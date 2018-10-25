@@ -21,7 +21,7 @@ fsx-ws-1.0.1
 
 This will show solutions architects how to take advantage of a fully-managed Windows native file system for various application workloads like home directories, web serving & content management, enterprise applications, analytics, and media & entertainment.
 
-This workshop will cover how to create and initiate an incremental file-system-consistent backup of a file system, as well as how to access the file system from broad range of clients from both Windows and Linux EC2 instances to Amazon WorkSpaces and AppStream 2.0. We will also restore a backup as a new file system and setup Microsoft Distributed File System (DFS) Replication between two file systems. For those of you who want to consolidate multiple file systems under a single namespace, we'll also spend time setting up DFS Namespaces with two file systems to achieve double the capacity and throughput.
+This workshop will cover how to create and initiate an incremental file-system-consistent backup of a file system, as well as how to access the file system from a broad range of clients from Windows and Linux EC2 instances to Amazon WorkSpaces and AppStream 2.0. We will also restore a backup as a new file system and setup Microsoft Distributed File System (DFS) Replication between two file systems across Availability Zones. For those of you who want to consolidate multiple file systems under a single namespace, we'll spend time setting up DFS Namespaces with two file systems to achieve double the capacity and throughput.
 
 ### Informational
 
@@ -38,7 +38,7 @@ Click on the ![](/images/efs_tutorial.png) link below to go to the Amazon FSx fo
 
 | Section 1 | Go to |
 | --- | --- 
-| FSx for Windows Prerequisites | [![](/images/efs_tutorial.png)](/tutorial) |
+| Prerequisites | [![](/images/efs_tutorial.png)](/tutorial) |
 
 
 
