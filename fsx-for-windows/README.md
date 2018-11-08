@@ -47,7 +47,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 Click on the links below to go to the FSx for Windows worshop steps. You must first complete **Section 1: Prerequisites** above before moving on to the steps in**Section 2: The Workshop** below.
 
 | Step | The Workshop |
-| --- | :---:
+| --- | :--- |
 | 2.00 | [Create a file system](./step.2.00)
 | 2.01 | [Launch Amazon EC2 instances](./step.2.01)
 | 2.02 | [Map a file share on Windows and test](./step.2.02)
