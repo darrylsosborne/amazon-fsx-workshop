@@ -38,7 +38,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | Go to |
 | --- | --- 
-| 1.0 | [(Prerequisites)](/prerequisites/step1.0) |
+| 1.0 | [Prerequisites](/prerequisites/step1.0) |
 
 
 
@@ -48,7 +48,7 @@ Click on the ![](/images/efs_scenario.png) links below to go to the FSx for Wind
 
 | Step | Go to |
 | --- | ---
-| 2.0 | [Create a file system](/workshop/step2.0)
+| 2.0 | [Create a file system](./workshop/step2.0)
 | 2.1 | [Launch Amazon EC2 instances](/workshop/step2.1)
 | 2.2 | [Map a file share on Windows and test](/workshop/step2.2)
 | 2.3 | [Create new shares and test](/workshop/step2.3)
