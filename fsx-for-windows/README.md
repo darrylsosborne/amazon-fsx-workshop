@@ -48,16 +48,16 @@ Click on the ![](/images/efs_scenario.png) links below to go to the FSx for Wind
 
 | Step | Go to |
 | --- | ---
-| 2.0 | [(Create a file system)](/workshop/step2.0)
-| 2.1 | [(Launch Amazon EC2 instances)](/workshop/step2.1)
-| 2.2 | [(Map a file share on Windows and test)](/workshop/step2.2)
-| 2.3 | [(Create new shares and test)](/workshop/step2.3)
-| 2.4 | [(Backup the file system)](/workshop/step2.4)
-| 2.5 | [(Mount a file system on Linux and test)](/workshop/step2.5)
-| 2.6 | [(Restore a backup)](/workshop/step2.6)
-| 2.7 | [(Setup and test DFS Replication)](/workshop/step2.7)
-| 2.8 | [(Setup and test DFS Namespaces)](/workshop/step2.8)
-| 2.9 | [(Delete the resources)](/workshop/step2.9)
+| 2.0 | [Create a file system](/workshop/step2.0)
+| 2.1 | [Launch Amazon EC2 instances](/workshop/step2.1)
+| 2.2 | [Map a file share on Windows and test](/workshop/step2.2)
+| 2.3 | [Create new shares and test](/workshop/step2.3)
+| 2.4 | [Backup the file system](/workshop/step2.4)
+| 2.5 | [Mount a file system on Linux and test](/workshop/step2.5)
+| 2.6 | [Restore a backup](/workshop/step2.6)
+| 2.7 | [Setup and test DFS Replication](/workshop/step2.7)
+| 2.8 | [Setup and test DFS Namespaces](/workshop/step2.8)
+| 2.9 | [Delete the resources](/workshop/step2.9)
 
 
 
