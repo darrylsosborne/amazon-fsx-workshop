@@ -38,7 +38,9 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 **2.01.5.** Configure the instance with the following details:
 
 > **Number of instances**: 1
+
 > **Purchasing option**: leave **Request Spot instances** unchecked
+
 > **Network**: 
 > **Subnet**: 
 > **Auto-assign Public IP**: 
