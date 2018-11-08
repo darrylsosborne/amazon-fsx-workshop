@@ -1,6 +1,7 @@
-![](https://s3.amazonaws.com/aws-us-east-1/tutorial/AWS_logo_PMS_300x180.png)
+![](/images/AWS_logo_PMS_300x180.png)
 
-![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
+![](/images/product-icon_Amazon_FSx_lockup_horizontal_squid_ink.png)
+
 # **Amazon FSx**
 
 ## Describe Amazon FSx
@@ -26,21 +27,21 @@ This workshop will cover how to create and initiate an incremental file-system-c
 
 ### Workshop: Amazon FSx for Windows File Server
 
-Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Windows worshop.
+Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Windows workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Windows v.1.0.1 | [![](/images/efs_tutorial.png)](/tutorial) |
+| FSx for Windows | [![](/images/efs_tutorial.png)](/tutorial) |
 
 
 
 ### Workshop: Amazon FSx for Lustre
 
-Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Lustre worshop.
+Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Lustre workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Lustre v.1.0.1 | [![](/images/efs_scenario.png)](/scenarios/wordpress) |
+| FSx for Lustre | [![](/images/efs_scenario.png)](/scenarios/wordpress) |
 
 
 
