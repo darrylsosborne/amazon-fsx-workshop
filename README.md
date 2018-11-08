@@ -27,21 +27,21 @@ This workshop will cover how to create and initiate an incremental file-system-c
 
 ### Workshop: Amazon FSx for Windows File Server
 
-Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Windows workshop.
+Click on the link below to **go to** the FSx for Windows workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Windows | [![](/images/efs_tutorial.png)](/tutorial) |
+| FSx for Windows | [![](/images/product-icon_Amazon_FSx_for_WFS_lockup_horizontal_squid_ink.png)] |
 
 
 
 ### Workshop: Amazon FSx for Lustre
 
-Click on the ![](/images/efs_scenario.png) link below to go to the FSx for Lustre workshop.
+Click on the link below to **go to** the FSx for Lustre workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Lustre | [![](/images/efs_scenario.png)](/scenarios/wordpress) |
+| FSx for Lustre | [![](/images/product-icon_Amazon_FSx_for_WFS_lockup_horizontal_squid_ink.png)] |
 
 
 
