@@ -27,7 +27,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 > This step involves launching two Amazon EC2 instances (Windows & Linux), and two Amazon WorkSpaces (Windows & Linux)
 
-#### Launch an Amazon EC2 Windows instance
+### Launch an Amazon EC2 Windows instance
 
 **2.01.1.** Sign in to the [Amazon EC2 Console](https://console.aws.amazon.com/ec2/)
 
@@ -83,7 +83,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 **2.01.14.** Select **Launch Instances**
 
-#### Launch an Amazon EC2 Windows instance
+### Launch an Amazon EC2 Windows instance
 
 **2.01.15.** Sign in to the [Amazon EC2 Console](https://console.aws.amazon.com/ec2/)
 
