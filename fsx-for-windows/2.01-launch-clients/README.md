@@ -48,6 +48,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 > **Capacity Reservation**: 
 > **Domain join directory**: 
 
+| Detail | Value |
 | :--- | :--- |
 | Number of instances | 1 |
 | Purchasing option | Request Spot instances unchecked |
