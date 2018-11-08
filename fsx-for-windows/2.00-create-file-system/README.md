@@ -27,11 +27,11 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 > This step involves creating a FSx for Windows file system.
 
-**2.1.1.** Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
+**2.0.1.** Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
 
-**2.1.2.** Select **Create a file system**
+**2.0.1.** Select **Create a file system**
 
-**2.1.3.** Complete the **Create a file system** wizard using the following settings:
+**2.0.2.** Complete the **Create a file system** wizard using the following settings:
 
 **File system details** section
 
@@ -67,7 +67,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 | Step | The Workshop |
 | --- | :--- |
-| 2.01 | [Launch a few clients](../step.2.01)
+| 2.01 | [Launch a few clients](./2.01-launch-clients)
 
 
 ## Troubleshooting

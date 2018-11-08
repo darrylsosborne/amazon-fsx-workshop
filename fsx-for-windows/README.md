@@ -5,9 +5,7 @@
 
 ## STGXXX: Amazon EFS - Leverage the Power of a Distributed Shared File System in the Cloud
 
-### Workshop 1.0.1
-
-fsx-ws-1.0.1
+### Workshop fsx-ws-1.0.1
 
 ---
 
@@ -38,7 +36,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | The Prerequisites |
 | --- | :--- |
-| 1.00 | [Prerequisites](./step.1.00) |
+| 1.00 | [Prerequisites](./1.00-prerequisites) |
 
 
 
@@ -48,16 +46,16 @@ Click on the links below to go to the FSx for Windows worshop steps. You must fi
 
 | Step | The Workshop |
 | --- | :--- |
-| 2.00 | [Create a file system](./step.2.00)
-| 2.01 | [Launch a few clients](./step.2.01)
-| 2.02 | [Map a file share on Windows and test](./step.2.02)
-| 2.03 | [Create new shares and test](./step.2.03)
-| 2.04 | [Backup the file system](./step.2.04)
-| 2.05 | [Mount a file system on Linux and test](./step2.05)
-| 2.06 | [Restore a backup](./step.2.06)
-| 2.07 | [Setup and test DFS Replication](./step.2.07)
-| 2.08 | [Setup and test DFS Namespaces](./step.2.08)
-| 2.09 | [Delete the resources](./step.2.09)
+| 2.00 | [Create a file system](./2.00-create-file-system)
+| 2.01 | [Launch a few clients](./2.01-launch-clients)
+| 2.02 | [Map a file share on Windows and test](./2.02-map-fileshare-and-test)
+| 2.03 | [Create new shares and test](./2.03-create-new-shares-and-test)
+| 2.04 | [Backup the file system](./2.04-backup-file-system)
+| 2.05 | [Mount a file system on Linux and test](./2.05-mount-filesystem-and-test)
+| 2.06 | [Restore a backup](./2.06-restore-backup)
+| 2.07 | [Setup and test DFS Replication](./2.07-setup-and-test-dfsr)
+| 2.08 | [Setup and test DFS Namespaces](./2.08-setup-and-test-dfsn)
+| 2.09 | [Delete the resources](./2.09-delete-resources)
 
 
 
