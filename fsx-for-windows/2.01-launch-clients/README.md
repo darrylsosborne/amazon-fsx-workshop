@@ -48,6 +48,15 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 > **Capacity Reservation**: 
 > **Domain join directory**: 
 
+| :--- | :--- |
+| Number of instances | 1 |
+| Purchasing option | Request Spot instances unchecked |
+| Network | Select the VPC created in the prerequisites section |
+
+
+
+
+
 **Network & Security** section
 
 - **Virtual private cloud (VPC)**: select the VPC crated in the prerequisites section (to verify the VPC Id, view the output of the AWS CloudFormation stack)
