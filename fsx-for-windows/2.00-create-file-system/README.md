@@ -27,39 +27,45 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 > This step involves creating a FSx for Windows file system.
 
-**2.0.1.** Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
+**2.00.1.** Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
 
-**2.0.1.** Select **Create a file system**
+**2.00.1.** Select **Create a file system**
 
-**2.0.2.** Complete the **Create a file system** wizard using the following settings:
+**2.00.2.** Complete the **Create a file system** wizard using the following settings:
 
 **File system details** section
 
 - **File system name**: type in a name of your file system  (this will **not** be used to access the file share or file system)
-- **Target capacity**: Select the size of the fleet (recommend 5)
-
+- **Storage capacity**: 512 GiB
+- **Throughput capacity**: 64 MB/s
 
 **Network & Security** section
 
-- **Request type**: **Request**
-- **Target capacity**: Select the size of the fleet (recommend 5)
-
+- **Virtual private cloud (VPC)**: select the VPC crated in the prerequisites section (to verify the VPC Id, view the output of the AWS CloudFormation stack)
+- **Availability zone**: select any availability zone
+- **Subnet**: select the subnet
+- **VPC Security Groups**: select the default security group
 
 **Windows Authentication** section
 
-- **Request type**: **Request**
-- **Target capacity**: Select the size of the fleet (recommend 5)
-
+- **Microsoft Active Directory ID**: select the directory created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack)
 
 **Encryption** section
 
-- **Request type**: **Request**
-- **Target capacity**: Select the size of the fleet (recommend 5)
+- **Encryption key**: select the default aws/fsx key
 
-**Backup and maintenance** section
+**Maintenance preferences - optional** section
+(expand the window)
 
-- **Request type**: **Request**
-- **Target capacity**: Select the size of the fleet (recommend 5)
+- **Daily automatic backup window**: No preference
+- **Automatic backup retention period**: 0 days (this disables automatic backups)
+- **Weekly maintenance window**: No preference
+
+**2.00.3.** Select **Review summary**
+
+**2.00.4.** Review the file system attributes & estimted monthly costs
+
+**2.00.5.** Select **Create file system**
 
 ---
 ## Next step
