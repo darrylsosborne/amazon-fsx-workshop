@@ -15,15 +15,9 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ---
 
-## Tutorial Overview
-
-### Overview
-
-This tutorial is designed to help you better understand the distributed data storage design of Amazon Elastic File System (Amazon EFS) and how to best leverage this design by taking advantage of scale-out achitectures.
-
 ### Prerequisites
 
-You must first complete [**Section 1: Prerequisites**](./README.md) and the previous steps in [**Section 2: The Workshop**](./README.md)
+You must first complete [**Section 1: Prerequisites**](../README.md) and the previous steps in [**Section 2: The Workshop**](../README.md).
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
@@ -73,7 +67,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 | Step | The Workshop |
 | --- | :--- |
-| 2.01 | [Launch a few clients](./step.2.01)
+| 2.01 | [Launch a few clients](../step.2.01)
 
 
 ## Troubleshooting
