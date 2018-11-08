@@ -67,7 +67,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 | Step | The Workshop |
 | --- | :--- |
-| 2.01 | [Launch a few clients](./2.01-launch-clients)
+| 2.01 | [Launch a few clients](../2.01-launch-clients)
 
 
 ## Troubleshooting
