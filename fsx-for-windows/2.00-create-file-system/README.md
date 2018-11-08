@@ -63,7 +63,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 **2.00.3.** Select **Review summary**
 
-**2.00.4.** Review the file system attributes & estimted monthly costs
+**2.00.4.** Review the file system attributes & estimated monthly costs
 
 **2.00.5.** Select **Create file system**
 
