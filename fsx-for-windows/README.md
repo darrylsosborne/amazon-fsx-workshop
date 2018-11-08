@@ -36,9 +36,9 @@ This workshop is divided into two sections with the second section dependent on 
 
 Click on the link below to go to the Amazon FSx for Windows File Server prerequisites section. Start this section at the start of the workshop, as soon as you sit down. The referenced Amazon CloudFormation template will create a stack that contains all the prerequisites for the next section of the workshop and it will take 20-30 minutes for the CloudFormation stack to  automatically build out the environment. You must complete this section before moving to **Section 2: The Workshop**.
 
-| Step | Go to |
+| Step | The Prerequisites |
 | --- | --- 
-| 1.0 | [Prerequisites](/prerequisites/step1.0) |
+| 1.0 | [Prerequisites](./step1.0) |
 
 
 
@@ -46,19 +46,19 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 Click on the ![](/images/efs_scenario.png) links below to go to the FSx for Windows worshop steps. You must first complete **Section 1: Prerequisites** above before moving on to **Section 2: The Workshop** below.
 
-| Step | Go to |
+| Step | The Workshop |
 | --- | ---
-| 2.0 | [Create a file system](./workshop/step2.0)
-| 2.1 | [Launch Amazon EC2 instances](/workshop/step2.1)
-| 2.2 | [Map a file share on Windows and test](/workshop/step2.2)
-| 2.3 | [Create new shares and test](/workshop/step2.3)
-| 2.4 | [Backup the file system](/workshop/step2.4)
-| 2.5 | [Mount a file system on Linux and test](/workshop/step2.5)
-| 2.6 | [Restore a backup](/workshop/step2.6)
-| 2.7 | [Setup and test DFS Replication](/workshop/step2.7)
-| 2.8 | [Setup and test DFS Namespaces](/workshop/step2.8)
-| 2.9 | [Delete the resources](/workshop/step2.9)
-
+| 2.0 | [Create a file system](./step2.0)
+| 2.1 | [Launch Amazon EC2 instances](./step2.1)
+| 2.2 | [Map a file share on Windows and test](./step2.2)
+| 2.3 | [Create new shares and test](./step2.3)
+| 2.4 | [Backup the file system](./step2.4)
+| 2.5 | [Mount a file system on Linux and test](./step2.5)
+| 2.6 | [Restore a backup](./step2.6)
+| 2.7 | [Setup and test DFS Replication](./step2.7)
+| 2.8 | [Setup and test DFS Namespaces](./step2.8)
+| 2.9 | [Delete the resources](./step2.9)
+| 2.10 | [Delete the resources](./step2.10)
 
 
 ## License
