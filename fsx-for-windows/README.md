@@ -38,27 +38,27 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | The Prerequisites |
 | --- | --- 
-| 1.0 | [Prerequisites](./step1.0) |
+| 1.00 | [Prerequisites](./step.1.00) |
 
 
 
 ### Section 2: The Workshop
 
-Click on the ![](/images/efs_scenario.png) links below to go to the FSx for Windows worshop steps. You must first complete **Section 1: Prerequisites** above before moving on to **Section 2: The Workshop** below.
+Click on the links below to go to the FSx for Windows worshop steps. You must first complete **Section 1: Prerequisites** above before moving on to the steps in**Section 2: The Workshop** below.
 
 | Step | The Workshop |
 | --- | ---
-| 2.0 | [Create a file system](./step2.0)
-| 2.1 | [Launch Amazon EC2 instances](./step2.1)
-| 2.2 | [Map a file share on Windows and test](./step2.2)
-| 2.3 | [Create new shares and test](./step2.3)
-| 2.4 | [Backup the file system](./step2.4)
-| 2.5 | [Mount a file system on Linux and test](./step2.5)
-| 2.6 | [Restore a backup](./step2.6)
-| 2.7 | [Setup and test DFS Replication](./step2.7)
-| 2.8 | [Setup and test DFS Namespaces](./step2.8)
-| 2.9 | [Delete the resources](./step2.9)
-| 2.10 | [Delete the resources](./step2.10)
+| 2.00 | [Create a file system](./step.2.00)
+| 2.01 | [Launch Amazon EC2 instances](./step.2.01)
+| 2.02 | [Map a file share on Windows and test](./step.2.02)
+| 2.03 | [Create new shares and test](./step.2.03)
+| 2.04 | [Backup the file system](./step.2.04)
+| 2.05 | [Mount a file system on Linux and test](./step2.05)
+| 2.06 | [Restore a backup](./step.2.06)
+| 2.07 | [Setup and test DFS Replication](./step.2.07)
+| 2.08 | [Setup and test DFS Namespaces](./step.2.08)
+| 2.09 | [Delete the resources](./step.2.09)
+
 
 
 ## License
