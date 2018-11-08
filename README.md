@@ -31,7 +31,7 @@ Click on the link below to **go to** the FSx for Windows workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Windows | [![](/images/product-icon_Amazon_FSx_for_WFS_lockup_horizontal_squid_ink.png)] |
+| FSx for Windows | [![](/images/architecture-product-card_Amazon_FSx_for_WFS.svg)] |
 
 
 
@@ -41,7 +41,7 @@ Click on the link below to **go to** the FSx for Lustre workshop.
 
 | Workshop | Go to |
 | --- | --- 
-| FSx for Lustre | [![](/images/product-icon_Amazon_FSx_for_WFS_lockup_horizontal_squid_ink.png)] |
+| FSx for Lustre | [![](/images/architecture-product-card_Amazon_FSx_for_WFS.svg)] |
 
 
 
