@@ -3,9 +3,11 @@
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
 # **Amazon FSx for Windows File Server**
 
-## Create a file system
+## Prerequisites
 
-### Version fsx-w-1.0.0
+### Version 2018.11
+
+fsx.w.wrkshp.2018.11
 
 ---
 
@@ -38,7 +40,7 @@ Click on the link below in the desired AWS region to create the AWS Cloudformati
 - MAD password
 - Instance type of Microsoft DFS Namespace servers
 
-![test](../images/fsx_for_windows_prerequisites_parameters.png)
+![](../images/fsx_for_windows_prerequisites_parameters.png)
 
 ---
 
