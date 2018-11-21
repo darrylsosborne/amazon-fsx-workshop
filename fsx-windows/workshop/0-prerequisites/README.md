@@ -30,7 +30,7 @@ WARNING!! This tutorial environment will exceed your free-usage tier. You will i
 ---
 ### Create Amazon Virtual Private Clouds (Amazon VPC)
 
-Click on the link below in the desired AWS region to create the AWS Cloudformation stack that will create two Amazon VPCs in your AWS account. These VPCs will host Amazon EFS file systems and the other AWS resources created in this workshop. Use the following parameters and the screenshot below as a guide to enter the appropriate AWS CloudFormation parameter values.
+Click on the link below in the desired AWS region to create the AWS Cloudformation stack that will create an Amazon VPC, AWS Managed Microsoft AD, and two Microsoft EC2 instances running the Distributed File System Namespaces role.	 Use the following parameters and the screenshot below as a guide to enter the appropriate AWS CloudFormation parameter values.
 
 #### Parameters
 
@@ -45,7 +45,7 @@ Click on the link below in the desired AWS region to create the AWS Cloudformati
 
 ---
 
-Click on the link below in the desired AWS region to create the AWS Cloudformation stack that will create an Amazon VPC, AWS Manageed Microsoft AD (enterprise), and two Windows EC2 instances with the Distributed File System role.
+Click on the link below in the desired AWS region to create the AWS CloudFormation stack that will create an Amazon VPC, AWS Manageed Microsoft AD (enterprise), and two Windows EC2 instances running the Distributed File System Namespaces role.
 
 | AWS Region Code | Region Name |
 | :--- | :--- 
