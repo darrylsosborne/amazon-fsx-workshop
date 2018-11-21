@@ -25,7 +25,7 @@ Metadata:
         - InstanceType
     ParameterLabels:
       AvailabilityZones:
-        default: Availability Zones
+        default: Availability Zones (select two)
       KeyName:
         default: EC2 key pair
       InstanceType:
@@ -62,6 +62,7 @@ Parameters:
     Type: String
     NoEcho: true
   MadDnsName:
+    Default: example.com
     Description: A fully qualified domain name. This name will resolve inside your VPC only. It does not need to be publicly resolvable (e.g. corp.example.com)
     Type: String
   MadEdition:
