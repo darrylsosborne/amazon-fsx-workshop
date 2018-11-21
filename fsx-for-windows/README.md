@@ -48,12 +48,12 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 | :--- | :---
 | 1 | [Create a file system](/workshop/1_create_file_system) |
 | 2 | [Launch a few clients](/workshop/2_launch_clients) |
-| 3 | [Map a file share on Windows and test](workshop/3_map_fileshare)
-| 4 | [Create new shares and test](workshop/4_create_new_shares)
+| 3 | [Map a file share on Windows](workshop/3_map_fileshare)
+| 4 | [Create new shares](workshop/4_create_new_shares)
 | 5 | [Backup the file system](workshop/5_backup_file_system)
-| 6 | [Mount a file system on Linux and test](workshop/6_mount_filesystem)
+| 6 | [Mount a file system on Linux](workshop/6_mount_filesystem)
 | 7 | [Restore a backup](workshop/7_restore_backup)
-| 8 | [Setup and test DFS Replication](workshop/8_setup_dfs)
+| 8 | [Setup DFS Replication](workshop/8_setup_dfs)
 | 9 | [Delete the resources](workshop/9_delete_resources)
 
 
