@@ -42,7 +42,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 Click on the links below to go to the FSx for Windows workshop. You must first complete **Prerequisites** above before moving on to the steps in**The Workshop** below. These steps must be completed in order.
 
-
+| :---
 | [Create a file system](/workshop/1_create_file_system)
 | :---
 | [Launch a few clients](/workshop/2_launch_clients)
