@@ -36,7 +36,8 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | Workshop |
 | :--- | :---
-| 0 | [**Prerequisites**](/workshop/0_prerequisites) |
+| 0 | [Prerequisites](/workshop/0_prerequisites) |
+| 1 | [Create a file system](/workshop/1_create_file_system) |
 
 
 ### The Workshop
