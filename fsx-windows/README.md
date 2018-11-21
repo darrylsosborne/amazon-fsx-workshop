@@ -36,7 +36,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | Workshop |
 | :--- | :---
-| 0 | [Prerequisites](workshop/0_prerequisites) |
+| 0 | [Prerequisites](workshop/0-prerequisites) |
 
 ### The Workshop
 
@@ -45,15 +45,15 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 
 | Step | Workshop |
 | :--- | :---
-| 1 | [Create a file system](workshop/1_create_file_system) |
-| 2 | [Launch a few clients](workshop/2_launch_clients) |
-| 3 | [Map a file share on Windows](workshop/3_map_fileshare)
-| 4 | [Create new shares](workshop/4_create_new_shares)
-| 5 | [Backup the file system](workshop/5_backup_file_system)
-| 6 | [Mount a file system on Linux](workshop/6_mount_filesystem)
-| 7 | [Restore a backup](workshop/7_restore_backup)
-| 8 | [Setup DFS Replication](workshop/8_setup_dfs)
-| 9 | [Delete the resources](workshop/9_delete_resources)
+| 1 | [Create a file system](workshop/1-create-file-system) |
+| 2 | [Launch a few clients](workshop/2-launch-clients) |
+| 3 | [Map a file share on Windows](workshop/3-map-fileshare)
+| 4 | [Create new shares](workshop/4-create-new-shares)
+| 5 | [Backup the file system](workshop/5-backup-file-system)
+| 6 | [Mount a file system on Linux](workshop/6-mount-filesystem)
+| 7 | [Restore a backup](workshop/7-restore-backup)
+| 8 | [Setup DFS Replication](workshop/8-setup-dfs)
+| 9 | [Delete the resources](workshop/9-delete-resources)
 
 
 ## License
