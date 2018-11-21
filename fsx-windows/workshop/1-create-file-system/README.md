@@ -23,15 +23,13 @@ You must first complete [**Prerequisites**](../README.md) before continuing with
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 1: Create an FSx for Windows file system
+### Step 1.1: Create an FSx for Windows file system
 
-> This step involves creating a FSx for Windows file system.
+- Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
 
-**1.0** Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
+- Select **Create a file system**
 
-**1.1** Select **Create a file system**
-
-**1.2** Complete the **Create a file system** wizard using the following settings:
+- Complete the **Create a file system** wizard using the following settings:
 
 | File system details | Value |
 | :--- | :--- 
@@ -70,11 +68,11 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 #
 
-**1.3** Select **Review summary**
+- Select **Review summary**
 
-**1.4** Review the file system attributes & estimated monthly costs
+- Review the file system attributes & estimated monthly costs
 
-**1.5** Select **Create file system**
+- Select **Create file system**
 
 ---
 ## Next section
