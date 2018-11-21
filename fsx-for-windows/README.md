@@ -44,7 +44,8 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 
 | :---
 | [Create a file system](/workshop/1_create_file_system)
-| :---
+
+
 | [Launch a few clients](/workshop/2_launch_clients)
 | :---
 | [Map a file share on Windows and test](workshop/3_map_fileshare)
