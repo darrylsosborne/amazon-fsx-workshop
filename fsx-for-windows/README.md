@@ -32,7 +32,7 @@ WARNING!! This workshop will exceed your free-usage tier. You will incur charges
 
 ### The Workshop
 
-This workshop is divided into two sections with the second section dependent on the first. The first section creates all the workshop prerequisites, like an Amazon VPC, an AWS Managed Microsoft AD, mulitple Amazon EC2 instances, Amazon WorkSpaces, and an AppStream 2.0 stack. The second section depends on the resources created in the first. In this section you will create the FSx for Windows file system and complete various administrative tasks and run a few performance tests against the file system.
+This workshop is divided into two sections with the second section dependent on the first. The first section creates all the workshop prerequisites, like an Amazon VPC, and an AWS Managed Microsoft AD. The second section depends on the resources created in the first. In this section you will create the FSx for Windows file system and complete various administrative tasks and run a few performance tests against the file system.
 
 ### Section 1: Prerequisites
 
@@ -45,7 +45,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 ### Section 2: The Workshop
 
-Click on the links below to go to the FSx for Windows worshop steps. You must first complete **Section 1: Prerequisites** above before moving on to the steps in**Section 2: The Workshop** below.
+Click on the links below to go to the FSx for Windows workshop steps. You must first complete **Section 1: Prerequisites** above before moving on to the steps in**Section 2: The Workshop** below.
 
 | Step | The Workshop |
 | --- | :--- |
