@@ -55,7 +55,7 @@ Click on the link below in the desired AWS region to create the AWS Cloudformati
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Create file system**](../workshop/1-create-file-system) |
+| [**Create file system**](.../workshop/1-create-file-system) |
 | :---
 ---
 
