@@ -25,9 +25,14 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 ### Step 1.1: Create an FSx for Windows file system
 
-- Sign in to the [Amazon FSx Console](https://console.aws.amazon.com/fsx/)
+- Click on the link below to log in to the Amazon FSx Management Console in the same AWS region where you launched your CloudFormation stack. 
 
-- Select **Create a file system**
+| AWS Region Code | Region Name |
+| :--- | :--- 
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/fsx/home?region=us-east-1#file-system-create) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/fsx/home?region=us-east-2#file-system-create) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/fsx/home?region=us-west-2#file-system-create) |
+| eu-west-1 | [EU East (Ireland)](https://console.aws.amazon.com/fsx/home?region=eu-west-1#file-system-create) |
 
 - Complete the **Create a file system** wizard using the following settings:
 
@@ -37,7 +42,6 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Storage capacity | 512 GiB |
 | Throughput capacity | 64 MB/s |
 
-#
 
 | Network & security | Value |
 | :--- | :--- 
@@ -46,19 +50,16 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Subnet | select the subnet |
 | VPC Security Groups | select the default security group |
 
-#
 
 | Windows authentication | Value |
 | :--- | :--- 
 | Microsoft Active Directory ID | select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
 
-#
 
 | Encryption | Value |
 | :--- | :--- 
 | Encryption key | select the default FSx encryption key (e.g. (default) aws/fsx) |
 
-#
 
 | Maintenance preferences | Value |
 | :--- | :--- 
@@ -66,7 +67,6 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Automatic backup retention period | 0 days (this disables automatic backups) |
 | Weekly maintenance window | No preference |
 
-#
 
 - Select **Review summary**
 
