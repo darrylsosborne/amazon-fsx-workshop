@@ -42,16 +42,25 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 Click on the links below to go to the FSx for Windows workshop. You must first complete **Prerequisites** above before moving on to the steps in**The Workshop** below. These steps must be completed in order.
 
-| :---
+
 | [Create a file system](/workshop/1_create_file_system)
+| :---
 | [Launch a few clients](/workshop/2_launch_clients)
+| :---
 | [Map a file share on Windows and test](workshop/3_map_fileshare)
+| :---
 | [Create new shares and test](workshop/4_create_new_shares)
+| :---
 | [Backup the file system](workshop/5_backup_file_system)
+| :---
 | [Mount a file system on Linux and test](workshop/6_mount_filesystem)
+| :---
 | [Restore a backup](workshop/7_restore_backup)
+| :---
 | [Setup and test DFS Replication](workshop/8_setup_dfs)
+| :---
 | [Delete the resources](workshop/9_delete_resources)
+| :---
 
 
 ## License
