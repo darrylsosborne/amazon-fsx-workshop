@@ -1,11 +1,15 @@
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/AWS_logo_PMS_300x180.png)
 
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
-# **Amazon FSx for Windows File Server (FSx for Windows)**
 
-## STGXXX: Amazon EFS - Leverage the Power of a Distributed Shared File System in the Cloud
 
-### Workshop fsx-ws-1.0.1
+# **Amazon FSx for Windows File Server**
+
+## Workshop
+
+### Version 2018.11
+
+fsx.w.wrkshp.2018.11
 
 ---
 
@@ -24,7 +28,7 @@ This workshop will cover how to create and initiate an incremental file-system-c
 ### Informational
 
 You will be using your own AWS account for all workshop activities.
-WARNING!! This tutorial environment will exceed your free-usage tier. You will incur charges as a result of stepping through this workshop. Terminate all resources that were created during this workshop so you don’t continue to incur ongoing charges.
+WARNING!! This workshop will exceed your free-usage tier. You will incur charges as a result of stepping through this workshop. Terminate all resources that were created during this workshop so you don’t continue to incur ongoing charges.
 
 ### The Workshop
 
@@ -37,7 +41,6 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 | Step | The Prerequisites |
 | --- | :--- |
 | 1.00 | [Prerequisites](./1.00-prerequisites) |
-
 
 
 ### Section 2: The Workshop
@@ -56,7 +59,6 @@ Click on the links below to go to the FSx for Windows worshop steps. You must fi
 | 2.07 | [Setup and test DFS Replication](./2.07-setup-and-test-dfsr)
 | 2.08 | [Setup and test DFS Namespaces](./2.08-setup-and-test-dfsn)
 | 2.09 | [Delete the resources](./2.09-delete-resources)
-
 
 
 ## License
