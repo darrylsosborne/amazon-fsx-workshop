@@ -34,8 +34,9 @@ WARNING!! This workshop will exceed your free-usage tier. You will incur charges
 
 Click on the link below to go to the Amazon FSx for Windows File Server prerequisites section. Start this section at the start of the workshop, as soon as you sit down. The referenced Amazon CloudFormation template will create a stack that contains all the prerequisites for the next section of the workshop and it will take 20-30 minutes for the CloudFormation stack to  automatically build out the environment. You must complete this section before moving to **Section 2: The Workshop**.
 
-| [**Prerequisites**](/workshop/0_prerequisites) |
-| :---
+| Step | Workshop |
+| :--- | :---
+| 0 | [**Prerequisites**](/workshop/0_prerequisites) |
 
 
 ### The Workshop
