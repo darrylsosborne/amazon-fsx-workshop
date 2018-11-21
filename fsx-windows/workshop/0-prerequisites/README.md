@@ -38,7 +38,7 @@ Click on the link below in the desired AWS region to create the AWS Cloudformati
 - MAD password
 - Instance type of Microsoft DFS Namespace servers
 
-![](images/fsx_for_windows_prerequisites_parameters.png)
+![test](../images/fsx_for_windows_prerequisites_parameters.png)
 
 ---
 
