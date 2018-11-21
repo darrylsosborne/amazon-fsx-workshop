@@ -36,9 +36,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 | Step | Workshop |
 | :--- | :---
-| 0 | [Prerequisites](/workshop/0_prerequisites) |
-| 1 | [Create a file system](/workshop/1_create_file_system) |
-
+| 0 | [Prerequisites](workshop/0_prerequisites) |
 
 ### The Workshop
 
@@ -47,8 +45,8 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 
 | Step | Workshop |
 | :--- | :---
-| 1 | [Create a file system](/workshop/1_create_file_system) |
-| 2 | [Launch a few clients](/workshop/2_launch_clients) |
+| 1 | [Create a file system](workshop/1_create_file_system) |
+| 2 | [Launch a few clients](workshop/2_launch_clients) |
 | 3 | [Map a file share on Windows](workshop/3_map_fileshare)
 | 4 | [Create new shares](workshop/4_create_new_shares)
 | 5 | [Backup the file system](workshop/5_backup_file_system)
