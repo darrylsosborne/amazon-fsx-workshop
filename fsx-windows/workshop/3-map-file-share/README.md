@@ -82,22 +82,41 @@ $download.DownloadFile($url,$destination)
 $extract = New-Object -ComObject Shell.Application
 $files = $extract.Namespace($destination).Items()
 $extract.NameSpace($path).CopyHere($files)
+
 ```
 
-- Run the following
+- Open a new **PowerShell** window **NOT** as **Administrator**
+- Run the DiskSpeed script below to test write performance of the mapped **Z:** drive
 
 ```sh
-C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -c512M -d60 -r -w100 -t8 -o32 -b1024K -Sh -L Z:\${env:computername}.dat
+C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -b16K -c4G -o4 -t8 -w25 -r -L -d30 -Z1G Z:\${env:computername}.dat
 ```
 
-- 
+- While the script is running, open **Task Explorer** and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet)
 
+- What was the peak write throughput you achieved?
+- What was the peak read throughput you achieved?
+- What was the P99 (99th %-tile) of your test?
+
+
+- Experiment with different DiskSpd parameter settings. Use the table below was a guide. Test with different block sizes (-b), file sizes (-c), number of outstanding I/O requests (-o), number of threads per file (-t), and read/write ratio (-w).
+
+| Parameter | Description 
+| :--- | :--- 
+| `-b<size>[K\|M\|G]` | Block size in bytes or KiB, MiB, or GiB (default = 64K). |
+| `-c<size>[K|M|G|b]` | Create files of the specified size. Size can be stated in bytes or KiBs, MiBs, GiBs, or blocks. |
+| `-o<count>` | Number of outstanding I/O requests per-target per-thread. (1 = synchronous I/O, unless more than one thread is specified with by using `-F`.) (default = 2) |
+| `-t<count>` | Number of threads per target. Conflicts with `-F`, which specifies the total number of threads. |
+| `-w<percentage>` | Percentage of write requests to issue (default = 0, 100% read). The following are equivalent and result in a 100% read-only workload: omitting `-w`, specifying `-w` with no percentage and `-w0`. **CAUTION**: A write test will destroy existing data without issuing a warning. |
+
+- What different parameters did you test?
+- How did the different parameter options alter the results?
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Map file share**](../3-map-file-share) |
+| [**Create new shares**](../4-creat-new-shares) |
 | :---
 ---
 
