@@ -24,9 +24,9 @@ You must first complete [**Prerequisites**](../0-prerequisites) and the previous
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 3.1: Log on to the Windows EC2 instance
+### Step 4.1: Log on to the Windows EC2 instance
 
-- From the Amazon EC2 Console, select the **Public DNS (IPv4)**name of the **Windows Server 2016 - FSx Workshop** instance
+- From the Amazon EC2 Console, select the **Public DNS (IPv4)** name of the **Windows Server 2016 - FSx Workshop** instance
 - Launch your remote desktop application to log on to the Windows EC2 instance you created in the previous workshop
 - Log on to the **Windows Server 2016 - FSx Workshop** instance using following AD credentials
 
@@ -34,7 +34,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | :--- | :--- 
 | admin@<directory> (e.g. admin@example.com) | The Microsoft Active Directory (MAD) password you entered as a parameter when you launched the prerequisites CloudFormation stack|
 
-### Step 3.2: Create file shares
+### Step 4.2: Create file shares
 
 > Complete the following steps when logged on to the **Windows Server 2016 - FSx Workshop** instance
 
@@ -59,17 +59,20 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 - Experiment and create other file shares. All shares must be created on the D:\ drive.
 
-### Step 3.3: Access the new file shares
+### Step 4.3: Access the new file shares
 
 > Complete the following steps when logged on to the **Windows Server 2016 - FSx Workshop** instance
 
-- Click **Start**
+- Open **File Explorer**
+- Type the UNC path to one of the new shares using the file system's DNS name (e.g. **\\\\fs-0123456789abcdef.example.com\data**)
+- Access all the new shares created above (e.g. \data, \finance, \sales, marketing)
+- Can we read and write to all shares?
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Map file share**](../3-map-file-share) |
+| [**Backup file system**](../5-backup-file-system) |
 | :---
 ---
 
