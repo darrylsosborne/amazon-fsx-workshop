@@ -3,9 +3,11 @@
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
 # **Amazon FSx for Windows File Server**
 
-## Workshop 2.01 - Launch a few clients
+## Launch clients
 
-### Version fsx-w-1.0.0
+### Version 2018.11
+
+fsx.w.wrkshp.2018.11
 
 ---
 
@@ -15,11 +17,127 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ---
 
-### Prerequisites
+### Launch clients
 
-You must first complete [**Section 1: Prerequisites**](../README.md) and the previous steps in [**Section 2: The Workshop**](../README.md).
+You must first complete [**Prerequisites**](../README.md) and the previous step [**Create a file system**](../README.md)
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
+
+### Step 2.1: Launch a Windows EC2 instance
+
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+
+| AWS Region Code | Region Name |
+| :--- | :--- 
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-2#LaunchInstanceWizard:) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
+| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
+
+- Launch an EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
+
+| Configuration detail | Value |
+| :--- | :--- 
+| Amazon Machine Image (AMI) | Microsoft Windows Server 2016 Base |
+| |
+| Instance Type | m5.large |
+| |
+| Number of instances | 1 |
+| Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
+| Domain join directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
+| IAM role | Select fsx-workshop-AmazonEC2RoleForSSM |
+| Tag | Key/Value = Name / EFS Workshop |
+| Security Group | default VPC security group |
+| Key pair | Select an existing key pair that you have access to |
+| |
+| Add tags | Key=Name; Value=Windows Server 2016 - FSx Workshop  |
+| Security group | Select the default VPC security group  |
+| EC2 key pair | Select an existing EC2 key pair you have access to  |
+
+- 
+
+
+### Step 2.1: Launch a Windows EC2 instance
+
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+
+| AWS Region Code | Region Name |
+| :--- | :--- 
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-2#LaunchInstanceWizard:) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
+| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
+
+- Launch an EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
+
+| Configuration detail | Value |
+| :--- | :--- 
+| Amazon Machine Image (AMI) | Microsoft Windows Server 2016 Base |
+| |
+| Instance Type | m5.large |
+| |
+| Number of instances | 1 |
+| Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
+| Domain join directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
+| IAM role | Select fsx-workshop-AmazonEC2RoleForSSM |
+| Tag | Key/Value = Name / EFS Workshop |
+| Security Group | default VPC security group |
+| Key pair | Select an existing key pair that you have access to |
+| |
+| Add tags | Key=Name; Value=Windows Server 2016 - FSx Workshop  |
+| |
+| Security group | Select the default VPC security group  |
+| |
+| EC2 key pair | Select an existing EC2 key pair you have access to  |
+
+- Launch the instance
+
+### Step 2.2: Launch a Linux EC2 instance
+
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+
+| AWS Region Code | Region Name |
+| :--- | :--- 
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-2#LaunchInstanceWizard:) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
+| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
+
+- Launch an EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
+
+| Configuration detail | Value |
+| :--- | :--- 
+| Amazon Machine Image (AMI) | Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type |
+| |
+| Instance Type | m5.large |
+| |
+| Number of instances | 1 |
+| Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
+| Domain join directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
+| IAM role | Select fsx-workshop-AmazonEC2RoleForSSM |
+| Tag | Key/Value = Name / EFS Workshop |
+| Security Group | default VPC security group |
+| Key pair | Select an existing key pair that you have access to |
+| |
+| Add tags | Key=Name; Value=Windows Server 2016 - FSx Workshop  |
+| |
+| Security group | Select the default VPC security group  |
+| |
+| EC2 key pair | Select an existing EC2 key pair you have access to  |
+
+- Launch the instance
+
+
+
+
+
+
+
+
+
+
+
+Select the default VPC security group
 
 ## Workshop
 
