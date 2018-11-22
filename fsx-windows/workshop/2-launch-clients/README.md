@@ -25,7 +25,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 ### Step 2.1: Launch a Windows EC2 instance
 
-- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you launched your CloudFormation stack.
 
 | AWS Region Code | Region Name |
 | :--- | :--- 
@@ -60,7 +60,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 ### Step 2.2: Launch a Linux EC2 instance
 
-- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you launched your CloudFormation stack.
 
 | AWS Region Code | Region Name |
 | :--- | :--- 
@@ -93,11 +93,11 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 ### Step 2.3: Launch two Amazon WorkSpaces
 
-- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you created your VPCs and EFS file systems. 
+- Click on the link below to log in to the Amazon EC2 Management Console in the same AWS region where you launched your CloudFormation stack.
 
 | AWS Region Code | Region Name |
 | :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:) |
+| us-east-1 | [US East (N. Virginia)]("https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:" target="_blank") |
 | us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-2#LaunchInstanceWizard:) |
 | us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
 | eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
