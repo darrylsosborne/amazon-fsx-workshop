@@ -25,7 +25,7 @@ Metadata:
         - InstanceType
     ParameterLabels:
       AvailabilityZones:
-        default: Availability Zones (select two)
+        default: Availability Zones (select 2)
       KeyName:
         default: EC2 key pair
       InstanceType:
@@ -119,6 +119,8 @@ Resources:
           !Ref KeyName
         InstanceType:
           !Ref InstanceType
+        SecurityGroup:
+          !GetAtt [ Vpc, Outputs.DefaultSecurityGroup ]
         SubnetIds:
           !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnet0 ], !GetAtt [ Vpc, Outputs.PublicSubnet1 ] ] ]
       TemplateURL: https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_SetupDFSNamespaceServers.yaml

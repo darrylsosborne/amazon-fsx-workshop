@@ -27,7 +27,7 @@ Metadata:
         - KeyName
         - InstanceType
         - SecurityGroup
-        - Subnet
+        - SubnetIds
     ParameterLabels:
       DirectoryId:
         default: Directory Id
@@ -37,7 +37,7 @@ Metadata:
         default: EC2 instance type
       SecurityGroups:
         default: Security groups
-      Subnet:
+      SubnetIds:
         default: Subnets
 
 Parameters:
@@ -62,7 +62,7 @@ Parameters:
   SecurityGroup:
     Description: Select the security group.
     Type: AWS::EC2::SecurityGroup::Id
-  Subnet:
+  SubnetIds:
     Description: Select two existing subnets.
     Type: List<AWS::EC2::Subnet::Id>
 
@@ -101,9 +101,12 @@ Resources:
           - !GetAtt ActiveDirectory.Name
         - Key: dnsIpAddresses
           Value:
-          - !Select [0, !GetAtt DirectoryId.DnsIpAddrs]
-          - !Select [1, !GetAtt DirectoryId.DnsIpAddrs]
-      SubnetId: !Select [ 0, !Ref Subnet ]
+          - !Select [ 0, !GetAtt ActiveDirectory.DnsIpAddrs ]
+          - !Select [ 1, !GetAtt ActiveDirectory.DnsIpAddrs ] 
+      SubnetId: !Select [ 0, !Ref SubnetIds ]
+      Tags:
+        - Key: Name
+          Value: !Join [ '', [ 'NSS1-', !Ref 'AWS::StackName' ] ]
   Instance2:
     Type: AWS::EC2::Instance
     Properties:
@@ -125,9 +128,12 @@ Resources:
           - !GetAtt ActiveDirectory.Name
         - Key: dnsIpAddresses
           Value:
-          - !Select [0, !GetAtt DirectoryId.DnsIpAddrs]
-          - !Select [1, !GetAtt DirectoryId.DnsIpAddrs]   
-      SubnetId: !Select [ 1, !Ref Subnet ]
+          - !Select [ 0, !GetAtt ActiveDirectory.DnsIpAddrs ]
+          - !Select [ 1, !GetAtt ActiveDirectory.DnsIpAddrs ]    
+      SubnetId: !Select [ 1, !Ref SubnetIds ]
+      Tags:
+        - Key: Name
+          Value: !Join [ '', [ 'NSS2-', !Ref 'AWS::StackName' ] ]
   FSxDomainJoinInstallDFS:
     Type: AWS::SSM::Document
     Properties:

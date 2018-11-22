@@ -111,13 +111,39 @@ Resources:
       Tags:
         - Key: Name
           Value: !Join [ '', [ 'VPC | ', !Ref 'AWS::StackName' ] ]
+  DefaultSGIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !GetAtt Vpc.DefaultSecurityGroup
+      IpProtocol: tcp
+      FromPort: 3389
+      ToPort: 3389
+      CidrIp: 0.0.0.0/0
+  RdpSGIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !GetAtt Vpc.DefaultSecurityGroup
+      IpProtocol: tcp
+      FromPort: 3389
+      ToPort: 3389
+      CidrIp: 0.0.0.0/0
+  SshSGIngress:
+    Type: AWS::EC2::SecurityGroupIngress
+    Properties:
+      GroupId: !GetAtt Vpc.DefaultSecurityGroup
+      IpProtocol: tcp
+      FromPort: 22
+      ToPort: 22
+      CidrIp: 0.0.0.0/0
 
 Outputs:
   
   Vpc:
     Value: !Ref Vpc
-  VpcCidr:
+  VpcCidr: 
     Value: !Ref VpcCidr
+  DefaultSecurityGroup:
+    Value: !GetAtt Vpc.DefaultSecurityGroup
   PublicSubnet0:
     Value: !Ref PublicSubnet0
   PublicSubnet0Cidr:
