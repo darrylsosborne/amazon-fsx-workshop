@@ -51,7 +51,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Configuraiton detail | Value 
 | :--- | :--- 
 | Drive | Z:
-| Folder | UNC path of the file system's default file share using the DNS name you copied above - **\\<file system's DNS name>>\share** - (e.g. **\\fs-0123456789abcdef.example.com\share**)
+| Folder | UNC path of the file system's default file share using the DNS name you copied above - **\\\\<file system's DNS name>>\share** - (e.g. **\\\fs-0123456789abcdef.example.com\share**)
 | Reconnect at sign-in | Leave **checked**
 | Connect using different credentials | Leave **unchecked**
 
