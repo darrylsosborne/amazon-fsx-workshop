@@ -51,7 +51,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 - Complete the **Create A Shared Folder Wizard** creating new shares based on the following information.
 
 | Share name | Folder path | Create new path | Shared folder permissions
-| :--- | :--- |
+| :--- | :--- | :--- | :---
 | data | D:\data | Yes | Customize permissions > Everyone Full Control |
 | finance | D:\finance | Yes | Administrators have full access; other users have no access |
 | sales | D:\sales | Yes | All users have read-only access |
