@@ -19,7 +19,7 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ### Create file system
 
-You must first complete [**Prerequisites**](../README.md) before continuing with this workshop.
+You must first complete [**Prerequisites**](../0-prerequisites) before continuing with this workshop.
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
