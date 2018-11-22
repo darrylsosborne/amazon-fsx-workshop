@@ -42,7 +42,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 ### Step 3.3: Map the file system's default share
 
-> Complete the following steps when logged on to the **Windows Server 2016 - FSx Workshop** instance
+> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
 
 - Open **File Explorer**
 - Context-click **This PC** and click **Map network drive...**
@@ -51,15 +51,47 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Configuraiton detail | Value 
 | :--- | :--- 
 | Drive | Z:
-| Folder | UNC path of the file system's default file share using the DNS name you copied above - **\\\\<file system's DNS name>>\share** - (e.g. **\\\fs-0123456789abcdef.example.com\share**)
+| Folder | UNC path of the file system's default file share using the DNS name you copied above - **\\\\<file system's DNS name>\share** - (e.g. **\\\\fs-0123456789abcdef.example.com\share**)
 | Reconnect at sign-in | Leave **checked**
 | Connect using different credentials | Leave **unchecked**
 
 ### Step 3.3: Access a file share
 
-> Complete the following steps when logged on to the **Windows Server 2016 - FSx Workshop** instance
+> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
 
-- In the **File Explorer** window of the **Z:\**
+- In the **File Explorer** window of the **Z:**
+- Create new empty files on the **Z:** drive
+- Context-click >> **New** >> **Text Document**
+- Create a few different types of files
+
+### Step 3.3: Test the performance of the new file share
+
+> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
+
+- Open a **PowerShell** window as an **Administrator**
+- Install DiskSpeed using the script below. Copy >> Paste >> Execute the script in the PowerShell window
+
+```sh
+$path = "C:\Tools\DiskSpd-2.0.21a"
+$url = "https://gallery.technet.microsoft.com/DiskSpd-A-Robust-Storage-6ef84e62/file/199535/2/DiskSpd-2.0.21a.zip"
+$destination = "C:\Tools\DiskSpd-2.0.21a.zip"
+$download = New-Object -Typename System.Net.WebClient
+New-Item -Type Directory -Path $path
+$download.DownloadFile($url,$destination)
+
+$extract = New-Object -ComObject Shell.Application
+$files = $extract.Namespace($destination).Items()
+$extract.NameSpace($path).CopyHere($files)
+```
+
+- Run the following
+
+```sh
+C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -c512M -d60 -r -w100 -t8 -o32 -b1024K -Sh -L Z:\${env:computername}.dat
+```
+
+- 
+
 
 ---
 ## Next section
