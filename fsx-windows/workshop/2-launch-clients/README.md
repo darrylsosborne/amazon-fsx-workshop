@@ -46,7 +46,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | Number of instances | 1 |
 | Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
 | Domain join directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
-| IAM role | Select fsx-workshop-AmazonEC2RoleForSSM |
+| IAM role | Select fsx-workshop-prerequisites... |
 | |
 | Add tags | Key=Name; Value=Windows Server 2016 - FSx Workshop  |
 | |
