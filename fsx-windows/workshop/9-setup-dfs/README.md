@@ -169,6 +169,7 @@ Add-DfsrConnection -GroupName ${Group} -SourceComputerName ${FirstFSComputerName
 
 - Delete both Amazon WorkSpaces
 - Once the WorkSpaces are deleted you must also register WorkSpaces from Active Directory
+- Remove the inbound rule referencing the Amazon WorkSpaces Security Group from the VPC's default security group
 - Terminate the Windows EC2 instance you launched
 - Terminate the Amazon Linux EC2 instance you launched
 - Delete the file system backups
