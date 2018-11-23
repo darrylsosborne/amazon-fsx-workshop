@@ -116,7 +116,7 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -b16K -c4G -o4 -t8 -w25 -r -L -d30 -Z
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Create new shares**](../4-creat-new-shares) |
+| [**Create new shares**](../4-create-new-shares) |
 | :---
 ---
 
