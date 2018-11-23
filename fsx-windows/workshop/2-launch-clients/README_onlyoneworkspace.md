@@ -86,7 +86,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 - Launch the instance
 
-### Step 2.3: Launch two Amazon WorkSpaces
+### Step 2.3: Launch Amazon WorkSpaces
 
 - Click on the link below to log in to the Amazon WorkSpaces Console in the same AWS region where you launched your CloudFormation stack.
 
@@ -108,20 +108,10 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 | Detail | Value |
 | :--- | :--- |
-| Username | shawn |
-| First Name | Shawn |
-| Last Name | Spencer |
+| Username | <your last name> |
+| First Name | <your first name> |
+| Last Name | <your first name> |
 | Email | Enter an email address you have access to |
-
-- Click **+Create Additional Users**
-- Create a second user with the following details.
-
-| Detail | Value |
-| :--- | :--- |
-| Username | burton |
-| First Name | Burton |
-| Last Name | Guster |
-| Email | Enter an email address you have access to (this can be the same email you used above) |
 
 - Click **Create Users**
 - Click **Next Step**
@@ -130,8 +120,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 | Username | Bundle |
 | :--- | :--- |
-| <directory>\burton | Standard with Windows 10 |
-| <directory>\shawn | Standard with Amazon Linux 2 |
+| <directory>\<Username> | Standard with Windows 10 |
 
 - Click **Next Step**
 - Change the **Running Mode** to **Always On**
