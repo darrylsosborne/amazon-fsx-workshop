@@ -54,9 +54,8 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 - Were you able to map the file share?
 - Why not?
 - How do you troubleshoot?
-- Come to the front of the room and tell me, Darryl Osborne ![](../images/Darryl_Osborne_reinvent.jpg) 
-
-..."I can't map file shares from WorkSpaces." I will give you a prize and further instructions.
+- Hint: Could it be related to network traffic access?
+- If you can't figure it out... come see me at the front of the room.
 
 ### Step 8.4: Access a file share
 
