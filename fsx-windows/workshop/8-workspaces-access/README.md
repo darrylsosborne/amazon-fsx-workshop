@@ -54,7 +54,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 - Were you able to map the file share?
 - Why not?
 - How do you troubleshoot?
-- Come to the front of the room and tell me, Darryl Osborne ![](../images/Darryl_Osborne_reinvent.jpeg) 
+- Come to the front of the room and tell me, Darryl Osborne ![](../images/Darryl_Osborne_reinvent.jpg) 
 
 ..."I can't map file shares from WorkSpaces." I will give you a prize and further instructions.
 
