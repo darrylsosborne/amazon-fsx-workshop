@@ -32,7 +32,7 @@ Click on the icon (link) below to go to the FSx for Windows workshop.
 
 | Workshop |
 | --- 
-| [![](/images/architecture-product-card_Amazon_FSx_for_Windows.svg)](/fsx-for-windows)
+| [![](/images/architecture-product-card_Amazon_FSx_for_Windows.svg)](./fsx-windows)
 
 
 
@@ -42,7 +42,7 @@ Click on the icon (link) below to go to the FSx for Lustre workshop.
 
 | Workshop |
 | --- 
-| [![](/images/architecture-product-card_Amazon_FSx_for_Lustre.svg)](/fsx-for-lustre) |
+| [![](/images/architecture-product-card_Amazon_FSx_for_Lustre.svg)](./fsx-lustre) |
 
 
 
