@@ -1,6 +1,7 @@
-![](/images/AWS_logo_PMS_300x180.png)
+![](https://s3.amazonaws.com/aws-us-east-1/tutorial/AWS_logo_PMS_300x180.png)
 
-![](/images/product-icon_Amazon_FSx_lockup_horizontal_squid_ink.png)
+![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
+
 
 # **Amazon FSx**
 
@@ -27,7 +28,7 @@ Select the appropriate workshop below.
 
 ### Workshop: Amazon FSx for Windows File Server
 
-Click on the link below to go to the FSx for Windows workshop.
+Click on the icon (link) below to go to the FSx for Windows workshop.
 
 | Workshop |
 | --- 
@@ -37,7 +38,7 @@ Click on the link below to go to the FSx for Windows workshop.
 
 ### Workshop: Amazon FSx for Lustre
 
-Click on the link below to **go to** the FSx for Lustre workshop.
+Click on the icon (link) below to go to the FSx for Lustre workshop.
 
 | Workshop |
 | --- 
