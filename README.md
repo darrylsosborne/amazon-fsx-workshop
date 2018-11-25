@@ -4,11 +4,11 @@
 
 # **Amazon FSx**
 
-## Describe Amazon FSx
+## Workshops
 
-### Workshops 1.0.0
+### Version 2018.11
 
-fsx-1.0.0
+fsx.w.wrkshp.2018.11
 
 ---
 
@@ -16,13 +16,13 @@ fsx-1.0.0
 
 ---
 
-## Workshop Overview
+## Workshops Overview
 
 ### Overview
 
 These workshops are designed to show solutions architects how to take advantage of our fully-managed 3rd party file systems. for various application workloads like home directories, web serving & content management, enterprise applications, analytics, and media & entertainment.
 
-This workshop will cover how to create and initiate an incremental file-system-consistent backup of a file system, as well as how to access the file system from a broad range of clients from Windows and Linux EC2 instances to Amazon WorkSpaces and AppStream 2.0. We will also restore a backup as a new file system and setup Microsoft Distributed File System (DFS) Replication between two file systems across Availability Zones. For those of you who want to consolidate multiple file systems under a single namespace, we'll spend time setting up DFS Namespaces with two file systems to achieve double the capacity and throughput.
+Select the appropriate workshop below.
 
 
 ### Workshop: Amazon FSx for Windows File Server
@@ -31,7 +31,7 @@ Click on the link below to go to the FSx for Windows workshop.
 
 | Workshop |
 | --- 
-| [![](/images/architecture-product-card_Amazon_FSx_for_WFS.svg)](/fsx-for-windows)
+| [![](/images/architecture-product-card_Amazon_FSx_for_Windows.svg)](/fsx-for-windows)
 
 
 
@@ -41,7 +41,7 @@ Click on the link below to **go to** the FSx for Lustre workshop.
 
 | Workshop |
 | --- 
-| [![](/images/architecture-product-card_Amazon_FSx_for_WFS.svg)](/fsx-for-lustre) |
+| [![](/images/architecture-product-card_Amazon_FSx_for_Lustre.svg)](/fsx-for-lustre) |
 
 
 
