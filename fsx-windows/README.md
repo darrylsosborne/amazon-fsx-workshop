@@ -56,6 +56,6 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 | 9 | [Setup DFS](workshop/9-setup-dfs)
 
 
-## License
+## License Summary
 
-This library is licensed under the Amazon Software License.
+This sample code is made available under a modified MIT license. See the LICENSE file.

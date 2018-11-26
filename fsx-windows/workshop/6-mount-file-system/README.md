@@ -275,7 +275,7 @@ sudo python ~/smallfile/smallfile_cli.py \
 
 For feedback, suggestions, or corrections, please email me at [darrylo@amazon.com](mailto:darrylo@amazon.com).
 
-## License
+## License Summary
 
-This library is licensed under the Amazon Software License.
+This sample code is made available under a modified MIT license. See the LICENSE file.
 
