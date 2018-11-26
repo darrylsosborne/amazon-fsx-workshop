@@ -20,7 +20,7 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ### Mount the file system
 
-You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Launch clients**](../3-launch_client).
+You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Launch client**](../3-launch_client).
 
 You must wait for the file system you created in section 1 **Create file system** to have a **Lifecycle** of **Available**. You can verify the file system's lifecycle or status by viewing the status using FSx Console or the lifecycle using the CLI command below, substituting the appropriate region parameter based on your environment.
 
@@ -48,7 +48,9 @@ sudo yum update -y
 
 # install utilities
 sudo yum install -y tree git wget
-sudo yum install -y --enablerepo=epel nload ioping
+wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm -P /tmp
+sudo yum install -y /tmp/epel-release-latest-7.noarch.rpm
+sudo yum install -y nload ioping
 
 # install parallel
 (wget -O - pi.dk/3 || curl pi.dk/3/ || fetch -o - http://pi.dk/3) | bash

@@ -2,13 +2,13 @@
 
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
 
-# **Amazon FSx for Windows File Server**
+# **Amazon FSx for Lustre**
 
-## Restore backup
+## Bulk load
 
 ### Version 2018.11
 
-fsx.w.wrkshp.2018.11
+fsx.l.wrkshp.2018.11
 
 ---
 
@@ -18,72 +18,92 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ---
 
-### Restore backup
+### Bulk load
 
-You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Map a file share**](../4-create-new-shares)
+You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Mount the file system**](../4-mount-file-system)
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 7.1: Restore a backup
+### Step 6.1: Log on to the Linux EC2 instance
 
-- Click on the link below to log in to the Amazon FSx Management Console in the same AWS region as your file system. 
+- From the Amazon EC2 Console, select the **Lustre client - FSx Workshop** instance
+- Click **Connect**
+- Use the connection information to SSH to the instance using your laptop's terminal application
 
-| AWS Region Code | Region Name |
-| :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/fsx/home?region=us-east-1#file-systems) |
-| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/fsx/home?region=us-east-2#file-systems) |
-| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/fsx/home?region=us-west-2#file-systems) |
-| eu-west-1 | [EU East (Ireland)](https://console.aws.amazon.com/fsx/home?region=eu-west-1#file-systems) |
+### Step 6.2: Bulk load files
 
-- Click the **File system name** link of the FSx for Windows file system you created earlier in the workshop
-- Click the **Backups** tab
-- Click the checkbox next to the backup you created earlier. It should have the type **User-Initiated**
-- Click **Restore backup**
-- Complete the **Create file system from backup...** wizard with the following settings
+> Complete the following steps SSH'd in to the **Lustre client - FSx Workshop** instance
 
-| File system details | Value |
-| :--- | :--- 
-| File system name | type in a name of your file system - this will **not** be used to access the file share or file system |
-| Storage capacity | Immutable when restoring a backup |
-| Throughput capacity | 64 MB/s |
+- These commands assume you linked the file system to the entire NASA NEX bucket (s3://nasanex). If you selected a specific prefix from this bucket or used a different bucket, you'll need to adjust your examination criteria based on your dataset.
 
+- Based on your examination of the file system in an earlier section, you know that object data is not loaded into the file system that's liked to an S3 bucket when the file system is created. Only metadata is loaded when the file system is created. There is no need to per-warm a file system with data. You access the file system like any other POSIX compliant file system. When a file is first accessed, the file's data is lazy loaded into the file system from the S3 bucket. While is this very convenient and requires not change to existing applications, you may decide to reduce latencies by loading file data prior to running your workload. FSx for Lustre allows you to bulk load data from a linked S3 bucket.
 
-| Network & security | Value |
-| :--- | :--- 
-| Virtual private cloud (VPC) | Accept the default |
-| Availability zone | Select a different Availability Zone from the default |
-| Subnet | Accept the default |
-| VPC Security Groups | Accept the default |
+- Decide what data you want to bulk load. This could be by file type, size, subdirectory, or all of the above. Or you could have other criteria.
+
+- Construct a find command to return the data you want to bulk load.
+
+- Run the command below to load 2048 .tif files. This command uses GNU parallel to parallelize load (restore) commands to the file system. Data isn't loaded through Lustre client issuing the command. The parallel design of Lustre allows data to be loaded in parallel directly from S3 into the file system's object storage targets (OSTs). This results is fast, high throughput data loads. 
+
+For more information about GNU Parallel, pleae refer to GNU Parallel - https://www.gnu.org/software/parallel/ - used to parallelize single-threaded commands; O. Tange (2018): GNU Parallel 2018, March 2018, https://doi.org/10.5281/zenodo.1146014
+
+```sh
+threads=128
+time lfs find /mnt/fsx --type f --name *.tif | head -2048 | parallel --will-cite -j ${threads} sudo lfs hsm_restore {} &
+
+```
 
 
-| Windows authentication | Value |
-| :--- | :--- 
-| Microsoft Active Directory ID | Accept the default |
+- While this is running, verify data isn't being loaded through the client by running nload to monitor network throughput in real time on the client.  Monitor the throughput for a few seconds then exit nload by using Control+Z.
+
+```sh
+nload -u M
+```
+
+- Access the CloudWatch dashboard you created earlier and monitor file system performance during the data load.
+
+- How much throughput are you achieving?  Read throughput? Write throughput? Total throughput?
+- How many operations per second are you seeing? Reads? Writes? Metadata?
+
+- Monitor storage capacity by running **lfs df** to view **Used** and **Available** storage for all the object storage servers (OSTs). Run this a few times to monitor its progress.
+
+```sh
+lfs df -h
+```
+- How much data was loaded?
+- How much available storage is there?
+
+- After a few minutes cancel the load by issues the following command
+
+```sh
+threads=128
+time lfs find /mnt/fsx --type f --name *.tif | head -2048 | parallel --will-cite -j ${threads} sudo lfs hsm_cancel {} &
+
+```
+
+- After a few minutes the bulk load (hsm_restore) should stop.
+
+- Verify the state of the .tif files by running the command below.
+- Are they how many are loaded vs. how many are "released"?
 
 
-| Encryption | Value |
-| :--- | :--- 
-| Encryption key | Accept the default |
+```sh
+threads=128
+time lfs find /mnt/fsx --type f --name *.tif | head -2048 | parallel --will-cite -j ${threads} sudo lfs hsm_state {} &
 
+```
 
-| Maintenance preferences | Value |
-| :--- | :--- 
-| Daily automatic backup window | No preference |
-| Automatic backup retention period | 0 days (this disables automatic backups) |
-| Weekly maintenance window | No preference |
+- Run a final **df** to see how much data was loaded before you cancelled it.
 
+```sh
+lfs df -h
+```
 
-- Select **Review summary**
-
-- Review the file system attributes & estimated monthly costs
-
-- Select **Create file system**
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Mount file system**](../6-mount-file-system) |
+| [**Bulk load**](../-bulk-load) |
 | :---
 ---
 
@@ -92,6 +112,5 @@ For feedback, suggestions, or corrections, please email me at [darrylo@amazon.co
 ## License
 
 This library is licensed under the Amazon Software License.
-
 
 
