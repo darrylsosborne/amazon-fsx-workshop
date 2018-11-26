@@ -24,13 +24,13 @@ You must first complete [**Prerequisites**](../0-prerequisites) and the previous
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 6.1: Log on to the Linux EC2 instance
+### Step 7.1: Log on to the Linux EC2 instance
 
 - From the Amazon EC2 Console, select the **Lustre client - FSx Workshop** instance
 - Click **Connect**
 - Use the connection information to SSH to the instance using your laptop's terminal application
 
-### Step 6.2: Bulk load files
+### Step 7.2: Bulk load files
 
 > Complete the following steps SSH'd in to the **Lustre client - FSx Workshop** instance
 
@@ -103,7 +103,7 @@ lfs df -h
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Bulk load**](../-bulk-load) |
+| [**Performance tests**](../8-performance-tests) |
 | :---
 ---
 

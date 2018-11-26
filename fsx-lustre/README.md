@@ -53,8 +53,7 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 | 5 | [Examine the file system](workshop/5-lazy-load) |
 | 6 | [Lazy load files](workshop/6-lazy-load) |
 | 7 | [Bulk load files](workshop/7-bulk-load) |
-| 8 | [Run IOPS tests](workshop/8-iops-tests) |
-| 9 | [Run throughput tests](workshop/9-throughput-tests) |
+| 8 | [Performance tests](workshop/8-performance-tests) |
 
 
 

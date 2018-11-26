@@ -290,6 +290,7 @@ aws fsx describe-file-systems --output json --region <region>
 
 ```sh
 sudo mkdir -p /mnt/fsx
+sudo chmod 777 /mnt/fsx
 # for example: sudo mount -t cifs //fs-0123456789abcdef.example.com/share /mnt/fsx/share --verbose -o vers=2.0,user=admin@example.com
 sudo mount -t lustre <file-system-dns-name>@tcp:/fsx /mnt/fsx
 ```
