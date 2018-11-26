@@ -48,12 +48,13 @@ Click on the links below to go to the FSx for Windows workshop. You must first c
 | :--- | :---
 | 1 | [Create a file system](workshop/1-create-file-system) |
 | 2 | [Create a CloudWatch dashboard](workshop/2-create-dashboard) |
-| 3 | [Launch a few clients](workshop/3-launch-clients) |
-| 4 | [Mount a file system on Linux](workshop/4-mount-file-system) |
-| 5 | [Lazy load files](workshop/5-lazy-load) |
-| 6 | [Bulk load files](workshop/6-bulk-load) |
-| 7 | [Run IOPS tests](workshop/7-iops-tests) |
-| 8 | [Run throughput tests](workshop/8-throughput-tests) |
+| 3 | [Launch a client](workshop/3-launch-client) |
+| 4 | [Mount the file system](workshop/4-mount-file-system) |
+| 5 | [Examine the file system](workshop/5-lazy-load) |
+| 6 | [Lazy load files](workshop/6-lazy-load) |
+| 7 | [Bulk load files](workshop/7-bulk-load) |
+| 8 | [Run IOPS tests](workshop/8-iops-tests) |
+| 9 | [Run throughput tests](workshop/9-throughput-tests) |
 
 
 

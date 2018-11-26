@@ -38,6 +38,12 @@ The link below will help launch a CloudFormation stack that will crate a CloudWa
 
 - FSx for Lustre file system id
 
+- You can find the file system id using FSx Console or by running the CLI command below, substituting the appropriate region parameter based on your environment.
+
+```sh
+aws fsx describe-file-systems --output json --region <region>
+```
+
 ---
 
 This CloudFormation template will launch a CloudFormation stack that will create a CloudWatch dashboard to visually display the following file system metrics:
@@ -71,7 +77,7 @@ This CloudFormation template will launch a CloudFormation stack that will create
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Launch clients**](../3-launch-clients) |
+| [**Launch a client**](../3-launch-client) |
 | :---
 ---
 

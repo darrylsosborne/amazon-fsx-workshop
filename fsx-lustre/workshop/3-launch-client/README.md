@@ -4,7 +4,7 @@
 
 # **Amazon FSx for Lustre**
 
-## Launch clients
+## Launch a client
 
 ### Version 2018.11
 
@@ -18,13 +18,13 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ---
 
-### Launch clients
+### Launch a client
 
 You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Create a file system**](../1-create-file-system)
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 2.1: Launch a Linux EC2 instance
+### Step 3.1: Launch a Linux EC2 instance
 
 - Click on the link below to log in to the Amazon EC2 Console in the same AWS region where you launched your CloudFormation stack.
 
@@ -35,14 +35,15 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
 | eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
 
-- Launch one EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Select one of the listed AMIs (different Linux distributions supported).
+- Launch one EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. A variety of Linux distributions are supported. Select one of the listed AMIs from Community AMIs or the AWS Marketplace.
 
 | Configuration detail | Value |
 | :--- | :--- 
-| Amazon Machine Image (AMI) | ami-0dd1c2f6b0890614a (us-east-1) |
-| Amazon Machine Image (AMI) | ami- (us-east-2) |
-| Amazon Machine Image (AMI) | ami- (us-west-2) |
-| Amazon Machine Image (AMI) | ami- (eu-west-1) |
+| Amazon Machine Image (AMI) | CentOS 7 (x86_64) - with Updates HVM |
+| Amazon Machine Image (AMI) | Red Hat Enterprise Linux 7.6 (HVM), SSD Volume Type (works, but not officially supported by Lustre) |
+| Amazon Machine Image (AMI) | RHEL-7.5_HVM_GA-20180322-x86_64-1-Hourly2-GP2 |
+| Amazon Machine Image (AMI) | RHEL-7.0_HVM_GA-20150209-x86_64-1-Hourly2-GP2 |
+| Amazon Machine Image (AMI) | SUSE Linux Enterprise Server 12 SP3 (HVM), SSD Volume Type |
 | |
 | Instance Type | c5.2xlarge |
 | |

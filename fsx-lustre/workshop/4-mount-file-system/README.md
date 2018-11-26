@@ -4,7 +4,7 @@
 
 # **Amazon FSx for Lustre**
 
-## Mount file system
+## Mount the file system
 
 ### Version 2018.11
 
@@ -18,9 +18,9 @@ Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.co
 
 ---
 
-### Mount file system
+### Mount the file system
 
-You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Launch clients**](../3-launch_clients).
+You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Launch clients**](../3-launch_client).
 
 You must wait for the file system you created in section 1 **Create file system** to have a **Lifecycle** of **Available**. You can verify the file system's lifecycle or status by viewing the status using FSx Console or the lifecycle using the CLI command below, substituting the appropriate region parameter based on your environment.
 
@@ -233,7 +233,44 @@ Finished            : Mon Nov 19 02:02:51 2018
 - There are separate instructions for each Linux distribution. Following the appropriate instructions based on the Linux distribution you used to launch the EC2 instance in the previous section.
 
 
+#### CentOS 7.5 or RedHat 7.5 (or 7.6)
 
+- Run the following commands to install Lustre client 2.10.5
+
+```sh
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/el7.5.1804/client/RPMS/x86_64/kmod-lustre-client-2.10.5-1.el7.x86_64.rpm
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/el7.5.1804/client/RPMS/x86_64/lustre-client-2.10.5-1.el7.x86_64.rpm
+
+sudo yum localinstall -y *lustre-client-2.10.5*.rpm
+```
+
+- You may need to reboot your compute instance for the client to finish installing.
+
+#### CentOS 7.0 or RedHat 7.0
+
+- Run the following commands to install Lustre client 2.10.5
+
+```sh
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/el7/client/RPMS/x86_64/kmod-lustre-client-2.10.5-1.el7.x86_64.rpm
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/el7/client/RPMS/x86_64/lustre-client-2.10.5-1.el7.x86_64.rpm
+
+sudo yum localinstall -y *lustre-client-2.10.5*.rpm
+```
+
+- You may need to reboot your compute instance for the client to finish installing.
+
+#### SUSE Linus 12 SP3
+
+- Run the following commands to install Lustre client 2.10.5
+
+```sh
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/sles12sp3/client/RPMS/x86_64/lustre-client-2.10.5-1.x86_64.rpm
+wget https://downloads.whamcloud.com/public/lustre/lustre-2.10.5/sles12sp3/client/RPMS/x86_64/lustre-client-kmp-default-2.10.5_k4.4.132_94.33-1.x86_64.rpm
+
+sudo yum localinstall -y *lustre-client-2.10.5*.rpm
+```
+
+- You may need to reboot your compute instance for the client to finish installing.
 
 
 ### Step 4.5: Mount the file system
@@ -258,230 +295,14 @@ sudo mount -t lustre <file-system-dns-name>@tcp:/fsx /mnt/fsx
 - Run **df** to verify mount
 
 ```sh
-df
+lfs df
 ```
-
-### Step 4.6: Examine the file system's metadata loaded from the linked S3 bucket
-
-
-
-
-
-
-time find /mnt/fsx/*.las -type f | parallel --will-cite -j ${threads} sudo lfs hsm_restore {} &
-
-time lfs find /mnt/fsx --type f --name *.nc | parallel --will-cite -j ${threads} sudo lfs hsm_restore {} &
-
-
-time lfs find /mnt/fsx --type f --name *.nc | wc -l
-
-
-- Experiment and mount the file shares you created in the previous section. Use the following table to mount each share to a different local mount point. Remember to create the local mount point first before mounting the file share.
-
-| Local mount point | File share |
-| :--- | :--- |
-| /mnt/fsx/data | data |
-| /mnt/fsx/finance | finance |
-| /mnt/fsx/sales | sales |
-| /mnt/fsx/marketing | marketing |
-
-- Were you able to mount all file shares?
-- Why not?
-
-- Run **df** to verfify all file shares have been mounted correctly
-
-```sh
-df
-```
-
-- Can you mount a single file share and gain access all the sub-shares?
-- Try this
-
-```sh
-sudo mkdir -p /mnt/fsx
-# for example: sudo mount -t cifs //fs-0123456789abcdef.example.com/share /mnt/fsx/share --verbose -o vers=2.0,user=admin@example.com
-sudo mount -t cifs //<file-system-dns-name>/d$ /mnt/fsx --verbose -o vers=2.0,user=admin@<domain>
-```
-
-- Run a simple touch command to write to the /share file share.
-
-```sh
-touch amazon_linux_test.txt
-```
-
-- What two things can you do to write to these shares?
-
-```sh
-sudo touch amazon_linux_test.txt
-```
-
-```sh
-sudo chown ec2-user:ec2-user /mnt/fsx/share
-touch amazon_linux_test.txt
-```
-
-
-### Step 6.4: Run performance tests
-
-> Complete the following steps SSH'd in to the **Amazon Linux - FSx Workshop** instance
-
-- Run scripts below to evaluate file share performance. Change the path to access any of the file shares you've created (e.g. of=/mnt/fsx/share, of=/mnt/fsx/data, of=/mnt/fsx/marketing, etc.)
-
-```sh
-time sudo dd if=/dev/zero of=/mnt/fsx/share/2G-fsx-dd-$(date +%Y%m%d%H%M%S.%3N) bs=1M count=2048 status=progress conv=fsync
-```
-```sh
-time sudo dd if=/dev/zero of=/mnt/fsx/share/2G-fsx-dd-$(date +%Y%m%d%H%M%S.%3N) bs=1M count=2048 status=progress oflag=sync
-```
-```sh
-job_name=$(echo $(uuidgen)| grep -o ".\{6\}$")
-bs=1024K
-count=256
-sync=oflag=sync
-threads=128
-
-sudo mkdir -p /mnt/fsx/share/${job_name}/{1..128}
-
-time seq 1 ${threads} | sudo parallel --will-cite -j ${threads} dd if=/dev/zero of=/mnt/fsx/share/${job_name}/{}/dd-$(date +%Y%m%d%H%M%S.%3N) bs=${bs} count=${count} ${sync} &
-```
-
-- While the parallel dd command is running, run the **nload** command below for 10-20 seconds to monitor network throughput in real time
-- Exit **nload** by pressing **Control+z**
-- How long did it take to generate 32 GiB of data across 128 files?
-- What was the average throughput of this test?
-
-
-- Run the **smallfile** test below to write a large number of small files
-
-```sh
-job_name=$(echo $(uuidgen)| grep -o ".\{6\}$")
-prefix=$(echo $(uuidgen)| grep -o ".\{6\}$")
-path=/mnt/fsx/share/${job_name}
-sudo mkdir -p ${path}
-
-threads=16
-file_size=1024
-file_count=1024
-operation=create
-same_dir=N
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-
-```
-
-- While the script above is running, press the return/enter key a few times to return a prompt. Run the **nload** command below for 30-40 seconds to monitor network throughput in real time.
-- Exit **nload** by pressing **Control+z**
-- How long did it take to generate 32 GiB of data across 16 threads?
-- What was the average throughput of this test?
-
-
-- Run the **smallfile** test below to read the files generated above
-
-```sh
-operation=read
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-```
-
-- Run the **smallfile** test below to stat the files generated above
-
-```sh
-operation=stat
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-```
-
-- Run the **smallfile** test below to append to the files generated above
-
-```sh
-operation=append
-file_size=128
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-```
-
-- Run the **smallfile** test below to rename to the files generated above
-
-```sh
-operation=rename
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-```
-
-- Run the **smallfile** test below to rename to the files generated above
-
-```sh
-operation=delete-renamed
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-```
-
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Restore backup**](../7-restore-backup) |
+| [**Examine the file system**](../5-examine-file-system) |
 | :---
 ---
 
