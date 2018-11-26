@@ -1,13 +1,14 @@
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/AWS_logo_PMS_300x180.png)
 
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
-# **Amazon FSx for Windows File Server**
+
+# **Amazon FSx for Lustre**
 
 ## Create file system
 
 ### Version 2018.11
 
-fsx.w.wrkshp.2018.11
+fsx.l.wrkshp.2018.11
 
 ---
 
@@ -23,62 +24,39 @@ You must first complete [**Prerequisites**](../0-prerequisites) before continuin
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 1.1: Create an FSx for Windows file system
+### Step 1.1: Install the latest AWS CLI
 
-- Click on the link below to log in to the Amazon FSx Management Console in the same AWS region where you launched your CloudFormation stack. 
-
-| AWS Region Code | Region Name |
-| :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/fsx/home?region=us-east-1#file-system-create) |
-| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/fsx/home?region=us-east-2#file-system-create) |
-| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/fsx/home?region=us-west-2#file-system-create) |
-| eu-west-1 | [EU East (Ireland)](https://console.aws.amazon.com/fsx/home?region=eu-west-1#file-system-create) |
-
-- Complete the **Create a file system** wizard using the following settings:
-
-| File system details | Value |
-| :--- | :--- 
-| File system name | type in a name of your file system - this will **not** be used to access the file share or file system |
-| Storage capacity | 512 GiB |
-| Throughput capacity | 64 MB/s |
+- Install the latest AWS CLI on your laptop. For more details on how to install the latest AWS CLI, please refer to the [AWS Command Line Interface User Guide](https://docs.aws.amazon.com/cli/latest/userguide/installing.html). 
 
 
-| Network & security | Value |
-| :--- | :--- 
-| Virtual private cloud (VPC) | select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack)|
-| Availability zone | select any availability zone |
-| Subnet | select the subnet |
-| VPC Security Groups | select the default security group |
+### Step 1.2: Create an FSx for Lustre file system
+
+- Copy the script below into your favorite text editor
+
+```sh
+subnet=<subnet>
+bucket=nasanex
+region=<region>
 
 
-| Windows authentication | Value |
-| :--- | :--- 
-| Microsoft Active Directory ID | select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
+aws fsx create-file-system \
+--file-system-type LUSTRE \
+--storage-capacity 3600 \
+--subnet-ids ${subnet} \
+--lustre-configuration ImportPath=s3://${bucket} \
+--region ${region} \
+--output json
+```
 
+- Replace the variable values <subnet_id> and <region> with the appropriate values for your environment. If you completed the prerequisites section, look at the output of the CloudFormation stack to find the subnet_id value. Use the same region where you created your VPC. We highly recommend you use the "nasanex" bucket. NASA NEX is a part of the **Registry of Open Data on AWS** project and is a collection of Earth science datasets maintained by NASA, including climate change projections and satellite images of the Earth's surface. We will be using some objects in this bucket for some of the other workshop sections. If you have another data repository you would like to use during the workshop, please replace the "nasanex" variable value with the bucket name and prefix (e.g. mybucket/prefix).
 
-| Encryption | Value |
-| :--- | :--- 
-| Encryption key | select the default FSx encryption key (e.g. (default) aws/fsx) |
-
-
-| Maintenance preferences | Value |
-| :--- | :--- 
-| Daily automatic backup window | No preference |
-| Automatic backup retention period | 0 days (this disables automatic backups) |
-| Weekly maintenance window | No preference |
-
-
-- Select **Review summary**
-
-- Review the file system attributes & estimated monthly costs
-
-- Select **Create file system**
+- Run the script, with the updated variable values, from the command line.
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Launch clients**](../2-launch-clients) |
+| [**Create dashboard**](../2-create-dashboard) |
 | :---
 ---
 

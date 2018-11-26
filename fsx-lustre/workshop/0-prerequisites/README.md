@@ -31,7 +31,7 @@ WARNING!! This tutorial environment will exceed your free-usage tier. You will i
 ---
 ### Create Amazon Virtual Private Clouds (Amazon VPC)
 
-Click on the link below in the desired AWS region to create the AWS Cloudformation stack that will create an Amazon VPC. Use the following parameters and the screenshot below as a guide to enter the appropriate AWS CloudFormation parameter values.
+Click on the link below in the desired AWS region to create the AWS Cloudformation stack that will create an Amazon VPC. Use the following parameters as a guide to enter the appropriate AWS CloudFormation parameter values.
 
 #### Parameters
 
@@ -40,7 +40,7 @@ Click on the link below in the desired AWS region to create the AWS Cloudformati
 
 ---
 
-Click on the link below in the desired AWS region to create the AWS CloudFormation stack that will create an Amazon VPC.
+Click on the link below in the desired AWS region to create the AWS CloudFormation stack that will create an Amazon VPC, subnet, security group, etc.
 
 | AWS Region Code | Region Name |
 | :--- | :--- 

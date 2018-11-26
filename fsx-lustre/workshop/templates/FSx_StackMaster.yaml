@@ -34,7 +34,7 @@ Parameters:
   VpcCidr:
     AllowedValues: 
     - 10.0.0.0/16
-    - 173.31.0.0/16
+    - 172.31.0.0/16
     - 192.168.0.0/16
     Default: 10.0.0.0/16
     Description: Select the private IPv4 CIDR for the VPC.
@@ -51,3 +51,14 @@ Resources:
           !Ref VpcCidr
       TemplateURL: https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/lustre/current/templates/FSx_CreateVPC.yaml
     
+Outputs:
+  Vpc:
+    Value: !GetAtt [ Vpc, Outputs.Vpc ]
+  VpcCidr: 
+    Value: !GetAtt [ Vpc, Outputs.VpcCidr ]
+  DefaultSecurityGroup:
+    Value: !GetAtt [ Vpc, Outputs.DefaultSecurityGroup ]
+  PublicSubnet0:
+    Value: !GetAtt [ Vpc, Outputs.PublicSubnet0 ]
+  PublicSubnet0Cidr:
+    Value: !GetAtt [ Vpc, Outputs.PublicSubnet0Cidr ]

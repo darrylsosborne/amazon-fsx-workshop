@@ -2,13 +2,13 @@
 
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
 
-# **Amazon FSx for Windows File Server**
+# **Amazon FSx for Lustre**
 
-## Map file share
+## Create dashboard
 
 ### Version 2018.11
 
-fsx.w.wrkshp.2018.11
+fsx.l.wrkshp.2018.11
 
 ---
 
@@ -17,106 +17,61 @@ fsx.w.wrkshp.2018.11
 Errors or corrections? Email us at [darrylo@amazon.com](mailto:darrylo@amazon.com).
 
 ---
+### Prerequisites
 
-### Map file share
+* An AWS account with administrative level access
+* An Amazon EC2 key pair
+* An Amazon FSx for Lustre file system
 
-You must first complete [**Prerequisites**](../0-prerequisites) and the previous step [**Create a file system**](../2-launch-clients)
+If a key pair has not been previously created in your account, please refer to [Creating a Key Pair Using Amazon EC2](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair) from the AWS EC2 User's Guide.  
 
-WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
+Verify that the key pair is created in the same AWS region you will use for the tutorial.
 
-### Step 3.1: Log on to the Windows EC2 instance
+WARNING!! This tutorial environment will exceed your free-usage tier. You will incur charges as a result of building this environment and executing the scripts included in this tutorial. Delete all files on the EFS file system that were created during this tutorial and delete the  stack so you don’t continue to incur additional compute and storage charges.
 
-- From the Amazon EC2 Console, copy the **Public DNS (IPv4)** name of the **Windows Server 2016 - FSx Workshop** instance
-- Launch your remote desktop application to log on to the Windows EC2 instance you created in the previous workshop
-- Log on to the **Windows Server 2016 - FSx Workshop** instance using following AD credentials
+---
+### 2.1 Create Amazon CloudWatch dashboard for your FSx for Lustre file system
 
-| Username | Password |
+The link below will help launch a CloudFormation stack that will crate a CloudWatch dashboard for your FSx for Luster file system.
+
+#### Parameters
+
+- FSx for Lustre file system id
+
+---
+
+This CloudFormation template will launch a CloudFormation stack that will create a CloudWatch Dashboard to visually display the following file system metrics:
+
+| Widget | Metric Name | Metric Math Express |
+| :--- | :--- | :--- |
+| Available Storage Capacity (TiB)| Available Storage (TiB) | freeDataStorageCapacity/1073741824 |
+| Throughput (MiB/s) | Total Data Throughput (MiB/s) | SUM(METRICS())/1048576/PERIOD(readBytes) |
+| Throughput (MiB/s) | Data Write Throughput (MiB/s) | writeBytes/1048576/PERIOD(writeBytes) |
+| Throughput (MiB/s) | Data Read Throughput (MiB/s) | readBytes/1048576/PERIOD(readBytes) |
+| Percent Throughput (%) | Percent Write Throughput (%) | writeBytes*100/SUM(METRICS()) |
+| Percent Throughput (%) | Percent Read Throughput (%)  | readBytes*100/SUM(METRICS()) |
+| Operations per Second (iops) | Total Operations per second (iops) | SUM(METRICS())/PERIOD(metadataOperations) |
+| Operations per Second (iops) | Data Write Operations per second (iops) | dataWriteOperations/PERIOD(dataWriteOperations) |
+| Operations per Second (iops) | Data Read Operations per second (iops) | dataReadOperations/PERIOD(dataReadOperations) |
+| Operations per Second (iops) | Metadata Operations per second (iops) | metadataOperations/PERIOD(metadataOperations) |
+| Percent Operations per Second (%) | Percent Write Operations per second (%) | dataWriteOperations*100/SUM(METRICS()) |
+| Percent Operations per Second (%) | Percent Read Operations per second (%) | dataReadOperations*100/SUM(METRICS()) |
+| Percent Operations per Second (%) | Percent Metadata Operations per second (%) | metadataOperations*100/SUM(METRICS()) |
+
+- Click on the link below in the same AWS region where you created your FSx for Lustre file system. 
+
+| AWS Region Code | Region Name |
 | :--- | :--- 
-| admin@<<directory>> (e.g. admin@example.com) | The Microsoft Active Directory (MAD) password you entered as a parameter when you launched the prerequisites CloudFormation stack|
-
-### Step 3.2: Copy the DNS name of the FSx for Windows file system
-
-- From the Amazon FSx Console select the file system you created in the **Create a file system** section.
-- Click the **Network & Security** tab.
-- Copy the **DNS name** of the file system
-
-### Step 3.3: Map the file system's default share
-
-> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
-
-- Open **File Explorer**
-- Context-click **This PC** and click **Map network drive...**
-- Map the file share using the following information, 
-
-| Configuraiton detail | Value 
-| :--- | :--- 
-| Drive | Z:
-| Folder | UNC path of the file system's default file share using the DNS name you copied above - **\\\\<file system's DNS name>\share** - (e.g. **\\\\fs-0123456789abcdef.example.com\share**)
-| Reconnect at sign-in | Leave **checked**
-| Connect using different credentials | Leave **unchecked**
-
-### Step 3.3: Access a file share
-
-> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
-
-- In the **File Explorer** window of the **Z:**
-- Create new empty files on the **Z:** drive
-- Context-click >> **New** >> **Text Document**
-- Create a few different types of files
-
-### Step 3.3: Test the performance of the new file share
-
-> Complete the following steps logged on to the **Windows Server 2016 - FSx Workshop** instance
-
-- Open a **PowerShell** window as an **Administrator**
-- Install DiskSpeed using the script below. Copy >> Paste >> Execute the script in the PowerShell window
-
-```sh
-$path = "C:\Tools\DiskSpd-2.0.21a"
-$url = "https://gallery.technet.microsoft.com/DiskSpd-A-Robust-Storage-6ef84e62/file/199535/2/DiskSpd-2.0.21a.zip"
-$destination = "C:\Tools\DiskSpd-2.0.21a.zip"
-$download = New-Object -Typename System.Net.WebClient
-New-Item -Type Directory -Path $path
-$download.DownloadFile($url,$destination)
-
-$extract = New-Object -ComObject Shell.Application
-$files = $extract.Namespace($destination).Items()
-$extract.NameSpace($path).CopyHere($files)
-
-```
-
-- Open a new **PowerShell** window **NOT** as **Administrator**
-- Run the DiskSpeed script below to test write performance of the mapped **Z:** drive
-
-```sh
-C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -b16K -c4G -o4 -t8 -w25 -r -L -d30 -Z1G Z:\${env:computername}.dat
-```
-
-- While the script is running, open **Task Explorer** and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet)
-
-- What was the peak write throughput you achieved?
-- What was the peak read throughput you achieved?
-- What was the P99 (99th %-tile) of your test?
-
-
-- Experiment with different DiskSpd parameter settings. Use the table below was a guide. Test with different block sizes (-b), file sizes (-c), number of outstanding I/O requests (-o), number of threads per file (-t), and read/write ratio (-w).
-
-| Parameter | Description 
-| :--- | :--- 
-| `-b<size>[K\|M\|G]` | Block size in bytes or KiB, MiB, or GiB (default = 64K). |
-| `-c<size>[K\|M\|G\|b]` | Create files of the specified size. Size can be stated in bytes or KiBs, MiBs, GiBs, or blocks. |
-| `-o<count>` | Number of outstanding I/O requests per-target per-thread. (1 = synchronous I/O, unless more than one thread is specified with by using `-F`.) (default = 2) |
-| `-t<count>` | Number of threads per target. Conflicts with `-F`, which specifies the total number of threads. |
-| `-w<percentage>` | Percentage of write requests to issue (default = 0, 100% read). The following are equivalent and result in a 100% read-only workload: omitting `-w`, specifying `-w` with no percentage and `-w0`. **CAUTION**: A write test will destroy existing data without issuing a warning. |
-
-- What different parameters did you test?
-- How did the different parameter options alter the results?
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-lustre-workshop-dashboard&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/lustre/current/templates/FSx_CW_Dashboard.yaml) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-lustre-workshop-dashboard&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/lustre/current/templates/FSx_CW_Dashboard.yaml) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-lustre-workshop-dashboard&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/lustre/current/templates/FSx_CW_Dashboard.yaml) |
+| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-lustre-workshop-dashboard&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/lustre/current/templates/FSx_CW_Dashboard.yaml) |
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Create new shares**](../4-create-new-shares) |
+| [**Launch clients**](../3-launch-clients) |
 | :---
 ---
 
