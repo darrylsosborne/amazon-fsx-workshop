@@ -2,13 +2,13 @@
 
 ![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_available.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ingergration.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_ecryption-lock.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_fully-managed.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_lowcost-affordable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_performance.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_scalable.png)![](https://s3.amazonaws.com/aws-us-east-1/tutorial/100x100_benefit_storage.png)
 
-# **Amazon FSx for Windows File Server**
+# **Amazon FSx for Lustre**
 
 ## Launch clients
 
 ### Version 2018.11
 
-fsx.w.wrkshp.2018.11
+fsx.l.wrkshp.2018.11
 
 ---
 
@@ -24,7 +24,7 @@ You must first complete [**Prerequisites**](../0-prerequisites) and the previous
 
 WARNING!! This workshop environment will exceed your free-usage tier. You will incur charges as a result of building this environment and completing the steps below.
 
-### Step 2.1: Launch a Windows EC2 instance
+### Step 2.1: Launch a Linux EC2 instance
 
 - Click on the link below to log in to the Amazon EC2 Console in the same AWS region where you launched your CloudFormation stack.
 
@@ -35,115 +35,34 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 | us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
 | eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
 
-- Launch an EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
+- Launch one EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Select one of the listed AMIs (different Linux distributions supported).
 
 | Configuration detail | Value |
 | :--- | :--- 
-| Amazon Machine Image (AMI) | Microsoft Windows Server 2016 Base |
-| |
-| Instance Type | c5.2xlarge |
-| |
-| Number of instances | 1 |
-| Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
-| Domain join directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
-| IAM role | Select fsx-workshop-prerequisites... |
-| |
-| Add tags | Key=Name; Value=Windows Server 2016 - FSx Workshop  |
-| |
-| Security group | Select the default VPC security group  |
-| |
-| EC2 key pair | Select an existing EC2 key pair you have access to  |
-
-- Launch the instance
-
-### Step 2.2: Launch a Linux EC2 instance
-
-- Click on the link below to log in to the Amazon EC2 Console in the same AWS region where you launched your CloudFormation stack.
-
-| AWS Region Code | Region Name |
-| :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-1#LaunchInstanceWizard:) |
-| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/ec2/v2/home?region=us-east-2#LaunchInstanceWizard:) |
-| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/ec2/v2/home?region=us-west-2#LaunchInstanceWizard:) |
-| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/ec2/v2/home?region=eu-west-1#LaunchInstanceWizard:) |
-
-- Launch an EC2 instance with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
-
-| Configuration detail | Value |
-| :--- | :--- 
-| Amazon Machine Image (AMI) | Amazon Linux AMI 2018.03.0 (HVM), SSD Volume Type |
+| Amazon Machine Image (AMI) | ami-0dd1c2f6b0890614a (us-east-1) |
+| Amazon Machine Image (AMI) | ami- (us-east-2) |
+| Amazon Machine Image (AMI) | ami- (us-west-2) |
+| Amazon Machine Image (AMI) | ami- (eu-west-1) |
 | |
 | Instance Type | c5.2xlarge |
 | |
 | Number of instances | 1 |
 | Network | Select the VPC Id created in the prerequisites section (to verify the the VPC Id, view the output of the AWS CloudFormation stack) |
 | |
-| Add tags | Key=Name; Value=Amazon Linux - FSx Workshop  |
+| Add tags | Key=Name; Value=Lustre client - FSx Workshop  |
 | |
 | Security group | Select the default VPC security group  |
 | |
 | EC2 key pair | Select an existing EC2 key pair you have access to  |
 
 - Launch the instance
-
-### Step 2.3: Launch two Amazon WorkSpaces
-
-- Click on the link below to log in to the Amazon WorkSpaces Console in the same AWS region where you launched your CloudFormation stack.
-
-| AWS Region Code | Region Name |
-| :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/workspaces/home?region=us-east-1#addworkspaces:addworkspaces) |
-| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/workspaces/home?region=us-east-2#addworkspaces:addworkspaces) |
-| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/workspaces/home?region=us-west-2#addworkspaces:addworkspaces) |
-| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/workspaces/home?region=eu-west-1#addworkspaces:addworkspaces) |
-
-- Launch the WorkSpaces with the following configuration details. If a value isn't specified below, accept the default value. Create one EC2 instance per table below.
-
-| Directory | Value |
-| :--- | :--- 
-| Directory | Select the Directory Id created in the prerequisites section (to verify the the Directory Id, view the output of the AWS CloudFormation stack) |
-| Enable Self Service Permissions | Yes |
-
-- Create a user with the following details.
-
-| Detail | Value |
-| :--- | :--- |
-| Username | shawn |
-| First Name | Shawn |
-| Last Name | Spencer |
-| Email | Enter an email address you have access to |
-
-- Click **+Create Additional Users**
-- Create a second user with the following details.
-
-| Detail | Value |
-| :--- | :--- |
-| Username | burton |
-| First Name | Burton |
-| Last Name | Guster |
-| Email | Enter an email address you have access to (this can be the same email you used above) |
-
-- Click **Create Users**
-- Click **Next Step**
-
-- Assign WorkSpaces bundle with the following details.
-
-| Username | Bundle |
-| :--- | :--- |
-| <directory>\burton | Standard with Windows 10 |
-| <directory>\shawn | Standard with Amazon Linux 2 |
-
-- Click **Next Step**
-- Change the **Running Mode** to **Always On**
-- Click **Next Step**
-- Click **Launch WorkSpaces**
 
 
 ---
 ## Next section
 ### Click on the link below to go to the next section
 
-| [**Map file share**](../3-map-file-share) |
+| [**Mount file system**](../4-mount-file-system) |
 | :---
 ---
 

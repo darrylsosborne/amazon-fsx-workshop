@@ -49,10 +49,10 @@ Click on the link below in the desired AWS region to create the AWS CloudFormati
 
 | AWS Region Code | Region Name |
 | :--- | :--- 
-| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
-| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
-| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
-| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
+| us-east-1 | [US East (N. Virginia)](https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-windows-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
+| us-east-2 | [US East (Ohio)](https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-windows-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
+| us-west-2 | [US West (Oregon)](https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-windows-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
+| eu-west-1 | [EU West (Ireland)](https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-windows-workshop-prerequisites&templateURL=https://s3.amazonaws.com/aws-us-east-1/fsx-workshop/windows/current/templates/FSx_StackMaster_DFSn.yaml) |
 
 ---
 ## Next section

@@ -40,7 +40,7 @@ The link below will help launch a CloudFormation stack that will crate a CloudWa
 
 ---
 
-This CloudFormation template will launch a CloudFormation stack that will create a CloudWatch Dashboard to visually display the following file system metrics:
+This CloudFormation template will launch a CloudFormation stack that will create a CloudWatch dashboard to visually display the following file system metrics:
 
 | Widget | Metric Name | Metric Math Express |
 | :--- | :--- | :--- |
