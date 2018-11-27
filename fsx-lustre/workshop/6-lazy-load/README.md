@@ -36,7 +36,7 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 - These commands assume you linked the file system to the entire NASA NEX bucket (s3://nasanex). If you selected a specific prefix from this bucket or used a different bucket, you'll need to adjust your examination criteria based on your dataset.
 
-- Based on your examination of the file system in the previous section, you know that no object data has been loaded into the file system. Only metadata has been loaded at this time. There is no need to per-warm a file system with data. You access the file system like any other POSIX compliant file system. When a file's is first accessed, the file's data will be lazy loaded into the file system which leads to slightly higher access times. But once the file has been loaded into the file system, you have super fast access to it. In this section of the workshop you will lazy load a few files multiple times to understand the different performance characteristics between first and subsequent access and how to load and release individual file data from the file system. Releasing the file data from the file system isn't deleting the file. The metadata resides in the file system but the data has been removed. If you need to access the file again, upon first access it will be loaded from the linked S3 bucket but subsequent access will be served from the file system until it is released.
+- Based on your examination of the file system in the previous section, you know that no object data has been loaded into the file system. Only metadata has been loaded at this time. There is no need to pre-warm a file system with data. You access the file system like any other POSIX-compliant file system. When a file is first accessed, the file's data will be lazy loaded into the file system which leads to slightly higher access times. But once the file has been loaded into the file system, you have super fast access to it. In this section of the workshop you will lazy load a few files multiple times to understand the different performance characteristics between first and subsequent access and how to load and release individual file data from the file system. Releasing the file data from the file system isn't deleting the file. The metadata resides in the file system but the data has been removed. If you need to access the file again, upon first access it will be loaded from the linked S3 bucket but subsequent access will be served from the file system until it is released.
 
 
 - Generate a list of some .tif files
@@ -94,7 +94,7 @@ sys	    0m0.108s
 ```
 
 - If I think the file system returned the same results that fast, would I be **right** or **wrong**?
-- If you guessed **wrong** you are **right**. The data was cached on my EC2 instance. Lets flush the cache and run the command again, this time getting the data from the FSx for Lustre file system.
+- If you guessed **wrong** you are correct. The data was cached on my EC2 instance. Lets flush the cache and run the command again, this time getting the data from the FSx for Lustre file system.
 - Run this command to flush cache
 
 ```sh
