@@ -232,7 +232,7 @@ Finished            : Mon Nov 19 02:02:51 2018
 
 > Complete the following steps SSH'd in to the **Amazon Linux - FSx Workshop** instance
 
-- There are separate instructions for each Linux distribution. Following the appropriate instructions based on the Linux distribution you used to launch the EC2 instance in the previous section.
+- There are separate instructions for each Linux distribution. Follow the appropriate instructions based on the Linux distribution you used to launch the EC2 instance in the previous section.
 
 
 #### CentOS 7.5 or RedHat 7.5 (or 7.6)
@@ -291,7 +291,6 @@ aws fsx describe-file-systems --output json --region <region>
 ```sh
 sudo mkdir -p /mnt/fsx
 sudo chmod 777 /mnt/fsx
-# for example: sudo mount -t cifs //fs-0123456789abcdef.example.com/share /mnt/fsx/share --verbose -o vers=2.0,user=admin@example.com
 sudo mount -t lustre <file-system-dns-name>@tcp:/fsx /mnt/fsx
 ```
 
