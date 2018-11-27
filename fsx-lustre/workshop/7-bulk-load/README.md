@@ -36,13 +36,13 @@ WARNING!! This workshop environment will exceed your free-usage tier. You will i
 
 - These commands assume you linked the file system to the entire NASA NEX bucket (s3://nasanex). If you selected a specific prefix from this bucket or used a different bucket, you'll need to adjust your examination criteria based on your dataset.
 
-- Based on your examination of the file system in an earlier section, you know that object data is not loaded into the file system that's liked to an S3 bucket when the file system is created. Only metadata is loaded when the file system is created. There is no need to per-warm a file system with data. You access the file system like any other POSIX compliant file system. When a file is first accessed, the file's data is lazy loaded into the file system from the S3 bucket. While is this very convenient and requires not change to existing applications, you may decide to reduce latencies by loading file data prior to running your workload. FSx for Lustre allows you to bulk load data from a linked S3 bucket.
+- Based on your examination of the file system in an earlier section, you know that object data is not loaded into the file system that's linked to an S3 bucket when the file system is created. Only metadata is loaded when the file system is created. There is no need to pre-warm a file system with data. You access the file system like any other POSIX-compliant file system. When a file is first accessed, the file's data is lazy loaded into the file system from the S3 bucket. While is this very convenient and requires no change to existing applications, you may decide to reduce read latency by loading file data prior to running your workload. FSx for Lustre allows you to bulk load data from a linked S3 bucket.
 
 - Decide what data you want to bulk load. This could be by file type, size, subdirectory, or all of the above. Or you could have other criteria.
 
 - Construct a find command to return the data you want to bulk load.
 
-- Run the command below to load 2048 .tif files. This command uses GNU parallel to parallelize load (restore) commands to the file system. Data isn't loaded through Lustre client issuing the command. The parallel design of Lustre allows data to be loaded in parallel directly from S3 into the file system's object storage targets (OSTs). This results is fast, high throughput data loads. 
+- Run the command below to load 2048 .tif files. This command uses GNU parallel to parallelize load (restore) commands to the file system. Data isn't loaded through the Lustre client issuing the command. The design of Lustre allows data to be loaded in parallel directly from S3 into the file system's object storage targets (OSTs). This results in fast, high-throughput data loads. 
 
 For more information about GNU Parallel, pleae refer to GNU Parallel - https://www.gnu.org/software/parallel/ - used to parallelize single-threaded commands; O. Tange (2018): GNU Parallel 2018, March 2018, https://doi.org/10.5281/zenodo.1146014
 
@@ -53,7 +53,7 @@ time lfs find /mnt/fsx --type f --name *.tif | head -2048 | parallel --will-cite
 ```
 
 
-- While this is running, verify data isn't being loaded through the client by running nload to monitor network throughput in real time on the client.  Monitor the throughput for a few seconds then exit nload by using Control+Z.
+- While this is running, verify data isn't being loaded through the client by running nload to monitor network throughput in real time on the client.  Monitor the throughput for a few seconds then exit nload by using Ctrl+Z.
 
 ```sh
 nload -u M
@@ -72,7 +72,7 @@ lfs df -h
 - How much data was loaded?
 - How much available storage is there?
 
-- After a few minutes cancel the load by issues the following command
+- After a few minutes cancel the load by issuing the following command
 
 ```sh
 threads=128
@@ -83,7 +83,7 @@ time lfs find /mnt/fsx --type f --name *.tif | head -2048 | parallel --will-cite
 - After a few minutes the bulk load (hsm_restore) should stop.
 
 - Verify the state of the .tif files by running the command below.
-- Are they how many are loaded vs. how many are "released"?
+- How many are loaded vs. released?
 
 
 ```sh
