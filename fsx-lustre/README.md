@@ -33,7 +33,7 @@ WARNING!! This workshop will exceed your free-usage tier. You will incur charges
 
 ### Prerequisites
 
-Click on the link below to go to the Amazon FSx for Windows File Server prerequisites section. It is recommended to complete this section before moving to **The Workshop**.
+Click on the link below to go to the Amazon FSx for Lustre prerequisites section. It is recommended to complete this section before moving to **The Workshop**.
 
 | Step | Workshop |
 | :--- | :---
@@ -41,7 +41,7 @@ Click on the link below to go to the Amazon FSx for Windows File Server prerequi
 
 ### The Workshop
 
-Click on the links below to go to the FSx for Windows workshop. You must first complete **Prerequisites** above before moving on to the steps in**The Workshop** below. These steps must be completed in order.
+Click on the links below to go to the FSx for Lustre workshop. You must first complete **Prerequisites** above before moving on to the steps in**The Workshop** below. These steps must be completed in order.
 
 
 | Step | Workshop |
