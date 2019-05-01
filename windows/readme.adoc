@@ -7,14 +7,9 @@ image:fsx-windows-aws-logos.png[alt="fsx for windows and aws logos", align="left
 
 This is a workshop designed for architects and engineers who would like to learn more about Amazon Web Services (AWS) native Windows file storage.
 
-Click the buttons below to start the Amazon FSx for Windows File Server workshop.
+Click the button below to start the Amazon FSx for Windows File Server workshop.
 
-image::cw-monitoring-tutorial.png[link=01-create-environment/, align="left",width=420]
-image::cw-monitoring-tutorial.png[link=02-create-file-server-from-backup/, align="left",width=420]
-image::cw-monitoring-tutorial.png[link=03-create-new-share/, align="left",width=420]
-image::cw-monitoring-tutorial.png[link=04-test-performance/, align="left",width=420]
-image::cw-monitoring-tutorial.png[link=05-setup-dfs-namespace/, align="left",width=420]
-image::cw-monitoring-tutorial.png[link=06-setup-dfs-replication/, align="left",width=420]
+image::01-create-environment.png[link=01-create-environment/, align="left",width=420]
 
 NOTE: You will incur charges as you go through these tutorials as it will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
 
