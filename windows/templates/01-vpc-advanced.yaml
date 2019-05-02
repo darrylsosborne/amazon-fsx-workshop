@@ -44,6 +44,36 @@ Resources:
       Tags:
         - Key: Name
           Value: !Join [ '', [ 'VPC IGW | ', !Ref 'AWS::StackName' ] ]     
+  NatGateway0Eip:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  NatGateway1Eip:
+    Type: AWS::EC2::EIP
+    Properties:
+      Domain: vpc
+  NatGateway0:
+    Type: AWS::EC2::NatGateway
+    Properties: 
+      AllocationId: !GetAtt NatGateway0Eip.AllocationId
+      SubnetId: !Ref PublicSubnet0
+  NatGateway1:
+    Type: AWS::EC2::NatGateway
+    Properties: 
+      AllocationId: !GetAtt NatGateway1Eip.AllocationId
+      SubnetId: !Ref PublicSubnet1
+  PrivateRoute0:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable0
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway0
+  PrivateRoute1:
+    Type: AWS::EC2::Route
+    Properties:
+      RouteTableId: !Ref PrivateRouteTable1
+      DestinationCidrBlock: 0.0.0.0/0
+      NatGatewayId: !Ref NatGateway1
   PrivateRouteTable0:
     Type: AWS::EC2::RouteTable
     Properties:

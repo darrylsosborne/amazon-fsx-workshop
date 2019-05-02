@@ -15,9 +15,19 @@ Metadata:
         - SubnetId
         - SecurityGroupId
         - DirectoryId
+        - DailyAutomaticBackupStartTime
+        - CopyTagsToBackups
+        - AutomaticBackupRetentionDays
+        - WeeklyMaintenanceStartTime
     ParameterLabels:
       DirectoryId:
         default: Directory
+      AutomaticBackupRetentionDays:
+        default: Backup retention days
+      CopyTagsToBackups:
+        default: Copy tags to backups
+      DailyAutomaticBackupStartTime:
+        default: Daily backup start time (optional)
       FileSystemName:
         default: File system name
       SecurityGroupId:
@@ -28,12 +38,32 @@ Metadata:
         default: Subnet
       ThroughputCapacity:
         default: Throughput capacity (MiB/s)
+      WeeklyMaintenanceStartTime:
+        default: Weekly maintenance start time (optional)
 
 Parameters:
   DirectoryId:
     AllowedPattern: ^d-[0-9a-f]{10}$
     Description: Enter the directory ID of the AWS Managed Microsoft Active Directory (e.g. d-0123456789)
     Type: String    
+  AutomaticBackupRetentionDays:
+    Default: 7
+    Description: Number of days to retain automatic daily backups (0 to 35 days)
+    MaxValue: 35
+    MinValue: 0
+    Type: Number
+  CopyTagsToBackups:
+    AllowedValues:
+    - '' 
+    - true
+    - false
+    Default: ''
+    Description: Stripe set of the files imported from a data repository
+    Type: String
+  DailyAutomaticBackupStartTime:
+    AllowedPattern: ^$|([01]\d|2[0-3]):?([0-5]\d)$
+    Description: Enter the daily automatic backup start time in hour:minute UTC format (e.g. 11:30pm = 23:30)
+    Type: String
   FileSystemName:
     Default: fsx-windows-workshop
     AllowedPattern: ^$|(.*)$
@@ -65,6 +95,18 @@ Parameters:
     Default: 64
     Description: Throughput capacity (MiB/s)
     Type: String
+  WeeklyMaintenanceStartTime:
+    AllowedPattern: ^$|[1-7]:([01]\d|2[0-3]):?([0-5]\d)$
+    Description: Enter the weekly maintenance start time in day:hour:minute UTC format (e.g. Monday 11:30pm = 1:23:30)
+    Type: String
+
+Conditions:
+  CopyTagsToBackupsProvided:
+    !Not [ !Equals [ '', !Ref CopyTagsToBackups ] ]
+  DailyAutomaticBackupStartTimeProvided:
+    !Not [ !Equals [ '', !Ref DailyAutomaticBackupStartTime ] ]
+  WeeklyMaintenanceStartTimeProvided:
+    !Not [ !Equals [ '', !Ref WeeklyMaintenanceStartTime ] ]
 
 Resources:
   WindowsFileSystem:
@@ -81,7 +123,11 @@ Resources:
           Value: !Ref FileSystemName
       WindowsConfiguration:
         ActiveDirectoryId: !Ref DirectoryId
+        AutomaticBackupRetentionDays: !Ref AutomaticBackupRetentionDays
+        CopyTagsToBackups: !If [ CopyTagsToBackupsProvided, !Ref CopyTagsToBackups, !Ref 'AWS::NoValue' ]
+        DailyAutomaticBackupStartTime: !If [ DailyAutomaticBackupStartTimeProvided, !Ref DailyAutomaticBackupStartTime, !Ref 'AWS::NoValue' ]
         ThroughputCapacity: !Ref ThroughputCapacity
+        WeeklyMaintenanceStartTime: !If [ WeeklyMaintenanceStartTimeProvided, !Ref WeeklyMaintenanceStartTime, !Ref 'AWS::NoValue' ]
 
 Outputs:
   FileSystemId:

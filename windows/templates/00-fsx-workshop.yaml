@@ -52,7 +52,7 @@ Resources:
     Properties:
       Parameters:
         VpcId:
-          !GetAtt [ Vpc, Outputs.Vpc ]
+          !GetAtt [ Vpc, Outputs.VpcId ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/02-security-group.yaml
   ActiveDirectory:
     DependsOn: [ SecurityGroup ]
@@ -60,9 +60,9 @@ Resources:
     Properties:
       Parameters:
         SubnetId:
-          !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnet0 ], !GetAtt [ Vpc, Outputs.PublicSubnet1 ] ] ]
+          !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnetId0 ], !GetAtt [ Vpc, Outputs.PublicSubnetId1 ] ] ]
         VpcId:
-          !GetAtt [ Vpc, Outputs.Vpc ]
+          !GetAtt [ Vpc, Outputs.VpcId ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/03-active-directory.yaml
   FileSystem:
     DependsOn: [ ActiveDirectory ]
@@ -72,9 +72,9 @@ Resources:
         DirectoryId:
           !GetAtt [ ActiveDirectory, Outputs.DirectoryId ]
         SecurityGroupId:
-          !GetAtt [ SecurityGroup, Outputs.FileSystemSecurityGroup ]
+          !GetAtt [ SecurityGroup, Outputs.FileSystemSecurityGroupId ]
         SubnetId:
-          !GetAtt [ Vpc, Outputs.PrivateSubnet0 ]
+          !GetAtt [ Vpc, Outputs.PrivateSubnetId0 ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/04-file-system.yaml
   NamespaceServer:
     DependsOn: [ FileSystem ]
@@ -84,9 +84,9 @@ Resources:
         DirectoryId:
           !GetAtt [ ActiveDirectory, Outputs.DirectoryId ]
         SecurityGroupId:
-          !GetAtt [ SecurityGroup, Outputs.WindowsSecurityGroup ]
+          !GetAtt [ SecurityGroup, Outputs.WindowsSecurityGroupId ]
         SubnetId:
-          !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnet0 ], !GetAtt [ Vpc, Outputs.PublicSubnet1 ] ] ]
+          !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnetId0 ], !GetAtt [ Vpc, Outputs.PublicSubnetId1 ] ] ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/04-namespace-server.yaml
   WindowsServer:
     DependsOn: [ NamespaceServer ]
@@ -96,9 +96,9 @@ Resources:
         DirectoryId:
           !GetAtt [ ActiveDirectory, Outputs.DirectoryId ]
         SecurityGroupId:
-          !GetAtt [ SecurityGroup, Outputs.WindowsSecurityGroup ]
+          !GetAtt [ SecurityGroup, Outputs.WindowsSecurityGroupId ]
         SubnetId:
-          !GetAtt [ Vpc, Outputs.PublicSubnet0 ]
+          !GetAtt [ Vpc, Outputs.PublicSubnetId0 ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/04-windows-instance.yaml
   Dashboard:
     DependsOn: [ FileSystem ]
@@ -108,7 +108,7 @@ Resources:
         EmailAddress:
           !Ref EmailAddress
         FileSystemId:
-          !GetAtt [ FileSystemId, Outputs.FileSystemId ]
+          !GetAtt [ FileSystem, Outputs.FileSystemId ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/05-dashboard.yaml
 
 
