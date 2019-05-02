@@ -7,7 +7,7 @@ This section will create a new environment (see diagram below) that you will use
 
 == Diagram
 
-image::fsx-workshop-environment-architecture.png[align="left",width=420]
+image::fsx-workshop-environment-architecture.png[align="left",width=840]
 
 
 == Step-by-step Guide
