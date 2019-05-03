@@ -18,11 +18,11 @@ image::create-file-system-from-backup.png[align="left", width=600]
 * Open the link:https://aws.amazon.com/fsx/[Amazon FSx] console.
 
 * *_Select_* the *File system name* or the *File system ID* of file system created by the CloudFormation template. The file system name is "*Amazon FSx for Windows File Server 0*".
-* From the *details* view, *_select_* the *Backups* tab.
+* From the *details* view and the *Overview* tab, make a note of the *Availability Zone*.
+* *_Select_* the *Backups* tab.
 * *_Click_* the check box next to the *Automatic* backup taken of the file system after it was created.
 * *_Select_* the *Restore backup* button.
 * *_Complete_* the *Create file system from backup...* wizard with the following settings:
-
 
 |===
 | File system details | Value
@@ -36,83 +36,54 @@ a| Immutable when restoring a backup
 a| 64 MB/s
 |===
 
+|===
+| *Network & security* | *Value*
+| *Virtual private cloud (VPC)*
+a| Accept the default - *VPC|fsx-windows-workshop...*
 
-|
+| *Availability Zone*
+a| Remember the availability zone you noted above? From the dropdown menu *_select_* the other availability zone.
 
-| *Availability Zones*
-a| Select two (2) availability zones for your VPC.
+| *Subnet*
+a| Accept the default - *Private Subnet 1|fsx-windows-workshop...*
 
-| *Email address*
-a| Enter the email address that will receive notifications for low free storage capacity CloudWatch alarms. Important! An AWS Notification Subscription Confirmation email will be sent to this email address when the CloudFormation stack is created. You must take the action described in that email to confirm the SNS topic subscription before the email address can start receiving alarm notifications.
-
+| *VPC Security Groups*
+a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
 |===
 
-
-| Network & security | Value |
-| :--- | :---
-| Virtual private cloud (VPC) | Accept the default |
-| Availability zone | Select a different Availability Zone from the default |
-| Subnet | Accept the default |
-| VPC Security Groups | Accept the default |
-
-
-| Windows authentication | Value |
-| :--- | :---
-| Microsoft Active Directory ID | Accept the default |
-
-
-| Encryption | Value |
-| :--- | :---
-| Encryption key | Accept the default |
-
-
-| Maintenance preferences | Value |
-| :--- | :---
-| Daily automatic backup window | No preference |
-| Automatic backup retention period | 0 days (this disables automatic backups) |
-| Weekly maintenance window | No preference |
-
-
-- Select **Review summary**
-
-- Review the file system attributes & estimated monthly costs
-
-- Select **Create file system**
-
-
-
-
-
-=== Parameters
-
-[cols="3,10"]
+|===
+| *Windows authentication* | *Value*
+| *Microsoft Active Directory ID*
+a| From the dropdown menu *_select_* the *example.com d(...* directory
 |===
 
-| *VPC CIDR*
-a| Select a CIDR that will be used for the VPC.
-
-| *Availability Zones*
-a| Select two (2) availability zones for your VPC.
-
-| *Email address*
-a| Enter the email address that will receive notifications for low free storage capacity CloudWatch alarms. Important! An AWS Notification Subscription Confirmation email will be sent to this email address when the CloudFormation stack is created. You must take the action described in that email to confirm the SNS topic subscription before the email address can start receiving alarm notifications.
-
+|===
+| *Encryption* | *Value*
+| *Encryption key*
+a| Accept the default - *(default)aws/fsx*
 |===
 
-* After you have entered values for all parameters, *_click_* *Next*.
-* *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_click_* *Next*.
-* *_Review_* the CloudFormation stack settings.
-* *_Click_* both checkboxes in the blue *Capabilities* box at the bottom of the page.
+|===
+| *Maintenance preferences* | *Value*
+| *Daily automatic backup window*
+a| *_Select_* *No preferences*
 
-image::cloudformation-capabilities.png[align="left", width=420]
+| *Automatic backup retention period*
+a| *_Enter_* *0* days
 
-* *_Click_* *Create stack*.
+| *Weekly maintenance window*
+a| *_Select_* *No preferences*
+|===
+
+* *_Select_* *Next*
+
+* *_Review_* the file system summary and *_select_* *Create file system*.
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::02-create-file-server-from-backup.png[link=../02-create-file-server-from-backup/, align="left",width=420]
+image::02-create-file-server-from-backup.png[link=../03-create-new-file-share/, align="left",width=420]
 
 
 

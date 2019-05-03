@@ -44,6 +44,9 @@ Resources:
           FromPort: 3389
           ToPort: 3389
           CidrIp: !Ref IngressCidr
+      Tags:
+        - Key: Name
+          Value: "Windows security group" 
       VpcId:
         !Ref VpcId
   WindowsSecurityGroupIngress:
@@ -61,6 +64,9 @@ Resources:
           FromPort: 445
           ToPort: 445
           SourceSecurityGroupId: !Ref WindowsSecurityGroup
+      Tags:
+        - Key: Name
+          Value: "File system security group"     
       VpcId:
         !Ref VpcId
   FileSystemSecurityGroupIngress:
