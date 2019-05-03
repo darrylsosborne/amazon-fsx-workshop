@@ -14,10 +14,11 @@ image::fsx-workshop-environment-architecture.png[align="left"]
 
 === CloudFormation
 
+NOTE: Read through all steps below before *_clicking_* the *"Deploy to AWS"* button.
+
 * Click on the *"Deploy to AWS"* button and follow the CloudFormation prompts to begin.
 
-[NOTE]
-Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
+NOTE: Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
 
 
 |===
