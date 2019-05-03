@@ -17,7 +17,7 @@ It will take approximately 2 hours to complete this workshop and you will be cha
 | Amazon FSx for Windows File Server
 a| $0.985
 
-| Amazon Directory Service
+| AWS Directory Service
 a| $0.240
 
 | Amazon EC2
