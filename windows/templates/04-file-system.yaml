@@ -35,7 +35,7 @@ Parameters:
     Description: Enter the directory ID of the AWS Managed Microsoft Active Directory (e.g. d-0123456789)
     Type: String    
   FileSystemName:
-    Default: fsx-windows-workshop
+    Default: "Amazon FSx for Windows File Server 0"
     AllowedPattern: ^$|(.*)$
     Description: Name of file system - name value of key-value pair
     Type: String     

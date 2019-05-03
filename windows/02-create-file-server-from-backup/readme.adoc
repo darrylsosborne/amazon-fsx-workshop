@@ -1,84 +1,87 @@
-= Create Workshop Environment
+= Create file system from backup
 :toc:
 :icons:
 :linkattrs:
 :imagesdir: ../../resources/images
 
-This section will create a new environment (see diagram below) that you will use for the workshop.
+This section will create a new file system from a backup.
 
-=== Pricing
-
-NOTE: You will incur charges as you go through this workshop if you exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
-
-It will take approximately 2 hours to complete this workshop and you will be charged approximately *$1.625* to run this environment for 2 hours (based on US East - N. Virginia prices).
-
-|===
-
-| *Service* | *2-hour pricing*
-| Amazon FSx for Windows File Server
-a| $0.985
-
-| AWS Directory Service
-a| $0.240
-
-| Amazon EC2
-a| $0.391
-
-| Amazon CloudWatch
-a| $0.008
-
-| AWS Secrets Manager
-a| $0.001
-
-|===
-
-
+You can use an available backup to create a new file system, effectively restoring a point-in-time snapshot of another file system.
 
 == Diagram
 
-image::fsx-workshop-environment-architecture.png[align="left", width=600]
+image::create-file-system-from-backup.png[align="left", width=600]
 
 
 == Step-by-step Guide
 
-=== CloudFormation
+* Open the link:https://aws.amazon.com/fsx/[Amazon FSx] console.
 
-IMPORTANT: Read through all steps below and watch the quick video before *_clicking_* the *Deploy to AWS* button.
-
-image::create-environment.gif[align="left", width=600]
-
-* Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
-
-NOTE: Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
+* *_Select_* the *File system name* or the *File system ID* of file system created by the CloudFormation template. The file system name is "*Amazon FSx for Windows File Server 0*".
+* From the *details* view, *_select_* the *Backups* tab.
+* *_Click_* the check box next to the *Automatic* backup taken of the file system after it was created.
+* *_Select_* the *Restore backup* button.
+* *_Complete_* the *Create file system from backup...* wizard with the following settings:
 
 
 |===
+| File system details | Value
+| *File system name*
+a| Amazon FSx for Windows File Server 1
 
-|Region | Launch template with a new VPC
-| *N. Virginia* (us-east-1)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+| *Storage capacity*
+a| Immutable when restoring a backup
 
-| *Ohio* (us-east-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+| *Throughput capacity*
+a| 64 MB/s
+|===
 
-| *Oregon* (us-west-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
 
-| *Ireland* (eu-west-1)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+|
 
-| *Sydney* (ap-southeast-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+| *Availability Zones*
+a| Select two (2) availability zones for your VPC.
 
-| *Tokyo* (ap-northeast-1)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
-
+| *Email address*
+a| Enter the email address that will receive notifications for low free storage capacity CloudWatch alarms. Important! An AWS Notification Subscription Confirmation email will be sent to this email address when the CloudFormation stack is created. You must take the action described in that email to confirm the SNS topic subscription before the email address can start receiving alarm notifications.
 
 |===
 
-* Accept the defaults on the *Prerequisite - Prepare template* page and *_click_* *Next*.
 
-* Accept the default stack name and *_click_* *Next*. *_Enter_* values for all parameters.
+| Network & security | Value |
+| :--- | :---
+| Virtual private cloud (VPC) | Accept the default |
+| Availability zone | Select a different Availability Zone from the default |
+| Subnet | Accept the default |
+| VPC Security Groups | Accept the default |
+
+
+| Windows authentication | Value |
+| :--- | :---
+| Microsoft Active Directory ID | Accept the default |
+
+
+| Encryption | Value |
+| :--- | :---
+| Encryption key | Accept the default |
+
+
+| Maintenance preferences | Value |
+| :--- | :---
+| Daily automatic backup window | No preference |
+| Automatic backup retention period | 0 days (this disables automatic backups) |
+| Weekly maintenance window | No preference |
+
+
+- Select **Review summary**
+
+- Review the file system attributes & estimated monthly costs
+
+- Select **Create file system**
+
+
+
+
 
 === Parameters
 
