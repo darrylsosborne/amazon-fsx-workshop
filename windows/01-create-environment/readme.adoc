@@ -1,4 +1,5 @@
 = Create Workshop Environment
+:toc:
 :icons:
 :linkattrs:
 :imagesdir: ../../resources/images
