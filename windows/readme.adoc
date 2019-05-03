@@ -7,7 +7,7 @@ image:fsx-windows-aws-logos.png[alt="fsx for windows and aws logos", align="left
 
 This is a workshop designed for architects and engineers who would like to learn more about Amazon Web Services (AWS) native Windows file storage.
 
-Click the button below to start the Amazon FSx for Windows File Server workshop.
+Click the button below to start the *Amazon FSx for Windows File Server* workshop.
 
 image::01-create-environment.png[link=01-create-environment/, align="left",width=420]
 
