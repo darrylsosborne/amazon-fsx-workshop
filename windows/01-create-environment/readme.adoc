@@ -5,6 +5,34 @@
 
 This section will create a new environment (see diagram below) that you will use for the workshop.
 
+=== Pricing
+
+NOTE: You will incur charges as you go through this workshop if you exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
+
+It will take approximately 2 hours to complete this workshop and you will be charged approximately $1.625 to run this environment for 2 hours (based on US East - N. Virginia prices).
+
+|===
+
+| Service | Approx. 2-hour charge
+| Amazon FSx for Windows File Server
+a| $0.985
+
+| Amazon Directory Service
+a| $0.240
+
+| Amazon EC2
+a| $0.391
+
+| Amazon CloudWatch
+a| $.008
+
+| AWS Secrets Manager
+a| $0.001
+
+|===
+
+
+
 == Diagram
 
 image::fsx-workshop-environment-architecture.png[align="left"]
@@ -74,7 +102,6 @@ image::cloudformation-capabilities.png[align="left", width=420]
 
 * *_Click_* *Create stack*.
 
-NOTE: You will incur charges as you go through these tutorials as it will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
 
 === Participation
 
