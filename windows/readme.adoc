@@ -11,8 +11,6 @@ Click the button below to start the Amazon FSx for Windows File Server workshop.
 
 image::01-create-environment.png[link=01-create-environment/, align="left",width=420]
 
-NOTE: You will incur charges as you go through these tutorials as it will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
-
 === Participation
 
 We encourage participation; if you find anything, please submit an issue. However, if you want to help raise the bar, **submit a PR**!
