@@ -13,7 +13,7 @@ It will take approximately 2 hours to complete this workshop and you will be cha
 
 |===
 
-| *Service* | *Approx. 2-hour price*
+| *Service* | *2-hour pricing*
 | Amazon FSx for Windows File Server
 a| $0.985
 
