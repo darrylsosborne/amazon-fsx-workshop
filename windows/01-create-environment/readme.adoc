@@ -109,7 +109,7 @@ image::cloudformation-capabilities.png[align="left", width=420]
 
 Click the button below to go to the next section.
 
-image::02-create-file-server-from-backup.png[link=../../02-create-file-server-from-backup/, align="left",width=420]
+image::02-create-file-server-from-backup.png[link=../02-create-file-server-from-backup/, align="left",width=420]
 
 
 
