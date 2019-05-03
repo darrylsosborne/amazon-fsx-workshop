@@ -104,6 +104,4 @@ image::cloudformation-capabilities.png[align="left", width=420]
 * *_Click_* *Create stack*.
 
 
-=== Participation
 
-We encourage participation; if you find anything, please submit an issue. However, if you want to help raise the bar, **submit a PR**!
