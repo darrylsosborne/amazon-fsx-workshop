@@ -72,7 +72,7 @@ a| *_Select_* *No preferences*
 
 Click the button below to go to the next section.
 
-image::02-create-file-server-from-backup.png[link=../03-create-new-file-share/, align="left",width=420]
+image::03-create-new-file-share.png[link=../03-create-new-file-share/, align="left",width=420]
 
 
 
