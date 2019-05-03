@@ -24,6 +24,7 @@ image::create-file-system-from-backup.png[align="left", width=600]
 * *_Select_* the *Restore backup* button.
 * *_Complete_* the *Create file system from backup...* wizard with the following settings:
 
+[cols="3,10"]
 |===
 | File system details | Value
 | *File system name*
@@ -34,10 +35,7 @@ a| Immutable when restoring a backup
 
 | *Throughput capacity*
 a| 64 MB/s
-|===
 
-|===
-| *Network & security* | *Value*
 | *Virtual private cloud (VPC)*
 a| Accept the default - *VPC|fsx-windows-workshop...*
 
@@ -49,22 +47,13 @@ a| Accept the default - *Private Subnet 1|fsx-windows-workshop...*
 
 | *VPC Security Groups*
 a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
-|===
 
-|===
-| *Windows authentication* | *Value*
 | *Microsoft Active Directory ID*
 a| From the dropdown menu *_select_* the *example.com d(...* directory
-|===
 
-|===
-| *Encryption* | *Value*
 | *Encryption key*
 a| Accept the default - *(default)aws/fsx*
-|===
 
-|===
-| *Maintenance preferences* | *Value*
 | *Daily automatic backup window*
 a| *_Select_* *No preferences*
 
