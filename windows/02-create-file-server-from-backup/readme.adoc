@@ -26,7 +26,7 @@ image::create-file-system-from-backup.png[align="left", width=600]
 
 [cols="3,10"]
 |===
-| File system details | Value
+
 | *File system name*
 a| Amazon FSx for Windows File Server 1
 
@@ -37,13 +37,13 @@ a| Immutable when restoring a backup
 a| 64 MB/s
 
 | *Virtual private cloud (VPC)*
-a| Accept the default - *VPC|fsx-windows-workshop...*
+a| Accept the default - *VPC fsx-windows-workshop...*
 
 | *Availability Zone*
 a| Remember the availability zone you noted above? From the dropdown menu *_select_* the other availability zone.
 
 | *Subnet*
-a| Accept the default - *Private Subnet 1|fsx-windows-workshop...*
+a| Accept the default - *Private Subnet 1 fsx-windows-workshop...*
 
 | *VPC Security Groups*
 a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
