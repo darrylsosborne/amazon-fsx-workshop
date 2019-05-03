@@ -43,7 +43,11 @@ image::fsx-workshop-environment-architecture.png[align="left"]
 
 === CloudFormation
 
-IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* button.
+IMPORTANT: Read through all steps below and watch the quick video before *_clicking_* the *Deploy to AWS* button.
+
+
+video::create-environment.mp4[width=640, start=00, end=35, options=autoplay]
+
 
 * Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 
