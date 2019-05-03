@@ -12,11 +12,11 @@ Metadata:
         default: Workshop Environment
       Parameters:
         - VpcCidr
-        - AvailabilityZone
+        - AvailabilityZones
         - EmailAddress
     ParameterLabels:
-      AvailabilityZone:
-        default: Availability Zone
+      AvailabilityZones:
+        default: Availability Zones
       EmailAddress:
         default: Email Address
       VpcCidr:

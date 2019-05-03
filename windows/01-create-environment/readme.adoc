@@ -44,7 +44,31 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 
 |===
 
-=== Specify stack details
+* Accept the defaults on the *Prerequisite - Prepare template* sectuib and *_click_* *Next*.
+
+* Accept the default stack name and *_click_* *Next*. *_Enter_* values for all parameters.
+
+=== Parameters
+
+[cols="3,10"]
+|===
+
+| *VPC CIDR*
+a| Select a CIDR that will be used for the VPC.
+
+| *Availability Zones*
+a| Select two (2) availability zones for your VPC.
+
+| *Email address*
+a| Enter the email address that will receive notifications for low free storage capacity CloudWatch alarms. Important! An AWS Notification Subscription Confirmation email will be sent to this email address when the CloudFormation stack is created. You must take the action described in that email to confirm the SNS topic subscription before the email address can start receiving alarm notifications.
+
+|===
+
+* After you have entered values for all parameters, *_click_* *Next*.
+* *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_click_* *Next*.
+* *_Review_* the CloudFormation stack settings.
+* *_Click_* both checkboxes in the blue *Capabilities* box at the bottom of the page.
+* *_Click_* *Create stack*.
 
 NOTE: You will incur charges as you go through these tutorials as it will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
 
