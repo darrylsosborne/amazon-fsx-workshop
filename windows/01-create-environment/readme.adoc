@@ -24,7 +24,7 @@ a| $0.240
 a| $0.391
 
 | Amazon CloudWatch
-a| $.008
+a| $0.008
 
 | AWS Secrets Manager
 a| $0.001
