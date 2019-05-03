@@ -57,7 +57,7 @@ Parameters:
     Type: String
     Default: Windows Server 2019 English 64-bit
 Resources:
-  Instance1:
+  Instance0:
     Type: AWS::EC2::Instance
     Properties:
       IamInstanceProfile: !Ref InstanceProfile
@@ -69,8 +69,8 @@ Resources:
       SubnetId: !Select [ 0, !Ref SubnetId ]
       Tags:
         - Key: Name
-          Value: "FSx Workshop - DFS Namespace Server Instance 1"
-  Instance2:
+          Value: "Namespace Server 0"
+  Instance1:
     Type: AWS::EC2::Instance
     Properties:
       IamInstanceProfile: !Ref InstanceProfile
@@ -82,7 +82,7 @@ Resources:
       SubnetId: !Select [ 1, !Ref SubnetId ]
       Tags:
         - Key: Name
-          Value: "FSx Workshop - DFS Namespace Server Instance 2"
+          Value: "Namespace Server 1"
   FSxDomainJoinInstallDFS:
     Type: AWS::SSM::Document
     Properties:
@@ -128,7 +128,7 @@ Resources:
         - !Select [ 1, !GetAtt ActiveDirectory.DnsIpAddrs ]        
       Targets:
       - Key: InstanceIds
-        Values: [ !Ref Instance1, !Ref Instance2 ]
+        Values: [ !Ref Instance0, !Ref Instance1 ]
   InstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -214,17 +214,17 @@ Resources:
       OSName: !Ref WindowsVersion
 
 Outputs:
+  Instance0:
+    Description: Amazon EC2 Windows DFS Namespace Server Instance 0
+    Value: !Ref Instance1
+  Instance0DnsName:
+    Description: Amazon EC2 Windows DFS Namespace Server Instance 0 DNS name
+    Value: !GetAtt Instance1.PublicDnsName
   Instance1:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 1
-    Value: !Ref Instance1
+    Value: !Ref Instance2
   Instance1DnsName:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 1 DNS name
-    Value: !GetAtt Instance1.PublicDnsName
-  Instance2:
-    Description: Amazon EC2 Windows DFS Namespace Server Instance 2
-    Value: !Ref Instance2
-  Instance2DnsName:
-    Description: Amazon EC2 Windows DFS Namespace Server Instance 2 DNS name
     Value: !GetAtt Instance2.PublicDnsName
   WindowsVersion:
     Description: Amazon EC2 instance Windows Version
