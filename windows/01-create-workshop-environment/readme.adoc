@@ -30,7 +30,7 @@ image::create-environment.gif[align="left", width=600]
 
 . Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 +
-TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the page in a new tab to keep both the github workshop and AWS Console available at the same time.
+TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS Console.
 +
 NOTE: Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
 +
