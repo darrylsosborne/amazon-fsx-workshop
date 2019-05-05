@@ -4,14 +4,9 @@
 :linkattrs:
 :imagesdir: ../../resources/images
 
-This section will create a new file share.
+This section will test the performance of your *Amazon FSx for Windows File Server 0*.
 
-You can use an available backup to create a new file system, effectively restoring a point-in-time snapshot of another file system.
-
-== Diagram
-
-image::create-file-system-from-backup.png[align="left", width=600]
-
+There are many disk performance tools out there. We have pre-installed DiskSpeed (DiskSpd) and fio on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download it and use it.
 
 == Step-by-step Guide
 
@@ -24,45 +19,7 @@ image::create-file-system-from-backup.png[align="left", width=600]
 * *_Select_* the *Restore backup* button.
 * *_Complete_* the *Create file system from backup...* wizard with the following settings:
 
-[cols="3,10"]
-|===
 
-| *File system name*
-a| Amazon FSx for Windows File Server 1
-
-| *Storage capacity*
-a| Immutable when restoring a backup
-
-| *Throughput capacity*
-a| 64 MB/s
-
-| *Virtual private cloud (VPC)*
-a| Accept the default - *VPC fsx-windows-workshop...*
-
-| *Availability Zone*
-a| Remember the availability zone you noted above? From the dropdown menu *_select_* the other availability zone.
-
-| *Subnet*
-a| Accept the default - *Private Subnet 1 fsx-windows-workshop...*
-
-| *VPC Security Groups*
-a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
-
-| *Microsoft Active Directory ID*
-a| From the dropdown menu *_select_* the *example.com d(...* directory
-
-| *Encryption key*
-a| Accept the default - *(default)aws/fsx*
-
-| *Daily automatic backup window*
-a| *_Select_* *No preferences*
-
-| *Automatic backup retention period*
-a| *_Enter_* *0* days
-
-| *Weekly maintenance window*
-a| *_Select_* *No preferences*
-|===
 
 * *_Select_* *Next*
 
@@ -72,7 +29,7 @@ a| *_Select_* *No preferences*
 
 Click the button below to go to the next section.
 
-image::03-create-new-file-share.png[link=../05-monitor-performance/, align="left",width=420]
+image::05-monitor-performance.png[link=../05-monitor-performance/, align="left",width=420]
 
 
 
