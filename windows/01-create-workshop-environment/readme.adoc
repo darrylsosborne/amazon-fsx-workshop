@@ -92,7 +92,7 @@ image::aws-notification-subscription-email.png[align="left",width=420]
 
 Click the button below to go to the next section.
 
-image::02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="left",width=420]
+image::02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="left",width=210] image::02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="right",width=210]
 
 
 
