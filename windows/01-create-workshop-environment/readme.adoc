@@ -86,7 +86,7 @@ image::cloudformation-capabilities.png[align="left", width=420]
 
 In approximately 45 minutes an email will be sent to the email address entered above (see sample  below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email address during the workshop.
 
-image::aws-notification-subscription-email.png[align="left",width=840]
+image::aws-notification-subscription-email.png[align="left",width=420]
 
 == Next section
 
