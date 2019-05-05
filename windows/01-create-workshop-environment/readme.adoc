@@ -61,7 +61,6 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 |===
 
 .
-+
 ----
 Accept the defaults on the *Prerequisite - Prepare template* page and *_click_* *Next*.
 ----
