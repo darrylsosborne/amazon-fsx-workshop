@@ -6,7 +6,7 @@
 
 This section will test the performance of your *Amazon FSx for Windows File Server 0*.
 
-There are many disk performance tools out there. We have pre-installed DiskSpeed (DiskSpd) and fio on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download it and use it.
+There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download it and use it.
 
 == Step-by-step Guide
 

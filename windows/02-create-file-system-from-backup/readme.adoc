@@ -11,9 +11,10 @@ This section will create a new file system from a backup.
 
 You can use an available backup to create a new file system, effectively restoring a point-in-time snapshot of another file system.
 
+
 == Duration
 
-NOTE: It will take approximately 15 minutes to restore a backup as a new file system.
+NOTE: It will take approximately 5 minutes to complete this section.
 
 
 == Diagram
@@ -55,7 +56,7 @@ a| Accept the default - *Private Subnet 1 fsx-windows-workshop...*
 | *VPC Security Groups*
 a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
 | *Microsoft Active Directory ID*
-a| From the dropdown menu *_select_* the *example.com d(...* directory
+a| From the dropdown menu *_select_* the *example.com (d-...)* directory
 | *Encryption key*
 a| Accept the default - *(default)aws/fsx*
 | *Daily automatic backup window*
@@ -71,6 +72,7 @@ a| *_Select_* *No preferences*
 . *_Review_* the file system summary and *_select_* *Create file system*.
 
 NOTE: It will take approximately 15 minutes to restore a backup as a new file system. Continue with the next section while the new file system is created in the background.
+
 
 == Next section
 
