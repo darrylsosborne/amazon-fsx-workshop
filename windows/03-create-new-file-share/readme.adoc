@@ -25,7 +25,7 @@ IMPORTANT: Read through all steps below before continuing.
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 +
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and Amazon FSx console.
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
 
@@ -43,7 +43,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
 +
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS Secrets Manager console.
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
 . *_Select_* the *Secret name* link for *Password-<GUID>*.
 
