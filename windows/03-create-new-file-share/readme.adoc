@@ -24,7 +24,9 @@ NOTE: It will take approximately 15 minutes to complete this section.
 IMPORTANT: Read through all steps below before continuing.
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
-
++
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and Amazon FSx console.
++
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
 
 . *_Select_* *Running Instances*
@@ -40,7 +42,9 @@ IMPORTANT: Read through all steps below before continuing.
 . Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
 
 . Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
-
++
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS Secrets Manager console.
++
 . *_Select_* the *Secret name* link for *Password-<GUID>*.
 
 . *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
