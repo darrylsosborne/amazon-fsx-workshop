@@ -10,7 +10,7 @@ This section will create a new environment (see diagram below) that you will use
 
 NOTE: You will incur charges as you go through this workshop if you exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
 
-It will take approximately 2 hours to complete this workshop and you will be charged approximately *$1.625* to run this environment for 2 hours (based on US East - N. Virginia prices). Be sure you follow the steps in the link:../02-create-file-system-from-backup/[*Delete Workshop Environment*] section so you don't continue to incur charges after completing the workshop.
+It will take approximately 2 hours to complete this workshop and you will be charged approximately *$1.625* to run this environment for 2 hours (based on US East - N. Virginia prices). After completing the workshop, follow the steps in the link:../02-create-file-system-from-backup/[*Delete Workshop Environment*] section so you don't continue to incur charges.
 
 |===
 

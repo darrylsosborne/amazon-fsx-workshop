@@ -216,16 +216,16 @@ Resources:
 Outputs:
   Instance0:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 0
-    Value: !Ref Instance1
+    Value: !Ref Instance0
   Instance0DnsName:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 0 DNS name
-    Value: !GetAtt Instance1.PublicDnsName
+    Value: !GetAtt Instance0.PublicDnsName
   Instance1:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 1
-    Value: !Ref Instance2
+    Value: !Ref Instance1
   Instance1DnsName:
     Description: Amazon EC2 Windows DFS Namespace Server Instance 1 DNS name
-    Value: !GetAtt Instance2.PublicDnsName
+    Value: !GetAtt Instance1.PublicDnsName
   WindowsVersion:
     Description: Amazon EC2 instance Windows Version
     Value: !Ref WindowsVersion

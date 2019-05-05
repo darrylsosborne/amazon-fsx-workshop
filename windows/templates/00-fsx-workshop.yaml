@@ -76,7 +76,7 @@ Resources:
         SubnetId:
           !GetAtt [ Vpc, Outputs.PrivateSubnetId0 ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/04-file-system.yaml
-  NamespaceServer:
+  NamespaceServers:
     DependsOn: [ FileSystem ]
     Type: AWS::CloudFormation::Stack
     Properties:
@@ -89,7 +89,7 @@ Resources:
           !Join [ ',', [ !GetAtt [ Vpc, Outputs.PublicSubnetId0 ], !GetAtt [ Vpc, Outputs.PublicSubnetId1 ] ] ]
       TemplateURL: https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/04-namespace-server.yaml
   WindowsServer:
-    DependsOn: [ NamespaceServer ]
+    DependsOn: [ NamespaceServers ]
     Type: AWS::CloudFormation::Stack
     Properties:
       Parameters:

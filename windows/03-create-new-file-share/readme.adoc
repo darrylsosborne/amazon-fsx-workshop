@@ -4,75 +4,131 @@
 :linkattrs:
 :imagesdir: ../../resources/images
 
-This section will create a new file share.
+This section will create new file shares.
 
-You can use an available backup to create a new file system, effectively restoring a point-in-time snapshot of another file system.
-
-== Diagram
-
-image::create-file-system-from-backup.png[align="left", width=600]
-
+You can use standard Microsoft tools to create new file shares on your Amazon FSx for Windows File Server.
 
 == Step-by-step Guide
 
+=== Connect to Windows Server
+
 * Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 
-* *_Select_* the *File system name* or the *File system ID* of file system created by the CloudFormation template. The file system name is "*Amazon FSx for Windows File Server 0*".
-* From the *details* view and the *Overview* tab, make a note of the *Availability Zone*.
-* *_Select_* the *Backups* tab.
-* *_Click_* the check box next to the *Automatic* backup taken of the file system after it was created.
-* *_Select_* the *Restore backup* button.
-* *_Complete_* the *Create file system from backup...* wizard with the following settings:
+* Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
+
+* *_Select_* *Running Instances*
+
+* *_Select_* the radio button next to the instance with the *Name* *Windows Server 0*
+
+* Copy the *Public DNS (IPv4)* name of the *Windows Server 0* instance.
+
+* Launch your remote desktop application and create a new connection.
+
+* Use the DNS name copied as the host name of the new connection.
+
+* Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
+
+* Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
+
+* *_Select_* the *Secret name* link for *Password-<GUID>*.
+
+* *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
+
+* Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Server 0* instance for the remote desktop session connection.
+
+=== Map default file share
+
+* Once you've logged on to the *Windows Server 0* instance, *_launch_* *File Explorer*.
+
+* *_Context-click_* *This PC* and *_select_* *Map network drive...*
+
+* Map the file share using the following information:
 
 [cols="3,10"]
 |===
 
-| *File system name*
-a| Amazon FSx for Windows File Server 1
+| *Drive*
+a| Z:
 
-| *Storage capacity*
-a| Immutable when restoring a backup
+| *Folder*
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *Amazon FSx for Windows File Server 0* file system. *_Copy_* the *DNS Name* of the file system and use it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\\\fs-0123456789abcdef.example.com\share).
 
-| *Throughput capacity*
-a| 64 MB/s
+| *Reconnect at sign-in*
+a| Leave *checked*
 
-| *Virtual private cloud (VPC)*
-a| Accept the default - *VPC fsx-windows-workshop...*
-
-| *Availability Zone*
-a| Remember the availability zone you noted above? From the dropdown menu *_select_* the other availability zone.
-
-| *Subnet*
-a| Accept the default - *Private Subnet 1 fsx-windows-workshop...*
-
-| *VPC Security Groups*
-a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
-
-| *Microsoft Active Directory ID*
-a| From the dropdown menu *_select_* the *example.com d(...* directory
-
-| *Encryption key*
-a| Accept the default - *(default)aws/fsx*
-
-| *Daily automatic backup window*
-a| *_Select_* *No preferences*
-
-| *Automatic backup retention period*
-a| *_Enter_* *0* days
-
-| *Weekly maintenance window*
-a| *_Select_* *No preferences*
+| *Connect using different credentials*
+a| Leave *unchecked*
 |===
 
-* *_Select_* *Next*
+* In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click_* >> *New* >> *Text Documents*. Create a few different types of test files.
 
-* *_Review_* the file system summary and *_select_* *Create file system*.
+=== Create new file shares
+
+Find the *Computer Name* of *Amazon FSx Windows File Server 0*
+
+Launch a PowerShell window
+
+* *_Click_* *Start* *Windows PowerShell*
+
+* *_Copy_* the script below into your favorite text editor and replace *"file_system_0_dns_name"* with the DNS name of *Amazon FSx Windows File Server 0*. Run the updated script in the *Windows PowerShell* window.
+``
+$FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
+(Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
+``
+* *_Copy_* the computer name returned by the script
+
+Create new file shares using the *Shared Folders* Console.
+
+* *_Click_* *Start*
+
+* *_Type_* *fsmgmt.msc*
+
+* From the *Shared Folders* Console, *_select_* *Action* >> *Connect to another computer...*
+
+* *_Paste_* the computer name copied above in the *Another computer:* text box and *_click_* *Ok*
+
+* *_Double-click_* the *Shares* folder
+
+* With the *Shares* folder selected, *_click_* *Action* >> *New Share...* from the menu
+
+* Complete the *Create A Shared Folder Wizard*, creating new shares based on the following attributes:
+
+|===
+| Share name | Folder path | Create new path | Shared folder permissions
+| data
+| D:\data
+| Yes
+| Customize permissions >> Everyone Full Control
+
+| finance
+| D:\finance
+| Yes
+| Administrators have full access; other users have no access
+
+| sales
+| D:\sales
+| Yes
+| All users have read-only access
+
+| marketing
+| D:\marketing
+| Yes
+| Customize permissions >> Everyone Full Control
+|===
+
+* Experiemnt and create other file shares. All shares must be created on the D:\ drive.
+
+=== Access the new file shares
+
+* *_Open_* a new *File Explorer* windows
+
+* Use UNC paths to connect to the newly created file shares. Experiment using the file system DNS name and the file system's computer name (FQDN) you found earlier. Remember to add different file shares at the end of the DNS name to make up the full UNC path (e.g. \\\\fs-0123456789abcdef.example.com\sales and \\\\amznfsxdduvdamf.example.com\accounting).
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::03-create-new-file-share.png[link=../04-test-performance/, align="left",width=420]
+image::04-test-performance.png[link=../04-test-performance/, align="left",width=420]
 
 
 

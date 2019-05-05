@@ -58,7 +58,7 @@ Parameters:
     Type: String
     Default: Windows Server 2019 English 64-bit
 Resources:
-  Instance:
+  Instance0:
     Type: AWS::EC2::Instance
     Properties:
       IamInstanceProfile: !Ref InstanceProfile
@@ -116,7 +116,7 @@ Resources:
         - !Select [ 1, !GetAtt ActiveDirectory.DnsIpAddrs ]        
       Targets:
       - Key: InstanceIds
-        Values: [ !Ref Instance ]
+        Values: [ !Ref Instance0 ]
   InstanceProfile:
     Type: AWS::IAM::InstanceProfile
     Properties:
@@ -202,12 +202,12 @@ Resources:
       OSName: !Ref WindowsVersion
 
 Outputs:
-  Instance:
+  Instance0:
     Description: Amazon EC2 Windows instance ID
-    Value: !Ref Instance
+    Value: !Ref Instance0
   InstanceDnsName:
     Description: Amazon EC2 Windows instance public DNS name
-    Value: !GetAtt Instance.PublicDnsName
+    Value: !GetAtt Instance0.PublicDnsName
   WindowsVersion:
     Description: Amazon EC2 instance Windows Version
     Value: !Ref WindowsVersion

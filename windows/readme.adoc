@@ -9,7 +9,7 @@ This is a workshop designed for architects and engineers who would like to learn
 
 Click the button below to start the *Amazon FSx for Windows File Server* workshop.
 
-image::01-create-environment.png[link=01-create-environment/, align="left",width=420]
+image::01-create-environment.png[link=01-create-workshop-environment/, align="left",width=420]
 
 === Participation
 
