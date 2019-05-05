@@ -6,33 +6,9 @@
 
 This section will create a new environment (see diagram below) that you will use for the workshop.
 
-=== Pricing
+=== Duration
 
-NOTE: You will incur charges as you go through this workshop if you exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
-
-It will take approximately 2 hours to complete this workshop and you will be charged approximately *$1.625* to run this environment for 2 hours (based on US East - N. Virginia prices). After completing the workshop, follow the steps in the link:../02-create-file-system-from-backup/[*Delete Workshop Environment*] section so you don't continue to incur charges.
-
-|===
-
-| *Service* | *2-hour pricing*
-| Amazon FSx for Windows File Server
-a| $0.985
-
-| AWS Directory Service
-a| $0.240
-
-| Amazon EC2
-a| $0.391
-
-| Amazon CloudWatch
-a| $0.008
-
-| AWS Secrets Manager
-a| $0.001
-
-|===
-
-
+NOTE: It will take approximately 45 minutes for CloudFormation to automatically create your workshop environment, after completing the *Step-by-step Guide* below.
 
 == Diagram
 
@@ -104,6 +80,10 @@ a| Enter the email address that will receive notifications for low free storage 
 image::cloudformation-capabilities.png[align="left", width=420]
 
 * *_Click_* *Create stack*.
+
+In approximately 45 minutes an email will be sent to the email address entered above (see sample screenshot below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email during the workshop.
+
+image::aws-notification-subscription-email.png[align="left",width=840]
 
 == Next section
 
