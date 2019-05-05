@@ -26,10 +26,9 @@ IMPORTANT: Read through all steps below and watch the quick video before *_click
 
 image::create-environment.gif[align="left", width=600]
 
-. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
-
 NOTE: Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
 
+. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 
 |===
 |Region | Launch template with a new VPC
