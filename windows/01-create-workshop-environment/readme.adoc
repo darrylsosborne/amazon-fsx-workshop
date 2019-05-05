@@ -26,8 +26,9 @@ IMPORTANT: Read through all steps below and watch the quick video before *_click
 
 image::create-environment.gif[align="left", width=600]
 
-. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 +
+. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
+
 
 NOTE: Amazon FSx is currently available in 6 regions. Please choose the same region where you have your FSx for Windows File Server.
 
@@ -56,8 +57,8 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 
 |===
 
-+
 . Accept the defaults on the *Prerequisite - Prepare template* page and *_click_* *Next*.
++
 
 * Accept the default stack name and *_click_* *Next*. *_Enter_* values for all parameters.
 
