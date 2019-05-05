@@ -75,6 +75,7 @@ Launch a PowerShell window
 
 ``
 $FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
+
 (Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
 ``
 
