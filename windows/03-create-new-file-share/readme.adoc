@@ -29,15 +29,15 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 +
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
 
-. *_Select_* *Running Instances*
+. *_Select_* *Running Instances*.
 
-. *_Select_* the radio button next to the instance with the *Name* *Windows Server 0*
+. *_Select_* the radio button next to the instance with the *Name* *Windows Server 0*.
 
 . Copy the *Public DNS (IPv4)* name of the *Windows Server 0* instance.
 
 . Launch your remote desktop application and create a new connection.
 
-. Use the DNS name copied as the host name of the new connection.
+. Use the DNS name copied above as the host name of the new connection.
 
 . Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
 
@@ -49,7 +49,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
 
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Server 0* instance for the remote desktop session connection.
+. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Server 0* instance for the remote desktop session.
 
 === Map default file share
 
@@ -80,18 +80,16 @@ a| Leave unchecked
 
 Find the *Computer Name* of *Amazon FSx Windows File Server 0*
 
-Launch a PowerShell window
-
 . *_Click_* *Start* >> *Windows PowerShell*
 
 . *_Copy_* the script below into your favorite text editor and replace *"file_system_0_dns_name"* with the DNS name of *Amazon FSx Windows File Server 0*. Run the updated script in the *Windows PowerShell* window.
-
++
 [source,bash]
 ----
 $FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
 (Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
 ----
-
++
 
 . *_Copy_* the computer name returned by the script
 +
