@@ -4,10 +4,12 @@
 :linkattrs:
 :imagesdir: ../../resources/images
 
-[.lead]
+
+== Summary
+
 This section will create a new environment (see diagram below) that you will use for the workshop.
 
-=== Duration
+== Duration
 
 NOTE: It will take approximately 45 minutes for CloudFormation to automatically create your workshop environment, after completing the *Step-by-step Guide* below.
 
