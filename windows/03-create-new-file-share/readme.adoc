@@ -71,10 +71,14 @@ Launch a PowerShell window
 * *_Click_* *Start* *Windows PowerShell*
 
 * *_Copy_* the script below into your favorite text editor and replace *"file_system_0_dns_name"* with the DNS name of *Amazon FSx Windows File Server 0*. Run the updated script in the *Windows PowerShell* window.
+
+
 ``
 $FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
 (Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
 ``
+
+
 * *_Copy_* the computer name returned by the script
 
 Create new file shares using the *Shared Folders* Console.
