@@ -93,8 +93,8 @@ image:02-create-file-system-from-backup.png[link=../02-create-file-system-from-b
 [cols=25%,25%,25%,25%]
 |===
 | image:02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="left",width=210]
-| Previous Section
-| Next Section
-| image:02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="right",width=210]
+a| Previous Section
+a| Next Section
+a| image:02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="right",width=210]
 |===
 
