@@ -4,6 +4,7 @@
 :linkattrs:
 :imagesdir: ../../resources/images
 
+[.lead]
 This section will create a new environment (see diagram below) that you will use for the workshop.
 
 === Duration
@@ -81,7 +82,7 @@ image::cloudformation-capabilities.png[align="left", width=420]
 
 * *_Click_* *Create stack*.
 
-In approximately 45 minutes an email will be sent to the email address entered above (see sample screenshot below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email during the workshop.
+In approximately 45 minutes an email will be sent to the email address entered above (see sample  below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email address during the workshop.
 
 image::aws-notification-subscription-email.png[align="left",width=840]
 
