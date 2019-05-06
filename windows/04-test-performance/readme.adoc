@@ -25,14 +25,15 @@ IMPORTANT: Read through all steps below before continuing.
 
 . From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map the *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
-. *_Run_* the script below to create a 100 GB parse file
+. *_Run_* the script below to create a 100 GB sparse file
 +
 ```sh
 $random = $(Get-Random)
 fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
-+```
+```
++
 . Run the DiskSpeed script below to test read performance of the mapped **Z:** drive
 +
 ```sh
