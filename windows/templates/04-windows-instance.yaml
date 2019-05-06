@@ -71,6 +71,45 @@ Resources:
       Tags:
         - Key: Name
           Value: "Windows Server 0"
+      UserData:
+        Fn::Base64:
+          !Sub |
+            <powershell>
+
+            # disable ie security (windows)
+            function Disable-ieESC {
+                $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}"
+                $UserKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}"
+                Set-ItemProperty -Path $AdminKey -Name "IsInstalled" -Value 0
+                Set-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0
+                Stop-Process -Name Explorer
+                Write-Host "IE Enhanced Security Configuration (ESC) has been disabled." -ForegroundColor Green
+            }
+            Disable-ieESC
+
+            # install vdbench (windows)
+            $path = "C:\Tools\DiskSpd-2.0.21a"
+            $url = "https://gallery.technet.microsoft.com/DiskSpd-A-Robust-Storage-6ef84e62/file/199535/2/DiskSpd-2.0.21a.zip"
+            $destination = "C:\Tools\DiskSpd-2.0.21a.zip"
+            $download = New-Object -Typename System.Net.WebClient
+            New-Item -Type Directory -Path $path
+            $download.DownloadFile($url,$destination)
+            $extract = New-Object -ComObject Shell.Application
+            $files = $extract.Namespace($destination).Items()
+            $extract.NameSpace($path).CopyHere($files)
+
+            # install fio (windows)
+            $path = "C:\Tools"
+            $url = "https://bluestop.org/files/fio/releases/fio-3.13-x64.zip"
+            $destination = "C:\Tools\fio-3.13-x64.zip"
+            $download = New-Object -Typename System.Net.WebClient
+            New-Item -Type Directory -Path $path
+            $download.DownloadFile($url,$destination)
+            $extract = New-Object -ComObject Shell.Application
+            $files = $extract.Namespace($destination).Items()
+            $extract.NameSpace($path).CopyHere($files)
+            
+            </powershell>
   FSxDomainJoinInstallDFS:
     Type: AWS::SSM::Document
     Properties:
