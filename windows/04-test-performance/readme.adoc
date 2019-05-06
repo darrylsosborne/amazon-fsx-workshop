@@ -66,8 +66,8 @@ a| Sequential stride size, offset between subsequent I/O operations in bytes or 
 | `-t<count>`
 a| Number of threads per target. Conflicts with `-F`, which specifies the total number of threads.
 
-| `-Sh`
-a| Disable both software and hardware caching.
+| `-Su`
+a| Disable both software caching.
 
 |===
 +
@@ -94,7 +94,7 @@ While the script is running, open *Task Explorer* and monitor network performanc
 * What was the peak write throughput you achieved?
 * What was the P99 (99th %-tile) of your test?
 +
-. Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), random I/O (-r) or sequential I/O (-s), and enable/disable software & hardware write caching (-Sh).
+. Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with file sizes (-c), different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), random I/O (-r) or sequential I/O (-s), and enable/disable software & hardware write caching (-Sh).
 +
 [cols="3,10"]
 |===
@@ -105,6 +105,9 @@ a| Duration in seconds.
 
 | `-b<size>[K\|M\|G]`
 a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
+
+| `-c<size>[K\|M\|G]`
+a| Create files of the specified size. Size can be stated in bytes or KiBs, MiBs, GiBs, or blocks.
 
 | `-r<size>[K\|M\|G]`
 a| Random I/O aligned to the specified number of <alignment> bytes or KiB, MiB, GiB, or blocks. Overrides -s.
