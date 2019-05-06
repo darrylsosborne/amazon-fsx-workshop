@@ -4,11 +4,73 @@
 :linkattrs:
 :imagesdir: ../../resources/images
 
-This section will test the performance of your *Amazon FSx for Windows File Server 0*.
 
-There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download it and use it.
+== Summary
+
+This section will test the performance of *Amazon FSx for Windows File Server 0*.
+
+There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bluestop.org/fio/[fio] on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
+
+
+== Duration
+
+NOTE: It will take approximately 30 minutes to complete this section.
+
 
 == Step-by-step Guide
+
+IMPORTANT: Read through all steps below before continuing.
+
+=== Read test
+
+. From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
++
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map the *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
++
+. *_Run_* the script below to create a 100 GB parse file
++
+```sh
+$random = $(Get-Random)
+fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
++```
+. Run the DiskSpeed script below to test read performance of the mapped **Z:** drive
++
+```sh
+C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -t1 -o32 -b64K -Sh -L Z:\${env:computername}-$random.dat
+```
++
+While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
++
+* What was the peak read throughput you achieved?
+* What was the P99 (99th %-tile) of your test?
++
+. Experiment with different DiskSpd parameter settings. Use the table below was a guide. Test with different block sizes (-b), file sizes (-c), number of outstanding I/O requests (-o), number of threads per file (-t), and enable/disable software & hardware caching (-Sh).
++
+[cols="3,10"]
+|===
+| Parameter | Description
+
+| `-b<size>[K\|M\|G]`
+a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
+
+| `-o<count>`
+a| Number of outstanding I/O requests per-target per-thread. (1 = synchronous I/O, unless more than one thread is specified with by using `-F`.) (default = 2)
+
+| `-t<count>`
+a| Number of threads per target. Conflicts with `-F`, which specifies the total number of threads.
+
+| `-Sh`
+a| Disable both software and hardware caching.
+
+|===
++
+
+* What different parameters did you test?
+* How did the different parameter options alter the results?
+
+
+=== Write test
+
 
 * Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 
