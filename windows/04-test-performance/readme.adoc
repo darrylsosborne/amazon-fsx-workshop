@@ -157,7 +157,7 @@ While the script is running, open *Task Explorer* and monitor network performanc
 |===
 | Parameter | Description
 
-| `--direct=[0|1]`
+| `--direct=[0\|1]`
 a| Duration in seconds.
 
 | `--bs=<size>[K\|M\|G]`
@@ -166,7 +166,7 @@ a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
 | `--numjobs=<count>`
 a| Number of clones (processes/threads performing the same workload) of this job. Default: 1.
 
-| `--readwrite=[read|write|randread|randwrite]`
+| `--readwrite=[read\|write\|randread\|randwrite]`
 a| Type of I/O pattern (read = sequential read; write = sequential write; randread = random read; randwrite = random write).
 
 | `--iodepth=<count>`
@@ -208,7 +208,7 @@ While the script is running, open *Task Explorer* and monitor network performanc
 |===
 | Parameter | Description
 
-| `--direct=[0|1]`
+| `--direct=[0\|1]`
 a| Duration in seconds.
 
 | `--bs=<size>[K\|M\|G]`
@@ -217,7 +217,7 @@ a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
 | `--numjobs=<count>`
 a| Number of clones (processes/threads performing the same workload) of this job. Default: 1.
 
-| `--readwrite=[read|write|randread|randwrite]`
+| `--readwrite=[read\|write\|randread\|randwrite]`
 a| Type of I/O pattern (read = sequential read; write = sequential write; randread = random read; randwrite = random write).
 
 | `--iodepth=<count>`
