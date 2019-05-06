@@ -196,10 +196,10 @@ C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${e
 +
 While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
 +
-* What was the peak read throughput?
-* What was the average read throughput?
+* What was the peak write throughput?
+* What was the average write throughput?
 * What was the average IOPS?
-* How many GB did you read in 120 seconds?
+* How many GB did you write in 120 seconds?
 +
 . Experiment with different fio parameter settings. Use the table below as a guide. Test with direct I/O enabled or disabled (--direct), different block sizes (--bs), number of outstanding I/O requests (--iodepth), number of jobs (--numjobs), random read, random write, sequential read, sequential write (--readwrite), and mixture of reads and writes (--rwmixread).
 
