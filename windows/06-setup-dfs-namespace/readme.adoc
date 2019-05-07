@@ -132,7 +132,7 @@ You should now have a new folder named *share* listed under the *corp* namespace
 | marketing
 | UNC path of *data* share on *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\marketing)
 |===
-+
+
 
 === Access the new Namespace folders
 
