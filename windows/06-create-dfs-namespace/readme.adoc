@@ -1,4 +1,4 @@
-= Setup DFS Namespace
+= Create DFS Namespace
 :toc:
 :icons:
 :linkattrs:
@@ -136,11 +136,11 @@ You should now have a new folder named *share* listed under the *corp* namespace
 
 === Access the new Namespace folders
 
-. *_Open_* a new *File Explorer* windows.
+. *_Open_* a new *File Explorer* window.
 
 . Use UNC paths to connect to the newly created DFS Namespace folders (e.g. *\\example.com\corp\share*, *\\example.com\corp\data*, etc.).
 
-. Create new test files in the *\\example.com\corp\share* folder. *_Context-click_* >> *New* >> *Text Documents*. Create a few different types of test files.
+. Create new test files in the *\\example.com\corp\share* folder. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
 
 == Next section
 

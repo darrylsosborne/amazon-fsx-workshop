@@ -75,7 +75,7 @@ TIP: The name of the SNS topic should be the file system id of *Amazon FSx for W
 
 Click the button below to go to the next section.
 
-image::06-setup-dfs-namespace.png[link=../06-setup-dfs-namespace/, align="left",width=420]
+image::06-create-dfs-namespace.png[link=../06-create-dfs-namespace/, align="left",width=420]
 
 
 
