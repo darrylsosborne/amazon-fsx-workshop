@@ -139,7 +139,7 @@ $FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.examp
 | Customize permissions >> Everyone Full Control
 |===
 +
-. Experiemnt and create other file shares. All shares must be created on the *D:\* drive.
+. Experiment and create other file shares. All shares must be created on the *D:\* drive.
 
 === Access the new file shares
 
