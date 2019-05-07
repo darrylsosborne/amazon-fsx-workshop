@@ -117,7 +117,7 @@ TIP: Use the remote desktop session to the *Windows Server 0* instance to create
 
 Click the button below to go to the next section.
 
-image::08-delete-workshop-environment.gif[link=../delete-workshop-environment/, align="left",width=420]
+image::08-delete-workshop-environment.gif[link=../08-delete-workshop-environment/, align="left",width=420]
 
 
 
