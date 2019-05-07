@@ -78,8 +78,6 @@ a| Leave unchecked
 
 === Create new file shares
 
-Find the *Computer Name* of *Amazon FSx Windows File Server 0*.
-
 . *_Click_* *Start* >> *Windows PowerShell*.
 
 . *_Copy_* the script below into your favorite text editor and replace *"file_system_0_dns_name"* with the DNS name of *Amazon FSx Windows File Server 0*. Run the updated script in the *Windows PowerShell* window.
@@ -142,7 +140,7 @@ $FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.examp
 
 Click the button below to go to the next section.
 
-image::04-test-performance.gif[link=../04-test-performance/, align="left",width=420]
+image::04-test-performance.png[link=../04-test-performance/, align="left",width=420]
 
 
 
