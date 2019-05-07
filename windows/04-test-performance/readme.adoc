@@ -9,7 +9,7 @@
 
 This section will test the performance of *Amazon FSx for Windows File Server 0*.
 
-There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bluestop.org/fio/[fio] on the *Windows Server 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
+There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bluestop.org/fio/[fio] on the *Windows Instance 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
 
 
 == Duration
@@ -23,9 +23,9 @@ IMPORTANT: Read through all steps below before continuing.
 
 === DiskSpd Read tests
 
-. From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
+. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . *_Run_* the script below to create a 100 GB sparse file
 +
@@ -78,9 +78,9 @@ a| Disable software caching.
 
 === DiskSpd Write tests
 
-. From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
+. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the DiskSpeed script below to test write performance of the mapped **Z:** drive
 +
@@ -132,9 +132,9 @@ a| Disables both software caching and hardware write caching.
 
 === fio read tests
 
-. From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
+. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test read performance of the mapped **Z:** drive
 +
@@ -183,9 +183,9 @@ a| Percentage of a mixed workload that should be reads. The outstanding percenta
 
 === fio write tests
 
-. From the remote desktop session to *Windows Server 0*, *_open_* a PowerShell window.
+. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Server 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test write performance of the mapped **Z:** drive
 +
