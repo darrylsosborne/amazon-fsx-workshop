@@ -21,7 +21,10 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 === Connect to Windows Instance 0
 
-IMPORTANT: Read through all steps below before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+image::connect-to-windows-instance-0.gif[align="left", width=600]
+
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 +
@@ -53,6 +56,11 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 === Map default file share
 
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+image::map-default-file-share.gif[align="left", width=600]
+
+
 . Once you've logged on to the *Windows Instance 0* instance, *_launch_* *File Explorer*.
 
 . *_Context-click_* *This PC* and *_select_* *Map network drive...*
@@ -77,6 +85,11 @@ a| Leave unchecked
 . In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
 
 === Create new file shares
+
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+image::create-new-file-shares.gif[align="left", width=600]
+
 
 . *_Click_* *Start* >> *Windows PowerShell*.
 
