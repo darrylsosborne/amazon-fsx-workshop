@@ -88,8 +88,6 @@ a| Leave unchecked
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::create-new-file-shares.gif[align="left", width=600]
-
 
 . *_Click_* *Start* >> *Windows PowerShell*.
 
