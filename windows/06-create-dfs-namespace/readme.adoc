@@ -142,6 +142,9 @@ You should now have a new folder named *share* listed under the *corp* namespace
 
 . Create new test files in the *\\example.com\corp\share* folder. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
 
+. Experiment and create new test files in all Namespace folders.
+
+
 == Next section
 
 Click the button below to go to the next section.
