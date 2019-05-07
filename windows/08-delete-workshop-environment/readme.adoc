@@ -50,7 +50,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 . *_Click_* *Delete* to delete the file system.
 
 
-=== Delete *Amazon FSx for Windows File Server 1*
+=== Delete *Workshop Environment* via CloudFormation
 
 IMPORTANT: Read through all steps below before continuing.
 
