@@ -19,7 +19,7 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to Windows Server
+=== Connect to Windows Server 0
 
 IMPORTANT: Read through all steps below before continuing.
 
@@ -31,7 +31,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Select_* *Running Instances*.
 
-. *_Select_* the radio button next to the instance with the *Name* *Windows Server 0*.
+. *_Select_* the radio button next to the instance with the name *Windows Server 0*.
 
 . Copy the *Public DNS (IPv4)* name of the *Windows Server 0* instance.
 
