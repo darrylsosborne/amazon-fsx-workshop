@@ -61,10 +61,10 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
 . *_Click_* the *radio button* next to the *fsx-windows-workshop* master or parent stack.
 +
-TIP: The master template will have the *Stack name* *fsx-windows-workshop* without the nested label.
+TIP: The master template will have the Stack name *fsx-windows-workshop* without the nested label.
 +
 . *_Click_* the *Actions* button then *Delete stack*.
-. *_Click_* *Yes, Delete* to delete the file system.
+. *_Click_* *Yes, Delete* to delete the workshop environment.
 
 IMPORTANT: It may take approximately 20 minutes to delete all AWS resources created by the CloudFormation template. Check on the status periodically to verify all resources have been delete.
 
