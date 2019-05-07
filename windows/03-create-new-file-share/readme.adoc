@@ -58,8 +58,6 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::map-default-file-share.gif[align="left", width=600]
-
 
 . Once you've logged on to the *Windows Instance 0* instance, *_launch_* *File Explorer*.
 
