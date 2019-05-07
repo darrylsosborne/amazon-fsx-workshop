@@ -16,7 +16,7 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-TIP: We need to manually delete the AWS resources created outside the CloudFormation template (e.g. one CloudWatch alarm and one FSx file system). All other AWS resources created from the CloudFormation template will be deleted with the CloudFormation template.
+TIP: We need to manually delete the AWS resources created outside the CloudFormation template (e.g. one CloudWatch alarm and one FSx file system). All other AWS resources created in the workshop environment will be deleted when you delete the CloudFormation stack.
 
 === Delete the *High throughput alarm* from *CloudWatch*
 
@@ -66,7 +66,7 @@ TIP: The master template will have the Stack name *fsx-windows-workshop* without
 . *_Click_* the *Actions* button then *Delete stack*.
 . *_Click_* *Yes, Delete* to delete the workshop environment.
 
-IMPORTANT: It may take approximately 20 minutes to delete all AWS resources created by the CloudFormation template. Check on the status periodically to verify all resources have been delete.
+IMPORTANT: It may take approximately 20 minutes to delete all AWS resources created by the CloudFormation template. Check the status periodically to verify all resources have been delete.
 
 
 

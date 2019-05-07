@@ -67,7 +67,7 @@ a| Sequential stride size, offset between subsequent I/O operations in bytes or 
 a| Number of threads per target. Conflicts with `-F`, which specifies the total number of threads.
 
 | `-Su`
-a| Disable both software caching.
+a| Disable software caching.
 
 |===
 +
@@ -140,7 +140,7 @@ IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is m
 +
 ```sh
 $random = $(Get-Random)
-C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
+C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random.dat --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
 ```
 +
 While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
@@ -191,7 +191,7 @@ IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is m
 +
 ```sh
 $random = $(Get-Random)
-C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=0 --thread --time_based --runtime=120
+C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random.dat --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=0 --thread --time_based --runtime=120
 ```
 +
 While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
