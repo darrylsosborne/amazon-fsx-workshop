@@ -19,7 +19,7 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to Windows Instance 0
+=== Connect to Windows Server 0
 
 IMPORTANT: Read through all steps below before continuing.
 
@@ -31,9 +31,9 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Select_* *Running Instances*.
 
-. *_Select_* the radio button next to the instance with the name *Windows Instance 0*.
+. *_Select_* the radio button next to the instance with the name *Windows Server 0*.
 
-. Copy the *Public DNS (IPv4)* name of the *Windows Instance 0* instance.
+. Copy the *Public DNS (IPv4)* name of the *Windows Server 0* instance.
 
 . Launch your remote desktop application and create a new connection.
 
@@ -49,11 +49,11 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
 
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance 0* instance for the remote desktop session.
+. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Server 0* instance for the remote desktop session.
 
 === Map default file share
 
-. Once you've logged on to the *Windows Instance 0* instance, *_launch_* *File Explorer*.
+. Once you've logged on to the *Windows Server 0* instance, *_launch_* *File Explorer*.
 
 . *_Context-click_* *This PC* and *_select_* *Map network drive...*
 

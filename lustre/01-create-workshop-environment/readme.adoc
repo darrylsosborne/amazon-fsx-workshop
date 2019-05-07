@@ -11,7 +11,7 @@ This section will create a new environment (see diagram below) that you will use
 
 == Duration
 
-NOTE: It will take approximately 45 minutes for CloudFormation to automatically create your workshop environment, after completing the *Step-by-step Guide* below.
+NOTE: It will take approximately 15 minutes for CloudFormation to automatically create your workshop environment, after completing the *Step-by-step Guide* below.
 
 == Diagram
 
@@ -37,19 +37,19 @@ NOTE: Amazon FSx is currently available in 6 regions.
 |===
 |Region | Launch template with a new VPC
 | *N. Virginia* (us-east-1)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/new?stackName=fsx-lustre-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/lustre/templates/00-fsx-workshop.yaml]
 
 | *Ohio* (us-east-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-east-2#/stacks/new?stackName=fsx-lustre-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/lustre/templates/00-fsx-workshop.yaml]
 
 | *Oregon* (us-west-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=us-west-2#/stacks/new?stackName=fsx-lustre-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/lustre/templates/00-fsx-workshop.yaml]
 
 | *Ireland* (eu-west-1)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=eu-west-1#/stacks/new?stackName=fsx-lustre-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/lustre/templates/00-fsx-workshop.yaml]
 
 | *Sydney* (ap-southeast-2)
-a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
+a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=ap-southeast-2#/stacks/new?stackName=fsx-lustre-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/lustre/templates/00-fsx-workshop.yaml]
 
 | *Tokyo* (ap-northeast-1)
 a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/home?region=ap-northeast-1#/stacks/new?stackName=fsx-windows-workshop&templateURL=https://s3.amazonaws.com/amazon-fsx/workshop/windows/templates/00-fsx-workshop.yaml]
@@ -80,7 +80,7 @@ image::cloudformation-capabilities.png[align="left", width=420]
 +
 . *_Click_* *Create stack*.
 
-In approximately 45 minutes an email will be sent to the email address entered above (see sample  below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email address during the workshop.
+In approximately 15 minutes an email will be sent to the email address entered above (see sample  below). Open the email message and *_click_* the *Confirm subscription* link. This will allow Amazon SNS to send CloudWatch alarm notifications to this email address during the workshop.
 
 image::aws-notification-subscription-email.png[align="left",width=420]
 

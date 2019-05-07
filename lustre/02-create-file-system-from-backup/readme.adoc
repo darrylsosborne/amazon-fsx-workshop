@@ -34,7 +34,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 +
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
 . *_Select_* the *File system name* or the *File system ID* of file system created by the CloudFormation template. The file system name is "*Amazon FSx for Windows File Server 0*".
-. From the *Details* view and the *Overview* tab, make a note of the *Availability Zone*.
+. From the *details* view and the *Overview* tab, make a note of the *Availability Zone*.
 . *_Select_* the *Backups* tab.
 . *_Click_* the check box next to the *Automatic* backup taken of the file system after it was created.
 . *_Select_* the *Restore backup* button.
@@ -49,11 +49,11 @@ a| Immutable when restoring a backup
 | *Throughput capacity*
 a| 64 MB/s
 | *Virtual private cloud (VPC)*
-a| Accept the default - *VPC \| fsx-windows-workshop-Vpc...*
+a| Accept the default - *VPC fsx-windows-workshop...*
 | *Availability Zone*
 a| Remember the availability zone you noted above? From the dropdown menu *_select_* the other availability zone.
 | *Subnet*
-a| Accept the default - *Private Subnet 1 \| fsx-windows-workshop-Vpc...*
+a| Accept the default - *Private Subnet 1 fsx-windows-workshop...*
 | *VPC Security Groups*
 a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
 | *Microsoft Active Directory ID*
