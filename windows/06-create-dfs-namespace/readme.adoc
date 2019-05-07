@@ -146,7 +146,7 @@ You should now have a new folder named *share* listed under the *corp* namespace
 
 Click the button below to go to the next section.
 
-image::07-setup-dfs-replication.gif[link=../07-setup-dfs-replication/, align="left",width=420]
+image::07-setup-dfs-replication.png[link=../07-setup-dfs-replication/, align="left",width=420]
 
 
 
