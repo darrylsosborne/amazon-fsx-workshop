@@ -21,3 +21,8 @@ NOTE: You will incur charges as you go through these workshops as it will exceed
 === Participation
 
 We encourage participation; if you find anything, please submit an issue. However, if you want to help raise the bar, **submit a PR**!
+
+
+=== License
+
+This sample code is made available under a modified MIT license. See the LICENSE file.
