@@ -39,7 +39,6 @@ File system creation is currently not supported in the following Availability Zo
 | *use1-az3*
 | Open the link:https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#subnets:[us-east-1 VPC] console for AZ mapping.
 
-|Region | Availability Zone ID | Mapping
 | *Oregon* (us-west-2)
 | *usw2-az4*
 | Open the link:https://us-west-2.console.aws.amazon.com/vpc/home?region=us-west-2#subnets:[us-east-1 VPC] console for AZ mapping.
