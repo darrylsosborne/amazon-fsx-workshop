@@ -32,19 +32,18 @@ TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the lin
 +
 [NOTE]
 ====
-NOTE: Amazon FSx is currently available in 6 regions. File system creation is currently not supported in the following Availability Zone IDs:
+Amazon FSx is currently available in 6 regions. File system creation is currently not supported in the following Availability Zones:
 +
 [cols="1,1,2", options="header"]
-.FSx not available in these Availability Zones
 |===
 |Region | Availability Zone ID | Mapping
 | *N. Virginia* (us-east-1)
 | use1-az3
-| Open the link:https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.
+| Open link:https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#subnets:[us-east-1 VPC] for AZ mapping.
 
 | *Sydney* (ap-southeast-2)
 | apse2-az3
-| Open the link:https://ap-southeast-2.console.aws.amazon.com/vpc/home?region=ap-southeast-2#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.
+| Open link:https://ap-southeast-2.console.aws.amazon.com/vpc/home?region=ap-southeast-2#subnets:[ap-southeast-2 VPC] for AZ mapping.
 |===
 ====
 +
