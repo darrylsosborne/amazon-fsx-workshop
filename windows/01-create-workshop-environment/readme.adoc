@@ -33,7 +33,6 @@ TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the lin
 [NOTE]
 ====
 Amazon FSx is currently available in 6 regions. File system creation is currently not supported in the following Availability Zones:
-+
 [cols="1,1,2", options="header"]
 |===
 |Region | Availability Zone ID | Mapping
