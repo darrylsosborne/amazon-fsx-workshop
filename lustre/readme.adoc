@@ -9,7 +9,7 @@ This is a workshop designed for architects and engineers who would like to learn
 
 === Duration
 
-NOTE: It will take approximately 2 hours to complete this workshop and you will be charged approximately *$1.625* to run this environment for 2 hours (based on US East - N. Virginia pricing). After completing the workshop, follow the steps in the link:../08-delete-workshop-environment/[*Delete Workshop Environment*] section so you don't continue to incur charges.
+NOTE: It will take approximately 2 hours to complete this workshop and you will be charged approximately *$7.872* to run this environment for 2 hours (based on US East - N. Virginia pricing). After completing the workshop, follow the steps in the link:../08-delete-workshop-environment/[*Delete Workshop Environment*] section so you don't continue to incur charges.
 
 === Pricing
 
@@ -19,10 +19,10 @@ NOTE: You will incur charges as you go through this workshop *_if_* you exceed t
 
 | *Service* | *2-hour pricing*
 | Amazon FSx for Lustre
-a| $0.985
+a| $7.000
 
 | Amazon EC2
-a| $0.391
+a| $0.864
 
 | Amazon CloudWatch
 a| $0.008

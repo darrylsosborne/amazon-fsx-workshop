@@ -15,7 +15,7 @@ NOTE: It will take approximately 15 minutes for CloudFormation to automatically 
 
 == Diagram
 
-image::fsx-workshop-environment-architecture.png[align="left", width=600]
+image::fsx-lustre-workshop-environment-architecture.png[align="left", width=600]
 
 
 == Step-by-step Guide
@@ -32,8 +32,7 @@ image::create-environment.gif[align="left", width=600]
 +
 TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS Console.
 +
-NOTE: Amazon FSx is currently available in 6 regions.
-+
+NOTE: Amazon FSx is currently available in 6 regions. If launching in Sydney (ap-southeast-2), file system creation is currently not supported for Availability Zone ID *apse2-az3*. Open the link:https://ap-southeast-2.console.aws.amazon.com/vpc/home?region=ap-southeast-2#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.+
 |===
 |Region | Launch template with a new VPC
 | *N. Virginia* (us-east-1)
@@ -65,7 +64,7 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 a| Select a CIDR that will be used for the VPC.
 
 | *Availability Zones*
-a| Select two (2) availability zones for your VPC.
+a| Select two (2) availability zones for your VPC. An Amazon EC2 instance and the FSx file system will be created in the *first* availability zone.
 
 | *Email address*
 a| Enter the email address that will receive notifications for low free storage capacity CloudWatch alarms. Important! An AWS Notification Subscription Confirmation email will be sent to this email address when the CloudFormation stack is created. You must take the action described in that email to confirm the SNS topic subscription before the email address can start receiving alarm notifications.
@@ -88,5 +87,5 @@ image::aws-notification-subscription-email.png[align="left",width=420]
 
 Click the button below to go to the next section.
 
-image::02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="right",width=420]
+image::02-evaluate-s3-integration.png[link=../02-evaluate-S3-integration/, align="right",width=420]
 
