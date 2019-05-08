@@ -26,20 +26,27 @@ IMPORTANT: Read through all steps below and watch the quick video before *_click
 
 image::create-environment.gif[align="left", width=600]
 
-* [x]
-
-btn:[OK]
-
 . Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 +
 TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS Console.
 +
-NOTE: Amazon FSx is currently available in 6 regions. If launching in Sydney (ap-southeast-2), file system creation is currently not supported for Availability Zone ID *apse2-az3*.
+[NOTE]
+====
+NOTE: Amazon FSx is currently available in 6 regions. File system creation is currently not supported in the following Availability Zone IDs:
++
+[cols="1,1,2", options="header"]
+.FSx not available in these Availability Zones
+|===
+|Region | Availability Zone ID | Mapping
+| *N. Virginia* (us-east-1)
+| use1-az3
+| Open the link:https://us-east-1.console.aws.amazon.com/vpc/home?region=us-east-1#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.
 
-
-use1-az3
-
-Open the link:https://ap-southeast-2.console.aws.amazon.com/vpc/home?region=ap-southeast-2#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.
+| *Sydney* (ap-southeast-2)
+| apse2-az3
+| Open the link:https://ap-southeast-2.console.aws.amazon.com/vpc/home?region=ap-southeast-2#subnets:[Amazon VPC] console *Subnets* window to see your *Availability Zone* to *Availability Zone ID* mapping.
+|===
+====
 +
 |===
 |Region | Launch template with a new VPC
