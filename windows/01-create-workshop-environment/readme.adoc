@@ -30,7 +30,6 @@ image::create-environment.gif[align="left", width=600]
 +
 Amazon FSx is currently available in 6 regions.
 +
-[.lead]
 File system creation is currently not supported in the following Availability Zones:
 +
 [cols="1,1,2", options="header"]
