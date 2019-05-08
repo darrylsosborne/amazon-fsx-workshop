@@ -13,10 +13,13 @@ Metadata:
       Parameters:
         - VpcCidr
         - AvailabilityZones
+        - KeyName
         - EmailAddress
     ParameterLabels:
       AvailabilityZones:
         default: Availability Zones
+      KeyName:
+        default: EC2 key pair
       EmailAddress:
         default: Email Address
       VpcCidr:
@@ -29,6 +32,9 @@ Parameters:
   EmailAddress:
     Description: The email address for CloudWatch alarm notification.
     Type: String
+  KeyName:
+    Description: Select the EC2 key pair for the Linux instance (Lustre client).
+    Type: AWS::EC2::KeyPair::KeyName
   VpcCidr:
     AllowedValues: 
     - 10.0.0.0/16
@@ -69,6 +75,10 @@ Resources:
     Type: AWS::CloudFormation::Stack
     Properties:
       Parameters:
+        KeyName:
+          !Ref KeyName
+        FileSystemId:
+          !GetAtt [ FileSystem, Outputs.FileSystemId ]
         SecurityGroupId:
           !GetAtt [ SecurityGroup, Outputs.Ec2SecurityGroupId ]
         SubnetId:
