@@ -9,7 +9,8 @@
 
 This section will examine Amazon FSx for Lustre data repository integration with Amazon S3.
 
-The workshop environment created an FSx for Lustre file system with a data repository integrated with the "nasanex" bucket in the Oregon (us-west-2) region. NASA NEX is a part of the *Registry of Open Data on AWS* project and is a collection of Earth science datasets maintained by NASA, including climate change projections and satellite images of the Earth's surface.
+The workshop environment created an FSx for Lustre file system with a data repository integrated with the "nasanex" bucket in the Oregon (us-west-2) region. link:https://registry.opendata.aws/nasanex/[NASA NEX] is a part of the link:https://registry.opendata.aws/[Registry of Open Data on AWS] project and is a collection of Earth science datasets maintained by NASA, including climate change projections and satellite images of the Earth's surface.
+
 
 == Duration
 
