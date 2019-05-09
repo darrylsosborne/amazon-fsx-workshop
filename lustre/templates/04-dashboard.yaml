@@ -13,14 +13,14 @@ Metadata:
     - Label:
         default: Alarm Notification
       Parameters:
-        - LowFreeStorageCapacityThreshold        
+        - LowFreeDataStorageCapacityThreshold        
         - EmailAddress
     ParameterLabels:
       EmailAddress:
         default: Email address
       FileSystemId:
         default: File system ID
-      LowFreeStorageCapacityThreshold:
+      LowFreeDataStorageCapacityThreshold:
         default: Threshold
 
 Parameters:
@@ -31,11 +31,11 @@ Parameters:
     AllowedPattern: ^(fs-)([a-z0-9]{17})$
     Description: Amazon FSx file system ID
     Type: String
-  LowFreeStorageCapacityThreshold:
+  LowFreeDataStorageCapacityThreshold:
     AllowedPattern: ^[0-9]+$
     ConstraintDescription: Must be an integer.
-    Default: 18691697672192
-    Description: Low free storage capacity threshold (Bytes)
+    Default: 7000000000000
+    Description: Low free data storage capacity threshold (Bytes)
     Type: String
 
 Resources:
@@ -199,7 +199,7 @@ Resources:
                       "width": 15,
                       "height": 6,
                       "properties": {
-                          "title": "Free Storage Capacity (Bytes)",
+                          "title": "Free Data Storage Capacity (Bytes)",
                           "annotations": {
                               "alarms": [
                                   "arn:aws:cloudwatch:',!Ref 'AWS::Region',':',!Ref 'AWS::AccountId',':alarm:',!Join [ '', [ 'Low free storage capacity alarm - ', !Ref FileSystemId ] ],'"
@@ -220,7 +220,7 @@ Resources:
       - Endpoint: !Ref EmailAddress
         Protocol: "email"
       TopicName: !Join [ '', [ !Ref FileSystemId, '-alarm-notification' ] ]
-  LowFreeStorageCapacityAlarm:
+  LowFreeDataStorageCapacityAlarm:
     Type: AWS::CloudWatch::Alarm
     Properties:
       AlarmActions:
@@ -232,9 +232,9 @@ Resources:
       - Name: FileSystemId
         Value: !Ref FileSystemId
       EvaluationPeriods: 1
-      MetricName: FreeStorageCapacity
+      MetricName: FreeDataStorageCapacity
       Namespace: AWS/FSx
       Period: 60
       Statistic: Minimum
-      Threshold: !Ref LowFreeStorageCapacityThreshold
+      Threshold: !Ref LowFreeDataStorageCapacityThreshold
       TreatMissingData: missing

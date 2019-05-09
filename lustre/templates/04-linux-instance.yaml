@@ -78,9 +78,38 @@ Resources:
               repo_upgrade: all
 
               runcmd:
+
+              # update
+              - yum update -y
+
+              # install tools
               - amazon-linux-extras install -y epel lustre2.10
-              - yum install -y parallel ioping tree nload git
+              - yum groupinstall -y "Development Tools"
+              - yum install -y parallel ioping tree nload git libaio-devel openmpi openmpi-devel
+
+              # install fio
+              - git clone git://git.kernel.dk/fio.git
+              - cd fio
+              - ./configure
+              - make
+              - make install
+              - cd
+
+              # install ior
+              - git clone https://github.com/hpc/ior.git
+              - export PATH=$PATH:/usr/lib64/openmpi/bin
+              - export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib64/openmpi/lib/
+              - cd ior
+              - ./bootstrap
+              - ./configure
+              - make
+              - sudo cp src/ior /usr/local/bin
+              - cd
+
+              # install smallfile
               - git clone https://github.com/bengland2/smallfile.git
+
+              # mount fsx lustre
               - _availability_zone=$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)
               - _region=${!_availability_zone:0:-1}
               - _mount_point=/mnt/fsx
@@ -89,6 +118,7 @@ Resources:
               - mount -a
               - chown ec2-user:ec2-user /mnt/fsx
               - reboot
+
   AmiInfoFunction:
     Type: AWS::Lambda::Function
     Properties:
