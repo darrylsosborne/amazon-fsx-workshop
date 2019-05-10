@@ -115,5 +115,5 @@ image::aws-notification-subscription-email.png[align="left",width=420]
 
 Click the button below to go to the next section.
 
-image::02-evaluate-s3-integration.png[link=../02-evaluate-S3-integration/, align="right",width=420]
+image::02-examine-data-repository-integration.png[link=../02-examine-data-repository-integration/, align="right",width=420]
 
