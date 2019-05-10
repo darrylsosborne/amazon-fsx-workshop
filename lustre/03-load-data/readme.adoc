@@ -1,4 +1,4 @@
-= Create new file share
+= Load data
 :toc:
 :icons:
 :linkattrs:
@@ -7,9 +7,9 @@
 
 == Summary
 
-This section will create new file shares.
+This section will load data into Amazon FSx for Lustre from the integrated Amazon S3 bucket (data repository).
 
-You can use standard Microsoft tools to create new file shares on your Amazon FSx for Windows File Server.
+The workshop environment created an FSx for Lustre file system with a data repository integrated with the "nasanex" bucket in the US West (Oregon) region. link:https://registry.opendata.aws/nasanex/[NASA NEX] is a part of the link:https://registry.opendata.aws/[Registry of Open Data on AWS] project and is a collection of Earth science datasets maintained by NASA, including climate change projections and satellite images of the Earth's surface.
 
 
 == Duration
@@ -19,128 +19,91 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to Windows Server 0
-
 IMPORTANT: Read through all steps below before continuing.
 
-. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
+=== Lazy load data
 
-. *_Select_* *Running Instances*.
+Complete these steps from the SSH terminal session window connected to *Linux Instance 0*.
 
-. *_Select_* the radio button next to the instance with the name *Windows Server 0*.
+*_Copy_* the scripts below and *_paste_* it into your favorite text editor.
+*_Copy_* the full path of one of the .tif files and *_replace_* the `*file*` placeholder.
+*_Execute_* the script
 
-. Copy the *Public DNS (IPv4)* name of the *Windows Server 0* instance.
-
-. Launch your remote desktop application and create a new connection.
-
-. Use the DNS name copied above as the host name of the new connection.
-
-. Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
-
-. Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. *_Select_* the *Secret name* link for *Password-<GUID>*.
-
-. *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
-
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Server 0* instance for the remote desktop session.
-
-=== Map default file share
-
-. Once you've logged on to the *Windows Server 0* instance, *_launch_* *File Explorer*.
-
-. *_Context-click_* *This PC* and *_select_* *Map network drive...*
-
-. Map the file share using the following information:
-+
-[cols="3,10"]
-|===
-| *Drive*
-a| Z:
-
-| *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *Amazon FSx for Windows File Server 0* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system and use it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
-
-| *Reconnect at sign-in*
-a| Leave checked
-
-| *Connect using different credentials*
-a| Leave unchecked
-|===
-+
-. In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
-
-=== Create new file shares
-
-. *_Click_* *Start* >> *Windows PowerShell*.
-
-. *_Copy_* the script below into your favorite text editor and replace *"file_system_0_dns_name"* with the DNS name of *Amazon FSx Windows File Server 0*. Run the updated script in the *Windows PowerShell* window.
+. Generate a list of some .tif files
 +
 [source,bash]
 ----
-$FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
-(Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
+time lfs find /mnt/fsx --type f --name *.tif | head 100
+
 ----
 +
-
-. *_Copy_* the computer name returned by the script.
-
-. *_Click_* *Start*.
-
-. *_Type_* *fsmgmt.msc*.
-
-. From the *Shared Folders* Console, *_select_* *Action* >> *Connect to another computer...*.
-
-. *_Paste_* the computer name copied above in the *Another computer:* text box and *_click_* *Ok*.
-
-. *_Double-click_* the *Shares* folder.
-
-. With the *Shares* folder selected, *_click_* *Action* >> *New Share...* from the menu.
-
-. Complete the *Create A Shared Folder Wizard*, creating new shares using on the following attributes:
+. Read the file and measure the time it takes to load it from the integrated S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs on *Linux Instance 0*.
 +
-|===
-| *Share name* | *Folder path* | *Create new path* | *Shared folder permissions*
-| data
-| D:\data
-| Yes
-| Customize permissions >> Everyone Full Control
+[source,bash]
+----
+time ls -lah `*file*` # time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
 
-| finance
-| D:\finance
-| Yes
-| Administrators have full access; other users have no access
-
-| sales
-| D:\sales
-| Yes
-| All users have read-only access
-
-| marketing
-| D:\marketing
-| Yes
-| Customize permissions >> Everyone Full Control
-|===
+----
 +
-. Experiemnt and create other file shares. All shares must be created on the *D:\* drive.
+My results are below. The file I'm using is 183MB.
+[source,bash]
+----
+-rwxr-xr-x. 1 root root 183M Aug 15  2014 /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
 
-=== Access the new file shares
+----
++
+. Read the file and measure the time it takes to load it from the linked S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs.
++
+[source,bash]
+----
+time cat `*file*` >/dev/shm/fsx # time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
 
-. *_Open_* a new *File Explorer* windows.
+----
++
+. How long did it take? My results are below.
++
+[source,bash]
+----
+real	0m4.702s
+user	0m0.000s
+sys	    0m0.152s
+----
++
+. *_Re-run_* the same **"time cat..."** command and see how long it takes? My results are below.
++
+[source,bash]
+----
+real	0m0.110s
+user	0m0.000s
+sys	    0m0.108s
+----
++
+[qanda]
+. The data *_read_* from the last command was delivered from where?::
+The cache on *Linux Instance 0*. You can verify this by opening a second SSH terminal session window to this same instance and run `nload -u M` to see real-time network throughput of the instance. To force the *_read_* to go back to FSx for Lustre, drop the cache on *Linux Instance 0* and re-run the command.
++
+[source,bash]
+----
+sudo bash -c 'echo 3 > /proc/sys/vm/drop_caches'
+time cat `*file*` >/dev/shm/fsx # time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
 
-. Use UNC paths to connect to the newly created file shares. Experiment using the file system DNS name and the file system's computer name (FQDN) you found earlier. Remember to add different file shares at the end of the DNS name to make up the full UNC path (e.g. *\\fs-0123456789abcdef.example.com\sales*, *\\amznfsxdduvdamf.example.com\accounting*, etc.).
+----
++
+. How long did it take? My results are below.
++
+[source,bash]
+----
+real	0m0.389s
+user	0m0.000s
+sys	    0m0.170s
+----
+
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::04-test-performance.png[link=../04-test-performance/, align="left",width=420]
+image::04-load-data.png[link=../04-test-performance/, align="left",width=420]
 
 
 

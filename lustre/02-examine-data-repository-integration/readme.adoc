@@ -39,7 +39,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 === Examine *s3://nasanex* data repository integration
 
-*_Copy_*, *_paste_*, and *execute* the shell commands below in the SSH terminal session of *Linux Instance 0* to answer the following questions:
+*_Copy_*, *_paste_*, then *_execute_* the shell commands below in the SSH terminal session of *Linux Instance 0* to answer the following questions:
 
 . How long does it take to list the entire file system?
 +
@@ -138,19 +138,16 @@ The results of your queries should match the following:
 | 169617
 
 | How many .nc, .hdf, .tif, .gz files?
-| .hdf = 207552
-.tif = 11095
-.nc = 87002
-.gz = 42009
+| .hdf = 207552; .tif = 11095; .nc = 87002; .gz = 42009
 
-| How much metadata (MDT) has been loaded into the file system?
+| How much storage is used by the metadata target (MDT)?
 | 4.4G
 
-| How much data (all the OSTs) has been loaded into the file system?
-| 13.5M
+| How much storage is used by all the object storage targets (OSTs)?
+| 27.M
 
 | How much data storage capacity is available?
-| 6.9 T
+| 6.6 T
 |===
 
 == Next section
