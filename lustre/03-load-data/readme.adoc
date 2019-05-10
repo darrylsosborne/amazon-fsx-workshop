@@ -26,7 +26,7 @@ IMPORTANT: Read through all steps below before continuing.
 Complete these steps from the SSH terminal session window connected to *Linux Instance 0*.
 
 *_Copy_* the scripts below and *_paste_* it into your favorite text editor.
-*_Copy_* the full path of one of the .tif files and *_replace_* the `*file*` placeholder.
+*_Copy_* the full path of one of the .tif files and *_replace_* the *_FILE_* placeholder.
 *_Execute_* the script
 
 . Generate a list of some .tif files
@@ -41,7 +41,7 @@ time lfs find /mnt/fsx --type f --name *.tif | head 100
 +
 [source,bash]
 ----
-time ls -lah `*file*` # time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
+time ls -lah *_FILE_* # time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
 
 ----
 +
