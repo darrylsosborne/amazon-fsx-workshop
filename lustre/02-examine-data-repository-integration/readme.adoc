@@ -23,6 +23,9 @@ IMPORTANT: Read through all steps below before continuing.
 
 === Connect to *Linux Instance 0*
 
+image::connect-linux-instance-0.gif[align="left", width=600]
+
+
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and Amazon EC2 console.
