@@ -41,11 +41,12 @@ time lfs find /mnt/fsx --type f --name *.tif | head 100
 +
 [source,bash]
 ----
-time ls -lah FILE # time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
+time ls -lah FILE # e.g. time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
 
 ----
 +
-My results are below. The file I'm using is 183MB.
+My results are below. The file I'm using is 183 MB.
++
 [source,bash]
 ----
 -rwxr-xr-x. 1 root root 183M Aug 15  2014 /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif
@@ -56,7 +57,7 @@ My results are below. The file I'm using is 183MB.
 +
 [source,bash]
 ----
-time cat FILE >/dev/shm/fsx # time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
+time cat FILE >/dev/shm/fsx # e.g. time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
 
 ----
 +
@@ -85,7 +86,7 @@ The cache on *Linux Instance 0*. You can verify this by opening a second SSH ter
 [source,bash]
 ----
 sudo bash -c 'echo 3 > /proc/sys/vm/drop_caches'
-time cat FILE >/dev/shm/fsx # time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
+time cat FILE >/dev/shm/fsx # e.g. time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif >/dev/shm/fsx
 
 ----
 +
