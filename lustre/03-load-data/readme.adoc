@@ -96,6 +96,13 @@ user	0m0.000s
 sys     0m0.170s
 ----
 
+=== Bulk load data
+
+Decide what data you want to bulk load. This could be by file type, size, subdirectory, or all of the above. Or you could have other criteria.
+
+Construct a find command to return the data you want to bulk load.
+
+
 
 == Next section
 
