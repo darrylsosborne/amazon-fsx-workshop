@@ -147,7 +147,7 @@ The results of your queries should match the following:
 | .hdf = 207552; .tif = 11095; .nc = 87002; .gz = 42009
 
 | How much storage is used by the metadata target (MDT)?
-| 4.4G
+| 934.1M
 
 | How much storage is used by all the object storage targets (OSTs)?
 | 27.M
