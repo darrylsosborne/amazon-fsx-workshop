@@ -28,9 +28,6 @@ image::create-high-throughput-alarm.gif[align="left", width=600]
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
 . Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
-* Do you have an *Alarm* for *FSx*?
-* Did your email address receive an alarm notification?
-* What triggered the alarm?
 . *_Select_* *Dashboards* from the left navigation pane.
 . *_Select_* the link of the dashboard created as a part of the workshop environment.
 +
