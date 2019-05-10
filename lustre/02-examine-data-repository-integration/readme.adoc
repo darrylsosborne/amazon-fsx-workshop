@@ -114,13 +114,13 @@ The results of your queries should match the following:
 |===
 | Query | Results
 | How long did it take to load file metadata from the linked S3 bucket during file system creation?
-| \~14m
+| ~14m
 
 | What was the max operations per second (ops) during metadata load?
 | 4,890 ops
 
 | How long does it take to list the entire file system?
-| \~1m18.229s
+| ~1m18.229s
 
 | What file types did you see?
 | .hdf  .nc  .gz  .tif  .json  .md5  .txt  .pdf
