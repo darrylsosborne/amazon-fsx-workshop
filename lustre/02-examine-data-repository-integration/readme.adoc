@@ -138,7 +138,10 @@ The results of your queries should match the following:
 | 169617
 
 | How many .nc, .hdf, .tif, .gz files?
-| .hdf = 207552 + .tif = 11095 + .nc = 87002 + .gz = 42009
+| .hdf = 207552
+.tif = 11095
+.nc = 87002
+.gz = 42009
 
 | How much metadata (MDT) has been loaded into the file system?
 | 4.4G
