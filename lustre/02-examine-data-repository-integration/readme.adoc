@@ -91,8 +91,10 @@ time lfs find /mnt/fsx --type f --name *.gz | wc -l
 ----
 +
 . How much metadata (MDT) has been loaded into the file system?
-. How much data (all the OSTs) has been loaded into the file system?
-. How much data storage capacity is available?
++
+How much data (all the OSTs) has been loaded into the file system?
++
+How much data storage capacity is available?
 +
 [source,bash]
 ----
