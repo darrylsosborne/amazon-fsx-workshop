@@ -48,7 +48,7 @@ time ls -lah FILE # e.g. time ls -lah /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_n
 My results are below. The file I'm using is 183 MB.
 +
 
-`-rwxr-xr-x. 1 root root 183M Aug 15  2014 /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif`
+`*_-rwxr-xr-x. 1 root root 183M Aug 15  2014 /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif_*`
 
 +
 . Read the file and measure the time it takes to load it from the linked S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs.
