@@ -34,7 +34,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 . *_Select_* *Dashboards* from the left navigation pane.
 . *_Select_* the link of the dashboard created as a part of the workshop environment.
 +
-TIP: The name of the dashboard should be the region name (e.g. us-east-1), dash (-), file system id of *Amazon FSx for Lustre* (e.g. us-east-fs-0123456789abcdef).
+TIP: The name of the dashboard should be the region name (e.g. us-east-1), dash (-), file system id of *Amazon FSx for Lustre* (e.g. us-east-1-fs-0123456789abcdef).
 . *_Scroll_* through the dashboard and review all the widgets and their settings.
 . Notice how the vertical time line is in sync across all widgets. This makes it easy to correlate different metric values for a given point in time.
 . *_Zoom_* in on a widget by *_clicking_* and *_dragging_* over a period of time. Notice all widgets also zoom in for the period of time selected.

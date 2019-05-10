@@ -97,6 +97,57 @@ sys     0m0.170s
 ----
 
 
+=== Bulk load data
+
+Complete these steps from two SSH terminal session windows connected to *Linux Instance 0*.
+
+. Open two (2) SSH terminal session windows connected to *Linux Instance 0*.
++
+Start `*nload*` in one of the SSH terminal session windows.
++
+[source,bash]
+----
+nload -u M
+
+----
++
+*_Copy_* the scripts below and *_execute_* them in the other SSH terminal session window.
+
+
+
+*_Copy_* the scripts below and *_paste_* it into your favorite text editor.
+*_Copy_* the full path of one of the .tif files and *_replace_* the *_FILE_* placeholder.
+*_Execute_* the script
+
+. Generate a list of files in the /AVHRR/ directory.
++
+[source,bash]
+----
+time lfs find /mnt/fsx/AVHRR/ --type f
+
+----
++
+. *_Execute_* the script below to bulk load all data for files in the /AVHRR/ directory from the integrated s3://nasanex bucket to the FSx for Lustre file system.
++
+----
+threads=36
+time lfs find /mnt/fsx/AVHRR/ --type f | parallel --will-cite -j ${threads} sudo lfs hsm_restore {} &
+
+----
+. *_Monitor_* the network throughput of the instance from the other SSH terminal window running `*nload*`. These objects are not copied through the instance from S3 to the file system. Parallel GET APIs are called from the OSTs to copy data directly from S3 to the OST.
+
+
+. Open the link:https://console.aws.amazon.com/cloudwatch/[Amazon CloudWatch] console.
++
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
++
+. *_Select_* *Dashboards* from the left navigation pane.
+. *_Select_* the link of the dashboard created as a part of the workshop environment.
++
+TIP: The name of the dashboard should be the region name (e.g. us-east-1), dash (-), file system id of *Amazon FSx for Lustre* (e.g. us-east-1-fs-0123456789abcdef).
+. *_Monitor_* the throughput widget to see how much throughput this bulk data load operation is achieving. The /AVHRR/ directory has 8 directories, 2223 files, and uses 26 GB of storage.
+
+
 == Next section
 
 Click the button below to go to the next section.
