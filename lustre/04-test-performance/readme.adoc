@@ -21,7 +21,7 @@ IMPORTANT: Read through all steps below before continuing.
 
 === Smallfile Read tests
 
-. Open two (2) SSH terminal session windows connected to *Linux Instance 0*
+. Open two (2) SSH terminal session windows connected to *Linux Instance 0*.
 +
 Start `*nload*` in one of the SSH terminal session windows.
 +
@@ -32,7 +32,7 @@ nload -u M
 ----
 +
 *_Copy_* the scripts below and *_execute_* them in the other SSH terminal session window.
-. Install smallfile
+. Install smallfile. link:https://github.com/distributed-system-analysis/smallfile[smallfile] is a distributed metadata-intensive workload generator for POSIX-like filesystems. It is licensed under Apache License, Version 2.0.
 +
 [source,bash]
 ----
