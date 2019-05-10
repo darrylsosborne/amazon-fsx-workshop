@@ -120,7 +120,7 @@ nload -u M
 +
 [source,bash]
 ----
-time lfs find /mnt/fsx/CMIP5 --type f
+time tree --du -h /mnt/fsx/CMIP5
 
 ----
 +
