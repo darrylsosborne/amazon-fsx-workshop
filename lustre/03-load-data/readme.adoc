@@ -37,7 +37,7 @@ time lfs find /mnt/fsx --type f --name *.tif | head 100
 
 ----
 +
-. Read the file and measure the time it takes to load it from the integrated S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs on *Linux Instance 0*.
+. How large is the file? Run an ls -la against the file to find out the size.
 +
 [source,bash]
 ----
@@ -51,7 +51,7 @@ My results are below. The file I'm using is 183 MB.
 `*_-rwxr-xr-x. 1 root root 183M Aug 15  2014 /mnt/fsx/NAIP/ca_1m_2012/36117/m_3611718_nw_11_1_20120623.tif_*`
 
 +
-. Read the file and measure the time it takes to load it from the linked S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs.
+. Read the file and measure the time it takes to load it from the integrated S3 bucket. This command will load the file by reading it from S3 and writing it to tempfs on *Linux Instance 0*.
 +
 [source,bash]
 ----
@@ -78,7 +78,7 @@ sys	    0m0.108s
 ----
 +
 [qanda]
-. The data *_read_* from the last command was delivered from where?::
+. The data *_read_* from the last command was delivered from where?
 The cache on *Linux Instance 0*. You can verify this by opening a second SSH terminal session window to this same instance and run `nload -u M` to see real-time network throughput of the instance. To force the *_read_* to go back to FSx for Lustre, drop the cache on *Linux Instance 0* and re-run the command.
 +
 [source,bash]
