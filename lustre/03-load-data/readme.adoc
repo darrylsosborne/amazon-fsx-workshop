@@ -65,7 +65,7 @@ time cat FILE >/dev/shm/fsx # e.g. time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_361
 ----
 real	0m4.702s
 user	0m0.000s
-sys	    0m0.152s
+sys	   0m0.152s
 ----
 +
 . *_Re-run_* the same **"time cat..."** command and see how long it takes? My results are below.
@@ -74,7 +74,7 @@ sys	    0m0.152s
 ----
 real	0m0.110s
 user	0m0.000s
-sys	    0m0.108s
+sys    0m0.108s
 ----
 +
 [qanda]
