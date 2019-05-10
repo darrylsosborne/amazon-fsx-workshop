@@ -64,7 +64,7 @@ TIP: The name of the SNS topic should be the file system id of *Amazon FSx for L
 . *_Scroll_* and *_review_* the *Conditions*, *Actions*, and *Name and description* sections.
 . *_Click_* *Create alarm*.
 . *_Wait_* a few minutes for the alarm state to transition from *Insufficient data* to *OK*.
-. *_Return_* to the previous workshop section *Test performance* and run a few more read and write performance tests against the file system. Make sure the duration of the test is at least 2 minutes.
+. *_Return_* to the previous workshop section *Test performance* and *_ior_* test again.
 * Did your *High throughput alarm* get triggered?
 * Did your email address receive an alarm notification?
 
