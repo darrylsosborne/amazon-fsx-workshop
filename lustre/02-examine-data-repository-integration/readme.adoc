@@ -41,6 +41,14 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 *_Copy_*, *_paste_*, then *_execute_* the shell commands below in the SSH terminal session of *Linux Instance 0* to answer the following questions:
 
+. Is the FSx for Lustre file system mounted?
++
+[source,bash]
+----
+mount -t lustre
+
+----
++
 . How long does it take to list the entire file system?
 +
 [source,bash]
@@ -113,14 +121,12 @@ The results of your queries should match the following:
 [cols="3,10"]
 |===
 | Query | Results
-| How long did it take to load file metadata from the linked S3 bucket during file system creation?
-| ~14m
 
-| What was the max operations per second (ops) during metadata load?
-| 4,890 ops
+| Is the FSx for Lustre file system mounted?
+| 10.0.1.193@tcp:/fsx on /mnt/fsx type lustre (rw,lazystatfs) (you will have a different IP address)
 
 | How long does it take to list the entire file system?
-| ~1m18.229s
+| ~real	0m47.373s
 
 | What file types did you see?
 | .hdf  .nc  .gz  .tif  .json  .md5  .txt  .pdf
