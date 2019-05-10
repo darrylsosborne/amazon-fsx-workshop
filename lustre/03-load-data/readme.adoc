@@ -60,6 +60,7 @@ time cat FILE >/dev/shm/fsx # e.g. time cat /mnt/fsx/NAIP/ca_1m_2012/36117/m_361
 ----
 +
 . How long did it take? My results are below.
++
 ----
 real    0m4.702s
 user    0m0.000s
