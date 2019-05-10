@@ -33,7 +33,7 @@ Complete these steps from the SSH terminal session window connected to *Linux In
 +
 [source,bash]
 ----
-time lfs find /mnt/fsx --type f --name *.tif | head 100
+time lfs find /mnt/fsx --type f --name *.tif | head -100
 
 ----
 +
