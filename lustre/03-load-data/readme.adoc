@@ -37,6 +37,9 @@ time lfs find /mnt/fsx --type f --name *.tif | head -100
 
 ----
 +
+. *_Copy_* the full path of one of the .tif files and *_replace_* the *_FILE_* placeholder.
+*_Execute_* the script
++
 . How large is the file? Run an ls -la against the file to find out the size.
 +
 [source,bash]
