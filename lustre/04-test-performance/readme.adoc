@@ -42,7 +42,7 @@ git clone https://github.com/bengland2/smallfile.git
 +
 Write, read, stat, append, rename, and delete a large number of smallfiles. *_Run_* these commands in order and review the results.
 +
-Write (create) 32,000 4KiB files
+Write (create) 316200 files
 +
 [source,bash]
 ----
@@ -51,9 +51,9 @@ prefix=$(echo $(uuidgen)| grep -o ".\{6\}$")
 path=/mnt/fsx/${job_name}
 sudo mkdir -p ${path}
 
-threads=64
-file_size=4
-file_count=500
+threads=32
+file_size=64
+file_count=10000
 operation=create
 same_dir=N
 
@@ -71,7 +71,7 @@ sudo python ~/smallfile/smallfile_cli.py \
 
 ----
 +
-. Read 32,000 4KiB files
+. Read ~316200 files
 +
 [source,bash]
 ----
@@ -91,7 +91,7 @@ sudo python ~/smallfile/smallfile_cli.py \
 
 ----
 +
-. Read 32,000 4KiB files
+. Stat ~316200 files
 +
 [source,bash]
 ----
@@ -110,67 +110,7 @@ sudo python ~/smallfile/smallfile_cli.py \
 --top ${path} &
 
 ----
-+
-. Read 32,000 4KiB files
-+
-[source,bash]
-----
-operation=append
-file_size=4
 
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-
-----
-+
-. Read 32,000 4KiB files
-+
-[source,bash]
-----
-operation=rename
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-
-----
-+
-. Read 32,000 4KiB files
-+
-[source,bash]
-----
-operation=delete-renamed
-
-sudo python ~/smallfile/smallfile_cli.py \
---operation ${operation} \
---threads ${threads} \
---file-size ${file_size} \
---files ${file_count} \
---same-dir ${same_dir} \
---hash-into-dirs Y \
---prefix ${prefix} \
---dirs-per-dir ${file_count} \
---files-per-dir ${file_count} \
---top ${path} &
-
-----
 
 === dd tests
 
