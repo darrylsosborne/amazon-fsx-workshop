@@ -101,7 +101,7 @@ How much data storage capacity is available?
 time lfs df -h
 
 ----
-+
+
 
 === Verify your results
 
