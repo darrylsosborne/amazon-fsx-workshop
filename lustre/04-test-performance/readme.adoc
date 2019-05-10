@@ -30,8 +30,8 @@ Start `*nload*` in one of the SSH terminal session windows.
 nload -u M
 
 ----
-
-. *_Copy_* the scripts below and *_execute_* them in the other SSH terminal session window.
++
+*_Copy_* the scripts below and *_execute_* them in the other SSH terminal session window.
 . Install smallfile
 +
 [source,bash]
