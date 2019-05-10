@@ -38,7 +38,7 @@ time lfs find /mnt/fsx --type f --name *.tif | head -100
 ----
 +
 . *_Copy_* the full path of one of the .tif files and *_replace_* the *_FILE_* placeholder.
-*_Execute_* the script
+*_Execute_* the script.
 +
 . How large is the file? Run an ls -la against the file to find out the size.
 +
@@ -80,8 +80,8 @@ sys     0m0.108s
 ----
 +
 [qanda]
-. The data *_read_* from the last command was delivered from where?
-The cache on *Linux Instance 0*. You can verify this by opening a second SSH terminal session window to this same instance and run `nload -u M` to see real-time network throughput of the instance. To force the *_read_* to go back to FSx for Lustre, drop the cache on *Linux Instance 0* and re-run the command.
+. Where did the last command get it's data?
+The cache on *Linux Instance 0*. You can verify this by opening a second SSH terminal session window to this same instance and run `nload -u M` to see real-time network throughput of the instance and re-run the command. To force the read operation to go back to FSx for Lustre, drop the cache on *Linux Instance 0* and re-run the command.
 +
 [source,bash]
 ----
@@ -115,29 +115,23 @@ nload -u M
 ----
 +
 *_Copy_* the scripts below and *_execute_* them in the other SSH terminal session window.
-
-
-
-*_Copy_* the scripts below and *_paste_* it into your favorite text editor.
-*_Copy_* the full path of one of the .tif files and *_replace_* the *_FILE_* placeholder.
-*_Execute_* the script
-
-. Generate a list of files in the /AVHRR/ directory.
++
+. Generate a list of files in the /CMIP5 directory.
 +
 [source,bash]
 ----
-time lfs find /mnt/fsx/AVHRR/ --type f
+time lfs find /mnt/fsx/CMIP5 --type f
 
 ----
 +
-. *_Execute_* the script below to bulk load all data for files in the /AVHRR/ directory from the integrated s3://nasanex bucket to the FSx for Lustre file system.
+. *_Execute_* the script below to bulk load all data for files in the /CMIP5 directory from the integrated s3://nasanex bucket to the FSx for Lustre file system.
 +
 ----
 threads=36
-time lfs find /mnt/fsx/AVHRR/ --type f | parallel --will-cite -j ${threads} sudo lfs hsm_restore {} &
+time lfs find /mnt/fsx/CMIP5--type f | parallel --will-cite -j ${threads} sudo lfs hsm_restore {}
 
 ----
-. *_Monitor_* the network throughput of the instance from the other SSH terminal window running `*nload*`. These objects are not copied through the instance from S3 to the file system. Parallel GET APIs are called from the OSTs to copy data directly from S3 to the OST.
+. *_Monitor_* the network throughput of the instance from the other SSH terminal window running `*nload*`. These objects are not copied through the instance from S3 to the file system. The GET API is called in parallel to copy data directly from S3 to the OSTs.
 
 
 . Open the link:https://console.aws.amazon.com/cloudwatch/[Amazon CloudWatch] console.
@@ -148,7 +142,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 . *_Select_* the link of the dashboard created as a part of the workshop environment.
 +
 TIP: The name of the dashboard should be the region name (e.g. us-east-1), dash (-), file system id of *Amazon FSx for Lustre* (e.g. us-east-1-fs-0123456789abcdef).
-. *_Monitor_* the throughput widget to see how much throughput this bulk data load operation is achieving. The /AVHRR/ directory has 8 directories, 2223 files, and uses 26 GB of storage.
+. *_Monitor_* the throughput widget to see how much throughput this bulk data load operation is achieving. The /CMIP5 directory has 775 directories, 416 files, and uses 68 GB of storage.
 
 
 == Next section
