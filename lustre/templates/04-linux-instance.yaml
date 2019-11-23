@@ -39,8 +39,9 @@ Parameters:
     Type: AWS::EC2::KeyPair::KeyName
   InstanceType:
     AllowedValues: 
-      - c5.4xlarge
-    Default: c5.4xlarge
+      - c5n.9xlarge
+      - c5n.18xlarge
+    Default: c5n.9xlarge
     Description: Select the instance type
     Type: String
   LinuxDistribution:
