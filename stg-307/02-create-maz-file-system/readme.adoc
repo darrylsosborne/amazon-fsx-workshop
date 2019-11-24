@@ -2,7 +2,7 @@
 :toc:
 :icons:
 :linkattrs:
-:imagesdir: ../../resources/images
+:imagesdir: ../resources/images
 
 
 == Summary
@@ -82,7 +82,7 @@ NOTE: It will take approximately 15 minutes to create a new file system. Continu
 
 Click the button below to go to the next section.
 
-image::03-manage-file-shares-via-PS.png[link=../03-manage-file-shares-via-PS/, align="left",width=420]
+image::03-create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
 
 
 
