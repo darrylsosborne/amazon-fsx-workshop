@@ -23,7 +23,7 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::connect-to-windows-instance-0.gif[align="left", width=600]
+image::connect-to-windows-instance.gif[align="left", width=600]
 
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
@@ -73,7 +73,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Z:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *Amazon FSx for Windows File Server SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
 
 | *Reconnect at sign-in*
 a| Leave checked
@@ -88,7 +88,7 @@ a| Leave unchecked
 
 IMPORTANT: Read through all steps below before continuing.
 
-. The *DNS Name* of the file system *Amazon FSx for Windows File Server SAZ* should still be in your clipboard
+. The *DNS Name* of the file system *STG326 - SAZ* should still be in your clipboard
 
 . *_Click_* *Start*.
 

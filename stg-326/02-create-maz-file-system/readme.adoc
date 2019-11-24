@@ -40,7 +40,7 @@ NOTE: The pre-built workshop environment was built in the *Ohio (us-east-2) AWS 
 [cols="3,10"]
 |===
 | *File system name*
-a| *_Enter_* STG326 - MAZ
+a| *_Enter_* *STG326 - MAZ*
 | *Deployment type*
 a| *_Select_* - *Multi-AZ*
 | *Storage capacity*
