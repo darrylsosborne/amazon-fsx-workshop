@@ -40,35 +40,35 @@ NOTE: The pre-built workshop environment was built in the *Ohio (us-east-2) AWS 
 [cols="3,10"]
 |===
 | *File system name*
-a| Amazon FSx for Windows File Server MAZ
+a| *_Enter_* Amazon FSx for Windows File Server MAZ
 | *Deployment type*
-a| Multi-AZ
+a| *_Select_* Multi-AZ
 | *Storage capacity*
-a| 300
+a| *_Enter_* 300
 | *Throughput capacity - Specify throughput capacity*
-a| 64 MB/s
+a| *_Select_* 64 MB/s
 | *Virtual private cloud (VPC)*
-a| Select - *VPC \| reinvent-2019-stg326...*
+a| *_Select_* - VPC \| reinvent-2019-stg326...
 | *VPC Security Groups*
-a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group...*
+a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the File system security group...
 | *Preferred subnet*
-a| Select - *Private Subnet 0 \| reinvent-2019-stg326...*
+a| *_Select_* - Private Subnet 0 \| reinvent-2019-stg326...
 | *Standby subnet*
-a| Select - *Private Subnet 1 \| reinvent-2019-stg326...*
+a| *_Select_* - Private Subnet 1 \| reinvent-2019-stg326...
 | *Windows authentication*
 a| AWS Managed Microsoft Active Directory
 | *Microsoft Active Directory ID*
-a| From the dropdown menu *_select_* the *example.com (d-...)* directory
+a| *_Select_* the example.com (d-...) directory
 | *Encryption key*
-a| Accept the default - *(default)aws/fsx*
+a| *_Accept_* the default - (default)aws/fsx
 | *Maintenance preferences - _optional_*
 a| *_Select_* the triangle to expand
 | *Daily automatic backup window*
-a| *_Select_* *No preferences*
+a| *_Select_* No preferences
 | *Automatic backup retention period*
-a| *_Accept_* the default *7* days
+a| *_Accept_* the default 7 days
 | *Weekly maintenance window*
-a| *_Accept_* the default *No preferences*
+a| *_Accept_* the default No preferences
 |===
 +
 . *_Select_* *Next*
