@@ -58,7 +58,7 @@ a| *_Select_* - *Private Subnet 1 \| reinvent-2019-stg326...*
 | *Windows authentication*
 a| AWS Managed Microsoft Active Directory
 | *Microsoft Active Directory ID*
-a| *_Select_* the *example.com | d-...* directory
+a| *_Select_* the *example.com \| d-...* directory
 | *Encryption key*
 a| *_Accept_* the default - *(default)aws/fsx*
 | *Maintenance preferences - _optional_*
