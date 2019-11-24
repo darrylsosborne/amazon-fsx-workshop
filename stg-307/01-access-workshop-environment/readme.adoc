@@ -11,7 +11,7 @@ A new AWS environment will be pre-built and available to you for use during this
 
 == Diagram
 
-image::fsx-workshop-environment-architecture.png[align="left", width=600]
+image::fsx-windows-workshop-architecture.png[align="left", width=600]
 
 == Step-by-step Guide
 
@@ -23,5 +23,5 @@ IMPORTANT: Follow the instructions given by the workshop administrators on how t
 
 Click the button below to go to the next section.
 
-image::02-create-file-system-from-backup.png[link=../02-create-file-system-from-backup/, align="right",width=420]
+image::02-create-maz-file-system.png[link=../02-create-maz-file-system/, align="right",width=420]
 
