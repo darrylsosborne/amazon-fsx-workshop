@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will monitor the performance of *Amazon FSx for Windows File Server 0*.
+This section will monitor the performance of *STG326 - SAZ*.
 
 
 == Duration
@@ -21,20 +21,18 @@ NOTE: It will take approximately 10 minutes to complete this section.
 
 IMPORTANT: Read through all steps below and watch the quick video.
 
-image::create-high-throughput-alarm.gif[align="left", width=600]
+image::examine-cloudwatch-dashboard.gif[align="left", width=600]
 
 . Open the link:https://console.aws.amazon.com/cloudwatch/[Amazon CloudWatch] console.
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
-. Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
-* Do you have an *Alarm* for *FSx*?
-* Did your email address receive an alarm notification?
-* What triggered the alarm?
+NOTE: The pre-built workshop environment was built in the *Ohio (us-east-2) AWS Region*. Make sure you are in the *Ohio (us-east-2) AWS Region*.
++
 . *_Select_* *Dashboards* from the left navigation pane.
 . *_Select_* the link of the dashboard created as a part of the workshop environment.
 +
-TIP: The name of the dashboard should be the region name (e.g. us-east-1), dash (-), file system id of *Amazon FSx for Windows File Server 0* (e.g. us-east-fs-0123456789abcdef).
+TIP: The name of the dashboard should be the region name (e.g. us-east-2), dash (-), file system id of *STG326 - SAZ* (e.g. us-east-2-fs-0123456789abcdef).
 . *_Scroll_* through the dashboard and review all the widgets and their settings.
 . Notice how the vertical time line is in sync across all widgets. This makes it easy to correlate different metric values for a given point in time.
 . *_Zoom_* in on a widget by *_clicking_* and *_dragging_* over a period of time. Notice all widgets also zoom in for the period of time selected.
