@@ -171,7 +171,7 @@ Get-FSxDedupStatus
 +
 . Do you see any optimization? Why not?
 . Quickly read the *_Enabling data deduplication_* section of the From the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-data-dedup.html[Amazon FSx for Windows File Server User Guide] to find the answer.
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
 ----
@@ -192,7 +192,7 @@ Set-FSxDedupConfiguration -MinimumFileAgeDays 0
 . Update the DailyOptimization data deduplication schedule to run in 2 minutes.
 . *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
 
-* Run the updated script in the *Windows PowerShell* window.
+* *_Run_* the updated script in the *Windows PowerShell* window.
 +
 [source,bash]
 ----
@@ -200,7 +200,7 @@ Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 ----
 +
 * Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
 ----
