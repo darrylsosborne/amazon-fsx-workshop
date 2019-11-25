@@ -158,7 +158,7 @@ While the script is running, open *Task Manager* and monitor network performance
 | Parameter | Description
 
 | `--direct=[0\|1]`
-a| Duration in seconds.
+a| Use buffered (0) or non-buffered (1) I/O.
 
 | `--bs=<size>[K\|M\|G]`
 a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
@@ -191,7 +191,7 @@ IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive
 +
 ```sh
 $random = $(Get-Random)
-C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=write --rwmixwrite=100 --thread --time_based --runtime=120
+C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=0 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=write --rwmixwrite=100 --thread --time_based --runtime=120
 ```
 +
 While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
@@ -209,7 +209,7 @@ While the script is running, open *Task Manager* and monitor network performance
 | Parameter | Description
 
 | `--direct=[0\|1]`
-a| Duration in seconds.
+a| Use buffered (0) or non-buffered (1) I/O.
 
 | `--bs=<size>[K\|M\|G]`
 a| Block size in bytes or KiB, MiB, or GiB (default = 64K).
