@@ -128,33 +128,46 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 
 image::manage-file-shares.gif[align="left", width=600]
 
+
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+
+. Go to the remote desktop session for your *Windows Instance 0*.
+
 . *_Click_* *Start* >> *Windows PowerShell*.
 
-. *_Copy_* the script below into your favorite text editor and replace *"dns_name"* with the DNS name of *STG326 - SAZ*. Run the updated script in the *Windows PowerShell* window.
+. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. Run the updated script in the *Windows PowerShell* window.
 +
 [source,bash]
 ----
-$FileSystem0DnsName = "dns_name" # e.g. "fs-0123456789abcdef.example.com"
-(Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
+
 ----
 +
 
-. *_Open_* a new *File Explorer* windows.
+. Complete the next few steps using the remote PowerShell session to the FSx file server.
 
-. Use UNC paths to connect to the newly created file shares. Experiment using the file system DNS name and the file server's computer name (FQDN) you found earlier. Remember to add different file shares at the end of the DNS name to make up the full UNC path (e.g. *\\fs-0123456789abcdef.example.com\application*, *\\amznfsxdduvdamf.example.com\data*, etc.).
+. Review the PowerShell function commands available using the *Amazon FSx CLI for remote management on PowerShell*. *_Run_* *Get-Command*.
 
-. Can you access file shares using either the file system's DNS name or the file server's computer name? Experiment to find the answer.
+. What commands are available?
 
-. Establish a remote PowerShell session to FSx server name.
-
-. *_Copy_* the script below into your favorite text editor and replace *"dns_name"* with the DNS name of *STG326 - SAZ*. Run the updated script in the *Windows PowerShell* window.
+. Examine your file system using the commands in the table below.
 +
-[source,bash]
-----
-$FileSystem0DnsName = "file_system_0_dns_name" # e.g. "fs-0123456789abcdef.example.com"
-(Resolve-DnsName ${FileSystem0DnsName} –Type CNAME).NameHost
-----
+|===
+| *Command*
+| Get-FSxSmbShare
+
+| Get-FSxSmbSession
+
+| Get-FSxSmbServerConfiguration
+
+| Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
+|===
 +
+
+. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
+
+. Close the PowerShell window. *_Run_* *exit*.
 
 
 == Next section
