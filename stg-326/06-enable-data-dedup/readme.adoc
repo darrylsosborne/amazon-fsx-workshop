@@ -94,9 +94,9 @@ Enable-FSxDedup
 
 === Create new data deduplication optimization schedule
 
-IMPORTANT: Read through all steps below and watch the quick video before continuing.
+// IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::new-data-dedup-schedule.gif[align="left", width=600]
+// image::new-data-dedup-schedule.gif[align="left", width=600]
 
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
@@ -111,9 +111,7 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 New-FSxDedupSchedule
 
 ----
-+
 
-+
 |===
 | *Prompt* | *Value*
 | Name
@@ -140,7 +138,7 @@ Set-FSxDedupSchedule -?
 
 . Examine the different options available to data deduplication schedule.
 
-. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
+. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm). This time is in UTC.
 
 +
 [source,bash]
