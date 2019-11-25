@@ -43,7 +43,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 * Run the updated script in the *Windows PowerShell* window.
 
 . Review the PowerShell function commands for data deduplication available using the *Amazon FSx CLI for remote management on PowerShell*.
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
 ----
@@ -55,7 +55,14 @@ Get-Command *-FSxDedup*
 . What commands are available?
 
 . Enable data depduplication for the entire FSx file system.
-* *_Run_* *Enable-FSxDedup*
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Enable-FSxDedup
+
+----
++
 
 . Examine your examine the data deduplication using the commands in the table below.
 
@@ -77,7 +84,7 @@ Get-Command *-FSxDedup*
 |===
 +
 
-* Where all these commands successful? Why not?
+* Were all these commands successful? Why not?
 * When is the next scheduled "Optimization" task?
 
 
@@ -88,10 +95,10 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::new-data-dedup-schedule.gif[align="left", width=600]
 
 
-. Complete the next few steps using the remote PowerShell session to the FSx file server.
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
 . Create a new data deduplication optimization schedule. Run the following PowerShell command using the table values when prompted.
-.
+
 * _Run_* the script in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
