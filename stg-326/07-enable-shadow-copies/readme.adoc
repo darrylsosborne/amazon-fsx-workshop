@@ -92,7 +92,7 @@ Set-FsxShadowCopySchedule -Default
 * What's the default schedule for shadow copies?
 * How much space is allocated, used, and available for shadow copies?
 
-NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore consume its storage capacity. However, shadow copies consume storage capacity only for the changed portions of ﬁles. All shadow copies stored in your ﬁle system are included in backups of your ﬁle system. Thus, when you restore a backup, users continue to have previous versions available as of the time that the ﬁle system was backed up.
+NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore consume its storage capacity. However, shadow copies consume storage capacity only for the changed portions of ﬁles. All shadow copies stored in your ﬁle system are included in backups of your ﬁle system. Thus, when you restore a backup, users continue to have previous versions available as of the time that the ﬁle system was backed up. For more information on shadow copies, please read the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/shadow-copies-fsxW.html[Working with Shadow Copies] section in the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide[Amazon FSx for Windows File Server User Guide].
 
 
 === Create a new shadow copy
