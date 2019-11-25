@@ -19,7 +19,10 @@ NOTE: It will take approximately 30 minutes to complete this section.
 
 == Step-by-step Guide
 
-IMPORTANT: Read through all steps below before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+image::test-performance.gif[align="left", width=600]
+
 
 === DiskSpd Read tests
 
@@ -134,7 +137,7 @@ a| Disables both software caching and hardware write caching.
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *TG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test read performance of the mapped **Z:** drive
 +
@@ -185,7 +188,7 @@ a| Percentage of a mixed workload that should be reads. The outstanding percenta
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *TG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test write performance of the mapped **Z:** drive
 +
