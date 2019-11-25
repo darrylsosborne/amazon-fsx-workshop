@@ -99,7 +99,7 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 
 . Create a new data deduplication optimization schedule. Run the following PowerShell command using the table values when prompted.
 
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
 ----
