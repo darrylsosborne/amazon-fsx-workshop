@@ -95,6 +95,41 @@ Set-FsxShadowCopySchedule -Default
 NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore consume its storage capacity. However, shadow copies consume storage capacity only for the changed portions of ﬁles. All shadow copies stored in your ﬁle system are included in backups of your ﬁle system. Thus, when you restore a backup, users continue to have previous versions available as of the time that the ﬁle system was backed up. For more information on shadow copies, please read the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/shadow-copies-fsxW.html[Working with Shadow Copies] section in the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide[Amazon FSx for Windows File Server User Guide].
 
 
+=== Modify shadow copy storage
+
+// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+// image::enable-shadow-copies.gif[align="left", width=600]
+
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
+
+
+. Set maximum size of shadow copy storage to 20% of the total storage capacity of the file system.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
+
++
+[source,bash]
+----
+Set-FSxShadowStorage -maxsize "20%"
+
+----
++
+
+. What other maxize options are available for shadow copies?
+
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
+
++
+[source,bash]
+----
+Set-FSxShadowStorage -?
+
+----
++
+
+* Experiment and use different options to set the maximum storage for shadow copies.
+
+
 === Create a new shadow copy
 
 // IMPORTANT: Read through all steps below and watch the quick video before continuing.
