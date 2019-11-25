@@ -40,7 +40,7 @@ fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak read throughput you achieved?
 * What was the P99 (99th %-tile) of your test?
@@ -89,7 +89,7 @@ $random = $(Get-Random)
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -c2G -s64K -w100 -t1 -o32 -b64K -Sh -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak write throughput you achieved?
 * What was the P99 (99th %-tile) of your test?
@@ -143,7 +143,7 @@ $random = $(Get-Random)
 C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
 ```
 +
-While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak read throughput?
 * What was the average read throughput?
@@ -194,7 +194,7 @@ $random = $(Get-Random)
 C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=write --rwmixwrite=100 --thread --time_based --runtime=120
 ```
 +
-While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak write throughput?
 * What was the average write throughput?
