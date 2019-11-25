@@ -240,6 +240,7 @@ Get-FSxDedupStatus
 . How many files were optimized and how much space is saved?
 * Find the corresponding Get-FSxDedupStatus output for the command attributes in the table below.
 
++
 |===
 | *Attribute*
 | LastOptimizationResult
