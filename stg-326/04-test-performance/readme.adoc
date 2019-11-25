@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will test the performance of *Amazon FSx for Windows File Server 0*.
+This section will test the performance of *STG326 - SAZ*.
 
 There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bluestop.org/fio/[fio] on the *Windows Instance 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
 
@@ -25,9 +25,9 @@ IMPORTANT: Read through all steps below before continuing.
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
-. *_Run_* the script below to create a 100 GB sparse file
+. *_Run_* the script below to create a 100 GB sparse file.
 +
 ```sh
 $random = $(Get-Random)
@@ -140,7 +140,7 @@ IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is m
 +
 ```sh
 $random = $(Get-Random)
-C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random.dat --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
+C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
 ```
 +
 While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
@@ -191,7 +191,7 @@ IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is m
 +
 ```sh
 $random = $(Get-Random)
-C:\Tools\fio-3.13-x64\fio --directory Z\:\\ --randrepeat=1 --direct=1 --name=${env:computername}-$random.dat --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=0 --thread --time_based --runtime=120
+C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=write --rwmixwrite=100 --thread --time_based --runtime=120
 ```
 +
 While the script is running, open *Task Explorer* and monitor network performance (e.g. Task Explorer >> Performance (tab) >> Ethernet).
