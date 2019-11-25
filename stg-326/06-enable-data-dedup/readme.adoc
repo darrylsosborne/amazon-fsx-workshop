@@ -109,9 +109,7 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 [source,bash]
 ----
 New-FSxDedupSchedule
-
 ----
-
 |===
 | *Prompt* | *Value*
 | Name
