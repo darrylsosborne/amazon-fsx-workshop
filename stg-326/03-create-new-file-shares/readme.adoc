@@ -84,6 +84,24 @@ a| Leave unchecked
 +
 . In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
 
+. Load sample data into the file system's default file share from the link:https://registry.opendata.aws/nasanex/[NASA NEX] project hosted on the registry of Open Data on AWS.
+
+* Go to the remote desktop session for your *Windows Instance 0*.
+
+* *_Click_* *Start* >> *Windows PowerShell*.
+
+* *_Run_* the script in the *Windows PowerShell* window.
++
+[source,bash]
+----
+Read-S3Object -BucketName nasanex -KeyPrefix /AVHRR -Folder Z:/nasanex/AVHRR
+
+----
++
+
+NOTE: It will take approximately 20 minutes to load this sample data. Continue with the next section while the data is loaded in the background.
+
+
 === Create new file shares
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
