@@ -17,130 +17,210 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to Windows Instance 0
-
-IMPORTANT: Read through all steps below before continuing.
-
-. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. Make sure you are in the same *AWS Region* as the workshop environment.
-
-. *_Select_* *Running Instances*.
-
-. *_Select_* the radio button next to the instance with the name *Windows Instance 0*.
-
-. Copy the *Public DNS (IPv4)* name of the *Windows Instance 0* instance.
-
-. Launch your remote desktop application and create a new connection.
-
-. Use the DNS name copied above as the host name of the new connection.
-
-. Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
-
-. Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. *_Select_* the *Secret name* link for *Password-<GUID>*.
-
-. *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
-
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance 0* instance for the remote desktop session.
-
-. *_Click_* *Start* >> *Windows PowerShell*.
-
-. Run the script below in the *Windows PowerShell* window.
-+
-[source,bash]
-----
-$env:computername
-----
-+
-. *_Copy_* and *_paste_* the *Computer name* or *Hostname* of *Namespace Server 0* to your favorite editor on your local machine. You will need this name in a few steps.
-
-. *_Repeat_* the steps above for *Namespace Server 1*.
-
-IMPORTANT: Repeat the steps above for *Namespace Server 1*. You must have the *Computer name* or *Hostname* of both *Namespace Server 0* and *Namespace Server 1* before continuing.
-
-=== Create DFS Namespace
+=== Enable data deduplication
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::create-dfs-namespace.gif[align="left", width=600]
+image::enable-data-dedup.gif[align="left", width=600]
 
-. *_Close_* the remote desktop session for *Namespace Server 1*.
 
-Complete the following steps from the remote desktop session for *Namespace Server 0*.
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com) and paste it to replace *"windows_remote_powershell_endpoint"* in the script.
 
-. *_Click_* *Start*.
+. Go to the remote desktop session for your *Windows Instance 0*.
 
-. *_Type_* *dfsmgmt.msc*.
+. *_Click_* *Start* >> *Windows PowerShell*.
 
-. From the *DFS Management* Console, *_select_* *Action* >> *New Namespace...*.
-
-. *_Paste_* the computer name or hostname of *Namespace Server 0* in *Server:* text box and *_click_* *Next*.
-
-. *_Enter_* *corp* as the name of the namespace.
-
-. *_Click_* *Next*.
-
-. Accept the defaults of the *Namespace Type* window. *Domain-based namespace* and *Enable Windows Server 2008 mode* should both be selected.
-
-. *_Click_* *Next*.
-
-. *_Click_* *Create*.
-
-. *_Click_* *Close*.
-
-. *_Expand_* *Namespaces* and *_select_* the namespace *\\example.com\corp*.
-
-. From the *DFS Management* Console, *_select_* *Action* >> *New Namespace Server...*.
-
-. *_Paste_* the computer name or hostname of *Namespace Server 1* in *Server:* text box and *_click_* *Ok*.
-
-. *_Select_* the *Namespace Servers* tab and verify both namespace servers are listed.
-
-. From the *DFS Management* Console, *_select_* *Action* >> *New Folder...*.
-
-. *_Enter_* *share* in the Name: text box field and *_click_* *Add*.
-
-. *_Enter_* the UNC path of the default share of *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\share).
-
-. *_Click_* *Ok*.
-
-. *_Click_* *Ok*.
+. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*
+* From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com) and paste it to replace *"windows_remote_powershell_endpoint"* in the script.
+* Run the updated script in the *Windows PowerShell* window.
 +
-You should now have a new folder named *share* listed under the *corp* namespace.
+[source,bash]
+----
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
+
+----
 +
-. *_Follow_* the steps above and create new folders for the following shares:
+
+. Complete the next few steps using the remote PowerShell session to the FSx file server.
+
+. Review the PowerShell function commands for data deduplication available using the *Amazon FSx CLI for remote management on PowerShell*.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Get-Command *-FSxDedup*
+
+----
++
+
+. What commands are available?
+
+. Enable data depduplication for the entire FSx file system.
+* *_Run_* *Enable-FSxDedup*
+
+. Examine your examine the data deduplication using the commands in the table below.
+
 +
 |===
-| *Folder name* | *Folder target*
-| data
-| UNC path of *data* share on *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\data)
+| *Command*
+| Get-FSxDedupConfiguration
 
-| finance
-| UNC path of *data* share on *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\finance)
+| Get-FSxDedupStatus
 
-| sales
-| UNC path of *data* share on *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\sales)
+| Get-FSxDedupJob
 
-| marketing
-| UNC path of *data* share on *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\marketing)
+| Get-FSxDedupMetadata
+
+| Get-FSxDedupSchedule
+
+| Measure-FSxDedupFileMetadata -path "D:\share"
+
 |===
++
+
+* Where all these commands successful? Why not?
+* When is the next scheduled "Optimization" task?
 
 
-=== Access the new Namespace folders
+=== Create new data deduplication optimization schedule
 
-. *_Open_* a new *File Explorer* window.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-. Use UNC paths to connect to the newly created DFS Namespace folders (e.g. *\\example.com\corp\share*, *\\example.com\corp\data*, etc.).
+image::new-data-dedup-schedule.gif[align="left", width=600]
 
-. Create new test files in the *\\example.com\corp\share* folder. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
 
-. Experiment and create new test files in all Namespace folders.
+. Complete the next few steps using the remote PowerShell session to the FSx file server.
+
+. Create a new data deduplication optimization schedule. Run the following PowerShell command using the table values when prompted.
+.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+New-FSxDedupSchedule
+
+----
++
+
++
+|===
+| *Prompt* | *Value*
+| Name
+| DailyOptimization
+
+| Type
+| Optimization
+
+|===
++
+
+. What time will the optimization start?
+. Examine the different options available to data deduplication jobs.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Set-FSxDedupSchedule -?
+
+----
++
+
+. Examine the different options available to data deduplication schedule.
+
+. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
+
+* Run the updated script in the *Windows PowerShell* window.
++
+[source,bash]
+----
+Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
+----
++
+* Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Get-FSxDedupStatus
+
+----
++
+. Did the optimization schedule run?
+* Look at the LastOptimizationTime value of the Get-FSxDedupStatus output.
+. How many files were optimized and how much space is saved?
+* Find the corresponding Get-FSxDedupStatus output for the command attributes in the table below
++
+|===
+| *Attribute*
+| LastOptimizationResult
+
+| OptimizedFilesCount
+
+| OptimizedFilesSavingsRate
+
+| OptimizedFilesSize
+
+| SavedSpace
+|===
++
+. Do you see any optimization? Why not?
+. Quickly read the *_Enabling data deduplication_* section of the From the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-data-dedup.html[Amazon FSx for Windows File Server User Guide] to find the answer.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Get-FSxDedupConfiguration
+
+----
++
+. What is the MinimumFileAgeDays attribute value?
+. Update the data deduplication configuration and set the minimum file age days attribute to 0.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Set-FSxDedupConfiguration -MinimumFileAgeDays 0
+
+----
++
+. Update the DailyOptimization data deduplication schedule to run in 2 minutes.
+. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
+
+* Run the updated script in the *Windows PowerShell* window.
++
+[source,bash]
+----
+Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
+----
++
+* Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
+* _Run_* the script in the *Remote Windows PowerShell Session*.
++
+[source,bash]
+----
+Get-FSxDedupStatus
+
+----
++
+. Did the optimization schedule run?
+* Look at the LastOptimizationTime value of the Get-FSxDedupStatus output.
+. How many files were optimized and how much space is saved?
+* Find the corresponding Get-FSxDedupStatus output for the command attributes in the table below
++
+|===
+| *Attribute*
+| LastOptimizationResult
+
+| OptimizedFilesCount
+
+| OptimizedFilesSavingsRate
+
+| OptimizedFilesSize
+
+| SavedSpace
+|===
++
 
 
 == Next section
