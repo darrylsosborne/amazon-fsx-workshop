@@ -120,6 +120,7 @@ New-FSxDedupSchedule
 
 |===
 +
+
 . What time will the optimization start?
 
 . Examine the different options available to data deduplication jobs.
