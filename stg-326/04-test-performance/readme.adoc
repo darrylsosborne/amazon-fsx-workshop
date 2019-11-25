@@ -9,7 +9,7 @@
 
 This section will test the performance of *STG326 - SAZ*.
 
-There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bluestop.org/fio/[fio] on the *Windows Instance 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
+There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bsdio.com/fio/[fio] on the *Windows Instance 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
 
 
 == Duration
@@ -80,7 +80,7 @@ a| Disable software caching.
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the DiskSpeed script below to test write performance of the mapped **Z:** drive
 +
@@ -134,7 +134,7 @@ a| Disables both software caching and hardware write caching.
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *TG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test read performance of the mapped **Z:** drive
 +
@@ -185,7 +185,7 @@ a| Percentage of a mixed workload that should be reads. The outstanding percenta
 
 . From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
 +
-IMPORTANT: This section assumes that *Amazon FSx for Windows File Server 0* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *Amazon FSx for Windows File Server 0* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *TG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
 . Run the fio script below to test write performance of the mapped **Z:** drive
 +
@@ -201,7 +201,7 @@ While the script is running, open *Task Explorer* and monitor network performanc
 * What was the average IOPS?
 * How many GB did you write in 120 seconds?
 +
-. Experiment with different fio parameter settings. Use the table below as a guide. Test with direct I/O enabled or disabled (--direct), different block sizes (--bs), number of outstanding I/O requests (--iodepth), number of jobs (--numjobs), random read, random write, sequential read, sequential write (--readwrite), and mixture of reads and writes (--rwmixread).
+. Experiment with different fio parameter settings. Use the table below as a guide. Test with direct I/O enabled or disabled (--direct), different block sizes (--bs), number of outstanding I/O requests (--iodepth), number of jobs (--numjobs), random read, random write, sequential read, sequential write (--readwrite), and mixture of reads and writes (--rwmixwrite).
 
 +
 [cols="3,10"]
@@ -223,8 +223,8 @@ a| Type of I/O pattern (read = sequential read; write = sequential write; randre
 | `--iodepth=<count>`
 a| Number of I/O units to keep in flight against the file.
 
-| `--rwmixread=<percent>`
-a| Percentage of a mixed workload that should be reads. The outstanding percentage will be writes.
+| `--rwmixwrite=<percent>`
+a| Percentage of a mixed workload that should be writes. The outstanding percentage will be reads.
 
 |===
 +
