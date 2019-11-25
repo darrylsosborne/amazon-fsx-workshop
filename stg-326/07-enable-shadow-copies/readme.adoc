@@ -1,116 +1,132 @@
-= Setup DFS Replication
+= Enable shadow copies
 :toc:
 :icons:
 :linkattrs:
 :imagesdir: ../resources/images
 
-
 == Summary
 
-This section will setup a DFS Replication.
-
-You use Microsoft PowerShell to setup DFS Replication for Amazon FSx for Windows File Server.
+This section will enable shadow copies for the entire file system.
 
 
 == Duration
 
-NOTE: It will take approximately 30 minutes to complete this section.
+NOTE: It will take approximately 15 minutes to complete this section.
 
 
 == Step-by-step Guide
 
-=== Connect to the Namespace server 0
+=== Start remote PowerShell session
 
-IMPORTANT: Read through all steps below before continuing.
+// IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-You should already have a remote desktop session open for *Namespace Server 0*.
+// image::enable-shadow-copies.gif[align="left", width=600]
 
-. *_Close_* all open applications, windows, etc.
+NOTE: If you still have your remote PowerShell session available from the previous sesion then please skip to the *Enable shadow copies* section.
 
-. *_Open_* a new *PowerShell* window as *Administrator* (e.g. *Start >> *_context-click_* *Window PowerShell* >> *More* >> *Run as Administrator*)
+. Go to the remote desktop session for your *Windows Instance 0*.
 
-. *_Copy_* the script below and run it in the *Administrator: Windows PowerShell* window.
-+
-[source,bash]
-----
-$Group = "Group" # e.g. "ReplicationGroup"
-$Folder = "Folder" # e.g. "folder"
+. *_Click_* *Start* >> *Windows PowerShell*.
 
-New-DfsReplicationGroup -GroupName ${Group}
-Grant-DfsrDelegation -GroupName ${Group} –AccountName "FSxAdmins" –Force
-New-DfsReplicatedFolder -GroupName ${Group} -FolderName ${Folder}
-
-----
-+
-
-. *_Copy_* the script below into your favorite text editor and replace *"Amazon FSx for Windows File Server 0"* with the DNS name of *Amazon FSx Windows File Server 0* and replace *"Amazon FSx for Windows File Server 1"* with the DNS name of *Amazon FSx Windows File Server 1*.  Run the updated script in the *Administrator: Windows PowerShell* window.
-+
-[source,bash]
-----
-$FirstFSDnsName = "Amazon FSx for Windows File Server 0" # e.g. "fs-abcdef0123456789.example.com"
-$RestoredFSDnsName = "Amazon FSx for Windows File Server 1" # e.g. "fs-0123456789abcdef.example.com"
-$FirstFSComputerName = (Resolve-DnsName ${FirstFSDnsName} -Type CNAME).NameHost
-$RestoredFSComputerName = (Resolve-DnsName ${RestoredFSDnsName} -Type CNAME).NameHost
-
-----
-+
-
-. *_Copy_* the script below and run it in the *Administrator: Windows PowerShell* window.
+. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*
 
 +
 [source,bash]
 ----
-Add-DfsrMember -GroupName ${Group} -ComputerName ${FirstFSComputerName}
-Add-DfsrMember -GroupName ${Group} -ComputerName ${RestoredFSComputerName}
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
 
 ----
 +
 
-. *_Copy_* the script below and run it in the *Administrator: Windows PowerShell* window.
+* From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com) and paste it to replace *"windows_remote_powershell_endpoint"* in the script.
+* Run the updated script in the *Windows PowerShell* window.
+
+=== Enable shadow copies
+
+// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+// image::enable-shadow-copies.gif[align="left", width=600]
+
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
+
+
+. Review the PowerShell function commands for shadow copies available using the *Amazon FSx CLI for remote management on PowerShell*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
 ----
-$FirstFSReplicationPath = "D:\Share"
-$RestoredFSReplicationPath = "D:\Share"
-
-Set-DfsrMembership –GroupName ${Group} –FolderName ${Folder} –ContentPath ${FirstFSReplicationPath} –ComputerName ${FirstFSComputerName} –PrimaryMember $True -Force
-Set-DfsrMembership –GroupName ${Group} –FolderName ${Folder} –ContentPath ${RestoredFSReplicationPath} –ComputerName ${RestoredFSComputerName} –PrimaryMember $False -Force
+Get-Command *-FSxShadow*
 
 ----
 +
 
-. *_Copy_* the script below and run it in the *Administrator: Windows PowerShell* window.
+. What commands are available?
+
+. Set shadow copy storage for the entire FSx file system. The default shadow copy storage setting lets shadow copies consume a maximum of 10 percent of your file system. The default schedule automatically takes shadow copies every Monday, Tuesday, Wednesday, Thursday, and Friday, at 7:00 AM and 12:00 PM UTC.
+* *_Run_* the script in the *Remote Windows PowerShell Session*. *_Enter_* *A* for *Yes to All* when prompted to confirm.
 
 +
 [source,bash]
 ----
-Add-DfsrConnection -GroupName ${Group} -SourceComputerName ${FirstFSComputerName} -DestinationComputerName ${RestoredFSComputerName}
+Set-FsxShadowStorage -Default
+Set-FsxShadowCopySchedule -Default
 
 ----
-
-
-=== Test DFS Replication
-
-
-. *_Open_* a new *File Explorer* window.
-
-. Use the UNC path to connect to the default share of *Amazon FSx for Windows File Server 0* (e.g. \\fs-0123456789abcdef.example.com\share).
-
-. *_Open_* a second *File Explorer* window.
-
-. Use the UNC path to connect to the default share of *Amazon FSx for Windows File Server 1* (e.g. \\fs-9876543210abcdef.example.com\share).
-+
-TIP: It may take approximately 5 minutes for replication to start.
 +
 
-. Once you see the same files in both file systems, create new files in both file systems (e.g. *_context-click_* >> New >> Text Document.
-+
-* How long does it take for the newly created files to show up in the replicated file system?
+. Examine the default shadow copy configuration using the commands in the table below.
 
-. Experiment with different techniques to create files on a file system and see them get replicated.
 +
-TIP: Use the remote desktop session to the *Windows Server 0* instance to create new files using DiskSpd, fio, or fsutil. Change the path to use the new DFS Namespace (\\example.com\corp\share) or even the UNC path for *Amazon FSx for Windows File Server 1*.
+|===
+| *Command*
+| Get-FSxShadowCopies
+
+| Get-FSxShadowCopySchedule
+
+| Get-FSxShadowStorage
+|===
++
+
+* What's the default schedule for shadow copies?
+* How much space is allocated, used, and available for shadow copies?
+
+NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore consume its storage capacity. However, shadow copies consume storage capacity only for the changed portions of ﬁles. All shadow copies stored in your ﬁle system are included in backups of your ﬁle system. Thus, when you restore a backup, users continue to have previous versions available as of the time that the ﬁle system was backed up.
+
+
+=== Create a new shadow copy
+
+// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+// image::new-data-dedup-schedule.gif[align="left", width=600]
+
+
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
+
+. Create an new shadow copy of the file system.
+
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
+
++
+[source,bash]
+----
+New-FSxShadowCopy
+----
++
+
+. From *File Explorer*, modify one of the test files you created when you first mapped the default file share (e.g. New Text Document, or New Rich Text Document).
+* Add something new to the document, like your name.
+* Save and close the document.
+* Open the document again to verify the changes.
+* *_Context-click (right-click)_* the file and *_select_* *Restore previous versions*.
+* *_Select_* the *Open* button to open and examine the previous version of the file. It should be empty.
+* *_Close_* the file.
+* *_Select_* the *Restore* button to restore the file to the previous version. Confirm this by *_selecting_* *Restore* on the *Previous version* pop-up window.
+* *Select* *OK* and *OK*.
+* Open the document again to verify the file was restored to the previous version - an empty file.
+
+. Experiment creating new files, folders, and taking shadow copies.
 
 
 == Next section
