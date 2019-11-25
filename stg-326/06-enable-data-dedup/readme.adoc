@@ -111,8 +111,7 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 New-FSxDedupSchedule
 
 ----
-+
-+
+
 |===
 | *Prompt* | *Value*
 | Name
@@ -122,7 +121,7 @@ New-FSxDedupSchedule
 | Optimization
 
 |===
-+
+
 
 . What time will the optimization start?
 
