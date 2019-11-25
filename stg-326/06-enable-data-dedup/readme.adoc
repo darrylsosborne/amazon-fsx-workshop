@@ -135,8 +135,6 @@ Set-FSxDedupSchedule -?
 ----
 +
 
-. Examine the different options available to data deduplication schedule.
-
 . *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm). This time is in UTC.
 
 +
@@ -148,9 +146,9 @@ Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 
 * Run the updated script in the *Windows PowerShell* window.
 
-* Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
+* Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check the status.
 
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -185,7 +183,7 @@ Get-FSxDedupStatus
 
 . Do you see any optimization? Why not?
 
-. Quickly read the *_Enabling data deduplication_* section of the From the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-data-dedup.html[Amazon FSx for Windows File Server User Guide] to find the answer.
+. Quickly read the *_Enabling data deduplication_* section of the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-data-dedup.html[Amazon FSx for Windows File Server User Guide] to find the answer.
 
 * *_Run_* the script in the *Remote Windows PowerShell Session*.
 
@@ -201,7 +199,7 @@ Get-FSxDedupConfiguration
 
 . Update the data deduplication configuration and set the minimum file age days attribute to 0.
 
-* _Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the script in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -215,14 +213,14 @@ Set-FSxDedupConfiguration -MinimumFileAgeDays 0
 
 . *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
 
-* *_Run_* the updated script in the *Windows PowerShell* window.
-
 +
 [source,bash]
 ----
 Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 ----
 +
+
+* *_Run_* the updated script in the *Windows PowerShell* window.
 
 * Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
 
@@ -240,7 +238,7 @@ Get-FSxDedupStatus
 * Look at the LastOptimizationTime value of the Get-FSxDedupStatus output.
 
 . How many files were optimized and how much space is saved?
-* Find the corresponding Get-FSxDedupStatus output for the command attributes in the table below
+* Find the corresponding Get-FSxDedupStatus output for the command attributes in the table below.
 
 +
 |===
