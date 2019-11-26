@@ -158,7 +158,7 @@ Close-FSxSmbOpenFile
 
 Click the button below to go to the next section.
 
-image::09-enable-ca-share-setup-sql.png[link=../09-enable-ca-share-setup-sql/, align="left",width=420]
+image::09-enable-ca-share.png[link=../09-enable-ca-share/, align="left",width=420]
 
 
 
