@@ -94,7 +94,7 @@ NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::modify-shadow-copy-storage.gif[align="left", width=600]
+image::modify-shadow-copies.gif[align="left", width=600]
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
