@@ -1,4 +1,4 @@
-= Enable Continuous Access share and setup SQL Server
+= Enable Continuous Access share
 :toc:
 :icons:
 :linkattrs:
@@ -7,61 +7,80 @@
 
 == Summary
 
-This section will enable Continuous Access for a share and setup High Availability (HA) Microsoft SQL Server.
+This section will create a Continuous Access (CA) share for High Availability (HA) Microsoft SQL Server for active database files.
+
+Microsoft SQL Server can be deployed with an SMB file share as the storage option for active data files. Amazon FSx is optimized to provide shared storage for SQL Server databases by supporting Continuously Available (CA) file shares, which are designed for applications such as SQL Server that require uninterrupted access to shared file data.
+
 
 == Duration
 
-NOTE: It will take approximately 15 minutes to complete this section.
+NOTE: It will take approximately 10 minutes to complete this section.
 
 
 == Step-by-step Guide
 
-TIP: We need to manually delete the AWS resources created outside the CloudFormation template (e.g. one CloudWatch alarm and one FSx file system). All other AWS resources created in the workshop environment will be deleted when you delete the CloudFormation stack.
+=== Enable Continuous Access share
 
-IMPORTANT: Read through all steps below and watch the quick video before continuing.
+//IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::delete-workshop-environment.gif[align="left", width=600]
+//image::connect-windows-instance.gif[align="left", width=600]
 
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard.
 
-=== Delete the *High throughput alarm* from *CloudWatch*
+. Go to the remote desktop session for your *Windows Instance 0*.
 
-IMPORTANT: Read through all steps below before continuing.
+. *_launch_* *File Explorer*.
 
-. Open the link:https://console.aws.amazon.com/cloudwatch/[Amazon CloudWatch] console.
+. *_Context-click_* *This PC* and *_select_* *Map network drive...*
+
+. Map the file share using the following information:
 +
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
+[cols="3,10"]
+|===
+| *Drive*
+a| Y:
+
+| *Folder*
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\d$* to the end of the *DNS Name* to complete the UNC path to the file system's hidden administrative share (e.g. \\fs-0123456789abcdef.example.com\d$).
+
+| *Reconnect at sign-in*
+a| Leave checked
+
+| *Connect using different credentials*
+a| Leave unchecked
+|===
 +
-. Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
-. *_Select_* *Alarms* from the left navigation pane.
-. *_Click_* the *check box* next to the *High throughput alarm - fs-...* alarm.
-. *_Click_* the *Actions* button then *Delete*.
-. *_Click_* *Delete* to confirm you want to delete the *High throughput alarm - fs-...* alarm.
+. In the *File Explorer* window of the *Y:* drive, create new folder. *_Context-click_* >> *New* >> *Folder*. Name the folder *sql*.
 
+. *_Click_* *Start* >> *Windows PowerShell*.
 
-=== Delete *Amazon FSx for Windows File Server 1*
+. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - MAZ*
 
-IMPORTANT: Read through all steps below before continuing.
-
-. Open the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console.
 +
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
+[source,bash]
+----
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
+
+----
 +
-. Make sure you are in the same *AWS Region* where you *_created_* your workshop environment.
-. *_Click_* the *radio button* next to the *Amazon FSx for Windows File Server 1* file system.
-. *_Click_* the *Actions* button then *Delete file system*.
-. *_Click_* *No* to create final backup.
-. *_Click_* the *check box* to acknowledge that all automated backups will no longer be available.
-. *_Copy_* the file system ID and *_paste_* it in the *File system ID* field.
-. *_Click_* *Delete* to delete the file system.
+
+* Run the updated script in the *Windows PowerShell* window.
+
+. *_Run_* the script in the *Remote Windows PowerShell Session*.
+
++
+[source,bash]
+----
+New-FSxSmbShare -Name "SQL CA Share" -Path "D:\sql" -Description "SQL CA share" -ContinuouslyAvailable $True -FolderEnumerationMode AccessBased -EncryptData $true
+
+----
++
+
+Windows Server Failover Cluster deployments commonly deploy an SMB file share witness to maintain quorum of the cluster’s resources. Witness file shares require only a small amount of storage for quorum information. Amazon FSx file systems can be used as an SMB file share witness for Windows Server Failover Cluster deployments.
 
 
 === End *Workshop*
 
 IMPORTANT: There is no need to manually delete workshop resources. The workshop environment will be cleaned up by the workshop administrators.
-
-
-
-IMPORTANT: It may take approximately 20 minutes to delete all AWS resources created by the CloudFormation template. Check the status periodically to verify all resources have been delete.
-
-
 
