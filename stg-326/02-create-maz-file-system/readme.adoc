@@ -62,7 +62,7 @@ a| *_Select_* - *example.com \| d-...*
 | *Encryption key*
 a| *_Accept_* the default - *(default)aws/fsx*
 | *Maintenance preferences - _optional_*
-a| *_Select_* the triangle to expand
+a| *_Select_* the arrow to expand
 | *Daily automatic backup window*
 a| *_Select_* - *No preferences*
 | *Automatic backup retention period*
