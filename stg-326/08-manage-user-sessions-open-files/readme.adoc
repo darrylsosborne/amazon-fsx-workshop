@@ -118,7 +118,7 @@ Get-Command *SmbSession*
 +
 
 . What commands are available to manage open files?
-. Run the command in the *Remote Windows PowerShell Session* window.
+* *_Run_* the command in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
