@@ -70,7 +70,7 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:
 +
 TIP: Check your email. You should eventually get a High Throughput Alarm email.
 +
-. *_Context-click (right-click)_* the new open file (e.g. D:\share\EC2AMAZ-xxxxxx-xxxxx.dat) and *_select_* *Close Open File*. *_Select_* *Yes* and the prompt window.
+. *_Context-click (right-click)_* the new open file (e.g. D:\share\EC2AMAZ-xxxxxx-xxxxx.dat) and *_select_* *Close Open File*. *_Select_* *Yes* at the prompt window.
 
 . What happened to the open file?
 
@@ -100,7 +100,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 +
 
 . What commands are available to manage user sessions?
-* Run the script in the *Remote Windows PowerShell Session* window.
+. Run the script in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
@@ -110,7 +110,7 @@ Get-Command *SmbSession*
 +
 
 . What commands are available to manage open files?
-* Run the script in the *Remote Windows PowerShell Session* window.
+. Run the script in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
@@ -127,7 +127,7 @@ Get-Command *Open*
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 . While the script is running, go back to the *Remote Windows PowerShell Session* window.
-* Run the script in the *Remote Windows PowerShell Session* window.
+. Run the script in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
@@ -137,7 +137,7 @@ Get-FSxSmbOpenFile
 +
 . Do you see an open file?
 . Close the open file.
-* Run the script in the *Remote Windows PowerShell Session* window. *_Enter_* *A* for *Yes to All* at the prompt.
+. Run the script in the *Remote Windows PowerShell Session* window. *_Enter_* *A* for *Yes to All* at the prompt.
 +
 [source,bash]
 ----
