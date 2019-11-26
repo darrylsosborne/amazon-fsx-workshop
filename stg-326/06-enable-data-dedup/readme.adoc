@@ -308,6 +308,10 @@ Get-FSxDedupStatus
 | SavedSpace
 |===
 
+. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
+
+. Close the PowerShell window. *_Run_* *exit*.
+
 == Next section
 
 Click the button below to go to the next section.
