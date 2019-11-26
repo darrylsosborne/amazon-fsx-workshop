@@ -21,9 +21,9 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 === Manage user sessions and open files using the UI
 
-//IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-//image::connect-windows-instance.gif[align="left", width=600]
+image::manage-sessions-files-ui.gif[align="left", width=600]
 
 . From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard.
 
@@ -75,6 +75,8 @@ TIP: Check your email. You should eventually get a High Throughput Alarm email.
 . What happened to the open file?
 
 . What happened to the DiskSpd command in the PowerShell window?
+
+. Close the PowerShell window. *_Run_* *exit*.
 
 . Close the *Shared Folders* Console.
 
