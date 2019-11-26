@@ -128,14 +128,14 @@ image::create-new-file-shares.gif[align="left", width=600]
 . Complete the *Create A Shared Folder Wizard*, creating new shares with the following attributes:
 +
 |===
-| *Share name* | *Folder path* | *Create new path* | *Shared folder permissions*
-| application
+| *Folder path* | *Share name* | *Create new path* | *Shared folder permissions*
 | D:\application
+| application
 | Yes
 | Customize permissions >> Everyone Full Control
 
-| data
 | D:\data
+| data
 | Yes
 | Customize permissions >> Everyone Full Control
 |===
