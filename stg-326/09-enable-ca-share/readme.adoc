@@ -87,6 +87,16 @@ New-FSxSmbShare -Name "SQL CA Share" -Path "D:\sql" -Description "SQL CA share" 
 ----
 +
 
+. Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
++
+TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
++
+. *_Select_* the *Secret name* link for *Password-<GUID>*.
+
+. *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
+
+. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate the *Windows PowerShell Credentials Request* window.
+
 Windows Server Failover Cluster deployments commonly deploy an SMB file share witness to maintain quorum of the cluster’s resources. Witness file shares require only a small amount of storage for quorum information. Amazon FSx file systems can be used as an SMB file share witness for Windows Server Failover Cluster deployments.
 
 

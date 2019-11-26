@@ -269,6 +269,16 @@ Get-FSxDedupStatus
 . Did the optimization schedule run?
 * Look at the LastOptimizationTime value of the Get-FSxDedupStatus output.
 
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
+
++
+[source,bash]
+----
+Update-FSxDedupStatus
+
+----
++
+
 . The active data deduplication job may still be running. *_run_* the following command in the *Remote Windows PowerShell Session* to check on the status of the data deduplication job.
 +
 [source,bash]
