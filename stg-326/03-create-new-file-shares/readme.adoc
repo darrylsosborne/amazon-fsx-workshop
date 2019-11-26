@@ -65,7 +65,7 @@ image::map-default-file-share.gif[align="left", width=600]
 
 . Once you've logged on to the *Windows Instance 0* instance, *_launch_* *File Explorer*.
 
-. *_Context-click_* *This PC* and *_select_* *Map network drive...*
+. *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
 
 . Map the file share using the following information:
 +
@@ -84,7 +84,7 @@ a| Leave checked
 a| Leave unchecked
 |===
 +
-. In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click_* >> *New* >> *Text Document*. Create a few different types of test files.
+. In the *File Explorer* window of the *Z:* drive, create new test files. *_Context-click (right-click)_* >> *New* >> *Text Document*. Create a few different types of test files.
 
 . Load sample data into the file system's default file share from the link:https://registry.opendata.aws/nasanex/[NASA NEX] project hosted on the registry of Open Data on AWS.
 
@@ -125,7 +125,7 @@ image::create-new-file-shares.gif[align="left", width=600]
 
 . With the *Shares* folder selected, *_click_* *Action* >> *New Share...* from the menu.
 
-. Complete the *Create A Shared Folder Wizard*, creating new shares using on the following attributes:
+. Complete the *Create A Shared Folder Wizard*, creating new shares with the following attributes:
 +
 |===
 | *Share name* | *Folder path* | *Create new path* | *Shared folder permissions*
