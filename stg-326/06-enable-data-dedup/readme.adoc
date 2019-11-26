@@ -44,7 +44,9 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 
 . *_Run_* the updated script in the *Windows PowerShell* window.
 
-. Complete the next few steps using the remote PowerShell session to the FSx file server.
++
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
++
 
 . Review the PowerShell function commands for data deduplication available using the *Amazon FSx CLI for remote management on PowerShell*.
 * *_Run_* the command in the *Remote Windows PowerShell Session*.

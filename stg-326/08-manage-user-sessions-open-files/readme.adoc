@@ -83,15 +83,11 @@ TIP: Check your email. You should eventually get a High Throughput Alarm email.
 
 === Manage user sessions and open files using the Amazon FSx CLI for Remote Management on PowerShell.
 
-//IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-//image::connect-windows-instance.gif[align="left", width=600]
+image::cmanage-sessions-files-cli.gif[align="left", width=600]
 
-. Open a new *Windows PowerShell* window.
-
-* *_Click_* *Start* >> *Windows PowerShell*.
-
-. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. Run the updated script in the *Windows PowerShell* window.
+. *_Copy_* the script below into your favorite text editor.
 +
 [source,bash]
 ----
@@ -101,8 +97,18 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 ----
 +
 
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+
+. Return to your favorit text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. *_Copy_* the updated script.
+
+. Go to the remote desktop session for your *Windows Instance 0*.
+
+. *_Click_* *Start* >> *Windows PowerShell*.
+
+. *_Run_* the updated script in the *Windows PowerShell* window.
+.
 . What commands are available to manage user sessions?
-. Run the script in the *Remote Windows PowerShell Session* window.
+* *_Run_* the command in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
@@ -112,7 +118,7 @@ Get-Command *SmbSession*
 +
 
 . What commands are available to manage open files?
-. Run the script in the *Remote Windows PowerShell Session* window.
+. Run the command in the *Remote Windows PowerShell Session* window.
 +
 [source,bash]
 ----
@@ -121,15 +127,21 @@ Get-Command *Open*
 ----
 +
 
-. Go back to the *Windows PowerShell Session* window, NOT the *Remote Windows PowerShell* window.
+. Open a new *Windows PowerShell* window.
+
+* *_Click_* *Start* >> *Windows PowerShell*.
+
 +
-. Run the DiskSpeed script below to test read performance of the mapped **Z:** drive
+. Run the DiskSpeed script below to test read performance of the mapped **Z:** drive in the new *Windows PowerShell* window.
 +
 ```sh
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
-. While the script is running, go back to the *Remote Windows PowerShell Session* window.
+
+. While the command is running, go back to the *Remote Windows PowerShell Session* window.
+
 . Run the script in the *Remote Windows PowerShell Session* window.
+
 +
 [source,bash]
 ----
@@ -137,9 +149,13 @@ Get-FSxSmbOpenFile
 
 ----
 +
+
 . Do you see an open file?
+
 . Close the open file.
+
 . Run the script in the *Remote Windows PowerShell Session* window. *_Enter_* *A* for *Yes to All* at the prompt.
+
 +
 [source,bash]
 ----
@@ -147,6 +163,7 @@ Close-FSxSmbOpenFile
 
 ----
 +
+
 . What happened to the open file?
 
 . What happened to the DiskSpd command in the other PowerShell window?
