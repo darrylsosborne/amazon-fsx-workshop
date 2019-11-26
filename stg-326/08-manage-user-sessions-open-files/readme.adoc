@@ -85,7 +85,7 @@ TIP: Check your email. You should eventually get a High Throughput Alarm email.
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::cmanage-sessions-files-cli.gif[align="left", width=600]
+image::manage-sessions-files-cli.gif[align="left", width=600]
 
 . *_Copy_* the script below into your favorite text editor.
 +
