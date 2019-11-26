@@ -47,7 +47,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 . Complete the next few steps using the remote PowerShell session to the FSx file server.
 
 . Review the PowerShell function commands for data deduplication available using the *Amazon FSx CLI for remote management on PowerShell*.
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -60,7 +60,7 @@ Get-Command *-FSxDedup*
 . What commands are available?
 
 . Enable data depduplication for the entire FSx file system.
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -96,16 +96,16 @@ Enable-FSxDedup
 
 === Create new data deduplication optimization schedule
 
-// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-// image::new-data-dedup-schedule.gif[align="left", width=600]
+image::new-data-dedup-schedule.gif[align="left", width=600]
 
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
 . Create a new data deduplication optimization schedule. Run the following PowerShell command using the table values when prompted.
 
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -127,7 +127,7 @@ New-FSxDedupSchedule
 . What time will the optimization start?
 
 . Examine the different options available to data deduplication jobs.
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -137,7 +137,7 @@ Set-FSxDedupSchedule -?
 ----
 +
 
-. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm). This time is in UTC.
+. *_Copy_* the command below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm). This time is in UTC.
 
 +
 [source,bash]
@@ -146,11 +146,11 @@ Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 ----
 +
 
-* Run the updated script in the *Windows PowerShell* window.
+* Run the updated command in the *Windows PowerShell* window.
 
 * Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check the status.
 
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -187,7 +187,7 @@ Get-FSxDedupStatus
 
 . Quickly read the *_Enabling data deduplication_* section of the link:https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-data-dedup.html[Amazon FSx for Windows File Server User Guide] to find the answer.
 
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -201,7 +201,7 @@ Get-FSxDedupConfiguration
 
 . Update the data deduplication configuration and set the minimum file age days attribute to 0.
 
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
@@ -213,7 +213,7 @@ Set-FSxDedupConfiguration -MinimumFileAgeDays 0
 
 . Update the DailyOptimization data deduplication schedule to run in 2 minutes.
 
-. *_Copy_* the script below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
+. *_Copy_* the command below into your favorite text editor and update the *start_time* parameter with the current time plus 2 minutes. Look at the clock in bottom right corner of the remote desktop window. Add 2 minutes to this time and replace the *start_time* parameter with this value. (i.e. 5:32pm)
 
 +
 [source,bash]
@@ -222,11 +222,11 @@ Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 ----
 +
 
-* *_Run_* the updated script in the *Windows PowerShell* window.
+* *_Run_* the updated command in the *Remote Windows PowerShell Session*.
 
 * Wait for the time of the DailyOptimization scheduled job to pass (i.e. 1 minute after the start_time you entered above) and run the command below to check on the status.
 
-* *_Run_* the script in the *Remote Windows PowerShell Session*.
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 
 +
 [source,bash]
