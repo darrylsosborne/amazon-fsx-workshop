@@ -12,7 +12,7 @@ This section will enable data deduplication.
 
 == Duration
 
-NOTE: It will take approximately 15 minutes to complete this section.
+NOTE: It will take approximately 20 minutes to complete this section.
 
 
 == Step-by-step Guide
