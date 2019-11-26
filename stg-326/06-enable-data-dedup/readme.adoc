@@ -103,7 +103,7 @@ image::new-data-dedup-schedule.gif[align="left", width=600]
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
-. Create a new data deduplication optimization schedule. Run the following PowerShell command using the table values when prompted.
+. Create a new data deduplication optimization schedule.
 
 * *_Run_* the command in the *Remote Windows PowerShell Session*.
 
@@ -112,6 +112,11 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 ----
 New-FSxDedupSchedule
 ----
++
+
+* Use the table values when prompted.
+
++
 |===
 | *Prompt* | *Value*
 | Name
