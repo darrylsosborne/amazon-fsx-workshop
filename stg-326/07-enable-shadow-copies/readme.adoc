@@ -92,9 +92,9 @@ NOTE: Shadow copies are stored alongside your ﬁle system's data, and therefore
 
 === Modify shadow copy storage
 
-// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-// image::enable-shadow-copies.gif[align="left", width=600]
+image::modify-shadow-copy-storage.gif[align="left", width=600]
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
@@ -127,9 +127,9 @@ Set-FSxShadowStorage -?
 
 === Create a new shadow copy
 
-// IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-// image::new-data-dedup-schedule.gif[align="left", width=600]
+image::new-shadow-copy.gif[align="left", width=600]
 
 
 NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
@@ -158,6 +158,11 @@ New-FSxShadowCopy
 
 . Experiment creating new files, folders, and taking shadow copies.
 
+. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
+
+. Close the PowerShell window. *_Run_* *exit*.
+
+. Close the File Explorer window.
 
 == Next section
 
