@@ -187,7 +187,6 @@ Get-Command
 . Examine your file system using the commands in the table below.
 
 * *_Run_* the commands in the remote PowerShell session.
-
 +
 |===
 | *Command*
@@ -200,7 +199,6 @@ Get-Command
 | Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
 |===
 +
-
 . End the remote PowerShell session. *_Run_* *Exit-PSSession*.
 
 . Close the PowerShell window. *_Run_* *exit*.
