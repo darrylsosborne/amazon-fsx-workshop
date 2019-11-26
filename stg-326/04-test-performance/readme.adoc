@@ -43,10 +43,13 @@ fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> More details >> Performance (tab) >> Ethernet).
 +
 * What was the peak read throughput you achieved?
 * What was the P99 (99th %-tile) of your test?
+* What was the Total Read IO MiB/s?
+* What was the I/O per second?
+* What was the AvgLat?
 +
 . Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), and enable/disable software caching (-Su).
 +
