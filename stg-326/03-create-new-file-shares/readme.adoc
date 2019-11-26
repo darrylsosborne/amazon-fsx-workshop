@@ -171,9 +171,10 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 
 . Complete the next few steps using the remote PowerShell session to the FSx file server.
 
-. Review the PowerShell function commands available using the *Amazon FSx CLI for remote management on PowerShell*. *_Run_* *Get-Command*.
+. Review the PowerShell function commands available using the *Amazon FSx CLI for remote management on PowerShell*.
 
 * *_Run_* the command in the *Remote Windows PowerShell Session*.+
++
 [source,bash]
 ----
 Get-Command
