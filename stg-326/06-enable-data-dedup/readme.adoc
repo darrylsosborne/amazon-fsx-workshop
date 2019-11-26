@@ -93,6 +93,10 @@ Enable-FSxDedup
 * Were all these commands successful? Why not?
 * When is the next scheduled "Optimization" task?
 
+. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
+
+. Close the PowerShell window. *_Run_* *exit*.
+
 
 === Create new data deduplication optimization schedule
 
@@ -101,7 +105,27 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::new-data-dedup-schedule.gif[align="left", width=600]
 
 
-NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
+. *_Copy_* the script below into your favorite text editor.
++
+[source,bash]
+----
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
+
+----
++
+
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+
+. Return to your favorit text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. *_Copy_* the updated script.
+
+. Go to the remote desktop session for your *Windows Instance 0*.
+
+. *_Click_* *Start* >> *Windows PowerShell*.
+
+. *_Run_* the updated script in the *Windows PowerShell* window.
+
+IMPORTANT: Complete the next few steps using the remote PowerShell session to the FSx file server.
 
 . Create a new data deduplication optimization schedule.
 
