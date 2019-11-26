@@ -48,13 +48,13 @@ a| *_Enter_* *300*
 | *Throughput capacity - Specify throughput capacity*
 a| *_Select_* - *64 MB/s*
 | *Virtual private cloud (VPC)*
-a| *_Select_* - *VPC \| reinvent-2019-stg326...*
+a| *_Select_* - *VPC \| mod-...*
 | *VPC Security Groups*
 a| *_Click_* the *X* to remove the default security group. From the dropdown menu *_select_* the *File system security group \| sg-...* security group
 | *Preferred subnet*
-a| *_Select_* - *Private Subnet 0 \| reinvent-2019-stg326...*
+a| *_Select_* - *Private Subnet 0 \| mod-...*
 | *Standby subnet*
-a| *_Select_* - *Private Subnet 1 \| reinvent-2019-stg326...*
+a| *_Select_* - *Private Subnet 1 \| mod-...*
 | *Windows authentication*
 a| AWS Managed Microsoft Active Directory
 | *Microsoft Active Directory ID*

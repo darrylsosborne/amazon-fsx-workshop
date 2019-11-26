@@ -11,7 +11,7 @@ This is a workshop designed for architects and engineers who would like to learn
 
 === Duration
 
-NOTE: It will take approximately 2 hours to complete and you will run it using an AWS account that we provide at the workshop.
+NOTE: It will take approximately 90 minutes to complete and you will run it using an AWS account that we provide at the workshop.
 
 === Pricing
 
