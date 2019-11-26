@@ -140,9 +140,9 @@ fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 
-. While the command is running, go back to the *Remote Windows PowerShell Session* window.
+. While the script is running, go back to the *Remote Windows PowerShell Session* window.
 
-. Run the script in the *Remote Windows PowerShell Session* window.
+. Run the command in the *Remote Windows PowerShell Session* window.
 
 +
 [source,bash]
@@ -156,7 +156,7 @@ Get-FSxSmbOpenFile
 
 . Close the open file.
 
-. Run the script in the *Remote Windows PowerShell Session* window. *_Enter_* *A* for *Yes to All* at the prompt.
+. Run the command in the *Remote Windows PowerShell Session* window. *_Enter_* *A* for *Yes to All* at the prompt.
 
 +
 [source,bash]
