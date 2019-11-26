@@ -168,7 +168,7 @@ New-FSxShadowCopy
 
 Click the button below to go to the next section.
 
-image::08-migrate-file-share.png[link=../08-migrate-file-share/, align="left",width=420]
+image::08-manage-user-sessions-open-files.png[link=../08-manage-user-sessions-open-files/, align="left",width=420]
 
 
 
