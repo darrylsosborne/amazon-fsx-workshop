@@ -21,15 +21,15 @@ NOTE: It will take approximately 10 minutes to complete this section.
 
 === Enable Continuous Access share
 
-//IMPORTANT: Read through all steps below and watch the quick video before continuing.
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-//image::connect-windows-instance.gif[align="left", width=600]
+image::enable-ca.gif[align="left", width=600]
 
-. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard.
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard.
 
 . Go to the remote desktop session for your *Windows Instance 0*.
 
-. *_launch_* *File Explorer*.
+. *_Start_* *File Explorer*.
 
 . *_Context-click_* *This PC* and *_select_* *Map network drive...*
 
@@ -52,10 +52,8 @@ a| Leave unchecked
 +
 . In the *File Explorer* window of the *Y:* drive, create new folder. *_Context-click_* >> *New* >> *Folder*. Name the folder *sql*.
 
-. *_Click_* *Start* >> *Windows PowerShell*.
 
-. *_Copy_* the script below into your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - MAZ*
-
+. *_Copy_* the script below into your favorite text editor.
 +
 [source,bash]
 ----
@@ -65,7 +63,19 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 ----
 +
 
-* Run the updated script in the *Windows PowerShell* window.
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+
+. Return to your favorit text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. *_Copy_* the updated script.
+
+. Go to the remote desktop session for your *Windows Instance 0*.
+
+. *_Click_* *Start* >> *Windows PowerShell*.
+
+. *_Run_* the updated script in the *Windows PowerShell* window.
+
++
+NOTE: Complete the next few steps using the remote PowerShell session to the FSx file server.
++
 
 . *_Run_* the script in the *Remote Windows PowerShell Session*.
 
