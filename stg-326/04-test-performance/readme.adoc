@@ -51,6 +51,7 @@ While the script is running, open *Task Manager* and monitor network performance
 * What was the Total Read IO MiB/s?
 * What was the I/O per second?
 * What was the AvgLat?
+* Why is your current throughput greater than the baseline throughput?
 +
 . Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), and enable/disable software caching (-Su).
 +
@@ -104,6 +105,7 @@ While the script is running, open *Task Manager* and monitor network performance
 * What was the Total Write IO MiB/s?
 * What was the I/O per second?
 * What was the AvgLat?
+* Why is your current throughput greater than the baseline throughput?
 +
 . Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with different file sizes (-c), different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), random I/O (-r) or sequential I/O (-s), and enable/disable software & hardware write caching (-Sh).
 +
