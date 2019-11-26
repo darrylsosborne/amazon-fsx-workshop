@@ -106,7 +106,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 . *_Click_* *Start* >> *Windows PowerShell*.
 
 . *_Run_* the updated script in the *Windows PowerShell* window.
-.
+
 . What commands are available to manage user sessions?
 * *_Run_* the command in the *Remote Windows PowerShell Session* window.
 +
