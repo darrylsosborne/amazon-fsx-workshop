@@ -53,7 +53,6 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 [source,bash]
 ----
 Get-Command *-FSxShadow*
-
 ----
 +
 
@@ -67,7 +66,6 @@ Get-Command *-FSxShadow*
 ----
 Set-FsxShadowStorage -Default
 Set-FsxShadowCopySchedule -Default
-
 ----
 +
 
@@ -106,7 +104,6 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 [source,bash]
 ----
 Set-FSxShadowStorage -maxsize "20%"
-
 ----
 +
 
@@ -118,7 +115,6 @@ Set-FSxShadowStorage -maxsize "20%"
 [source,bash]
 ----
 Set-FSxShadowStorage -?
-
 ----
 +
 

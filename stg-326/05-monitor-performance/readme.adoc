@@ -48,8 +48,8 @@ image::create-cloudwatch-alarm.gif[align="left", width=600]
 . *_Copy_* the file system id from the top right dashboard widget.
 . *_Click_* the *Maximize* button of the *Throughput (Bytes per second)* widget.
 . *_Click_* the *View in metrics* link (at the bottom left of the window).
-. *_Find_* the metric labeled *Total Data Throughput (B/s)* and *_click_* the *Create alarm* button in the actions column.
-. *_Scroll_* down to the *Conditions* section and in the *Define the threshold value* field *_enter_* 200000000. This will set an alarm condition that will trigger if the *Total Data Throughput (B/s)* is greater than 200 MB/s.
+. *_Find_* the metric labeled *Total Data Throughput (B/s)* and *_click_* the *Create alarm* button (bell icon) in the actions column.
+. *_Scroll_* down to the *Conditions* section. *_Accept_* the default *Threshold type* and *Greater* alarm condition and in the *Define the threshold value* field *_enter_* 200000000. This will set an alarm condition that will trigger if the *Total Data Throughput (B/s)* is greater than 200 MB/s.
 . *_Click_* *Next*.
 . *_Click_* *Create new topic*.
 . In the *Create new topic...* field, *_enter_* *High_Throughput_* then *_paste_* the file system id.

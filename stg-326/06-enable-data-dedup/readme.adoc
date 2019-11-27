@@ -55,7 +55,6 @@ NOTE: Complete the next few steps using the remote PowerShell session to the FSx
 [source,bash]
 ----
 Get-Command *-FSxDedup*
-
 ----
 +
 
@@ -68,7 +67,6 @@ Get-Command *-FSxDedup*
 [source,bash]
 ----
 Enable-FSxDedup
-
 ----
 +
 
@@ -163,7 +161,6 @@ New-FSxDedupSchedule
 [source,bash]
 ----
 Set-FSxDedupSchedule -?
-
 ----
 +
 
@@ -186,7 +183,6 @@ Set-FSxDedupSchedule -Name DailyOptimization -Start start_time
 [source,bash]
 ----
 Get-FSxDedupStatus
-
 ----
 +
 
@@ -223,7 +219,6 @@ Get-FSxDedupStatus
 [source,bash]
 ----
 Get-FSxDedupConfiguration
-
 ----
 +
 
@@ -237,7 +232,6 @@ Get-FSxDedupConfiguration
 [source,bash]
 ----
 Set-FSxDedupConfiguration -MinimumFileAgeDays 0
-
 ----
 +
 
@@ -274,7 +268,6 @@ Get-FSxDedupStatus
 [source,bash]
 ----
 Get-FSxDedupJob
-
 ----
 +
 
@@ -290,7 +283,6 @@ Get-FSxDedupJob
 [source,bash]
 ----
 Get-FSxDedupStatus
-
 ----
 +
 

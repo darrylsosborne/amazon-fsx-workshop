@@ -247,6 +247,11 @@ a| Percentage of a mixed workload that should be writes. The outstanding percent
 * What different parameters did you test?
 * How did the different parameter options alter the results?
 
+. Close all the PowerShell windows. *_Run_* *exit*.
+
+. Close the File Explorer window.
+
+. Close the Task Manager window.
 
 == Next section
 
