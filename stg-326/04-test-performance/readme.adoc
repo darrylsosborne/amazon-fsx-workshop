@@ -26,9 +26,9 @@ image::test-performance.gif[align="left", width=600]
 
 === DiskSpd Read tests
 
-. From the remote desktop session to *Windows Instance 0*.
+. *_Access_* the remote desktop session to *Windows Instance 0*.
 
-. _Click_* *Start* >> *Windows PowerShell*.
+. *_Click_* *Start* >> *Windows PowerShell*.
 +
 IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +

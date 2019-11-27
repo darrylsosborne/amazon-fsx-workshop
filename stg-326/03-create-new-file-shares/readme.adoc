@@ -204,6 +204,7 @@ Get-Command
 
 . Close the PowerShell window. *_Run_* *exit*.
 
+. Close the Shared Folders Console.
 
 == Next section
 
