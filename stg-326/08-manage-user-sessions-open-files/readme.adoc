@@ -51,16 +51,11 @@ image::manage-sessions-files-ui.gif[align="left", width=600]
 +
 IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
-. *_Run_* the script below to create a 100 GB sparse file.
+. Run the DiskSpeed script below to test read performance of the mapped **Z:** drive
 +
 ```sh
 $random = $(Get-Random)
 fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
-```
-+
-. Run the DiskSpeed script below to test read performance of the mapped **Z:** drive
-+
-```sh
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 +
