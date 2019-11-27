@@ -173,7 +173,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 
 . Review the PowerShell function commands available using the *Amazon FSx CLI for remote management on PowerShell*.
 
-* *_Run_* the command in the *Remote Windows PowerShell Session*.+
+* *_Run_* the command in the *Remote Windows PowerShell Session*.
 +
 [source,bash]
 ----

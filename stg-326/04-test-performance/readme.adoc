@@ -26,11 +26,13 @@ image::test-performance.gif[align="left", width=600]
 
 === DiskSpd Read tests
 
-. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
+. From the remote desktop session to *Windows Instance 0*.
+
+. _Click_* *Start* >> *Windows PowerShell*.
 +
 IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
 +
-. *_Run_* the script below to create a 100 GB sparse file.
+. *_Run_* the script below in the PowerShell seccion to create a 100 GB sparse file.
 +
 ```sh
 $random = $(Get-Random)
@@ -43,7 +45,7 @@ fsutil file createnew Z:\${env:computername}-$random.dat 100000000000
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Su -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> More details >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet).
 +
 * What is the baseline throughput of the file system? - This was configured when the file system was created and is available from the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console.
 * What was the peak read throughput you achieved?
@@ -97,7 +99,7 @@ $random = $(Get-Random)
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -c2G -s64K -w100 -t1 -o32 -b64K -Sh -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> Performance (tab) >> Ethernet).
 +
 * What is the baseline throughput of the file system? - This was configured when the file system was created and is available from the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console.
 * What was the peak write throughput you achieved?
@@ -156,7 +158,7 @@ $random = $(Get-Random)
 C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=read --rwmixread=100 --thread --time_based --runtime=120
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak read throughput?
 * What was the average read throughput?
@@ -207,7 +209,7 @@ $random = $(Get-Random)
 C:\Tools\fio-3.16-x64\fio --randrepeat=1 --direct=1 --name="Z:\${env:computername}-$random.dat" --numjobs=1 --bs=64K --iodepth=32 --size=1024M --readwrite=write --rwmixwrite=100 --thread --time_based --runtime=120
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Task Manager >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> Performance (tab) >> Ethernet).
 +
 * What was the peak write throughput?
 * What was the average write throughput?
