@@ -15,14 +15,6 @@ Click the link below to access the type of workshop you want to run.
 a|image::fsx-windows-od-workshop.png[link=on-demand/] a| image::fsx-windows-as-workshop.png[link=aws-sponsored/]
 |===
 
-
-
-image::fsx-windows-od-workshop.png[link=aws-sponsored/, align="center",width=420]
-
-
-image::fsx-windows-as-workshop.png[link=on-demand/, align="center",width=420]
-
-
 === Participation
 
 We encourage participation; if you find anything, please submit an issue. However, if you want to help raise the bar, **submit a PR**!
