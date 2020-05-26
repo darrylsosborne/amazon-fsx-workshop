@@ -10,10 +10,8 @@ This is a set of tutorials designed for architects and engineers who would like 
 Click the link below to access the type of on-demand workshop you want to run, Amazon FSx for Lustre or Amazon FSx for Windows File Server.
 [cols="1,1"]
 |===
-a|image::fsx-lustre-od-workshop.png[link=lustre/]
-a|image::fsx-windows-od-workshop.png[link=windows/]
-|
-|
+a|image::fsx-lustre-od-workshop.png[link=../lustre/]
+a|image::fsx-windows-od-workshop.png[link=../windows/]
 |===
 
 NOTE: You will incur charges as you go through either of these workshops, as they will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
