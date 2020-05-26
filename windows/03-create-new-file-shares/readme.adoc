@@ -118,13 +118,12 @@ Get-Command
 +
 |===
 | *Command*
-a|
-----
+a|----
 Get-FSxSmbShare
 ----
-| Get-FSxSmbSession
-| Get-FSxSmbServerConfiguration
-| Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
+a| Get-FSxSmbSession
+a| Get-FSxSmbServerConfiguration
+a| Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
 |===
 +
 
