@@ -3,7 +3,7 @@
 :linkattrs:
 :imagesdir: resources/images
 
-image:fsx-aws-logos.png[alt="fsx and aws logos", align="left",width=420]
+image:fsx-aws-logos.png[align="left",width=420]
 
 This is a set of workshops designed for architects and engineers who would like to learn more about Amazon Web Services (AWS) full-managed third party file system service - link:https://aws.amazon.com/fsx/[Amazon FSx].
 
