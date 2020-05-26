@@ -11,6 +11,7 @@ There are two types of Amazon FSx workshops. **On-Demand workshops** are designe
 
 Click the link below to access the type of workshops you want to run.
 
+[cols="1,1"]
 |===
 a|image::fsx-od-workshops.png[link=on-demand/] a| image::fsx-as-workshops.png[link=aws-sponsored/]
 |===

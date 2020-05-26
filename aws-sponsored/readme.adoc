@@ -9,6 +9,7 @@ This is a set of tutorials designed for architects and engineers who would like 
 
 Click the link below to access the type of AWS sponsored workshop you want to run, **Amazon FSx for Lustre** or **Amazon FSx for Windows File Server**.
 
+[cols="1,1"]
 |===
 a|image::fsx-lustre-as-workshop.png[link=../lustre/01-access-as-environment/]
 a|image::fsx-windows-as-workshop.png[link=../windows/01-access-as-environment/]
