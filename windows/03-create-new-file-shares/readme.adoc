@@ -27,21 +27,32 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::create-new-file-shares.gif[align="left",width=600]
 
 
-. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_select_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_select_* the image:copy-to-clipboard.png[align="left",width=20] shortcut to *_copy_* the *DNS Name* of the file system to the clipboard.
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_click_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard.
 
-. *_Click_* *Start*.
+. From the RDP session to the Windows Instance, *_click_* *Start*.
 
-. *_Type_* *fsmgmt.msc*.
+. *_Type_* *fsmgmt.msc* then press *return/enter* key.
 
-. From the *Shared Folders* Console, *_select_* *Action* >> *Connect to another computer...*.
+. From the *Shared Folders* window, *_select_* *Action* >> *Connect to another computer...*.
 
 . *_Paste_* the *DNS Name* copied above in the *Another computer:* text box and *_click_* *Ok*.
 
-. *_Double-click_* the *Shares* folder.
+. *_Context/right-click_* the *Shares* folder and *_click_* *New Share...*.
 
-. With the *Shares* folder selected, *_click_* *Action* >> *New Share...* from the menu.
+. *_Click_* *Next >*.
 
-. Complete the *Create A Shared Folder Wizard*, creating new shares with the following attributes:
+. *_Click_* *Browse...*.
+
+. *_Select_* *d$*.
+
+. *_Click_* *Make New Folder*.
+
+. Name the new folder *application*.
+
+. *_Select_* *OK*.
+
+. Complete the *Create A Shared Folder Wizard*, creating a new share with the following attribute:
+
 +
 |===
 | *Folder path* | *Share name* | *Create new path* | *Shared folder permissions*
@@ -49,14 +60,21 @@ image::create-new-file-shares.gif[align="left",width=600]
 | application
 | Yes
 | Customize permissions >> Everyone Full Control
+|===
++
 
+. Repeat the steps above and create a second new share with the name *data*.
+
++
+|===
 | D:\data
 | data
 | Yes
 | Customize permissions >> Everyone Full Control
 |===
 +
-. Experiment and create other file shares. All shares must be created on the *D:\* drive.
+
+. Experiment by using the steps above and create other file shares. All shares must be created on the *D:\* drive.
 
 === Manage file shares
 
@@ -69,25 +87,25 @@ image::manage-file-shares.gif[align="left", width=600]
 +
 [source,bash]
 ----
-$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "amznfsx0123abcde.example.com"
 enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
 
 ----
 +
 
-. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *Windows Remote PowerShell Endpoint* to *_copy_* the *Windows Remote PowerShell Endpoint* to the clipboard.
 
-. Return to your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. *_Copy_* the updated script.
+. Return to your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* in your clipboard. *_Copy_* the entire updated script.
 
-. Go to the remote desktop session for your *Windows Instance 0*.
+. Go to the remote desktop session for your *Windows Instance*.
 
 . *_Click_* *Start* >> *Windows PowerShell*.
 
 . *_Run_* the updated script in the *Windows PowerShell* window.
 
-. Complete the next few steps using the remote PowerShell session to the FSx file server.
+. Complete the next few steps using the remote PowerShell session of the FSx for Windows File Server.
 
-. Review the PowerShell function commands available using the *Amazon FSx CLI for remote management on PowerShell*.
+. Review the PowerShell function commands available using the *Amazon FSx CLI for Remote Management on PowerShell*.
 
 * *_Run_* the command in the *Remote Windows PowerShell Session*.
 +
@@ -99,7 +117,7 @@ Get-Command
 
 . What commands are available?
 
-. Review all the different commands available using the *Amazon FSx CLI for remote management on PowerShell*.
+. Review all the different commands available using the *Amazon FSx CLI for Remote Management on PowerShell*.
 
 . Examine your file system using the commands in the table below.
 
@@ -124,9 +142,9 @@ Get-Command
 
 == Next section
 
-Click the button below to go to the next section.
+Click the link below to go to the next section.
 
-image::04-test-performance.png[link=../04-test-performance/, align="left",width=420]
+image::test-performance.png[link=../04-test-performance/, align="left",width=420]
 
 
 
