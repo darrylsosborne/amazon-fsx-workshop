@@ -132,11 +132,10 @@ Get-Command
 | Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
 |===
 +
-. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
 
-. Close the PowerShell window. *_Run_* *exit*.
+. Close the PowerShell window.
 
-. Close the Shared Folders Console.
+. Close the Shared Folders window.
 
 == Next section
 
