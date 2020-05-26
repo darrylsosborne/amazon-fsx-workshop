@@ -67,6 +67,7 @@ image::create-new-file-shares.gif[align="left",width=600]
 
 +
 |===
+| *Folder path* | *Share name* | *Create new path* | *Shared folder permissions*
 | D:\data
 | data
 | Yes
@@ -125,7 +126,10 @@ Get-Command
 +
 |===
 | *Command*
-| Get-FSxSmbShare
+| [source,bash]
+----
+Get-Command
+----
 
 | Get-FSxSmbSession
 
