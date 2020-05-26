@@ -1,4 +1,4 @@
-= Map default file share
+= Map Default File Share
 :toc:
 :icons:
 :linkattrs:
@@ -7,12 +7,12 @@
 
 == Summary
 
-This section will map the default file share on an Amazon EC2 Windows instance.
+This section will map the Amazon FSx for Windows File Serverr default file share on an Amazon EC2 Windows instance.
 
 
 == Duration
 
-NOTE: It will take approximately 15 minutes to complete this section.
+NOTE: It will take approximately 5 minutes to complete this section.
 
 
 == Step-by-step Guide
@@ -84,7 +84,7 @@ a| Leave unchecked
 
 . Load sample data into the file system's default file share from the link:https://registry.opendata.aws/nasanex/[NASA NEX] project hosted on the registry of Open Data on AWS.
 
-* Go to the remote desktop session for your *Windows Instance 0*.
+* Go to the remote desktop session for your *Windows Instance*.
 
 * *_Click_* *Start* >> *Windows PowerShell*.
 
@@ -104,7 +104,7 @@ NOTE: It will take approximately 20 minutes to load this sample data. Continue w
 
 Click the link below to go to the next section.
 
-image::03-create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
+image::create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
 
 
 
