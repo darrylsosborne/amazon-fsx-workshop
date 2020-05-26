@@ -23,5 +23,4 @@ IMPORTANT: Follow the instructions given by the workshop administrators on how t
 
 Click the button below to go to the next section.
 
-image::02-create-maz-file-system.png[link=../02-create-maz-file-system/, align="right",width=420]
-
+image::fsx-windows-map-default-file-share.png[link=../02-map-default-file-share/, align="right",width=420]

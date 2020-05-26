@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will create new file shares.
+This section will create new file shares on the Amazon FSx for Windows File Server.
 
 You can use standard Microsoft tools to create new file shares on your Amazon FSx for Windows File Server.
 
@@ -19,26 +19,24 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to Windows Instance 0
+=== Connect to Windows Instance
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::connect-windows-instance.gif[align="left", width=600]
+image::create-new-file-shares.gif[align="left", width=600]
 
 
-. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
+. Go to the remote desktop session for your *Windows Instance*.
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-NOTE: The pre-built workshop environment was built in the *Ohio (us-east-2) AWS Region*. Make sure you are in the *Ohio (us-east-2) AWS Region*.
 +
 . Make sure you are in the same *AWS Region* as the workshop environment.
 
 . *_Select_* *Running Instances*.
 
-. *_Select_* the radio button next to the instance with the name *Windows Instance 0*.
+. *_Select_* the radio button next to the instance with the name *Windows Instance*.
 
-. Copy the *Public DNS (IPv4)* name of the *Windows Instance 0* instance.
+. Copy the *Public DNS (IPv4)* name of the *Windows Instance* instance.
 
 . Launch your remote desktop application and create a new connection.
 
@@ -54,7 +52,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
 
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance 0* instance for the remote desktop session.
+. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance* instance for the remote desktop session.
 
 === Map default file share
 
@@ -63,7 +61,7 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::map-default-file-share.gif[align="left", width=600]
 
 
-. Once you've logged on to the *Windows Instance 0* instance, *_launch_* *File Explorer*.
+. Once you've logged on to the *Windows Instance* instance, *_launch_* *File Explorer*.
 
 . *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
 
@@ -75,7 +73,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Z:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
 
 | *Reconnect at sign-in*
 a| Leave checked
