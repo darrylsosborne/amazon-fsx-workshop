@@ -27,7 +27,7 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::create-new-file-shares.gif[align="left",width=600]
 
 
-. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_select_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_select_* the image::copy-to-clipboard.png[align="left",width=10] shortcut to *_copy_* the *DNS Name* of the file system to the clipboard.
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_select_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_select_* the image:copy-to-clipboard.png[align="left",width=10] shortcut to *_copy_* the *DNS Name* of the file system to the clipboard.
 
 . *_Click_* *Start*.
 
