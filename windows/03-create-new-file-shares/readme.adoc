@@ -110,10 +110,9 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 
 * *_Run_* the command in the *Remote Windows PowerShell Session*.
 +
-[source,bash]
-----
+|===
 Get-Command
-----
+|===
 +
 
 . What commands are available?
