@@ -115,6 +115,19 @@ Get-Command
 ----
 +
 
++
+|===
+| *Command*
+|
+----
+Get-FSxSmbShare
+----
+| Get-FSxSmbSession
+| Get-FSxSmbServerConfiguration
+| Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
+|===
++
+
 . What commands are available?
 
 . Review all the different commands available using the *Amazon FSx CLI for Remote Management on PowerShell*.
