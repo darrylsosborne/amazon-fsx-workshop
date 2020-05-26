@@ -10,10 +10,8 @@ This is a set of tutorials designed for architects and engineers who would like 
 Click the link below to access the type of on-demand workshop you want to run, Amazon FSx for Lustre or Amazon FSx for Windows File Server.
 
 |===
-a|image::fsx-lustre-od-workshop.png[link=lustre/] a| image::fsx-windows-od-workshop.png[link=windows/]
+a|image::fsx-lustre-od-workshop.png[align="left",width=420,link=lustre/] a| image::fsx-windows-od-workshop.png[align="left",width=420,link=windows/]
 |Amazon FSx for Lustre makes it easy and cost effective to launch and run the world’s most popular high-performance file system.
-
-The open source Lustre file system is designed for applications that require fast storage – where you want your storage to keep up with your compute. Lustre was built to solve the problem of quickly and cheaply processing the world’s ever-growing data sets, and it’s the most widely used file system for the 500 fastest computers in the world.
 
 As a fully managed service, Amazon FSx brings Lustre to the masses, allowing you to use it for any workload where storage speed matters. Amazon FSx eliminates the traditional complexity of setting up and managing high-performance Lustre file systems, allowing you in minutes to spin up and run a battle-tested high-performance file system. It also provides multiple deployment options so you can optimize cost for your needs.
 
