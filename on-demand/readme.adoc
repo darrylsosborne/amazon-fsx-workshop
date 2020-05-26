@@ -18,7 +18,11 @@ The open source Lustre file system is designed for applications that require fas
 As a fully managed service, Amazon FSx brings Lustre to the masses, allowing you to use it for any workload where storage speed matters. Amazon FSx eliminates the traditional complexity of setting up and managing high-performance Lustre file systems, allowing you in minutes to spin up and run a battle-tested high-performance file system. It also provides multiple deployment options so you can optimize cost for your needs.
 
 Amazon FSx also integrates with Amazon S3, making it easy for you to process cloud data sets with the Lustre high-performance file system. When linked to an S3 bucket, an FSx for Lustre file system transparently presents S3 objects as files and allows you to write changed data back to S3.
-|
+|Amazon FSx for Windows File Server provides fully managed, highly reliable file storage that is accessible over the industry-standard Service Message Block (SMB) protocol. It is built on Windows Server, delivering a wide range of administrative features such as user quotas, end-user file restore, and Microsoft Active Directory (AD) integration.
+
+To support a wide spectrum of workloads, Amazon FSx provides high levels of throughput and IOPS, and consistent sub-millisecond latencies.
+
+Amazon FSx is accessible from Windows, Linux, and MacOS compute instances and devices. Thousands of compute instances and devices can access a file system concurrently.
 |===
 
 NOTE: You will incur charges as you go through either of these workshops, as they will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
