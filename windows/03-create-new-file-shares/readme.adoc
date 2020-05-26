@@ -121,9 +121,9 @@ Get-Command
 a|----
 Get-FSxSmbShare
 ----
-a|----
+a|--
 Get-FSxSmbSession
-----
+--
 a|----
 Get-FSxSmbServerConfiguration
 ----
