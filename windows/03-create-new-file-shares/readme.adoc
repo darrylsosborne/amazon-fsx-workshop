@@ -126,9 +126,9 @@ Get-Command
 +
 |===
 | *Command*
-| [source,bash]
+[source,bash]
 ----
-Get-Command
+|Get-Command
 ----
 
 | Get-FSxSmbSession
