@@ -17,7 +17,7 @@ You can use standard Microsoft tools to create new file shares on your Amazon FS
 NOTE: It will take approximately 5 minutes to complete this section.
 
 
-== Step-by-step Guide
+== Step-by-step guide
 
 
 === Create new file shares
