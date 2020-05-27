@@ -92,7 +92,7 @@ $random = $(Get-Random)
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -c2G -s64K -w100 -t1 -o32 -b64K -Sh -L Z:\${env:computername}-$random.dat
 ```
 +
-While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> Performance (tab) >> Ethernet).
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet).
 +
 * What is the baseline throughput of the file system? - This was configured when the file system was created and is available from the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console.
 * What was the peak write throughput you achieved?
