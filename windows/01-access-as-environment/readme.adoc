@@ -23,4 +23,4 @@ IMPORTANT: Follow the instructions given by the workshop administrators on how t
 
 Click the link below to go to the next section.
 
-image::fsx-windows-map-default-file-share.png[link=../02-map-default-file-share/, align="right",width=420]
+image::connect-to-instances.png[link=../02-connect-to-instances/, align="right",width=420]
