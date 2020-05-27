@@ -71,7 +71,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 +
 . Use the *Secret key/value* pairs of *username* and *password* and copy the *password* to the clipboard.
 
-. *_Paste_* the password from the clipboard in the browser-based SSH connection following the prompt (e.g. Password for admin@example.com@//amznfsx0123abcde.example.com/share:). The pasted password should be obfuscated (e.g. ************)
+. *_Paste_* the password from the clipboard in the browser-based SSH connection following the prompt (e.g. *Password for admin@example.com@//amznfsx0123abcde.example.com/share:*). The pasted password should be obfuscated (e.g. ************)
 
 . Verify the mount command succeeded. *_Run_* the following commands in the browser-based SSH connection window:
 +
@@ -103,7 +103,7 @@ time tree --du -h /fsx
 
 Click the link below to go to the next section.
 
-image::create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
+image::create-new-file-shares.png[link=../05-create-new-file-shares/, align="left",width=420]
 
 
 
