@@ -7,14 +7,12 @@
 
 == Summary
 
-This section will test the performance of *STG326 - SAZ*.
-
-There are many disk performance tools out there. We have pre-installed link:https://aka.ms/diskspd[DiskSpd] and link:https://bsdio.com/fio/[fio] on the *Windows Instance 0* instance. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
+There are many disk performance tools out there. link:https://aka.ms/diskspd[DiskSpd] and link:https://bsdio.com/fio/[fio] have been pre-installed on the *FSx/W Workshop Windows Instance*. If you are familiar with another tool and would prefer using it to test performance, feel free to download and use it.
 
 
 == Duration
 
-NOTE: It will take approximately 30 minutes to complete this section.
+NOTE: It will take approximately 40 minutes to complete this section.
 
 
 == Step-by-step Guide
@@ -26,13 +24,12 @@ image::test-performance.gif[align="left", width=600]
 
 === DiskSpd Read tests
 
-. *_Access_* the remote desktop session to *Windows Instance 0*.
+. From the remote desktop session to the *FSx/W Workshop Windows Instance*, *_click_* *Start* >> *Windows PowerShell*.
 
-. *_Click_* *Start* >> *Windows PowerShell*.
 +
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
+IMPORTANT: This section assumes the *MAZ* file system is mapped as the *Z:/* drive. If your instance does not have a mapped *Z:/* drive, map *MAZ* as the *Z:/* drive (see the previous section *Map Default File Share* for step-by-step instructions).
 +
-. *_Run_* the script below in the PowerShell seccion to create a 100 GB sparse file.
+. *_Run_* the script below in the PowerShell session to create a 100 GB sparse file.
 +
 ```sh
 $random = $(Get-Random)
@@ -88,11 +85,7 @@ a| Disable software caching.
 
 === DiskSpd Write tests
 
-. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
-+
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
-+
-. Run the DiskSpeed script below to test write performance of the mapped **Z:** drive
+. From the PowerShell window, *_run_* the DiskSpeed script below to test write performance of the mapped **Z:** drive
 +
 ```sh
 $random = $(Get-Random)
@@ -147,10 +140,8 @@ a| Disables both software caching and hardware write caching.
 
 === fio read tests
 
-. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
-+
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
-+
+. From the PowerShell window, *_run_* the DiskSpeed script below to test write performance of the mapped **Z:** drive
+
 . Run the fio script below to test read performance of the mapped **Z:** drive
 +
 ```sh
@@ -198,10 +189,8 @@ a| Percentage of a mixed workload that should be reads. The outstanding percenta
 
 === fio write tests
 
-. From the remote desktop session to *Windows Instance 0*, *_open_* a PowerShell window.
-+
-IMPORTANT: This section assumes that *STG326 - SAZ* is mapped as the *Z:/* drive. If your *Windows Instance 0* does not have a mapped *Z:/* drive, map *STG326 - SAZ* as the *Z:/* drive (see the previous section for step-by-step instructions).
-+
+. From the PowerShell window, *_run_* the DiskSpeed script below to test write performance of the mapped **Z:** drive
+
 . Run the fio script below to test write performance of the mapped **Z:** drive
 +
 ```sh
@@ -257,7 +246,7 @@ a| Percentage of a mixed workload that should be writes. The outstanding percent
 
 Click the button below to go to the next section.
 
-image::05-monitor-performance.png[link=../05-monitor-performance/, align="left",width=420]
+image::monitor-performance.png[link=../07-monitor-performance/, align="left",width=420]
 
 
 

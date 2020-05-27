@@ -31,7 +31,7 @@ image::create-new-file-shares.gif[align="left",width=600]
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
-. From the RDP session to the Windows Instance, *_click_* *Start*.
+. From the remote desktop session to the *FSx/W Workshop Windows Instance*, *_click_* *Start*.
 
 . *_Type_* *fsmgmt.msc* then press *return/enter* key.
 
