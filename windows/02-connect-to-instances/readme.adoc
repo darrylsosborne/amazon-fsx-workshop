@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will map the Amazon FSx for Windows File Serverr default file share on an Amazon EC2 Windows instance.
+This section will map the Amazon FSx for Windows File Server default file share on an Amazon EC2 Windows instance.
 
 
 == Duration
