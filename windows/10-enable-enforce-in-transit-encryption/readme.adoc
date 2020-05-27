@@ -73,12 +73,11 @@ Get-FSxSmbServerConfiguration
 . Enable enforcement of in-transit encryption.
 * *_Run_* the script in the *Remote Windows PowerShell Session*.
 
-+
+
 [source,bash]
 ----
 Set-FSxSmbServerConfiguration -RejectUnencryptedAccess $True
 ----
-+
 
 === End *Workshop*
 
