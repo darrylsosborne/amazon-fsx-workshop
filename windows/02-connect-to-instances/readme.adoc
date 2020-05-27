@@ -28,7 +28,7 @@ image::connect-windows-instance.gif[align="left", width=600]
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
-. Make sure you are in the same *AWS Region* as the workshop environment.
+. Make sure you are in the same *AWS Region* as the workshop environment. If you need to change the *AWS Region* of the Amazon EC2 console, in the top right corner of the browswer window *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
 
 . *_Click_* *Running Instances*.
 
@@ -64,7 +64,7 @@ image::connect-linux-instance.gif[align="left", width=600]
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
-. Make sure you are in the same *AWS Region* as the workshop environment.
+. Make sure you are in the same *AWS Region* as the workshop environment. If you need to change the *AWS Region* of the Amazon EC2 console, in the top right corner of the browswer window *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
 
 . *_Click_* the radio button next to the instance with the name *Linux Instance*.
 
@@ -78,7 +78,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 Click the link below to go to the next section.
 
-image::create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
+image::map-default-file-share.png[link=../03-map-default-file-share/, align="left",width=420]
 
 
 
