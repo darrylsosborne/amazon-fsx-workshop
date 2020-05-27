@@ -42,7 +42,7 @@ IMPORTANT: Read through all steps below and watch the quick video before *_creat
 
 image::create-cloudwatch-alarm.gif[align="left", width=600]
 
-. From the *Total throughput (bytes/sec)* metric from the Amazon CloudWatch console, *_click_* the image:widgets-action.png[align="left",width=20] *Create alarm* of the *Total throughput* line item.
+. From the *Total throughput (bytes/sec)* metric from the Amazon CloudWatch console, *_click_* the image:create-alarm.png[align="left",width=20] *Create alarm* link on the *Total throughput* line item.
 . *_Scroll_* down to the *Conditions* section. *_Accept_* the default *Threshold type* and *Greater* alarm condition and in the *Define the threshold value* field *_enter_* 200000000. This will set an alarm condition that will trigger if the *Total Data Throughput (B/s)* is greater than 200 MB/s.
 . *_Click_* *Next*.
 . *_Click_* *Create new topic*.
