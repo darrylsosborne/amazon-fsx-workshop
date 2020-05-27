@@ -60,13 +60,13 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::connect-linux-instance.gif[align="left", width=600]
 
 
-. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
+. Return to the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
 . Make sure you are in the same *AWS Region* as the workshop environment. If you need to change the *AWS Region* of the Amazon EC2 console, in the top right corner of the browswer window *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
 
-. *_Click_* the radio button next to the instance with the name *Linux Instance*.
+. *_Click_* the radio button next to the instance with the name *FSx/W Workshop Linux Instance*.
 
 . *_Click_* the *Connect* button.
 

@@ -37,7 +37,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Z:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\amznfsx0123abcde.example.com).
 
 | *Reconnect at sign-in*
 a| Leave checked

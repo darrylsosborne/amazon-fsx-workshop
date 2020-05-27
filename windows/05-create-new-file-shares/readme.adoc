@@ -26,7 +26,6 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 
 image::create-new-file-shares.gif[align="left",width=600]
 
-
 . From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_click_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard.
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.

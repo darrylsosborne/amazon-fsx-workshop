@@ -26,15 +26,15 @@ image::enable-shadow-copies.gif[align="left", width=600]
 +
 [source,bash]
 ----
-$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "fs-0123456789abcdef.example.com"
+$WindowsRemotePowerShellEndpoint = "windows_remote_powershell_endpoint" # e.g. "amznfsx0123abcde.example.com"
 enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationName FsxRemoteAdmin
 
 ----
 +
 
-. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *STG326 - SAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. fs-0123456789abcdef.example.com).
+. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *Windows Remote PowerShell Endpoint* of the file system to the clipboard (e.g. amznfsx0123abcde.example.com).
 
-. Return to your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *STG326 - SAZ*. *_Copy_* the updated script.
+. Return to your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *MAZ*. *_Copy_* the updated script.
 
 . Go to the remote desktop session for your *Windows Instance 0*.
 
@@ -154,17 +154,11 @@ New-FSxShadowCopy
 
 . Experiment creating new files, folders, and taking shadow copies.
 
-. End the remote PowerShell session. *_Run_* *Exit-PSSession*.
-
-. Close the PowerShell window. *_Run_* *exit*.
-
-. Close the File Explorer window.
-
 == Next section
 
 Click the button below to go to the next section.
 
-image::08-manage-user-sessions-open-files.png[link=../08-manage-user-sessions-open-files/, align="left",width=420]
+image::enable-enforce-in-transit-encryption.png[link=../10-enable-enforce-in-transit-encryption/, align="left",width=420]
 
 
 
