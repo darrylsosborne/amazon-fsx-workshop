@@ -70,7 +70,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Click_* the *Connect* button.
 
-. *_Click_* the radio button next to  *EC2 Instance Connect (browser-based SSH connection*.
+. *_Click_* the radio button next to  *EC2 Instance Connect (browser-based SSH connection)*.
 
 . Leave the default user name as *ec2-user* and *_click_* *Connect*.
 

@@ -17,49 +17,15 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Connect to the Windows Instance
-
-IMPORTANT: Read through all steps below and watch the quick video before continuing.
-
-image::connect-windows-instance.gif[align="left", width=600]
-
-
-. Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. Make sure you are in the same *AWS Region* as the workshop environment.
-
-. *_Select_* *Running Instances*.
-
-. *_Select_* the radio button next to the instance with the name *Windows Instance*.
-
-. Copy the *Public DNS (IPv4)* name of the *Windows Instance* instance.
-
-. Launch your remote desktop application and create a new connection.
-
-. Use the DNS name copied above as the host name of the new connection.
-
-. Start a new remote desktop session to the new connection (you will retrieve the *user name* and *password* from *AWS Secrets Manager*).
-
-. Open the link:https://console.aws.amazon.com/secretsmanager/[AWS Secrets Manager] console.
-+
-TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
-+
-. *_Select_* the *Secret name* link for *Password-<GUID>*.
-
-. *_Scroll_* to the *Secret value* section and *_click_* the *Retrieve secret value* button.
-
-. Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance* instance for the remote desktop session.
-
 === Map default file share
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
 image::map-default-file-share.gif[align="left", width=600]
 
+. Go to the Remote Desktop Session where you connected to the *Windows instance*.
 
-. Once you've logged on to the *Windows Instance* instance, *_launch_* *File Explorer*.
+. *_Launch_* *File Explorer*.
 
 . *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
 
@@ -71,7 +37,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Z:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Copy_* the *DNS Name* of the file system to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
+a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\fs-0123456789abcdef.example.com\share).
 
 | *Reconnect at sign-in*
 a| Leave checked
@@ -104,7 +70,7 @@ NOTE: It will take approximately 20 minutes to load this sample data. Continue w
 
 Click the link below to go to the next section.
 
-image::create-new-file-shares.png[link=../03-create-new-file-shares/, align="left",width=420]
+image::mount-default-file-share.png[link=../04-mount-default-file-share/, align="left",width=420]
 
 
 
