@@ -47,7 +47,7 @@ sudo yum install cifs-utils -y
 
 mountpoint=/fsx
 dnsname="dns_name" # e.g. "amznfsx0123abcde.example.com"
-username="user_name" # e.g. "admin@example.com"
+username="admin@example.com"
 
 sudo mkdir -p ${mountpoint}
 sudo mount -t cifs //${dnsname}/share ${mountpoint} -o vers=2.0,user=${username}
