@@ -32,9 +32,9 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Click_* *Running Instances*.
 
-. *_Click_* the radio button next to the instance with the name *Windows Instance*.
+. *_Click_* the radio button next to the instance with the name *FSx/W Workshop Windows Instance*.
 
-. Copy the *Public DNS (IPv4)* name of the *Windows Instance* instance.
+. Copy the *Public DNS (IPv4)* name of the *FSx/W Workshop Windows Instance* instance.
 
 . Launch your remote desktop application and create a new connection.
 
