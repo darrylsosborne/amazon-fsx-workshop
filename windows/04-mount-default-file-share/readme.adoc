@@ -86,7 +86,7 @@ ll /fsx
 
 . What directories and files do you see in the */fsx* mount point?
 
-. Verify the script you ran from the FSx/W Workshop Windows Instance to download data from Amazon S3 is progressing. *_Run_* the following command in the browser-based SSH connection window:
+. How many files, directories, and data were preloaded from Amazon S3? *_Run_* the following command in the browser-based SSH connection window:
 +
 [source,bash]
 ----
@@ -94,9 +94,23 @@ time tree --du -h /fsx
 
 ----
 +
-. How many files, directories, and data has been downloaded from Amazon S3?
+* The output should look similar to this:
++
+[source,bash]
+----
+│           ├── [8.9M]  AVHRRBUVI01.2011octa.abl
+│           ├── [8.9M]  AVHRRBUVI01.2011octb.abl
+│           ├── [8.9M]  AVHRRBUVI01.2011sepa.abl
+│           └── [8.9M]  AVHRRBUVI01.2011sepb.abl
+├── [   0]  MyFirstFile.txt
+└── [   7]  MySecondFile.rtf
 
-. Run the same command a few more times to see the progress.
+  26G used in 9 directories, 2225 files
+
+real0m0.169s
+user0m0.010s
+sys0m0.013s
+----
 
 
 == Next section
