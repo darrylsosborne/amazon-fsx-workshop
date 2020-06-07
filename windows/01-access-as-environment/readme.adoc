@@ -23,10 +23,10 @@ image::access-workshop.gif[align="left", width=600]
 
 . Go to the link:https://dashboard.eventengine.run[AWS Events Engine Dashboard] - link:https://dashboard.eventengine.run[https://dashboard.eventengine.run]
 * The AWS Event Engine was created to help AWS field teams run Workshops, GameDays, Bootcamps, Immersion Days, and other events that require hands-on access to AWS accounts.
-. *_Read_* the *Terms & Conditions*
-. *_Enter_* the team hash you were given from the workshop administrators and *_click_* *Accept terms and login*.
-. From the *Team Dashboard* page, *_click_* *AWS Console*.
-. From the *AWS Console Login* page, *_click_* the *Open AWS Console* link in the *Login Link* section to open the AWS Console using the provided AWS provided account.
+. *_Read_* the *Terms & Conditions*.
+. *_Enter_* the team hash you were given from the workshop administrators and *_click_* *[Accept terms and login]*.
+. From the *Team Dashboard* page, *_click_* *[AWS Console]*.
+. From the *AWS Console Login* page, *_click_* the *[Open AWS Console]* link in the *Login Link* section to open the AWS Console using the provided AWS provided account.
 
 
 == Next section
