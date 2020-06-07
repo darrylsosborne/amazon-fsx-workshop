@@ -158,7 +158,7 @@ New-FSxShadowCopy
 
 Click the button below to go to the next section.
 
-image::enable-enforce-in-transit-encryption.png[link=../10-enable-enforce-in-transit-encryption/, align="left",width=420]
+image::enforce-in-transit-encryption.png[link=../10-enable-enforce-in-transit-encryption/, align="left",width=420]
 
 
 
