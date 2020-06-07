@@ -73,15 +73,17 @@ Get-FSxSmbServerConfiguration
 . Enable enforcement of in-transit encryption.
 * *_Run_* the script in the *Remote Windows PowerShell Session*.
 
-
++
 [source,bash]
 ----
 Set-FSxSmbServerConfiguration -RejectUnencryptedAccess $True
 ----
++
+. When prompted to perform this action, _*type*_ *A* at the prompt.
 
-=== End *Workshop*
+== Next section
 
-IMPORTANT: There is no need to manually delete workshop resources. The workshop environment will be cleaned up by the workshop administrators.
+Click the button below to go to the next section.
 
-
+image::scale-storage-capacity.png[link=../11-scale-storage-capacity/, align="left",width=420]
 

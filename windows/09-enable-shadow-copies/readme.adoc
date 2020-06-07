@@ -36,7 +36,7 @@ enter-pssession -ComputerName ${WindowsRemotePowerShellEndpoint} -ConfigurationN
 
 . Return to your favorite text editor and replace *"windows_remote_powershell_endpoint"* with the *Windows Remote PowerShell Endpoint* of *MAZ*. *_Copy_* the updated script.
 
-. Go to the remote desktop session for your *Windows Instance 0*.
+. Go to the remote desktop session for your *FSx/W Workshop Windows Instance*.
 
 . *_Click_* *Start* >> *Windows PowerShell*.
 
