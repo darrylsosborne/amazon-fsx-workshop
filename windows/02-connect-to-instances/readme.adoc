@@ -52,7 +52,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . Use the *Secret key/value* pairs of *username* and *password* as the credentials to authenticate to the *Windows Instance* instance for the remote desktop session.
 * Windows Users - use the built-in *Remote Desktop Connection* application.
-* Mac Users - use the link:https://console.aws.amazon.com/secretsmanager/[Microsoft Remote Desktop] app available from the Mac App Store.
+* Mac Users - use the link:https://apps.apple.com/us/app/microsoft-remote-desktop/id1295203466?mt=12/[Microsoft Remote Desktop] app available from the Mac App Store.
 
 
 === Connect to the Linux instance
