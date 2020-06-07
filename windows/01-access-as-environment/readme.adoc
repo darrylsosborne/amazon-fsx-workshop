@@ -26,7 +26,7 @@ image::access-workshop.gif[align="left", width=600]
 . *_Read_* the *Terms & Conditions*.
 . *_Enter_* the team hash you were given from the workshop administrators and *_click_* *[Accept terms and login]*.
 . From the *Team Dashboard* page, *_click_* *[AWS Console]*.
-. From the *AWS Console Login* page, *_click_* the *[Open AWS Console]* link in the *Login Link* section to open the AWS Console using the provided AWS provided account.
+. From the *AWS Console Login* page, *_click_* the *[Open AWS Console]* link in the *Login Link* section to open the AWS Console using the AWS sponsored account.
 
 
 == Next section
