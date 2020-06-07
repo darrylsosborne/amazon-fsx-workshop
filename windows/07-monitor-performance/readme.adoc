@@ -21,7 +21,7 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 IMPORTANT: Read through all steps below and watch the quick video.
 
-image::examine-cloudwatch.gif[align="left", width=600]
+image::monitor-performance.gif[align="left", width=600]
 
 . From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_click_* the *Monitoring* tab.
 +
