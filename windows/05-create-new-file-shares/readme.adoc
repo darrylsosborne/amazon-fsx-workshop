@@ -129,7 +129,7 @@ Get-Command
 | Get-FSxSmbShare
 | Get-FSxSmbSession
 | Get-FSxSmbServerConfiguration
-| Get-FSxSmbShareAccess (when prompted, enter these share names: application, data, share)
+| Get-FSxSmbShareAccess (when prompted, enter these share names one at a time: application, data, share; press enter between each one and again at the end)
 |===
 +
 
