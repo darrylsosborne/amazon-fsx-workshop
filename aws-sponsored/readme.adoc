@@ -14,5 +14,3 @@ Click the link below to access the type of AWS sponsored workshop you want to ru
 a|image::fsx-lustre-as-workshop.png[link=../lustre/01-access-as-environment/]
 a|image::fsx-windows-as-workshop.png[link=../windows/01-access-as-environment/]
 |===
-
-NOTE: You will incur charges as you go through either of these workshops, as they will exceed the link:http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-limits.html[limits of AWS free tier].
