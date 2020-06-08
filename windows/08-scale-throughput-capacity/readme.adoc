@@ -33,7 +33,7 @@ image::scale-throughput-capacity.gif[align="left", width=600]
 
 Click the button below to go to the next section.
 
-image::monitor-performances.png[link=../09-monitor-performance/, align="left",width=420]
+image::monitor-performance.png[link=../09-monitor-performance/, align="left",width=420]
 
 
 
