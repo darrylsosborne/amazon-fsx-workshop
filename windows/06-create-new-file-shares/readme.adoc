@@ -141,7 +141,7 @@ Get-Command
 
 Click the link below to go to the next section.
 
-image::test-performance.png[link=../06-test-performance/, align="left",width=420]
+image::test-performance.png[link=../07-test-performance/, align="left",width=420]
 
 
 

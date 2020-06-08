@@ -45,7 +45,7 @@ image::create-cloudwatch-alarm.gif[align="left", width=600]
 . From the *Total throughput (bytes/sec)* metric from the Amazon CloudWatch console, *_click_* the image:create-alarm.png[align="left",width=20] *Create alarm* link on the *Total throughput* line item.
 . *_Scroll_* down to the *Conditions* section. *_Accept_* the default *Threshold type* and *Greater* alarm condition and in the *Define the threshold value* field *_enter_* 200000000. This will set an alarm condition that will trigger if the *Total Data Throughput (B/s)* is greater than 200 MB/s.
 . *_Click_* *Next*.
-. *_Click_* *Create new topic*.
+. In the *Notification* box under the *Select an SNS topic* sesion, *_click_* *Create new topic*.
 . In the *Create new topic...* field, *_enter_* *High_Throughput_* then *_paste_* the file system id.
 . In the *Email endpoints that will receive the notification...* field, *_enter_* an email address you have access to right now.
 . *_Click_* *Create topic*.
@@ -63,7 +63,7 @@ image::create-cloudwatch-alarm.gif[align="left", width=600]
 
 Click the button below to go to the next section.
 
-image::enable-data-dedupe.png[link=../08-enable-data-dedupe/, align="left",width=420]
+image::scale-throughput-capacity.png[link=../09-scale-throughput-capacity/, align="left",width=420]
 
 
 

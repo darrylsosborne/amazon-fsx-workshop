@@ -1,4 +1,4 @@
-= Connect to Instances
+= Connect to instances
 :toc:
 :icons:
 :linkattrs:
@@ -81,7 +81,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 Click the link below to go to the next section.
 
-image::map-default-file-share.png[link=../03-map-default-file-share/, align="left",width=420]
+image::examine-fsx-console.png[link=../03-examine-fsx-console/, align="left",width=420]
 
 
 

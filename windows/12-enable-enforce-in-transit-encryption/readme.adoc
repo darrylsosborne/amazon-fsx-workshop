@@ -79,11 +79,11 @@ Get-FSxSmbServerConfiguration
 Set-FSxSmbServerConfiguration -RejectUnencryptedAccess $True
 ----
 +
-. When prompted to perform this action, _*type*_ *A* at the prompt.
+. When prompted to perform this action, *_enter_* *A* at the prompt.
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::scale-storage-capacity.png[link=../11-scale-storage-capacity/, align="left",width=420]
+image::scale-storage-capacity.png[link=../13-scale-storage-capacity/, align="left",width=420]
 

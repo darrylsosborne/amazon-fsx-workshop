@@ -309,7 +309,7 @@ Get-FSxDedupStatus
 
 Click the button below to go to the next section.
 
-image::enable-shadow-copies.png[link=../09-enable-shadow-copies/, align="left",width=420]
+image::enable-shadow-copies.png[link=../11-enable-shadow-copies/, align="left",width=420]
 
 
 

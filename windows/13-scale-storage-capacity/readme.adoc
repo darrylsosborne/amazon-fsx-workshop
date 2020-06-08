@@ -33,7 +33,7 @@ image::scale-storage-capacity.gif[align="left", width=600]
 
 Click the button below to go to the next section.
 
-image::scale-throughput-capacity.png[link=../12-scale-throughput-capacity/, align="left",width=420]
+image::tear-down-workshop.png[link=../14-team-down-workshop/, align="left",width=420]
 
 
 
