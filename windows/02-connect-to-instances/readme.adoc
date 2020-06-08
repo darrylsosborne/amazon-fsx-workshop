@@ -21,7 +21,7 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::connect-windows-instance.gif[align="left", width=600]
+image::connect-windows-instance.gif[align="center"]
 
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
@@ -71,11 +71,11 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 . *_Click_* the radio button next to the instance with the name *FSx/W Workshop Linux Instance*.
 
-. *_Click_* the *Connect* button.
+. *_Click_* the *[Connect]* button.
 
 . *_Click_* the radio button next to  *EC2 Instance Connect (browser-based SSH connection)*.
 
-. Leave the default user name as *ec2-user* and *_click_* *Connect*.
+. Leave the default user name as *ec2-user* and *_click_* *[Connect]*.
 
 == Next section
 
