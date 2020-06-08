@@ -23,7 +23,7 @@ IMPORTANT: Read through all steps below and watch the quick video before continu
 image::scale-throughput-capacity.gif[align="left", width=600]
 
 . Return to the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console. *_Click_* the link to the *MAZ* file system.
-. In the *Summary* section, *_click_* the *[Update]* button next to *Storage capacity*.
+. In the *Summary* section, *_click_* the *[Update]* button next to *Throughput capacity*.
 . Increase the throughput capacity of the file system to 64 MB/s. *_Click_* the _Desired throughput capacity_ dropdown and select *64 MB/s*.  *_Click_* *[Update]*.
 . *_Click_* the *Updates* tab to monitor the storage capacity update action.
 . Wait for the storage capacity scaling *update* to complete before moving on to the next section. Do not wait for the optimization phase to complete. Once the file system displays the new value as the storage capacity in the summary section, continue to the next step.
