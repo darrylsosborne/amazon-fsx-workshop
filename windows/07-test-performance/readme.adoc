@@ -246,7 +246,7 @@ a| Percentage of a mixed workload that should be writes. The outstanding percent
 
 Click the button below to go to the next section.
 
-image::monitor-performance.png[link=../08-monitor-performance/, align="left",width=420]
+image::scale-throughput-capacity.png[link=../08-scale-throughput-capacity/, align="left",width=420]
 
 
 
