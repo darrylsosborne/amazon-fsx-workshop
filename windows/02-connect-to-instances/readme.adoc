@@ -21,7 +21,7 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::connect-windows-instance.gif[align="center"]
+image::connect-windows-instance.gif[align="left", width=600]
 
 
 . Open the link:https://console.aws.amazon.com/ec2/[Amazon EC2] console.
