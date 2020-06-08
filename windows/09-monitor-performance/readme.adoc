@@ -63,7 +63,7 @@ image::create-cloudwatch-alarm.gif[align="left", width=600]
 
 Click the button below to go to the next section.
 
-image::scale-throughput-capacity.png[link=../09-scale-throughput-capacity/, align="left",width=420]
+image::enable-data-dedupe.png[link=../10-enable-data-dedupe/, align="left",width=420]
 
 
 
