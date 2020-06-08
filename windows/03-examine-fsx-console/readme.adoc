@@ -1,4 +1,4 @@
-= Map Default File Share
+= Examine Amazon FSx console
 :toc:
 :icons:
 :linkattrs:
@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will map the Amazon FSx for Windows File Server default file share on an Amazon EC2 Windows instance.
+This section will help you become more familiar with the Amazon FSx console.
 
 
 == Duration
@@ -17,37 +17,61 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Map default file share
+=== Examine the Amazon FSx console
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::map-default-file-share.gif[align="left", width=600]
+image::examine-fsx-console.gif[align="left", width=600]
 
-. Go to the Remote Desktop Session where you connected to the *FSx/W Workshop Windows Instance*.
+. *_Go_* to the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system.
 
-. *_Launch_* *File Explorer*.
+. *_Examine_* the *Summary* section of the file system. *_Find_* the values of the following file system attributes:
+* File system ID
+* Lifecycle state
+* Deployment type
+* Storage type
+* Storage capacity
+* Throughput capacity
+* Availability Zones
+* Creation time
 
-. *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
+. *_Examine_* the *Network & security* section of the console. *_Click_* the *Network & security* tab. *_Find_* the values of the following file system attributes:
+* VPC
+* DNS name
+* Preferrred File Server IP Address
+* Windows Remote PowerShell Endpoint
+* KMS key ID
+* AWS Managed AD directory ID
+* Type
 
-. Map the file share using the following information:
-+
-[cols="3,10"]
-|===
-| *Drive*
-a| Z:
+. *_Examine_* the subnet attributes of the console. *_Find_* the values of preferred and standby subnets:
+* Subnets
+* Availability Zones
+* Network interfaces
 
-| *Folder*
-a| This is the UNC path of the file system's default file share. From the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\amznfsx0123abcde.example.com\share).
+. How would you find the VPC security groups associated to the file system?
+* Hint: *_Click_* the Network interface link of the preferred subnet. From the *Details* tab of the preferred file server's ENI, *_click_* the *view inbound rules* link within the *Security groups* attribute. *_Close_* the browser tab of the *Network interface* console.
 
-| *Reconnect at sign-in*
-a| Leave checked
+. *Return* to the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console.
 
-| *Connect using different credentials*
-a| Leave unchecked
-|===
-+
-. In the *File Explorer* window of the *Z:* drive you should see the folder *AVHRR* which contains sample data that was preloaded into your file system.
-. Create new test files in the root of the *Z:* drive. *_Context-click (right-click)_* >> *New* >> *Text Document*. Create a few different types of test files.
+. *_Examine_* the *Monitoring* section of the console. *_Click_* the *Monitoring* tab.
+. What Amazon CloudWatch metric information is available for the file system?
+
+. *_Examine_* the *Administration* section of the console. *_Click_* the *Administration* tab.
+. When is the weekly maintenance window scheduled?
+* Amazon FSx for Windows File Server performs routine software patching for the Microsoft Windows Server software it manages. The maintenance window is your opportunity to control what day and time of the week this software patching occurs. Patching occurs infrequently, typically once every several weeks. Patching should require only a fraction of your 30-minute maintenance window. During these few minutes of time, your Single-AZ file system is temporarily unavailable, and Multi-AZ file systems automatically fail over and fail back.
+
+. *_Examine_* the *Backups* section of the console. *_Click_* the *Backups* tab.
+. When is the daily automatic backup scheduled?
+. What's the automatic backup retention period?
+
+. *_Examine_* the *Updates* section of the console. *_Click_* the *Updates* tab.
+. What updates have been performed?
+* Storage and throughput capacity updates will be performed later in the workshop
+
+. *_Examine_* the *Tags* section of the console. *_Click_* the *Tags* tab.
+. What tags (key/value) pairs are assigned to the file system?
+. Add a new tag (key/value) pair. *_Click_* the *[Add]* button and enter a *key* / *value* of your choice (e.g. Environment/Production). *_Click_* the *[Save]* button.
 
 
 == Next section
