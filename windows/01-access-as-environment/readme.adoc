@@ -19,7 +19,7 @@ IMPORTANT: Follow the instructions given by the workshop administrators on how t
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
-image::access-workshop.gif[align="left", width=600]
+image::access-as-workshop.gif[align="left", width=600]
 
 . Go to the link:https://dashboard.eventengine.run[AWS Events Engine Dashboard] - link:https://dashboard.eventengine.run[https://dashboard.eventengine.run] or access the direct link provided by the workshop administrators.
 * The AWS Event Engine was created to help AWS field teams run Workshops, GameDays, Bootcamps, Immersion Days, and other events that require hands-on access to AWS accounts.
