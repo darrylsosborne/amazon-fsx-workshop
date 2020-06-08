@@ -26,8 +26,8 @@ image::scale-throughput-capacity.gif[align="left", width=600]
 . In the *Summary* section, *_click_* the *[Update]* button next to *Throughput capacity*.
 . Increase the throughput capacity of the file system to 64 MB/s. *_Click_* the _Desired throughput capacity_ dropdown and select *64 MB/s*.  *_Click_* *[Update]*.
 . *_Click_* the *Updates* tab to monitor the storage capacity update action.
-. Wait for the storage capacity scaling *update* to complete before moving on to the next section. Do not wait for the optimization phase to complete. Once the file system displays the new value as the storage capacity in the summary section, continue to the next step.
-* You can also monitor the storage capacity update action from the *Monitoring* tab using the *Free storage capacity* widget. The widget will show a large increase in free storage capacity once the update action is complete.
+* Do not wait for the throughput capacity action to complete. Move to the next section.
+
 
 == Next section
 
