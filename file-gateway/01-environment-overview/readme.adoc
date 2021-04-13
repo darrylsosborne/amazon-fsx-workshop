@@ -2,7 +2,7 @@
 :toc:
 :icons:
 :linkattrs:
-:imagesdir: /resources/images
+:imagesdir: ../resources/images
 
 
 == Summary
@@ -13,7 +13,7 @@ In the *Workshop Diagram*, Region 0 represents the AWS environment where the Ama
 
 - Phase 1 - Deploy the Region 0 environment hosting the Amazon FSx for Windows File Server using AWS CloudFormation
 - Phase 2 - Deploy the Region 1 environment hosting the remote Amazon FSx File Gateway EC2 instance using AWS CloudFormation
-- Phase 3 - Configure the Amazon FSx File Gateway
+- Phase 3 - Create the Amazon FSx File Gateway using the AWS Management Console
 
 It will take approximately 40 minutes for the entire workshop environment to be created.
 
@@ -25,4 +25,4 @@ image::fsx-gateway-workshop-architecture-complete.png[align="center"]
 
 Click the button below to go to the next section.
 
-image::create-fsx-windows-environment.png[link=../02-create-fsx-windows-environment/, align="right",width=420]
+image::deploy-fsx-windows-environment.png[link=../02-deploy-fsx-windows-environment/, align="right",width=420]
