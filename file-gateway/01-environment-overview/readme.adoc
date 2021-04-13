@@ -1,0 +1,24 @@
+= Amazon FSx File Gateway On-Demand Workshop Overview
+:toc:
+:icons:
+:linkattrs:
+:imagesdir: ../resources/images
+
+
+== Summary
+
+There are three phases or steps to create the Amazon FSx File Gateway Workshop environment. Below is the workshop diagram that shows the entire environment once all three setup phases have been completed.
+
+In the *Workshop Diagram*, Region 0 represents the AWS environment where the Amazon FSx for Windows File Server is running. Region 1 is a different AWS Region than Region 0 and simulates a remote environment where the FSx File Gateway is running. This region (Region 1) represents an on-premises site, remote office, branch office, or some facility remote from the AWS region running the Amazon FSx for Windows File Server.
+
+It will take approximately 40 minutes for the entire workshop environment to be created.
+
+== Workshop Diagram
+
+image::fsx-gateway-workshop-architecture-complete.png[align="center"]
+
+== Next section
+
+Click the button below to go to the next section.
+
+image::create-fsx-windows-environment.png[link=../02-create-fsx-windows-environment/, align="right",width=420]
