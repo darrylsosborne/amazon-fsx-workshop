@@ -1,4 +1,4 @@
-= Deploy Amazon FSx File Gateway On-Demand Workshop - FSx for Windows File Server Environment
+= Phase 1 - Deploy the Amazon FSx for Windows File Server environment
 :toc:
 :icons:
 :linkattrs:
@@ -8,11 +8,11 @@
 == Summary
 
 Deploy a new AWS environment for use during this workshop. See the *Workshop Diagram* below.
-It will take approximately 40 minutes for the workshop environment to be created.
+It will take approximately 30 minutes for this phase of the workshop environment to be created.
 
 == Workshop Diagram
 
-image::fsx-gateway-workshop-fsx-architecture.png[align="center"]
+image::fsx-gateway-workshop-architecture-phase-1.png[align="center"]
 
 === Deploy the environment using AWS CloudFormation
 
@@ -125,10 +125,16 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 [cols="3,10"]
 |===
 | *VPC CIDR*
-a| Select a CIDR that will be used for the VPC.
+a| Select a CIDR that will be used for the VPC. This CIDR block must not overlap the CIDR block in Phase 2.
 
 | *Availability Zones*
 a| Select two (2) availability zones for your VPC.
+
+| *Instance Type*
+a| Accept the default.
+
+| *Key Pair*
+a| Select an existing key pair.
 
 |===
 +
@@ -141,11 +147,15 @@ image::cloudformation-capabilities.png[align="left", width=420]
 +
 . *_Click_* *Create stack*.
 
-The tutorial environment will be available in approximately 40 minutes.
+The environment will be available in approximately 30 minutes.
 
+Do not move to the next section until the Microsoft Active Directory resource is *Active* in Region 0 (about 20 minutes)
+
+. Find the Directory ID of the AWS-Managed Microsoft Active Directory. From the CloudFormation stack window, *_Click_* the *Resources* tab and scroll down until you see the Logical ID *Directory*. Make note of its corresponding Physical ID (e.g. d-9067664e43).
+. * From the link:https://console.aws.amazon.com/directoryservicev2/[Amazon Directory Service] console, monitor the *Status* of the *Directory ID* from the previous step. Only continue to the next section once the *Status* shows *Active*.
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::create-fsx-gateway-environment.png[link=../01-create-fsx-gateway-environment/, align="right",width=420]
+image::deploy-fsx-gateway-environment.png[link=../02-deploy-fsx-gateway-environment/, align="right",width=420]
