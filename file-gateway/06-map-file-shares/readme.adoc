@@ -56,7 +56,7 @@ image::map-default-file-share.gif[align="left", width=600]
 
 . Go to the Remote Desktop Session where you connected to the *WindowsInstance*.
 
-. *_Launch_* *File Explorer*.
+. *_Launch_* a new *File Explorer* window.
 
 . *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
 
@@ -65,10 +65,10 @@ image::map-default-file-share.gif[align="left", width=600]
 [cols="3,10"]
 |===
 | *Drive*
-a| Z:
+a| Y:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. Return to the link:https://console.aws.amazon.com/storagegatewayv3/[AWS Storage Gateway] console and *_change_* the *AWS Region* to where you created the Amazon FSx File Gateway service components (Phase 3, Region 1). *_Click_* the link to the *SAZ2* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\172.31.0.24\share).
+a| This is the UNC path of the file gateway's default file share. Return to the link:https://console.aws.amazon.com/storagegatewayv3/[AWS Storage Gateway] console and *_change_* the *AWS Region* to where you created the Amazon FSx File Gateway service components (Phase 3, Region 1). From the *Storage Gateway* console's *FSx file systems* page, *_select_* the *File system ID* of the file sysetm you attached when creating the FSx File Gateway service components in Phase 3. In the *Examples Commands* section of the *Details* tab, copy the UNC path of the internal IP address of the FSx File Gateway (e.g. \\172.31.0.25\). *_Paste_* it as the first part of the UNC path. *_Add_* *share* to the end of the *DNS Name* to complete the UNC path to the file gateway's default file share (e.g. \\172.31.0.25\share).
 
 | *Reconnect at sign-in*
 a| Leave checked
@@ -78,7 +78,6 @@ a| Leave unchecked
 |===
 +
 . In the *File Explorer* window of the *Y:* drive you should see sample data that was preloaded into your file system. This sample data should be identical to the sample data visible in the File Explorer window mapped to the FSx for Windows File Server.
-
 
 == Next section
 

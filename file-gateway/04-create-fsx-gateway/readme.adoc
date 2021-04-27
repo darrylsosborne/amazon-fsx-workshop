@@ -71,18 +71,11 @@ It is a best practice to create a service account with minimum privileges to con
 +
 [cols="3,10"]
 |===
-| *Use*
+| *User*
 a| *_Enter_* *admin*
 
 | *Password*
 a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
-
-| *Organizational unit - optional*
-a| Accept the default - leave blank.
-
-| *Domain controller(s) - optional*
-a| Accept the default - leave blank.
-
 |===
 +
 . *_Accept_* the default values for *Audit logs* to *Disable logging*.
