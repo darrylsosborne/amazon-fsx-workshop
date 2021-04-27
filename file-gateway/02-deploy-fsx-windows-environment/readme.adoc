@@ -10,7 +10,7 @@
 Deploy a new AWS environment for use during this workshop. See the *Workshop Diagram* below.
 It will take approximately 30 minutes for this phase of the workshop environment to be created.
 
-== Workshop Diagram
+== Phase 1 Diagram
 
 image::fsx-gateway-workshop-architecture-phase-1.png[align="center"]
 

@@ -28,13 +28,13 @@ image::connect-windows-instance.gif[align="left", width=600]
 +
 TIP: *_Context-click (right-click)_* the link above and open the link in a new tab or window to make it easy to navigate between this github workshop and AWS console.
 +
-. Make sure you are in the same *AWS Region* as the workshop environment. If you need to change the *AWS Region* of the Amazon EC2 console, in the top right corner of the browswer window *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
+. Make sure you are in the same *AWS Region* where you deployed Phase 2 - Deploy the Amazon FSx File Gateway environment (Region 2). If you need to change the *AWS Region* of the Amazon EC2 console, from the top right corner of the browser window, *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
 
 . *_Click_* *Running Instances*.
 
-. *_Click_* the radio button next to the instance with the name *FSx/W Workshop Windows Instance*.
+. *_Click_* the radio button next to the instance with the name *WindowsInstance*.
 
-. Copy the *Public DNS (IPv4)* name of the *FSx/W Workshop Windows Instance* instance.
+. Copy the *Public DNS (IPv4)* name of the *WindowsInstance*.
 
 . Launch your remote desktop application and create a new connection.
 * Windows Users - use the built-in *Remote Desktop Connection* application.
@@ -58,7 +58,7 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 
 Click the link below to go to the next section.
 
-image::examine-fsx-console.png[link=../03-examine-fsx-console/, align="left",width=420]
+image::map-file-shares.png[link=../06-map-file-shares/, align="left",width=420]
 
 
 

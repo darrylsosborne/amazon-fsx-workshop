@@ -1,4 +1,4 @@
-= Map Default File Share
+= Map File Shares
 :toc:
 :icons:
 :linkattrs:
@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will map the Amazon FSx for Windows File Server default file share on an Amazon EC2 Windows instance.
+This section will map drives to the Amazon FSx for Windows File Server default file share in Region 1 and the Amazon FSx File Gateway default file share in Region 2.
 
 
 == Duration
@@ -17,13 +17,13 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Map default file share
+=== Map a drive to the Amazon FSx for Windows File Servver default share in Region 1
 
 IMPORTANT: Read through all steps below and watch the quick video before continuing.
 
 image::map-default-file-share.gif[align="left", width=600]
 
-. Go to the Remote Desktop Session where you connected to the *FSx/W Workshop Windows Instance*.
+. Go to the Remote Desktop Session where you connected to the *WindowsInstance*.
 
 . *_Launch_* *File Explorer*.
 
@@ -37,7 +37,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Z:
 
 | *Folder*
-a| This is the UNC path of the file system's default file share. Return to the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console, *_click_* the link to the *MAZ* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\amznfsx0123abcde.example.com\share).
+a| This is the UNC path of the file system's default file share. Return to the link:https://console.aws.amazon.com/fsx/[Amazon FSx] console and *_change_* the *AWS Region* to where you deployed the Amazon FSx for Windows File Server environment (Phase 1, Region 1). *_Click_* the link to the *SAZ2* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\amznfsx0123abcde.example.com\share).
 
 | *Reconnect at sign-in*
 a| Leave checked
@@ -46,15 +46,45 @@ a| Leave checked
 a| Leave unchecked
 |===
 +
-. In the *File Explorer* window of the *Z:* drive you should see the folder *AVHRR* which contains sample data that was preloaded into your file system.
-. Create new test files in the root of the *Z:* drive. *_Context-click (right-click)_* >> *New* >> *Text Document*. Create a few different types of test files.
+. In the *File Explorer* window of the *Z:* drive you should see sample data that was preloaded into your file system.
+
+=== Map a drive to the Amazon FSx File Gateway default share in Region 2
+
+IMPORTANT: Read through all steps below and watch the quick video before continuing.
+
+image::map-default-file-share.gif[align="left", width=600]
+
+. Go to the Remote Desktop Session where you connected to the *WindowsInstance*.
+
+. *_Launch_* *File Explorer*.
+
+. *_Context-click (right-click)_* *This PC* and *_select_* *Map network drive...*
+
+. Map the file share using the following information:
++
+[cols="3,10"]
+|===
+| *Drive*
+a| Z:
+
+| *Folder*
+a| This is the UNC path of the file system's default file share. Return to the link:https://console.aws.amazon.com/storagegatewayv3/[AWS Storage Gateway] console and *_change_* the *AWS Region* to where you created the Amazon FSx File Gateway service components (Phase 3, Region 1). *_Click_* the link to the *SAZ2* file system and *_select_* the *Network & security* tab. *_Click_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the *DNS name* to *_copy_* the *DNS Name* to the clipboard and paste it as the first part of the UNC path. *_Add_* *\share* to the end of the *DNS Name* to complete the UNC path to the file system's default file share (e.g. \\172.31.0.24\share).
+
+| *Reconnect at sign-in*
+a| Leave checked
+
+| *Connect using different credentials*
+a| Leave unchecked
+|===
++
+. In the *File Explorer* window of the *Y:* drive you should see sample data that was preloaded into your file system. This sample data should be identical to the sample data visible in the File Explorer window mapped to the FSx for Windows File Server.
 
 
 == Next section
 
 Click the link below to go to the next section.
 
-image::create-new-file-shares.png[link=../06-create-new-file-shares/, align="left",width=420]
+image::test-performance.png[link=../07-test-performance/, align="left",width=420]
 
 
 
