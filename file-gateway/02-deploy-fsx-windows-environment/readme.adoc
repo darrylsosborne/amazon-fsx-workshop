@@ -152,10 +152,10 @@ The environment will be available in approximately 30 minutes.
 Do not move to the next section until the Microsoft Active Directory resource is *Active* in Region 0 (about 20 minutes)
 
 . Find the Directory ID of the AWS-Managed Microsoft Active Directory. From the CloudFormation stack window, *_Click_* the *Resources* tab and scroll down until you see the Logical ID *Directory*. Make note of its corresponding Physical ID (e.g. d-9067664e43).
-. * From the link:https://console.aws.amazon.com/directoryservicev2/[Amazon Directory Service] console, monitor the *Status* of the *Directory ID* from the previous step. Only continue to the next section once the *Status* shows *Active*.
+. From the link:https://console.aws.amazon.com/directoryservicev2/[Amazon Directory Service] console, monitor the *Status* of the *Directory ID* from the previous step. Only continue to the next section once the *Status* shows *Active*.
 
 == Next section
 
 Click the button below to go to the next section.
 
-image::deploy-fsx-gateway-environment.png[link=../02-deploy-fsx-gateway-environment/, align="right",width=420]
+image::deploy-fsx-gateway-environment.png[link=../03-deploy-fsx-gateway-environment/, align="right",width=420]
