@@ -7,7 +7,7 @@
 
 == Summary
 
-Deploy a new AWS environment for use during this workshop. See the *Phase 1 Diagram* below.
+Deploy the Region 1 - Amazon FSx for Windows File Server environment. See the *Phase 1 Diagram* below.
 It will take approximately 30 minutes for this phase of the workshop environment to be created.
 
 == Phase 1 Diagram
@@ -123,7 +123,7 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 [cols="3,10"]
 |===
 | *VPC CIDR*
-a| Select a CIDR that will be used for the VPC. This CIDR block must not overlap the CIDR block in Phase 2.
+a| Select a CIDR that will be used for the VPC. This CIDR block must not overlap the CIDR block in Phase 2 - Region 2.
 
 | *Availability Zones*
 a| Select two (2) availability zones for your VPC.
@@ -136,10 +136,10 @@ a| Select an existing key pair.
 
 |===
 +
-. After you have entered values for all parameters, *_click_* *Next*.
+. After you have entered or accepted values for all parameters, *_click_* *Next*.
 . *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_click_* *Next*.
 . *_Review_* the CloudFormation stack settings.
-. *_Click_* both checkboxes in the blue *Capabilities* box at the bottom of the page.
+. *_Click_* the checkbox in the blue *Capabilities* box at the bottom of the page.
 +
 image::cloudformation-capabilities.png[align="left", width=420]
 +
