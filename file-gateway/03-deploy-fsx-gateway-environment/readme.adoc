@@ -117,14 +117,14 @@ a| Select an existing key pair.
 
 |===
 +
-. After you have entered values for all parameters, *_click_* *Next*.
-. *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_click_* *Next*.
+. After you have entered or accepted values for all parameters, *_select_* *Next*.
+. *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_select_* *Next*.
 . *_Review_* the CloudFormation stack settings.
-. *_Click_* both checkboxes in the blue *Capabilities* box at the bottom of the page.
+. *_Select_* the checkbox in the blue *Capabilities* box at the bottom of the page.
 +
 image::cloudformation-capabilities.png[align="left", width=420]
 +
-. *_Click_* *Create stack*.
+. *_Select_* *Create stack*.
 
 The environment will be available in approximately 5 minutes.
 
@@ -160,7 +160,7 @@ Update the Private Routing Table and add a route to the VPC CIDR in Region 2 usi
 
 IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* button.
 
-. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
+. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin. This should be the same region you selected above for Region 2.
 +
 TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the link in a new tab or window to make it easy to navigate between this github tutorial and the AWS Console.
 +
@@ -250,14 +250,14 @@ a| Select an existing key pair.
 
 |===
 +
-. After you have entered values for all parameters, *_click_* *Next*.
-. *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_click_* *Next*.
+. After you have entered values for all parameters, *_select_* *Next*.
+. *_Accept_* the default values of the *Configure stack options* and *Advanced options* sections and *_select_* *Next*.
 . *_Review_* the CloudFormation stack settings.
-. *_Click_* both checkboxes in the blue *Capabilities* box at the bottom of the page.
+. *_Select_* the checkbox in the blue *Capabilities* box at the bottom of the page.
 +
 image::cloudformation-capabilities.png[align="left", width=420]
 +
-. *_Click_* *Create stack*.
+. *_Select_* *Create stack*.
 
 The environment will be available in approximately 5 minutes.
 
