@@ -73,7 +73,7 @@ a| Leave checked
 a| Leave unchecked
 |===
 +
-. In the *File Explorer* window of the *Y:* drive you should see sample data that was preloaded into your file system. This sample data should be identical to the sample data visible in the File Explorer window mapped to the FSx for Windows File Server.
+. In the *File Explorer* window of the *Y:* drive you should see sample data that was preloaded into your file system. This sample data should be identical to the sample data visible in the File Explorer window mapped to the *Z:* drive pointing to the FSx for Windows File Server in Region 1.
 
 == Next section
 
