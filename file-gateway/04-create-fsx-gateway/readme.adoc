@@ -7,9 +7,9 @@
 
 == Summary
 
-The Amazon FSx File Gateway architecture has two components. The first component is the actional FSx File Gateway virtual or physical appliance, typically deployed on-premises. In this workshop it was deployed in Phase 2 - Deploy the Amazon FSx File Gateway environment in Region 2. The second component is the configuration of the FSx File Gateway service in the AWS Cloud. This the service component that connects to the underlying storage platform linked to the FSx File Gateway - which is the Amazon FSx for Windows File Server. This FSx for Windows File Server was deployed in Phase 1 - Deploy the Amazon FSX for Windows File Server environment.
+The Amazon FSx File Gateway architecture has two components. The first component is the actional FSx File Gateway virtual or physical appliance, typically deployed on-premises. In this workshop it was deployed in Phase 2 - Deploy the Amazon FSx File Gateway environment in Region 2. The second component is the configuration of the FSx File Gateway service in the AWS Cloud. This service component attaches the FSx for Windows File Server to the FSx File Gateway. This FSx for Windows File Server was deployed in Phase 1 - Deploy the Amazon FSX for Windows File Server environment in Region 1.
 
-Phase 3 will create the service components that connects the FSx File Gateway in Region 2 to the FSx for Windows File Server in Region 1.
+Phase 3 will create the FSx File Gateway service components that connects the FSx File Gateway in Region 2 to the FSx for Windows File Server in Region 1.
 
 == Phase 3 Diagram
 
@@ -19,7 +19,7 @@ image::fsx-gateway-workshop-architecture-phase-3.png[align="center"]
 
 IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* button.
 
-. From the link:https://console.aws.amazon.com/storagegatewayv3/[Amazon Storage Gateway] console, *_select_* the AWS Region where you created the Amazon FSx for Windows File Server environment (Phase 1 and Region 1).
+. From the link:https://console.aws.amazon.com/storagegateway/[Amazon Storage Gateway] console, *_select_* the AWS Region where you created the Amazon FSx for Windows File Server environment (Phase 1 and Region 1).
 . *_Select_* *Create gateway*.
 . *_Select_* *Amazon FSx File Gateway*, then *_select_* *Next*.
 . *_Select_* *Amazon EC2* as the *host platform*, then *_select_* *Next*.
@@ -29,7 +29,7 @@ IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* 
 . From the *Gateway time zone* dropdown menu, *_select_* the appropriate time zone where you deployed the Amazon FSx File Gateway environment (Region 2).
 . *_Enter_* the gateway name. Give it a name like *FSx File Gateway Workshop*. *_Select_* *Activate gateway*.
 +
-It will take 30+ seconds for the service to prepare the local disks on the FSx File Gateway instance.
+It may take 30+ seconds for the service to prepare the local disks on the FSx File Gateway instance.
 +
 . *_Select_* *Save and continue* to allocate the 150 GiB volume as the Cache of the FSx File Gateway instance.
 . *_Accept_* the default *Gateway health log group* option to *Create a new log group* and *_select_* *Save and continue*.
@@ -43,13 +43,13 @@ After a few seconds the *Status* of the FSx File Gateway should show *Running*.
 [cols="3,10"]
 |===
 | *Domain name*
-a| *_Enter_* *example.com*
+a| *example.com*
 
 | *Domain user*
-a| *_Enter_* *admin*
+a| *admin*
 
 | *Domain password*
-a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
+a| Copy in the Secret Value of the Secret Key 'Password-..' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
 
 | *Organizational unit - optional*
 a| Accept the default - leave blank.
@@ -59,18 +59,16 @@ a| Accept the default - leave blank.
 
 |===
 +
-. *_Select_* *Next*
-+
 It is a best practice to create a service account with minimum privileges to connect to Amazon FSx. For simplicity and ease of creating the workshop environments, we are using domain admin for the AWS-managed Active Directory created during Phase 1 - Deploy the Amazon FSx for Windows File Server environment in Region 1.
 +
-. After you have entered values for all parameters, *_click_* *Next*.
+. _Select_ *Next*.
 . On the *Attach FSx file system* page, *_select_* the *SAZ2* file system created in Phase 1 - Deploy an Amazon FSx for Windows File Server environment in Region 1.
-. *_Enter_* the values in the *Service account settings* section from the following table.
+. _Enter_ the values in the *Service account settings* section from the following table.
 +
 [cols="3,10"]
 |===
 | *User*
-a| *_Enter_* *admin*
+a| *admin*
 
 | *Password*
 a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
@@ -81,7 +79,7 @@ a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager cr
 . *_Select_* the *Next*.
 . *_Review_* the *Review and attach* page and *_select_* *Attach*.
 +
-After a few minutes the *Status* of the FSx file system should change to *Available*. You may need to refresh the table by *_selecting_* the refresh button.
+After a few minutes the *Status* of the FSx file system should change from *Updating *to *Available*. You may need to refresh the table by *_selecting_* the refresh button.
 
 == Next section
 
