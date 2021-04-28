@@ -79,7 +79,7 @@ a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager cr
 . *_Select_* the *Next*.
 . *_Review_* the *Review and attach* page and *_select_* *Attach*.
 +
-After a few minutes the *Status* of the FSx file system should change from *Updating *to *Available*. You may need to refresh the table by *_selecting_* the refresh button.
+After a few minutes the *Status* of the FSx file system should change from *Updating* to *Available*. You may need to refresh the table by *_selecting_* the refresh button.
 
 == Next section
 
