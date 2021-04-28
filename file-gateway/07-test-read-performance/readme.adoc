@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will test the read performance of the FSx File Gateway and compare it to the read performance of the FSx for Windows File Server when access over a Wide Area Network (WAN).
+This section will test the read performance of the local FSx File Gateway in Region 2, the same region as this Windows instance, and compare it to the read performance of the remote FSx for Windows File Server in Region 1.
 
 There are many disk performance tools out there. link:https://aka.ms/diskspd[DiskSpd] have been pre-installed on the *WindowsInstance*.
 
@@ -20,7 +20,7 @@ NOTE: It will take approximately 15 minutes to complete this section.
 
 IMPORTANT: Read through all steps below before continuing.
 
-=== Compare read durations of large CSV files from the FSx File Gateway and the FSx for Windows File Server
+=== Compare read durations of large files from the local FSx File Gateway and the remote FSx for Windows File Server
 
 There are three CSV files preloaded on the file system. This is sample sales data downloaded from link:http://eforexcel.com/wp/downloads-18-sample-csv-files-data-sets-for-testing-sales/[eforexcel.com]. There is a 10,000 records file (10k Sales Records.csv @ 1.18 MB), a 1,000,000 records file (1m Sales Records.csv @ 119 MB), and a 5,000,000 records file (5m Sales Records.csv @ 595 MB).
 
@@ -55,7 +55,7 @@ a| 59.4 seconds
 a| 6.5 seconds
 |===
 +
-. Repeat the tests to see if you continue to see a difference betwee accessing files from the remote FSx for Windows File Server and the local FSx File Gateway.
+. Repeat the tests to see if you continue to see a difference between accessing files from the remote FSx for Windows File Server and the local FSx File Gateway.
 
 
 === DiskSpd Read tests
@@ -82,14 +82,14 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Z:
 While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet). The DiskSpd script will complete in 120 seconds. After the script has completed, the output will be displayed in the PowerShell window.
 +
 * What was the P99 (99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
-* * What was the P99.999 (99.999th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
+* What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
 * What was the Total Read IO MiB/s? - This is found in the DiskSpd output. It is under *Read IO* under the *MiB/s* column.
 * What was the I/O per second? - This is found in the DiskSpd output. It is under *Read IO* under the *I/O per s* column.
 * What was the AvgLat? - This is found in the DiskSpd output. It is under *Read IO* under the *AvgLat* column.
 +
 . Copy the following table to your local computer and records the results
 +
-[cols="3,10,10"]
+[cols="3,10"]
 |===
 | DiskSpd Metric | FSx for Windows File Server
 
@@ -164,14 +164,14 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Y:
 While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet). The DiskSpd script will complete in 120 seconds. After the script has completed, the output will be displayed in the PowerShell window.
 +
 * What was the P99 (99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
-* * What was the P99.999 (99.999th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
+* What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
 * What was the Total Read IO MiB/s? - This is found in the DiskSpd output. It is under *Read IO* under the *MiB/s* column.
 * What was the I/O per second? - This is found in the DiskSpd output. It is under *Read IO* under the *I/O per s* column.
 * What was the AvgLat? - This is found in the DiskSpd output. It is under *Read IO* under the *AvgLat* column.
 +
 . Copy the following table to your local computer and records the results
 +
-[cols="3,10,10"]
+[cols="3,10"]
 |===
 | DiskSpd Metric | FSx File Gateway
 
