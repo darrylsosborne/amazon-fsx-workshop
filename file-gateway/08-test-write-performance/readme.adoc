@@ -27,13 +27,8 @@ IMPORTANT: Read through all steps below before continuing.
 . From the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server, *_context-click_* (*_right-click_*) and select *New >> TextDocument* and give it a new name (e.g. Test1).
 . Refresh the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway.
 . Do you see the file in both *File Explorer* windows?
-+
-NOTE: Changes made to files in the underlying FSx for Windows File Server are periodically pushed to the attached FSx File Gateways.
-+
 . From the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway, *_context-click_* (*_right-click_*) and select *New >> TextDocument* and give it a new name (e.g. Test2).
 . Do you see the file in both *File Explorer* windows?
-+
-NOTE: Changes made to files in the FSx File Gateway are immediately pushed to the attached FSx for Windows File Server.
 
 === Compare file updates between the local FSx File Gateway and the remote FSx for Windows File Server
 
