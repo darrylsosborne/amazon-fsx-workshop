@@ -17,7 +17,7 @@ NOTE: It will take approximately 5 minutes to complete this section.
 
 == Step-by-step Guide
 
-=== Map a drive to the Amazon FSx for Windows File Servver default share in Region 1
+=== Map a drive to the Amazon FSx for Windows File Server default share in Region 1
 
 IMPORTANT: Read through all steps below before continuing.
 
@@ -48,9 +48,7 @@ a| Leave unchecked
 
 === Map a drive to the Amazon FSx File Gateway default share in Region 2
 
-IMPORTANT: Read through all steps below and watch the quick video before continuing.
-
-image::map-default-file-share.gif[align="left", width=600]
+IMPORTANT: Read through all steps below before continuing.
 
 . Go to the Remote Desktop Session where you connected to the *WindowsInstance*.
 
@@ -66,7 +64,7 @@ image::map-default-file-share.gif[align="left", width=600]
 a| Y:
 
 | *Folder*
-a| This is the UNC path of the file gateway's default file share. Return to the link:https://console.aws.amazon.com/storagegatewayv3/[AWS Storage Gateway] console and *_change_* the *AWS Region* to where you created the Amazon FSx File Gateway service components (Phase 3, Region 1). From the *Storage Gateway* console's *FSx file systems* page, *_select_* the *File system ID* of the file sysetm you attached when creating the FSx File Gateway service components in Phase 3. In the *Examples Commands* section of the *Details* tab, copy the UNC path of the internal IP address of the FSx File Gateway (e.g. \\172.31.0.25\). *_Paste_* it as the first part of the UNC path. *_Add_* *share* to the end of the *DNS Name* to complete the UNC path to the file gateway's default file share (e.g. \\172.31.0.25\share).
+a| This is the UNC path of the file gateway's default file share. Return to the link:https://console.aws.amazon.com/storagegateway/[AWS Storage Gateway] console and *_change_* the *AWS Region* to where you created the Amazon FSx File Gateway service components (Phase 3, Region 1). From the *Storage Gateway* console select *FSx file systems* from the left window frame. *_Select_* the *File system ID* of the file system you attached when creating the FSx File Gateway service components in Phase 3. The *Gateway* name should be *FSx File Gateway Workshop*. In the *Examples Commands* section of the *Details* tab, copy the UNC path of the internal IP address of the FSx File Gateway (e.g. \\172.31.0.25\). *_Paste_* it as the first part of the UNC path. *_Add_* *share* to the end of the *IP address* to complete the UNC path to the file gateway's default file share (e.g. \\172.31.0.25\share).
 
 | *Reconnect at sign-in*
 a| Leave checked

@@ -27,11 +27,11 @@ TIP: *_Context-click (right-click)_* the link above and open the link in a new t
 +
 . Make sure you are in the same *AWS Region* where you deployed Phase 2 - Deploy the Amazon FSx File Gateway environment (Region 2). If you need to change the *AWS Region* of the Amazon EC2 console, from the top right corner of the browser window, *_click_* the region name next to *Support* and *_click_* the appropriate *AWS Region* from the drop-down menu.
 
-. *_Click_* *Running Instances*.
+. *_Click_* *Instances (running)*.
 
 . *_Click_* the radio button next to the instance with the name *WindowsInstance*.
 
-. Copy the *Public DNS (IPv4)* name of the *WindowsInstance*.
+. Copy the *Public IPv4 DNS* name of the *WindowsInstance* by *_selecting_* the image:copy-to-clipboard.png[align="left",width=20] shortcut next to the DNS name to *_copy_* the DNS Name to the clipboard.
 
 . Launch your remote desktop application and create a new connection.
 * Windows Users - use the built-in *Remote Desktop Connection* application.
