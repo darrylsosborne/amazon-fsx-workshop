@@ -261,7 +261,7 @@ image::cloudformation-capabilities.png[align="left", width=420]
 
 The environment will be available in approximately 5 minutes.
 
-Do not move to the next section until CloudFormation stack has a status of CREATE_COMPLETE.
+Do not move to the next section until the CloudFormation stack has a status of CREATE_COMPLETE.
 
 == Next section
 
