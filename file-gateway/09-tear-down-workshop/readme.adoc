@@ -9,7 +9,7 @@
 
 IMPORTANT: Read through all steps below before continuing.
 
-. Open the link:https://console.aws.amazon.com/storagegatewayv3/[AWS Storage Gateway] console.
+. Open the link:https://console.aws.amazon.com/storagegateway/[AWS Storage Gateway] console.
 . *_Change_* the *Region* to Region 1 where you created the Amazon FSx File Gateway service components (Phase 3 - Region 1).
 . *_Click_* the *check box* next to the *FSx File Gateway Workshop* gateway you created earlier.
 . *_Click_* *Actions >> Delete Gateway*.
