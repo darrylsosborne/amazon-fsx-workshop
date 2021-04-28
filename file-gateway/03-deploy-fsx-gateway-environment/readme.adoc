@@ -240,7 +240,7 @@ a| Accept the default.
 a| *_Select_* the *Public Subnet 1 - fsx-gateway-workshop-fsxgw-environment* subnet.
 
 | *Security Group*
-a| Select the *..-fsx-gateway-workshop-fsxgw-environment-WindowsSecurityGroup-..* security group.
+a| Select the *fsx-gateway-workshop-fsxgw-environment-WindowsSecurityGroup-<GUID>* security group.
 
 | *Password*
 a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
