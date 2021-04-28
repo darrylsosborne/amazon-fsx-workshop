@@ -294,7 +294,7 @@ a| 125.269
 
 Click the button below to go to the next section.
 
-image::tear-down-workshop.png[link=../08-tear-down-workshop/, align="left",width=420]
+image::tear-down-workshop.png[link=../09-tear-down-workshop/, align="left",width=420]
 
 
 
