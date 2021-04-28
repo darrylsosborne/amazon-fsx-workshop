@@ -22,6 +22,7 @@ Metadata:
       Parameters:
         - GatewayInstanceType
         - KeyPair
+        - LatestSgwAmiId
     ParameterLabels:
       AvailabilityZones:
         default: Availability Zones
@@ -31,6 +32,8 @@ Metadata:
         default: Instance type
       KeyPair:
         default: Key pair
+      LatestSgwAmiId:
+        default: Latest Storage Gateway AMI (do not change)
       PeerRegion:
         default: Peer region
       PeerVpc:

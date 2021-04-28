@@ -289,7 +289,7 @@ Resources:
           Value: SAZ2
       WindowsConfiguration:
         ActiveDirectoryId: !Ref Directory
-        ThroughputCapacity: 256
+        ThroughputCapacity: 64
         DeploymentType: SINGLE_AZ_2
 
   Instance0:

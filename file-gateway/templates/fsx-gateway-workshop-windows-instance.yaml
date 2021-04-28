@@ -57,12 +57,12 @@ Parameters:
     NoEcho: 'true'
     Type: String
   Subnet:
-    Description: Select the ..Public Subnet 1 | fsx-gateway-workshop-fsxgw-environment-<GUID> subnet
+    Description: Select the (Public Subnet 1 | fsx-gateway-workshop-fsxgw-environment) subnet
     Type: AWS::EC2::Subnet::Id
   SecurityGroup:
     Description: Select the fsx-gateway-workshop-fsxgw-environment-WindowsSecurityGroup-<GUID> (e.g., sg-7f16e91a87390).
     Type: AWS::EC2::SecurityGroup::Id
-  LatestAmiId:
+  LatestWS2019AmiId:
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
     Default: "/aws/service/ami-windows-latest/Windows_Server-2019-English-Full-Base"
 
@@ -76,7 +76,7 @@ Resources:
             ExpirationInDays: 30
             Status: Enabled
             Prefix: 'logs/'
-  DomainJoinSecrets:
+  Password:
     Type: AWS::SecretsManager::Secret
     Properties:
       SecretString: !Sub '{"username":"admin@example.com","password":"${Password}"}'
@@ -168,7 +168,7 @@ Resources:
         instance of MSFT_Credential as $MSFT_Credential1ref
         {
         Password = "managementgovernancesample";
-         UserName = "${DomainJoinSecrets}";
+         UserName = "${Password}";
         
         };
         instance of DSC_Computer as $DSC_Computer1ref
@@ -214,7 +214,7 @@ Resources:
                   - secretsmanager:GetSecretValue
                   - secretsmanager:DescribeSecret
                 Resource: 
-                  - !Ref 'DomainJoinSecrets'
+                  - !Ref 'Password'
           PolicyName: ssm-secrets-policy
         - PolicyDocument:
             Version: '2012-10-17'
@@ -250,7 +250,7 @@ Resources:
   WindowsInstance:
     Type: "AWS::EC2::Instance"
     Properties:
-      ImageId: !Ref LatestAmiId
+      ImageId: !Ref LatestWS2019AmiId
       InstanceType: !Ref InstanceType
       KeyName: !Ref KeyPair
       IamInstanceProfile: !Ref SSMInstanceProfile
