@@ -236,14 +236,14 @@ a| image::deploy-to-aws.png[link=https://console.aws.amazon.com/cloudformation/h
 | *Instance Type*
 a| Accept the default.
 
-| *Password*
-a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
-
 | *Subnet*
 a| *_Select_* the *Public Subnet 1 - fsx-gateway-workshop-fsxgw-environment* subnet.
 
 | *Security Group*
 a| Select the *..-fsx-gateway-workshop-fsxgw-environment-WindowsSecurityGroup-..* security group.
+
+| *Password*
+a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
 
 | *Key Pair*
 a| Select an existing key pair.
