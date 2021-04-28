@@ -7,7 +7,7 @@
 
 == Summary
 
-This section will test the write performance of the FSx File Gateway and compare it to the write performance of the FSx for Windows File Server when access over a Wide Area Network (WAN).
+This section will test the write performance of the local FSx File Gateway in Region 2, the same region as this Windows instance, and compare it to the write performance of the remote FSx for Windows File Server in Region 1.
 
 There are many disk performance tools out there. link:https://aka.ms/diskspd[DiskSpd] have been pre-installed on the *WindowsInstance*.
 
@@ -29,7 +29,6 @@ IMPORTANT: Read through all steps below before continuing.
 . Do you see the file in both *File Explorer* windows?
 . From the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway, *_context-click_* (*_right-click_*) and select *New >> TextDocument* and give it a new name (e.g. Test2).
 . Do you see the file in both *File Explorer* windows?
-. From the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server, *_context-click_* (*_right-click_*) and select *New >> TextDocument* and give it a new name (e.g. Test1).
 
 === Compare file updates between the local FSx File Gateway and the remote FSx for Windows File Server
 
