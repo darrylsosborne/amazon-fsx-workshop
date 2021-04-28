@@ -40,14 +40,14 @@ IMPORTANT: Read through all steps below before continuing.
 . Do you see the changes you made in the version of the file from the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway?
 . Wait a minute and try again? Continue opening the *Test1* file until you see the changes you made to the file from the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server reflected in the the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway.
 +
-NOTE: Changes made to files in the underlying FSx for Windows File Server are periodically pushed to the attached FSx File Gateways.
+NOTE: Changes made to the underlying FSx for Windows File Server are periodically pushed to the attached FSx File Gateways.
 +
 . From the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway, *_open_* the *Test2* file you created earlier and update its content (e.g. add your last name to the file).
 . *_Save_* and *_close_* the file.
 . From the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server, *_open_* the *Test2* file you updated earlier.
 . Do you see the changes you made to the file when accessed from the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server?
 +
-NOTE: Changes made to files in the FSx File Gateway are immediately pushed to the attached FSx for Windows File Server.
+NOTE: Changes made to the FSx File Gateway are immediately pushed to the attached FSx for Windows File Server.
 
 
 === Compare file deletes between the local FSx File Gateway and the remote FSx for Windows File Server
@@ -58,14 +58,14 @@ NOTE: Changes made to files in the FSx File Gateway are immediately pushed to th
 . Do you see *Test1* in the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway?
 . Wait a minute and try again? Continue *_refreshing_* the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway.
 +
-NOTE: Changes made to files in the underlying FSx for Windows File Server are periodically pushed to the attached FSx File Gateways.
+NOTE: Changes made to the underlying FSx for Windows File Server are periodically pushed to the attached FSx File Gateways.
 +
 . From the *File Explorer* window mapped to the *Y:* drive pointing to the local FSx File Gateway, *_delete_* the *Test2* file you created earlier.
 . Do you see *Test2* from the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server?
 . Refresh the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server.
 . Do you see *Test2* from the *File Explorer* window mapped to the *Z:* drive pointing to the remote FSx for Windows File Server?
 +
-NOTE: Changes made to files in the FSx File Gateway are immediately pushed to the attached FSx for Windows File Server.
+NOTE: Changes made to the FSx File Gateway are immediately pushed to the attached FSx for Windows File Server.
 
 === DiskSpd Write tests
 
@@ -163,7 +163,7 @@ a| Disable local caching.
 . From the remote desktop session to the *Windows Instance*, open another *Windows PowerShell* window by *_clicking_* *Start* >> *Windows PowerShell*.
 
 +
-IMPORTANT: This section assumes the remote FSx File Gateway is mapped as the *Y:* drive.
+IMPORTANT: This section assumes the local FSx File Gateway is mapped as the *Y:* drive.
 +
 . *_Run_* the script below in the PowerShell session to create a 1 GB sparse file.
 +
