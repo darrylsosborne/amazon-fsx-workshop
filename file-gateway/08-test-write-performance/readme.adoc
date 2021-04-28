@@ -289,7 +289,7 @@ a| 125.269
 |===
 
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
-* Using a hardware resources to host the FSx File Gateway will impact performance (e.g. allocating more CPUs, network bandwidth, larger/faster disks, more memory, etc.).
+* Using different hardware resources to host the FSx File Gateway may impact performance (e.g. allocating more CPUs, network bandwidth, larger/faster disks, more memory, etc.).
 
 == Next section
 
