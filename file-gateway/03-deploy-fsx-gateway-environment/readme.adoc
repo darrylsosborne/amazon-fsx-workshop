@@ -7,7 +7,7 @@
 
 == Summary
 
-Deploy a new AWS environment for use during this workshop. See the *Phase 2 Diagram* below.
+Deploy the Region 2 - Amazon FSx File Gateway environment. See the *Phase 2 Diagram* below.
 It will take approximately 5 minutes for this phase of the workshop environment to be created.
 
 == Phase 2 Diagram
