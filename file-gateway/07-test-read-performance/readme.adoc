@@ -72,13 +72,13 @@ IMPORTANT: This section assumes the remote FSx for Windows File Server is mapped
 . *_Run_* the script below in the PowerShell session to create a 1 GB sparse file.
 +
 ```sh
-fsutil file createnew Z:\${env:computername}.dat 1000000000
+fsutil file createnew Z:\${env:computername}-read.dat 1000000000
 ```
 +
 . Run the DiskSpeed script below to test read performance of the remote FSx for Windows File Server mapped as the **Z:** drive.
 +
 ```sh
-C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Z:\${env:computername}.dat
+C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Z:\${env:computername}-read.dat
 ```
 +
 While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet). The DiskSpd script will complete in 120 seconds. After the script has completed, the output will be displayed in the PowerShell window.
@@ -157,10 +157,10 @@ a| Disable local caching.
 +
 IMPORTANT: This section assumes the local FSx File Gateway is mapped as the *Y:/* drive.
 +
-. Run the DiskSpeed script below to test read performance of the remote FSx for Windows File Server mapped as the **Z:** drive.
+. Run the DiskSpeed script below to test read performance of the remote FSx File Gateway mapped as the **Y:** drive.
 +
 ```sh
-C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Y:\${env:computername}.dat
+C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w0 -r -t1 -o32 -b64K -Sr -L Y:\${env:computername}-read.dat
 ```
 +
 While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet). The DiskSpd script will complete in 120 seconds. After the script has completed, the output will be displayed in the PowerShell window.
