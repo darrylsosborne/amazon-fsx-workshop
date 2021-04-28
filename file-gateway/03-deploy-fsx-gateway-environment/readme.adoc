@@ -107,7 +107,7 @@ a| Copy in the VPC Id of the VPC created in Phase 1 - Amazon FSx for Windows Fil
 a| Select the VPC CIDR of the VPC created in Phase 1 - Amazon FSx for Windows File Server environment. This can be easily found from the Output tab of the CloudFormation stack you created in Region 1.
 
 | *DNS Ip Addresses*
-a| Copy in the two DNS Ip addresses of the AWS-managed Active Directory created in Phase 1 - Amazon FSx for Windows File Server environment. This can be easily found from the Output tab of the CloudFormation stack you deployed in Region 1.
+a| Copy in the two DNS Ip addresses of the AWS-managed Active Directory created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/directoryservicev2/[AWS Directory Service] console for the directory created in Phase 1 - Amazon FSx for Windows File Server environment deployed in Region 1.
 
 | *Instance Type*
 a| Accept the default.
