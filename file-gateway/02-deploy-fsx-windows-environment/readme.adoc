@@ -16,9 +16,7 @@ image::fsx-gateway-workshop-architecture-phase-1.png[align="center"]
 
 === Deploy the environment using AWS CloudFormation
 
-IMPORTANT: Read through all steps below and watch the quick video before *_clicking_* the *Deploy to AWS* button.
-
-image::create-environment.gif[align="left", width=600]
+IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* button.
 
 . Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
 +
