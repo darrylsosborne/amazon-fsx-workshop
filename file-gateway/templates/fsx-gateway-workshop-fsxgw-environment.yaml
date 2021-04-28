@@ -79,7 +79,6 @@ Parameters:
     - eu-north-1
     - me-south-1
     - sa-east-1
-    Default: us-west-2
     Description: Enter the region of the peered VPC
     Type: String
   PeerVpc:
@@ -194,7 +193,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 445
           ToPort: 445
-          CidrIp: !Ref WindowsSecurityGroup
+          SourceSecurityGroupId: !Ref WindowsSecurityGroup
         - IpProtocol: -1
           CidrIp: !Ref PeerVpcCidr
       Tags:

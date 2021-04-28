@@ -7,7 +7,7 @@
 
 == Summary
 
-Deploy a new AWS environment for use during this workshop. See the *Workshop Diagram* below.
+Deploy a new AWS environment for use during this workshop. See the *Phase 1 Diagram* below.
 It will take approximately 30 minutes for this phase of the workshop environment to be created.
 
 == Phase 1 Diagram

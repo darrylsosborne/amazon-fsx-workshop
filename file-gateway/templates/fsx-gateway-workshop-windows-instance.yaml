@@ -1,5 +1,35 @@
-AWSTemplateFormatVersion: '2010-09-09'
-Description: "Deploy single windows EC2 Instance and join domain with SSM Association"
+AWSTemplateFormatVersion: 2010-09-09
+
+Description: Deploy an Amazon Windows EC2 instance and join it to Active Directory
+
+Metadata:
+  Authors:
+    Description: Darryl Osborne (darrylo@amazon.com)
+  AWS::CloudFormation::Interface:
+    ParameterGroups:
+    - Label:
+        default: Windows Instance
+      Parameters:
+        - InstanceType
+        - Subnet
+        - SecurityGroup
+        - Password
+        - KeyPair
+        - LatestWS2019AmiId
+    ParameterLabels:
+      InstanceType:
+        default: Instance type
+      KeyPair:
+        default: Key pair
+      LatestWS2019AmiId:
+        default: Latest Microsoft Server 2019 Base AMI (do not change)
+      Password:
+        default: Password for admin@example.com
+      SecurityGroup:
+        default: Security group Id
+      Subnet:
+        default: Subnet Id
+
 Parameters:
   InstanceType:
     AllowedValues:
@@ -21,17 +51,16 @@ Parameters:
     Type: AWS::EC2::KeyPair::KeyName
   Password:
     AllowedPattern: (?=^.{6,255}$)((?=.*\d)(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[^A-Za-z0-9])(?=.*[a-z])|(?=.*[^A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z])|(?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9]))^.*
-    Description: Password for the domain admin user. Must be at least 8 characters,
-      containing letters, numbers, and symbols.
+    Description: Copy in the Secret Value of the Secret Key 'Password-<GUID>' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment.
     MaxLength: '32'
     MinLength: '8'
     NoEcho: 'true'
     Type: String
   Subnet:
-    Description: ID of a Subnet.
+    Description: Select the ..Public Subnet 1 | fsx-gateway-workshop-fsxgw-environment-<GUID> subnet
     Type: AWS::EC2::Subnet::Id
   SecurityGroup:
-    Description: ID of the domain member security group (e.g., sg-7f16e910).
+    Description: Select the fsx-gateway-workshop-fsxgw-environment-WindowsSecurityGroup-<GUID> (e.g., sg-7f16e91a87390).
     Type: AWS::EC2::SecurityGroup::Id
   LatestAmiId:
     Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
@@ -50,8 +79,6 @@ Resources:
   DomainJoinSecrets:
     Type: AWS::SecretsManager::Secret
     Properties:
-      Name: !Sub 'DomainJoinSecrets-${AWS::StackName}'
-      Description: Secrets to join AD domain
       SecretString: !Sub '{"username":"admin@example.com","password":"${Password}"}'
   LambdaSSMRole:
     Type: AWS::IAM::Role
@@ -238,6 +265,34 @@ Resources:
         Value: "WindowsInstance"
       - Key: "DomainToJoin"
         Value: example.com
+      UserData:
+        Fn::Base64:
+          !Sub |
+            <powershell>
+
+            # disable ie security (windows)
+            function Disable-ieESC {
+                $AdminKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A7-37EF-4b3f-8CFC-4F3A74704073}"
+                $UserKey = "HKLM:\SOFTWARE\Microsoft\Active Setup\Installed Components\{A509B1A8-37EF-4b3f-8CFC-4F3A74704073}"
+                Set-ItemProperty -Path $AdminKey -Name "IsInstalled" -Value 0
+                Set-ItemProperty -Path $UserKey -Name "IsInstalled" -Value 0
+                Stop-Process -Name Explorer
+                Write-Host "IE Enhanced Security Configuration (ESC) has been disabled." -ForegroundColor Green
+            }
+            Disable-ieESC
+
+            # install DiskSpd (windows)
+            $path = "C:\Tools\DiskSpd-2.0.21a"
+            $url = "https://github.com/microsoft/diskspd/releases/download/v2.0.21a/DiskSpd.zip"
+            $destination = "C:\Tools\DiskSpd-2.0.21a.zip"
+            $download = New-Object -Typename System.Net.WebClient
+            New-Item -Type Directory -Path $path
+            $download.DownloadFile($url,$destination)
+            $extract = New-Object -ComObject Shell.Application
+            $files = $extract.Namespace($destination).Items()
+            $extract.NameSpace($path).CopyHere($files)
+
+            </powershell>
   JoinDomainAssociation:
     DependsOn: 
       - WindowsInstance
