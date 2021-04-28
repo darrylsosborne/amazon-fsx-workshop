@@ -18,7 +18,7 @@ image::fsx-gateway-workshop-architecture-phase-2.png[align="center"]
 
 IMPORTANT: Read through all steps below before *_clicking_* the *Deploy to AWS* button.
 
-. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin.
+. Click on the *Deploy to AWS* button and follow the CloudFormation prompts to begin. To simulate a real-world scenario of deploying the FSx File Gateway remote from the FSx for Windows File Server, select a region below that is different than the region you selected in Phase 1.
 +
 TIP: *_Context-click (right-click)_* the *Deploy to AWS* button and open the link in a new tab or window to make it easy to navigate between this github tutorial and the AWS Console.
 +
