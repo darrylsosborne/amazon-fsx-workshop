@@ -91,14 +91,14 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w100 -r -t1 -o32 -b64K -Sr -L 
 ```
 +
 * What was the P99 (99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
-* * What was the P99.999 (99.999th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
+* * What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
 * What was the Total Write IO MiB/s? - This is found in the DiskSpd output. It is under *Write IO* under the *MiB/s* column.
 * What was the I/O per second? - This is found in the DiskSpd output. It is under *Write IO* under the *I/O per s* column.
 * What was the AvgLat? - This is found in the DiskSpd output. It is under *Write IO* under the *AvgLat* column.
 +
 . Copy the following table to your local computer and records the results
 +
-[cols="3,10,10"]
+[cols="3,10"]
 |===
 | DiskSpd Metric | FSx for Windows File Server
 
@@ -178,14 +178,14 @@ C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w100 -r -t1 -o32 -b64K -Sr -L 
 ```
 +
 * What was the P99 (99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
-* * What was the P99.999 (99.999th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
+* * What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
 * What was the Total Write IO MiB/s? - This is found in the DiskSpd output. It is under *Write IO* under the *MiB/s* column.
 * What was the I/O per second? - This is found in the DiskSpd output. It is under *Write IO* under the *I/O per s* column.
 * What was the AvgLat? - This is found in the DiskSpd output. It is under *Write IO* under the *AvgLat* column.
 +
 . Copy the following table to your local computer and records the results
 +
-[cols="3,10,10"]
+[cols="3,10"]
 |===
 | DiskSpd Metric | FSx File Gateway
 
@@ -287,7 +287,7 @@ a| 125.269
 |===
 +
 
-* How do you results differ from these? Why?
+* Compare your test results with those in the previous table. Do they differ substantially? Why?
 * Using a hardware resources to host the FSx File Gateway will impact performance (e.g. allocating more CPUs, network bandwidth, larger/faster disks, more memory, etc.).
 
 == Next section
