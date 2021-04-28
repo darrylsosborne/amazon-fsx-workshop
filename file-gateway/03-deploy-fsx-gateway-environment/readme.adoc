@@ -115,9 +115,6 @@ a| Accept the default.
 | *Key Pair*
 a| Select an existing key pair.
 
-| *Password*
-a| Copy in the Secret Value of the Secret Key 'Password' from Secrets Manager created in Phase 1 - Amazon FSx for Windows File Server environment. This can be found from the link:https://console.aws.amazon.com/secretsmanager/[Amazon Secrets Manager] created in Region 1.
-
 |===
 +
 . After you have entered values for all parameters, *_click_* *Next*.
