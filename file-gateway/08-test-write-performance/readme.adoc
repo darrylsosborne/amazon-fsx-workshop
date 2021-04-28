@@ -178,8 +178,10 @@ fsutil file createnew Y:\${env:computername}-$random.dat 1000000000
 C:\Tools\DiskSpd-2.0.21a\amd64\DiskSpd.exe -d120 -w100 -r -t1 -o32 -b64K -Sr -L Y:\${env:computername}-$random.dat
 ```
 +
+While the script is running, open *Task Manager* and monitor network performance (e.g. Start >> Task Manager >> More details >> Performance (tab) >> Ethernet). The DiskSpd script will complete in 120 seconds. After the script has completed, the output will be displayed in the PowerShell window.
++
 * What was the P99 (99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
-* * What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
+* What was the P99.99 (99.99th %-tile) latency in ms of your test? - This is found in the DiskSpd output. It is in the *total* table at the bottom.
 * What was the Total Write IO MiB/s? - This is found in the DiskSpd output. It is under *Write IO* under the *MiB/s* column.
 * What was the I/O per second? - This is found in the DiskSpd output. It is under *Write IO* under the *I/O per s* column.
 * What was the AvgLat? - This is found in the DiskSpd output. It is under *Write IO* under the *AvgLat* column.
@@ -249,7 +251,6 @@ a| Disable local caching.
 
 Below is a table with the results from a previous test. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) writes to the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1).
 
-+
 [cols="3,10,10"]
 |===
 | DiskSpd Metric (us-west-2) | FSx for Windows File Server (us-east-1) | FSx File Gateway (us-west-2)
@@ -286,7 +287,6 @@ a| 68.359
 a| 108.662
 a| 125.269
 |===
-+
 
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
 * Using a hardware resources to host the FSx File Gateway will impact performance (e.g. allocating more CPUs, network bandwidth, larger/faster disks, more memory, etc.).
