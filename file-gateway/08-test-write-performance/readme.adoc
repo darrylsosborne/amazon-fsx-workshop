@@ -74,7 +74,7 @@ NOTE: Changes made to files in the FSx File Gateway are immediately pushed to th
 . From the remote desktop session to the *Windows Instance*, *_click_* *Start* >> *Windows PowerShell*.
 
 +
-IMPORTANT: This section assumes the remote FSx for Windows File Server is mapped as the *Z:/* drive.
+IMPORTANT: This section assumes the remote FSx for Windows File Server is mapped as the *Z:* drive.
 +
 . *_Run_* the script below in the PowerShell session to create a 1 GB sparse file.
 +
@@ -163,7 +163,7 @@ a| Disable local caching.
 . From the remote desktop session to the *Windows Instance*, open another *Windows PowerShell* window by *_clicking_* *Start* >> *Windows PowerShell*.
 
 +
-IMPORTANT: This section assumes the remote FSx File Gateway is mapped as the *Y:/* drive.
+IMPORTANT: This section assumes the remote FSx File Gateway is mapped as the *Y:* drive.
 +
 . *_Run_* the script below in the PowerShell session to create a 1 GB sparse file.
 +
