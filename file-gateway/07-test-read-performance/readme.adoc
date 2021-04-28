@@ -273,7 +273,7 @@ a| 88.122
 a| 15.962
 |===
 
-* Do you results differ substantially? Why?
+* Compare your test results with those in the previous table. Do they differ substantially? Why?
 
 == Next section
 
