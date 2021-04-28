@@ -200,6 +200,7 @@ a|
 a|
 |===
 +
+. Repeat the test. The first run of this test will experience higher latencies as the FSx File Gateway writes the file into its cache from the remote FSx for Windows File Server. Subsequent reads will read the file directly from the local FSx File Gateway.
 . Experiment with different DiskSpd parameter settings. Use the table below as a guide. Test with different block sizes (-b), number of outstanding I/O requests (-o), number of threads per file (-t), and disable local caching (-Sr).
 +
 [cols="3,10"]
