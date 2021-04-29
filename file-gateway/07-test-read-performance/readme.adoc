@@ -254,14 +254,14 @@ Below is a table with the results from a previous test. These results show a sig
 | DiskSpd Read Metric | Test 1 | Test 2 | Test 1 | Test 2
 
 | Read IO throughput (MiB/s)
-| 26.79
-| 456.46
+>s| 26.79
+>s| 456.46
 |
 |
 
 | Read IO I/O per s
-| 428.64
-| 7303.40
+>s| 428.64
+>s| 7303.40
 |
 |
 
