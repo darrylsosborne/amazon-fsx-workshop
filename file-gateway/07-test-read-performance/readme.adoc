@@ -243,7 +243,7 @@ image::read-results-table.png[title="DiskSpd Read Results Table - sample", align
 ---
 image::read-results-throughput-chart.png[title="DiskSpd Read Throughput Chart - sample", align="left", width=800]
 ---
-image::read-results-latencies-chart.png[title="DiskSpd Read Latencies Chart - sample", align="left", width=600]
+image::read-results-latencies-chart.png[title="DiskSpd Read Latencies Chart - sample", align="left", width=800]
 ---
 
 == Next section
