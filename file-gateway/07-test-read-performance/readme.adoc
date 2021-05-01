@@ -249,13 +249,13 @@ Below is a table with the results from a previous test. These results show a sig
 
 [width="50%",cols="^1,>1,>1,>1,>1",frame="topbot",options="header"]
 |===
-| EC2 Instance (us-west-2) 2+| FSx for Windows File Server (us-east-1) 2+| FSx File Gateway (us-west-2)
-s| DiskSpd Read (metric) s| Test 1 (ms) s| Test 2 (ms) s| Test 1 (ms) s| Test 2 (ms)
+h| EC2 Instance (us-west-2) 2+h| FSx for Windows File Server (us-east-1) 2+h| FSx File Gateway (us-west-2)
+h| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 (ms)
 | Read IO throughput (MiB/s)
-| 189.71
-| 166.07
-| 355.43
-| 704.09
+>a| 189.71
+>a| 166.07
+>a| 355.43
+>a| 704.09
 
 | Read IO I/O per s
 | 189.71
