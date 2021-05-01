@@ -252,10 +252,10 @@ Below is a table with the results from a previous test. These results show a sig
 h| EC2 Instance (us-west-2) 2+h| FSx for Windows File Server (us-east-1) 2+h| FSx File Gateway (us-west-2)
 s| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 (ms)
 | Read IO throughput (MiB/s)
->a|189.71
->a|166.07
->m|355.43
->m|704.09
+>m| 189.71
+>m| 166.07
+>m| 355.43
+>m| 704.09
 
 | Read IO I/O per s
 >m| 189.71
@@ -264,40 +264,40 @@ s| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 
 >m| 704.09
 
 | Read IO AvgLat (ms)
-| 169.054
-| 192.680
-| 92.401
-| 45.447
+>m| 169.054
+>m| 192.680
+>m| 92.401
+>m| 45.447
 
 | Min %-tile
-| 65.561
-| 65.067
-| 5.048
-| 4.848
+>m| 65.561
+>m| 65.067
+>m| 5.048
+>m| 4.848
 
 | 50th %-tile
-| 136.523
-| 129.391
-| 45.362
-| 45.284
+>m| 136.523
+>m| 129.391
+>m| 45.362
+>m| 45.284
 
 | 90th %-tile
-| 271.632
-| 347.003
-| 49.669
-| 49.286
+>m| 271.632
+>m| 347.003
+>m| 49.669
+>m| 49.286
 
 | 99th %-tile
-| 584.909
-| 792.806
-| 1196.676
-| 59.106
+>m| 584.909
+>m| 792.806
+>m| 1196.676
+>m| 59.106
 
 | 99.99th %-tile
-| 1480.351
-| 2051.892
-| 10274.655
-| 87.566
+>m| 1480.351
+>m| 2051.892
+>m| 10274.655
+>m| 87.566
 |===
 
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
