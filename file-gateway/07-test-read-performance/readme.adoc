@@ -234,18 +234,17 @@ a| Disable local caching.
 
 === DiskSpd Read Results
 
-Below is a table with the results from a previous test. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) reads this large test file from the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1).
+Below is a table and charts with the results from some previous tests. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) reads this large test file from the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1).
 
+image::read-results-table.png[align="left", width=600]
+* DiskSpd Read Results Table - sample
 
-[width="50%",cols=">s,^m,^m",frame=end,options=header]
-|==========================
-|      2+|Columns 2 and 3
-|      2+|Columns 2 and 3
-|1       |Item 1  |Item 1
-|2       |Item 2  |Item 2
-|3       |Item 3  |Item 3
-|4       |Item 4  |Item 4
-|==========================
+image::read-results-throughput-chart.png[align="left", width=600]
+* DiskSpd Read Throughput Chart - sample
+
+image::read-results-latencies-chart.png[align="left", width=600]
+* DiskSpd Read Latencies Chart - sample
+
 
 [width="50%",cols="d,d,d,d,d",frame="topbot",options="header"]
 |===
@@ -270,10 +269,10 @@ s| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 
 >m| 45.447
 
 | Min %-tile
->d| 65.561
->d| 65.067
->d| 5.048
->d| 4.848
+>m| 65.561
+>m| 65.067
+>m| 5.048
+>m| 4.848
 
 | 50th %-tile
 >m| 136.523
