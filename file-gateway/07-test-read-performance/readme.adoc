@@ -239,7 +239,7 @@ Below is a table and charts with the results from some previous tests. These res
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
 
 
-image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=800]
+image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=1000]
 ---
 image::read-results-throughput-chart.png[title="DiskSpd Read Throughput Chart - sample", align="left", width=800]
 ---
