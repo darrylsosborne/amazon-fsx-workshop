@@ -236,67 +236,20 @@ a| Disable local caching.
 
 Below is a table and charts with the results from some previous tests. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) reads this large test file from the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1).
 
-image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=600]
-
-image::read-results-throughput-chart.png[align="left", width=600]
-* DiskSpd Read Throughput Chart - sample
-
-image::read-results-latencies-chart.png[align="left", width=600]
-* DiskSpd Read Latencies Chart - sample
+image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=800]
 
 
-[width="50%",cols="d,d,d,d,d",frame="topbot",options="header"]
-|===
-h| EC2 Instance (us-west-2) 2+h| FSx for Windows File Server (us-east-1) 2+h| FSx File Gateway (us-west-2)
-s| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 (ms)
-| Read IO throughput (MiB/s)
->m| 189.71
->m| 166.07
->m| 355.43
->m| 704.09
 
-| Read IO I/O per s
->m| 189.71
->m| 166.07
->m| 355.43
->m| 704.09
 
-| Read IO AvgLat (ms)
->m| 169.054
->m| 192.680
->m| 92.401
->m| 45.447
+image::read-results-throughput-chart.png[title="DiskSpd Read Throughput Chart - sample", align="left", width=800]
 
-| Min %-tile
->m| 65.561
->m| 65.067
->m| 5.048
->m| 4.848
 
-| 50th %-tile
->m| 136.523
->m| 129.391
->m| 45.362
->m| 45.284
 
-| 90th %-tile
->m| 271.632
->m| 347.003
->m| 49.669
->m| 49.286
 
-| 99th %-tile
->m| 584.909
->m| 792.806
->m| 1196.676
->m| 59.106
+image::read-results-latencies-chart.png[title="DiskSpd Read Latencies Chart - sample", align="left", width=600]
 
-| 99.99th %-tile
->m| 1480.351
->m| 2051.892
->m| 10274.655
->m| 87.566
-|===
+
+
 
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
 
