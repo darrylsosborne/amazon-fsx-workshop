@@ -234,28 +234,17 @@ a| Disable local caching.
 
 === DiskSpd Read Results
 
-Below is a table and charts with the results from some previous tests. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) reads this large test file from the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1).
+Below is a table and charts with the results from some previous tests. These results show a significant improvement when an Amazon EC2 Windows instance (us-west-2) reads this large test file from the local FSx File Gateway (us-west-2) compared to a remote FSx for Windows File Server (us-east-1). Remember, the first run of FSx File Gateway read tests will experience higher latencies as the FSx File Gateway reads the file into its cache from the remote FSx for Windows File Server. Subsequent reads will read the file directly from the local FSx File Gateway.
 
 * Compare your test results with those in the previous table. Do they differ substantially? Why?
 
 
-image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=800]+
-
-
-
-
-image::read-results-throughput-chart.png[title="DiskSpd Read Throughput Chart - sample", align="left", width=800]+
-
-
-
-
-image::read-results-latencies-chart.png[title="DiskSpd Read Latencies Chart - sample", align="left", width=600]+
-
-
-
-
-
-
+image::read-results-table.png[title="DiskSpd Read Results Table - sample", align="left", width=800]
+---
+image::read-results-throughput-chart.png[title="DiskSpd Read Throughput Chart - sample", align="left", width=800]
+---
+image::read-results-latencies-chart.png[title="DiskSpd Read Latencies Chart - sample", align="left", width=600]
+---
 
 == Next section
 
