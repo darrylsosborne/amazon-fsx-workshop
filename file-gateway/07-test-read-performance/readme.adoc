@@ -270,10 +270,10 @@ s| DiskSpd Read (metric) h| Test 1 (ms) h| Test 2 (ms) h| Test 1 (ms) h| Test 2 
 >m| 45.447
 
 | Min %-tile
->m| 65.561
->m| 65.067
->m| 5.048
->m| 4.848
+>d| 65.561
+>d| 65.067
+>d| 5.048
+>d| 4.848
 
 | 50th %-tile
 >m| 136.523
